@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Arnaud Dejeammes">
+        <meta name="description" content="Page d'accueil - Prototype site mobile Ohmyfood! – Formation Développeur Web, OpenClassrooms, projet 3">
+        <meta name="viewport" content="width=device-width, initial-scale=1">       
+        
+        <link rel="preload" href="" as="font" type="font/woff"> <!-- crossorigin="anonymous" --> <!-- Garder le preload ? --> <!-- href font -->
+        <!-- <link rel="stylesheet" type="text/css" href="normalize.css"> Lien placé en import dans le main. --> <!-- href avec dossier css -->
+        <link rel="stylesheet" href="public/css/OC_Ohmyfood_style.css"> <!--href style -->
+        
+        <title>
+            Ohmyfood! – <!-- Compléter. -->
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Ohmyfood! <!-- display: none; in scss-->
+        </h1>
+        <div class="loader">
+
+        </div>
+        <header>
+            <div class="logo">
+                <a href="#">
+                    <img class="logo_ohmyfood" src="" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
+                </a>
+            </div>
+        </header>
+            
+        <form method="post" action="#"> <!-- flex-direction: column-reverse; -->
+            <div id="form-title">
+                <h2>                       
+                    Réservez le menu qui vous convient                        
+                </h2>
+                <p>
+                    Découvrez des restaurants d’exception sélectionnés par nos soins.
+                </p>
+            </div>
+                
+            <label for="location">
+                <input id="location" size="25" type="search" name="location" placeholder="Paris, Belleville" required class="search-field">
+            </label>
+            <input class="search-desktop" type="submit" value="Explorer nos restaurants">
+        </form>
+
+        <aside> <!-- Supprimer un niveau de div ? -->
+            <div class=""> <!-- Trouver class. -->
+                <div class="-title"> <!-- Trouver class. -->
+                    <h2>
+                        Fonctionnnement
+                    </h2>
+                </div>
+                <ol class=""> <!-- padding: 0; -->
+                    <li class="search-filter">
+                        <button class="" id="" title="">
+                            <img class="" src="" alt="Icône pour le choix du restaurant : un téléphone portable">
+                        </button>
+                        <div class="">
+                            Choisissez un restaurant
+                        </div>
+                    </li>
+                    <li class="">
+                        <button class="" id="" title="">
+                            <img class="" src="" alt="Icône pour le choix du menu : une liste à puces">
+                        </button>
+                        <div class="">
+                            Composez votre menu
+                        </div>
+                    </li>
+                    <li class="">
+                        <button class="" id="" title="">
+                            <img class="" src="" alt="Icône pour le repas prêt : une devanture de restaurant">
+                        </button>
+                        <div class="filter-category">
+                           Dégustez au restaurant
+                        </div>
+                    </li>                    
+                </ol>
+            </div>
+        </aside>    
+        
+        <main>
+            <section class="restaurants">
+                
+                <h2 class="restaurants_section-title">
+                    Restaurants
+                </h2>   
+                
+                <article class="restaurants_card">
+                    <a href="">        
+                        <div class="restaurants_card-image">
+                            <img src="" alt="" title="Choisissez ce restaurant"/>
+                        </div>
+                        <div class="label">
+
+                        </div>
+                        <div class="restaurants_card-body">
+                            <div class="restaurants_card-body-title">
+                                <h3>
+                                    La palette du goût
+                                </h3>
+                            </div>
+                            <div class="restaurants_card-body-place">
+                                <P>
+                                    Ménilmontant
+                                </P>
+                            </div>
+                        </div>
+                    </a>
+                        <div class="restaurants_body-heart-choice">
+                            <img class="" src="" alt="Icône d’un cœur (vide, puis violet)">                                        
+                        </div>                    
+                </article>
+
+                <article class="restaurants_card">
+                    <a href="">        
+                        <div class="restaurants_card-image">
+                            <img src="" alt="" title="Choisissez ce restaurant"/>
+                        </div>
+                        <div class="label">
+
+                        </div>
+                        <div class="restaurants_card-body">
+                            <div class="restaurants_card-body-title">
+                                <h3>
+                                    La note enchantée
+                                </h3>
+                            </div>
+                            <div class="restaurants_card-body-place">
+                                <P>
+                                    Charonne
+                                </P>
+                            </div>
+                        </div>
+                    </a>    
+                        <div class="restaurants_body-heart-choice">
+                            <img class="" src="" alt="Icône d’un cœur (vide, puis violet)">                                        
+                        </div>
+                </article>
+
+                <article class="restaurants_card">
+                    <a href="">        
+                        <div class="restaurants_card-image">
+                            <img src="" alt="" title="Choisissez ce restaurant"/>
+                        </div>
+                        <div class="restaurants_card-body">
+                            <div class="restaurants_card-body-title">
+                                <h3>
+                                    À la française
+                                </h3>
+                            </div>
+                            <div class="restaurants_card-body-place">
+                                <P>
+                                    Cité Rouge
+                                </P>
+                            </div>
+                        </div>
+                    </a>
+                        <div class="restaurants_body-heart-choice">
+                            <img class="" src="" alt="Icône d’un cœur (vide, puis violet)">                                        
+                        </div>                    
+                </article>
+
+                <article class="restaurants_card">
+                    <a href="">        
+                        <div class="restaurants_card-image">
+                            <img src="" alt="" title="Choisissez ce restaurant"/>
+                        </div>
+                        <div class="restaurants_card-body">
+                            <div class="restaurants_card-body-title">
+                                <h3>
+                                    Le délice des sens
+                                </h3>
+                            </div>
+                            <div class="restaurants_card-body-place">
+                                <P>
+                                    Folie-Méricourt
+                                </P>
+                            </div>                            
+                        </div>
+                    </a>
+                        <div class="restaurants_body-heart-choice">
+                            <img class="" src="" alt="Icône d’un cœur (vide, puis violet)">                                        
+                        </div>                    
+                </article>
+            </section>
+        </main> 
+
+        <footer>
+            <nav>
+                <h2>
+                    Informations <!-- display: none; in scss -->
+                </h2>
+                <div class="logo">
+                <a href="#">
+                    <img class="logo_ohmyfood" src="" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
+                </a>
+                </div>
+                <ul>
+                    <li>
+                        <a href="">
+                            Proposer un restaurant
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Devenir partenaire
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Mentions légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+    </body>
+</html>

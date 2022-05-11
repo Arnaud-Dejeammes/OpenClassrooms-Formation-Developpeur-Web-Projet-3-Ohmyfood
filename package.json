@@ -1,0 +1,11 @@
+{
+  "name": "oc_p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "Prototype site mobile Ohmyfood! – Formation Développeur Web, OpenClassrooms, projet 3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./OC_Ohmyfood_main.scss:./public/css/OC_Ohmyfood_style.css"
+  },
+  "author": "Arnaud Dejeammes",
+  "license": "ISC"
+}
