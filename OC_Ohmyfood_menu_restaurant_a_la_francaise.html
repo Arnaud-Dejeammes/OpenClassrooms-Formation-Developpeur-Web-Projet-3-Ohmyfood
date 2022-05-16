@@ -8,8 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">       
         
         <link rel="preload" href="" as="font" type="font/woff"> <!-- crossorigin="anonymous" --> <!-- Garder le preload ? --> <!-- href font -->
-        <link rel="stylesheet" type="text/css" href="normalize.css"> <!-- href avec dossier css -->
-        <link rel="stylesheet" href="OC_Ohmyfood_style.css"/> <!--href style -->
+        <!-- <link rel="stylesheet" type="text/css" href="normalize.css"> Lien placé en import dans le main. --> <!-- href avec dossier css -->
+        <link rel="stylesheet" href="public/css/OC_Ohmyfood_style.css"> <!--href style -->
         
         <title>
             Ohmyfood! – Menu du restaurant À la française
@@ -46,12 +46,41 @@
                         <h2>
                             ENTRÉES
                         </h2>
-                        <li>
-                            <input type="checkbox">
-                            <label for="">
+                        
+                        <li class="menu-item">
+                            <div class="menu-checkbox">
+                                <div class="menu-checkbox-body">
+                                    <div class="menu-checkbox-body-title">
+                                        <span> <!-- Changer pour un titre -->
+                                            Tartare de poulpe acidulé
+                                        </span>
+                                    </div>
+                                    <span class="menu-checkbox-body-subtitle">
+                                        Aux zestes d'orange
+                                    </span>
+                                    <span class="menu-checkbox-body-price">
+                                        25€
+                                    </span>
+                                    <!-- <button class="toggle" title="Sélectionner cette entrée">
+                                
+                                        <img class="check-circle-solid-icon" src="public/images/icons/check-circle-solid-99E2D0.svg" alt="Icône d’une coche">
+                                    
+                                    </button> -->
 
-                            </label>
+                                    <button class="menu-checkbox-body-toggle" title="Sélectionner cette entrée">
+                                        <div class="check">
+                                            <img class="check-solid-icon" src="public/images/icons/check-solid-99E2D0.svg" alt="Icône d’une coche">
+                                        </div>
+                                </div>
+                                <input type="checkbox">
+                                <label for=""> <!-- Placer dans .menu-checkbox-body-toggle ? -->
+
+                                </label>
+                                
+                            </div>
+                            
                         </li>
+                        
                         <li>
                             <input type="checkbox">
                             <label for="">

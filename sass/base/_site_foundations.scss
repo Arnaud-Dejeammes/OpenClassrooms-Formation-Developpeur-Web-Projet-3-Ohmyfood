@@ -5,7 +5,16 @@
 body {
     display: flex;
     flex-direction: column;
-    /* background-color: $base-color-1; */
+    background-color: lightgrey;
+    max-width: 375px;
+}
+
+h1 {
+    display: none;
+}
+
+li {
+    list-style-type: none;        
 }
 
 a {
@@ -14,8 +23,4 @@ a {
 
 a:visited {
     color: black;
-}
-
-h1 {
-    display: none;
 }

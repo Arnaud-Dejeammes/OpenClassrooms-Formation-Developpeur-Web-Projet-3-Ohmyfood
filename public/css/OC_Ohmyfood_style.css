@@ -338,6 +338,7 @@ template {
   display: none;
 }
 
+/* Exporter dans vendors ? */
 * {
   box-sizing: border-box;
 }
@@ -345,7 +346,16 @@ template {
 body {
   display: flex;
   flex-direction: column;
-  /* background-color: $base-color-1; */
+  background-color: lightgrey;
+  max-width: 375px;
+}
+
+h1 {
+  display: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 a {
@@ -356,8 +366,116 @@ a:visited {
   color: black;
 }
 
-h1 {
-  display: none;
+/* animation-page-menu */
+/* animation .menu-checkbox-body-toggle */
+@keyframes item-checked {
+  /*animation: item-checked backwards; */
+  /* paused */
+}
+/* A voir si pertinent */
+/* Syntaxe combinateur parent > enfant */
+/* Syntaxe combinateur descendant (.ascendant .descendant). */
+.menu-item {
+  /* Dissimulation de la case à cocher checkbox. */
+  /* Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
+  /* &:hover .menu-checkbox-body-toggle {
+      animation-name: item-checked;
+  } */
+}
+.menu-item input {
+  opacity: 0;
+}
+.menu-item:hover .check-solid-icon {
+  transform: rotate(360deg);
+  /* animation-name: item-checked; */
+}
+.menu-item:hover .menu-checkbox-body-title {
+  width: 231px;
+}
+.menu-item:hover .menu-checkbox-body-subtitle {
+  width: 231px;
+}
+
+.menu-checkbox {
+  box-shadow: 0 4px 8px 0 #d9d9d9;
+  width: 349px;
+  height: 69px;
+  background-color: #ffffff;
+  border-radius: 13px;
+  overflow: hidden;
+  /* Masque .menu-checkbox-body-toggle. */
+}
+
+/* Dissimulation de la case à cocher checkbox. */
+/* .menu-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+} */
+.menu-checkbox-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 349px;
+  max-height: 69px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.menu-checkbox-body-title {
+  width: 290px;
+  height: 35px;
+  padding: 13px 0 0 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+.menu-checkbox-body-subtitle {
+  width: 290px;
+  height: 34px;
+  padding: 0 0 13px 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+.menu-checkbox-body-price {
+  width: 59px;
+  height: 69px;
+  padding: 42px 0 0px 11px;
+  /* Ajuster en fonction de la maquette et de la police. padding-bottom: 13; */
+  font-weight: bolder;
+  /* transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); */
+  /* Travailler la transition. */
+}
+
+.menu-checkbox-body-toggle {
+  width: 59px;
+  height: 69px;
+  background-color: #99E2D0;
+  border: none;
+  border-radius: 0 13px 13px 0px;
+  padding-left: 19px;
+  cursor: pointer;
+  /* Le pointer .menu-checkbox-body n'apparaît plus sur .menu-checkbox-body-toggle une fois l'animation lancée. */
+  /* transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); */
+  /* Transformer le départ de cubic-bézier */
+  /* Passer en @keyframes. */
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 3px;
+}
+
+.check-solid-icon {
+  width: 12px;
+  background-color: #ffffff;
+  transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
 /* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
