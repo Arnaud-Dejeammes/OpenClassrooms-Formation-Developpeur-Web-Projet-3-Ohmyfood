@@ -1,0 +1,113 @@
+.restaurant-card {
+    // display: flex;
+    // flex-direction: column;
+    margin: 0px 0px 18px 20px;
+    width: 335px;
+    height: 251px;
+    border-radius: 11px;
+    box-shadow: 0px 4px 8px 4px #d9d9d9;    
+    transition: transform 800ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);    
+    }
+
+    &:hover #la_palette_du_gout {
+        width: 108%;
+    }
+    &:hover #la_note_enchantee {
+        width: 105%;
+    }
+    &:hover #a_la_francaise {
+        width: 108%;
+    }
+    &:hover #le_delice_des_sens {
+        width: 105%;
+    }
+}
+
+.restaurant-card-image {
+    height: 174px;        
+    border-radius: 11px 11px 0px 0px;    
+    overflow: hidden;    
+}
+
+.restaurant-card-image img {    
+    position: relative;    
+    transform: translate(-50%, -50%);    
+    transition: width 900ms 100ms ease-in-out;
+}
+
+#la_palette_du_gout {
+    top: 33.5%;
+    left: 50.2%;
+    width: 103.5%;
+}
+
+#la_note_enchantee{
+    top: 35%;
+    left: 50%;
+    width: 102%;
+}
+
+#a_la_francaise {
+    top: 33.5%;
+    left: 50%;
+    width: 103%;
+}
+
+#le_delice_des_sens {
+    top: 33%;
+    left: 50%;  
+    width: 102%;
+}
+
+/* .new-stamp {
+    transform: translate(240px, -165px);
+    width: 80px;
+    height: 29px;
+    background-color: $base-color-3;    
+    padding: 0 0 9px 13px; // Problème avec le padding-bottom.
+    color: $darken-base-color-3;
+} */
+
+/* .new-stamp:nth-child() {
+    // display: none;
+    background-color: pink;
+} Trouver la solution. */
+
+.restaurant-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;    
+    width: 335px;
+    height: 77px;    
+    // transform: translate(0px, -45px); Avec new-stamp. // transform: translate(0px, 174px); Si restaurant-card flex column.
+}
+
+.restaurant-card-body-title {    
+    width: 288px;
+    height: 40px;
+    padding: 0px 0px 0px 14px; // Problème avec le padding-bottom.    
+    // color: black;          
+    // transition: color 0ms 799ms;
+}
+        
+.restaurant-card-body-place {
+    width: 288px;
+    height: 37px;    
+    padding: 0px 0px 0px 14px; // Problème avec le padding-bottom.    
+    // color: black;
+    // transition: color 0ms 799ms;
+}
+
+.restaurant_body-heart-choice {    
+    height: 77px;
+    width: 47px;
+    // Aligner en fonction de title et subtitle.   
+}
+
+.heart-regular-icon {    
+    height: 77px;
+    width: 23px;    
+}
