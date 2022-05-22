@@ -570,14 +570,27 @@ a:visited {
   padding: 0px 0px 0px 14px;
 }
 
-.restaurant_body-heart-choice {
-  height: 77px;
-  width: 47px;
+.restaurant-body-heart-choice {
+  width: 23px;
+  background: no-repeat;
+  color: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  /* &:hover .restaurant-body-heart-choice style {
+      display: none;
+  } */
+}
+.restaurant-body-heart-choice:hover .heart-solid-icon {
+  opacity: 1;
 }
 
 .heart-regular-icon {
-  height: 77px;
-  width: 23px;
+  cursor: pointer;
+}
+
+.heart-solid-icon {
+  fill: linear-gradient(to bottom left, #9356DC, #FF79DA);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
 /*# sourceMappingURL=OC_Ohmyfood_style.css.map */
