@@ -3,37 +3,15 @@ $background-color-element: #ffffff; /* A voir si pertinent */
 /* Syntaxe combinateur parent > enfant */
 /* Syntaxe combinateur descendant (.ascendant .descendant). */
 
-.menu-item {    
-    /* Dissimulation de la case à cocher checkbox. */ /* Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
-    & input {
-        opacity: 0; 
-    }
-    
-    &:hover .check-solid-icon {
-        transform: rotate(360deg);
-        /* animation-name: item-checked; */
-    }
-    
-    &:hover .menu-checkbox-body-title {
-        width: 231px;
-    }
-    &:hover .menu-checkbox-body-subtitle {        
-        width: 231px;
-    }
-
-    /* &:hover .menu-checkbox-body-toggle {
-        animation-name: item-checked;
-    } */
-}
-
-.menu-checkbox {
-    margin: 0px 0px 13px 0px;    
+.menu-checkbox {    
+    margin: 0px 0px 13px 0px; 
     width: 349px;
     height: 69px;
     background-color: $background-color-element;
     box-shadow: 0 4px 8px 0 #d9d9d9;
     border-radius: 13px;
-    overflow: hidden; /* Masque .menu-checkbox-body-toggle. */ 
+    overflow: hidden; /* Masque .menu-checkbox-body-toggle. */
+    // transform: translate(0px, -13px);   
 }
 
 /* Dissimulation de la case à cocher checkbox. */
@@ -103,5 +81,5 @@ $background-color-element: #ffffff; /* A voir si pertinent */
 .check-solid-icon {
     width: 12px;
     background-color: $background-color-element;
-    transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1);
+    // transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); // Passé en animation. Enlever si retour en transition.
 }

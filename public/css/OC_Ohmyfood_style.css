@@ -346,7 +346,6 @@ template {
 body {
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
   max-width: 375px;
 }
 
@@ -368,16 +367,13 @@ a:visited {
 
 /* animation-page-menu */
 /* animation .menu-checkbox-body-toggle */
-@keyframes item-checked {
-  /*animation: item-checked backwards; */
-  /* paused */
-}
-/* A voir si pertinent */
-/* Syntaxe combinateur parent > enfant */
-/* Syntaxe combinateur descendant (.ascendant .descendant). */
 .menu-item {
   /* Dissimulation de la case à cocher checkbox. */
   /* Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
+  /* &:hover .check-solid-icon {
+      transform: rotate(360deg);
+      // animation-name: item-checked;
+  } */
   /* &:hover .menu-checkbox-body-toggle {
       animation-name: item-checked;
   } */
@@ -386,8 +382,7 @@ a:visited {
   opacity: 0;
 }
 .menu-item:hover .check-solid-icon {
-  transform: rotate(360deg);
-  /* animation-name: item-checked; */
+  animation: item-checked 600ms forwards;
 }
 .menu-item:hover .menu-checkbox-body-title {
   width: 231px;
@@ -396,6 +391,75 @@ a:visited {
   width: 231px;
 }
 
+/* .check-solid-icon {
+    //content: "";
+    animation: item-checked 600ms 600ms forwards;
+} */
+@keyframes item-checked {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.menu-item {
+  animation: restaurant-menu-translate 800ms 100ms ease-out forwards;
+}
+
+#menu-checkbox-01 {
+  opacity: 0;
+  animation: restaurant-menu-opacity 320ms 100ms ease-in forwards;
+}
+
+#menu-checkbox-02 {
+  opacity: 0;
+  animation: restaurant-menu-opacity 320ms 260ms ease-in forwards;
+}
+
+#menu-checkbox-03 {
+  opacity: 0;
+  animation: restaurant-menu-opacity 320ms 420ms ease-in forwards;
+}
+
+@keyframes restaurant-menu-translate {
+  0% {
+    margin: 0px 0px 20px 0px;
+    transform: translate(0px, 7px);
+  }
+  100% {
+    margin: 0px 0px 13px 0px;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes restaurant-menu-opacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
+@keyframes restaurant-menu {
+    0% {
+        // opacity: 0;
+        margin: 0px 0px 0px 0px;
+        transform: translate(0px, -13px);        
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        margin: 0px 0px 13px 0px;
+        transform: translate(0px, 0px);
+
+    }
+} */
+/* A voir si pertinent */
+/* Syntaxe combinateur parent > enfant */
+/* Syntaxe combinateur descendant (.ascendant .descendant). */
 .menu-checkbox {
   margin: 0px 0px 13px 0px;
   width: 349px;
@@ -476,7 +540,6 @@ a:visited {
 .check-solid-icon {
   width: 12px;
   background-color: #ffffff;
-  transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
 .restaurant-card {

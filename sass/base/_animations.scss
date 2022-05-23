@@ -2,13 +2,109 @@
 
 /* animation .menu-checkbox-body-toggle */
 
-@keyframes item-checked {
-    0% {
+.menu-item {    
+    /* Dissimulation de la case à cocher checkbox. */ /* Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */    
 
+    & input {
+        opacity: 0; 
+    }
+    
+    /* &:hover .check-solid-icon {
+        transform: rotate(360deg);
+        // animation-name: item-checked;
+    } */
+
+    &:hover .check-solid-icon {
+        //content: "";
+        animation: item-checked 600ms forwards;
+    }
+    
+    &:hover .menu-checkbox-body-title {
+        width: 231px;
+    }
+    &:hover .menu-checkbox-body-subtitle {        
+        width: 231px;
+    }    
+
+    /* &:hover .menu-checkbox-body-toggle {
+        animation-name: item-checked;
+    } */
+}
+
+/* .check-solid-icon {
+    //content: "";
+    animation: item-checked 600ms 600ms forwards;
+} */
+
+@keyframes item-checked {
+    100% {
+        transform: rotate(360deg);        
+    }
+    // animation: item-checked backwards;
+    // paused
+}
+
+$opacity-duration: 320ms;
+
+.menu-item {
+        animation: restaurant-menu-translate 800ms 100ms ease-out forwards; // cubic-bezier(0,.37,1,.27); // cubic-bezier(.57,.19,0,.99);
+        // cubic-bezier(.57,.19,.29,.95);
+        // cubic-bezier(0,.5,.63,.97); // cubic-bezier(1,0,0,1); // ease-out
+    }
+
+#menu-checkbox-01 {
+    opacity: 0;   
+    animation: restaurant-menu-opacity $opacity-duration 100ms ease-in forwards // cubic-bezier(0,.5,.63,.97); // cubic-bezier(1,0,0,1); // ease-out
+}
+
+#menu-checkbox-02 {
+    opacity: 0;    
+    animation: restaurant-menu-opacity $opacity-duration 260ms ease-in forwards // cubic-bezier(0,.5,.63,.97); // cubic-bezier(1,0,0,1); // ease-out
+}
+
+#menu-checkbox-03 {
+    opacity: 0;    
+    animation: restaurant-menu-opacity $opacity-duration 420ms ease-in forwards // cubic-bezier(0,.5,.63,.97); // cubic-bezier(1,0,0,1); // ease-out
+}
+
+@keyframes restaurant-menu-translate {
+    0% {        
+        margin: 0px 0px 20px 0px;
+        transform: translate(0px, 7px);   
+    }
+    100% {    
+        margin: 0px 0px 13px 0px;
+        transform: translate(0px, 0px);       
+    }
+}
+
+@keyframes restaurant-menu-opacity {
+    0% {
+        opacity: 0;
+        
+    }
+    50% {
+        opacity: 0.5;
     }
     100% {
-
+        opacity: 1;
     }
-    /*animation: item-checked backwards; */
-    /* paused */
 }
+
+/*
+@keyframes restaurant-menu {
+    0% {
+        // opacity: 0;
+        margin: 0px 0px 0px 0px;
+        transform: translate(0px, -13px);        
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        margin: 0px 0px 13px 0px;
+        transform: translate(0px, 0px);
+        
+    }
+} */
