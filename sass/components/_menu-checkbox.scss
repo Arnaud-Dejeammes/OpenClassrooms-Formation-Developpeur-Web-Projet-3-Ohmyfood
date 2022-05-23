@@ -10,16 +10,8 @@ $background-color-element: #ffffff; /* A voir si pertinent */
     background-color: $background-color-element;
     box-shadow: 0 4px 8px 0 #d9d9d9;
     border-radius: 13px;
-    overflow: hidden; /* Masque .menu-checkbox-body-toggle. */
-    // transform: translate(0px, -13px);   
+    overflow: hidden;
 }
-
-/* Dissimulation de la case à cocher checkbox. */
-/* .menu-checkbox input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-} */
 
 .menu-checkbox-body {
     display: flex;
@@ -36,8 +28,7 @@ $background-color-element: #ffffff; /* A voir si pertinent */
     height: 35px;
     padding: 13px 0px 0px 11px; // Problème avec le padding-bottom, comme dans restaurant-card.
     overflow: hidden;
-    text-overflow: ellipsis;    
-    transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
+    text-overflow: ellipsis;   
 }
 
 .menu-checkbox-body-subtitle {      
@@ -45,17 +36,14 @@ $background-color-element: #ffffff; /* A voir si pertinent */
     height: 34px;
     padding: 0px 0px 0px 11px;  
     overflow: hidden;
-    text-overflow: ellipsis;
-    transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);    
+    text-overflow: ellipsis;    
 }
 
 .menu-checkbox-body-price {
     width: 59px;
     height: 69px;
     padding: 42px 0px 0px 11px; /* Ajuster en fonction de la maquette et de la police. padding-bottom: 13; */
-    font-weight: bolder;
-    /* transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); */
-    /* Travailler la transition. */
+    font-weight: bolder;   
 }
 
 .menu-checkbox-body-toggle {    
@@ -65,9 +53,7 @@ $background-color-element: #ffffff; /* A voir si pertinent */
     border: none;
     border-radius: 0px 13px 13px 0px;
     padding-left: 19px;
-    cursor: pointer; /* Le pointer .menu-checkbox-body n'apparaît plus sur .menu-checkbox-body-toggle une fois l'animation lancée. */
-    /* transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); */ /* Transformer le départ de cubic-bézier */
-    /* Passer en @keyframes. */
+    cursor: pointer;
 }
 
 .check {
@@ -80,6 +66,5 @@ $background-color-element: #ffffff; /* A voir si pertinent */
 
 .check-solid-icon {
     width: 12px;
-    background-color: $background-color-element;
-    // transition: transform 600ms cubic-bezier(0.32, 0, 0.07, 1); // Passé en animation. Enlever si retour en transition.
+    background-color: $background-color-element;    
 }
