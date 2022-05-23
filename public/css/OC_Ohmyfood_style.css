@@ -397,10 +397,11 @@ a:visited {
 }
 
 .menu-checkbox {
-  box-shadow: 0 4px 8px 0 #d9d9d9;
+  margin: 0px 0px 13px 0px;
   width: 349px;
   height: 69px;
   background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 #d9d9d9;
   border-radius: 13px;
   overflow: hidden;
   /* Masque .menu-checkbox-body-toggle. */
