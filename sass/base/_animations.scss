@@ -1,5 +1,143 @@
 $opacity-duration: 320ms;
 
+// Animation - Loader
+body {
+    animation: body-fade-in 3000ms forwards;
+}
+
+@keyframes body-fade-in {
+    100% {
+        filter: blur(0);
+    }
+}
+
+.loader {    
+    animation: loader-animation 3000ms forwards;
+}
+
+/* @keyframes loader-animation {
+    99% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 0;
+    }
+
+} */
+
+#circle-01 {
+    animation: circle-01-translate 1000ms forwards;    
+}
+
+@keyframes circle-01-translate {
+    /* 0% {
+        transform: translate(-50px);
+    } */
+
+    0%, 99% {
+        transform: scaleX(1.2);
+    }
+
+    50% {
+        transform: translate(300px) scaleY(1.2);
+    }
+
+    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: translate(95px) scaleX(.95);
+    }
+
+    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+        transform: translate(100px) scaleX(1);
+    }    
+}
+
+#circle-02 {
+    animation: circle-02-translate 1000ms 500ms forwards;    
+}
+
+@keyframes circle-02-translate {
+    /* 0% {
+        transform: translate(-100px);
+    } */
+
+    0%, 99% {
+        transform: scaleX(1.2);
+    }
+
+    50% {
+        transform: translate(250px) scaleY(1.2);
+    }
+    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: translate(95px) scaleX(.95);
+    }
+
+    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+        transform: translate(100px) scaleX(1);
+    }
+    
+    /* 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: scaleX(.80);
+        transform-origin: center;
+    }
+
+    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+        transform: scaleX(1);
+        transform-origin: center;
+    } */
+}
+
+#circle-03 {
+    animation: circle-03-translate 1000ms 1000ms forwards;    
+}
+
+@keyframes circle-03-translate {
+    /* 0% {
+        transform: translate(-180px);
+    } */
+
+    0%, 99% {
+        transform: scaleX(1.2);
+    }
+
+    50% {
+        transform: translate(190px) scaleY(1.2);
+    }
+    
+    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: translate(95px) scaleX(.95);
+    }
+
+    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+        transform: translate(100px) scaleX(1);
+    }
+}
+
+.progress-bar-load {       
+        transform-origin: 0%; /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */        
+        animation: progress-bar-animation 2000ms cubic-bezier(.32,0,.07,1) forwards;
+}
+
+@keyframes progress-bar-animation {
+    0% {
+        transform: scaleX(0%);
+        // opacity: 1;
+    }
+    100% {
+        transform: scaleX(3330%);
+        // opacity: 0.3;
+    }
+}
+
+#dot-01 {
+    animation: twinkle 3000ms;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+    }
+}
+
 // Animation - Page Menu - Sélection d'un plat
 .menu-item {    
     /* Dissimulation de la case à cocher checkbox.

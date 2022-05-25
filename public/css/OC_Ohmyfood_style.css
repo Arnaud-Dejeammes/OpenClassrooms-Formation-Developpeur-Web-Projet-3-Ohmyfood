@@ -365,6 +365,135 @@ a:visited {
   color: black;
 }
 
+@font-face {
+  font-family: "Shrikhand-Regular";
+  src: url("../fonts/Shrikhand-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto-Bold.woff") format("woff");
+}
+body {
+  animation: body-fade-in 3000ms forwards;
+}
+
+@keyframes body-fade-in {
+  100% {
+    filter: blur(0);
+  }
+}
+.loader {
+  animation: loader-animation 3000ms forwards;
+}
+
+/* @keyframes loader-animation {
+    99% {
+        opacity: 0.99;
+    }
+    100% {
+        opacity: 0;
+    }
+
+} */
+#circle-01 {
+  animation: circle-01-translate 1000ms forwards;
+}
+
+@keyframes circle-01-translate {
+  /* 0% {
+      transform: translate(-50px);
+  } */
+  0%, 99% {
+    transform: scaleX(1.2);
+  }
+  50% {
+    transform: translate(300px) scaleY(1.2);
+  }
+  81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+    transform: translate(95px) scaleX(0.95);
+  }
+  80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+    transform: translate(100px) scaleX(1);
+  }
+}
+#circle-02 {
+  animation: circle-02-translate 1000ms 500ms forwards;
+}
+
+@keyframes circle-02-translate {
+  /* 0% {
+      transform: translate(-100px);
+  } */
+  0%, 99% {
+    transform: scaleX(1.2);
+  }
+  50% {
+    transform: translate(250px) scaleY(1.2);
+  }
+  81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+    transform: translate(95px) scaleX(0.95);
+  }
+  80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+    transform: translate(100px) scaleX(1);
+  }
+  /* 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+      transform: scaleX(.80);
+      transform-origin: center;
+  }
+
+  80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+      transform: scaleX(1);
+      transform-origin: center;
+  } */
+}
+#circle-03 {
+  animation: circle-03-translate 1000ms 1000ms forwards;
+}
+
+@keyframes circle-03-translate {
+  /* 0% {
+      transform: translate(-180px);
+  } */
+  0%, 99% {
+    transform: scaleX(1.2);
+  }
+  50% {
+    transform: translate(190px) scaleY(1.2);
+  }
+  81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+    transform: translate(95px) scaleX(0.95);
+  }
+  80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+    transform: translate(100px) scaleX(1);
+  }
+}
+.progress-bar-load {
+  transform-origin: 0%;
+  /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */
+  animation: progress-bar-animation 2000ms cubic-bezier(0.32, 0, 0.07, 1) forwards;
+}
+
+@keyframes progress-bar-animation {
+  0% {
+    transform: scaleX(0%);
+  }
+  100% {
+    transform: scaleX(3330%);
+  }
+}
+#dot-01 {
+  animation: twinkle 3000ms;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+}
 .menu-item {
   /* Dissimulation de la case à cocher checkbox.
   Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
@@ -435,6 +564,113 @@ a:visited {
     opacity: 1;
   }
 }
+/* @font-face {
+    font-family: 'Shrikhand-Regular';
+    src: url('public/fonts/Shrikhand-Regular.ttf') format('ttf');
+} */
+/* @font-face {
+    font-family: 'Shrikhand-Regular';
+    src: url('../fonts/Shrikhand-Regular.woff') format('woff');
+} */
+.loader {
+  position: absolute;
+  width: 375px;
+  height: 1675px;
+  /* filter: blur(5px);
+  z-index: 1; */
+}
+
+.loader-circles {
+  width: 375px;
+  height: 375px;
+  padding: 45% 0px 0px 0px;
+}
+
+.circle {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 13px 0px 0px 0px;
+  justify-content: center;
+  font-family: "Shrikhand-Regular", cursive, serif;
+}
+
+#circle-01 {
+  background-color: #9356DC;
+  color: #99E2D0;
+  border: solid 3px #99E2D0;
+  box-shadow: 0px 0px 4px #9356DC;
+  transform: translate(-45px, 0px);
+}
+
+#circle-02 {
+  background-color: #99E2D0;
+  color: #FF79DA;
+  border: solid 3px #FF79DA;
+  box-shadow: 0px 0px 4px #9356DC;
+  transform: translate(-110px, 0px);
+}
+
+#circle-03 {
+  background-color: #FF79DA;
+  color: #9356DC;
+  border: solid 3px #9356DC;
+  box-shadow: 0px 0px 4px #9356DC;
+  transform: translate(-160px, 0px);
+}
+
+.progress-bar {
+  height: 40px;
+  padding: 10px 0px 0px 15px;
+}
+
+.progress-bar-border {
+  width: 345px;
+  height: 20px;
+  background: #9356DC;
+  background-color: #99E2D0;
+  border: solid 2px #9356DC;
+  box-shadow: 0px 0px 4px #9356DC;
+  border-radius: 2px;
+}
+
+.progress-bar-load {
+  width: 10px;
+  height: 10px;
+  margin: 3px 0px 0px 4px;
+  background: linear-gradient(to left, #FF79DA, #9356DC);
+  /* transform-origin: 0%; /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */
+  /* transform: scaleX(0);
+  transition: transform 2000ms cubic-bezier(.32,0,.07,1); */
+}
+
+/* #loader-welcome-text {    
+    // background-color: coral;
+    padding: 10px 0px 0px 100px;
+    font-family: 'Shrikhand-Regular', cursive, serif;
+    text-shadow: -1px 1px 2px $base-color-2;
+    // text-justify: center;
+} */
+.loader-text {
+  padding: 10px 0px 0px 100px;
+  font-family: "Shrikhand-Regular", cursive, serif;
+  color: #9356DC;
+  text-shadow: -1px 1px 2px #FF79DA;
+}
+
+#dot-01 {
+  color: #9356DC;
+}
+
+#dot-02 {
+  color: #99E2D0;
+}
+
+#dot-03 {
+  color: #FF79DA;
+}
+
 /* A voir si pertinent */
 /* Syntaxe combinateur parent > enfant */
 /* Syntaxe combinateur descendant (.ascendant .descendant). */

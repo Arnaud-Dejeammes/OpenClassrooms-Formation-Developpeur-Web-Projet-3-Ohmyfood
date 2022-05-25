@@ -1,9 +1,11 @@
 @import "./sass/base/normalize"; /* Exporter dans vendors ? */
 @import "./sass/base/site_foundations";
+@import "./sass/base/fonts";
 @import "./sass/base/animations";
 
 @import "./sass/utils/variables";
 
+@import "./sass/components/loader";
 @import "./sass/components/menu-checkbox";
 @import "./sass/components/restaurant-card";
 

@@ -7,26 +7,96 @@
         <meta name="description" content="Page d’accueil - Prototype site mobile Ohmyfood! – Formation Développeur Web, OpenClassrooms, projet 3">
         <meta name="viewport" content="width=device-width, initial-scale=1">       
         
-        <link rel="preload" href="" as="font" type="font/woff"> <!-- crossorigin="anonymous" --> <!-- Garder le preload ? --> <!-- href font -->
+        <link rel="preload" href="public/fonts/Roboto-Regular.woff" as="font" type="font/woff">
+        <link rel="preload" href="public/fonts/Roboto-Bold.woff" as="font" type="font/woff">
+        <link rel="preload" href="public/fonts/Shrikhand-Regular.woff" as="font" type="font/woff"> <!-- Vérifier la compatibilité du preload avec Firefox. -->
         <!-- <link rel="stylesheet" type="text/css" href="normalize.css"> Lien placé en import dans le main. --> <!-- href avec dossier css -->
         <link rel="stylesheet" href="public/css/OC_Ohmyfood_style.css"> <!--href style -->
         
         <title>
             Ohmyfood! – <!-- Compléter. -->
         </title>
-    </head>
+    </head>    
+    <div class="loader">
+        <div class="loader-circles">
+            <div class="circle" id="circle-01">
+                <span>
+                    oh
+                </span>
+            </div>
+            <div class="circle" id="circle-02">
+                <span>
+                    my
+                </span>
+            </div>
+                <span class="circle" id="circle-03">
+                    food
+                </span>
+            <div>
+        </div>
+        
+        <div class="loader-text">
+            
+            <span >
+                Merci de patienter          
+            </span>
+            
+            <span id="dot-01">
+                .
+            </span>
+            <span id="dot-02">
+                .
+            </span>
+            <span id="dot-03">
+                .
+            </span> <!-- Animer les trois petits points ? -->
+        
+        </div>
+    
 
+        <div class="progress-bar">
+            
+            <div class="progress-bar-border">     
+                <div class="progress-bar-load">
+                </div>            
+            </div>            
+        </div>
+
+        <div class="loader-text">
+            <span>
+                Nous sélectionnons<br>
+                vos restaurants&nbsp;!
+            </span>
+        
+            <!--  <span  id="dot-01">
+                .
+            </span>
+            <span  id="dot-02">
+                .
+            </span>
+            <span  id="dot-03">
+                .
+            </span> -->
+        </div>
+         
+        <!-- <div id="loader-welcome-text"> -->
+            <!-- <span class="loader-text">
+                Merci de patienter.<br>               
+            </span> -->
+            
+        <!-- </div> -->
+        
+
+    </div>
     <body>
         <h1>
             Ohmyfood! <!-- display: none; in scss-->
         </h1>
-        <div class="loader">
-
-        </div>
+        
         <header>
             <div class="logo">
                 <a href="#">
-                    <img class="logo_ohmyfood" src="" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
+                    <img class="logo_ohmyfood" src="public/images/logo_ohmyfood.png" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
                 </a>
             </div>
         </header>
