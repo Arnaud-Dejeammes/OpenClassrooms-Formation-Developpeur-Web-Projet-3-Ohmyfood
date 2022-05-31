@@ -5,6 +5,11 @@
 
 @import "./sass/utils/variables";
 
+@import "./sass/layouts/media_query_mobile";
+@import "./sass/layouts/media_query_tablet";
+@import "./sass/layouts/media_query_desktop";
+
+
 @import "./sass/components/loader";
 @import "./sass/components/menu-checkbox";
 @import "./sass/components/restaurant-card";

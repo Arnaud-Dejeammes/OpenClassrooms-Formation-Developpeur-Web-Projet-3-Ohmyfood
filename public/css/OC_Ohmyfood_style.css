@@ -346,7 +346,6 @@ template {
 body {
   display: flex;
   flex-direction: column;
-  max-width: 375px;
 }
 
 h1 {
@@ -562,6 +561,12 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@media all and (max-width: 767px) {
+  body {
+    max-width: 375px;
+    background-color: lightgrey;
   }
 }
 /* @font-face {

@@ -16,7 +16,8 @@
         <title>
             Ohmyfood! – <!-- Compléter. -->
         </title>
-    </head>    
+    </head>
+
     <div class="loader">
         <div class="loader-circles">
             <div class="circle" id="circle-01">
@@ -51,8 +52,7 @@
                 .
             </span> <!-- Animer les trois petits points ? -->
         
-        </div>
-    
+        </div>    
 
         <div class="progress-bar">
             
@@ -92,226 +92,229 @@
         <h1>
             Ohmyfood! <!-- display: none; in scss-->
         </h1>
+
+        <div class="body-blur">
         
-        <header>
-            <div class="logo">
-                <a href="#">
-                    <img class="logo_ohmyfood" src="public/images/logo_ohmyfood.png" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
-                </a>
-            </div>
-        </header>
-            
-        <form method="post" action="#"> <!-- flex-direction: column-reverse; -->
-            <div id="form-title">
-                <h2>                       
-                    Réservez le menu qui vous convient                        
-                </h2>
-                <p>
-                    Découvrez des restaurants d’exception sélectionnés par nos soins.
-                </p>
-            </div>
-                
-            <label for="location">
-                <input id="location" size="25" type="search" name="location" placeholder="Paris, Belleville" required class="search-field">
-            </label>
-            <input class="search-desktop" type="submit" value="Explorer nos restaurants">
-        </form>
-
-        <aside> <!-- Supprimer un niveau de div ? -->
-            <div class=""> <!-- Trouver class. -->
-                <div class="-title"> <!-- Trouver class. -->
-                    <h2>
-                        Fonctionnnement
-                    </h2>
-                </div>
-                <ol class=""> <!-- padding: 0; -->
-                    <li class="search-filter">
-                        <button class="" id="" title="">
-                            <img class="" src="" alt="Icône pour le choix du restaurant : un téléphone portable">
-                        </button>
-                        <div class="">
-                            Choisissez un restaurant
-                        </div>
-                    </li>
-                    <li class="">
-                        <button class="" id="" title="">
-                            <img class="" src="" alt="Icône pour le choix du menu : une liste à puces">
-                        </button>
-                        <div class="">
-                            Composez votre menu
-                        </div>
-                    </li>
-                    <li class="">
-                        <button class="" id="" title="">
-                            <img class="" src="" alt="Icône pour le repas prêt : une devanture de restaurant">
-                        </button>
-                        <div class="filter-category">
-                           Dégustez au restaurant
-                        </div>
-                    </li>                    
-                </ol>
-            </div>
-        </aside>    
-        
-        <main>
-            <section class="restaurants">
-                
-                <h2 class="restaurants_section-title">
-                    Restaurants
-                </h2>   
-                
-                <article class="restaurant-card">
-                    <a href="" title="Choisissez ce restaurant">
-                        <div class="restaurant-card-image">
-                            <img id="la_palette_du_gout" src="public/images/restaurant_la_palette_du_gout.jpg" alt="Intérieur du restaurant La palette du goût : plan rapproché sur une table en longueur en bois marron, avec des verres plus ou moins remplis de diverses boissons, des bouteilles, une corbeille de pain, des plats, des couverts ; la main de l’une des convives en tient un, dans une grande assiette blanche, qui vient d’arriver.">
-                        </div>
-                    </a>
-                    <!-- <div class="new-stamp">
-                        <p>Nouveau</p>
-                    </div> -->
-
-                    <div class="restaurant-card-body">
-                        <div class="restaurant-card-body-title">
-                            <h3>
-                                <a href="" title="Choisissez ce restaurant">
-                                    La palette du goût
-                                </a>
-                            </h3>
-                        </div>                        
-                        <div class="restaurant-card-body-place">
-                            <P>
-                                Ménilmontant <!-- Modifier en titre pour SEO ? -->
-                            </P>
-                        </div>                        
-                        <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
-                            <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
-                            <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
-                        </div>
-                    </div>
-                </article>
-
-                <article class="restaurant-card">
-                    <a href="" title="Choisissez ce restaurant">
-                        <div class="restaurant-card-image">
-                            <img id="la_note_enchantee" src="public/images/restaurant_la_note_enchantee.jpg" alt="Plan rapproché en plongée au-dessus d’une table en bois noir protégée par une plaque en verre du restaurant La note enchantée : du pain dans une corbeille recouverte d’une serviette blanche, un petit ramequin avec un cube de beurre, une entrée (des tomates cerises coupées en deux entourent un bloc de mozzarella découpé en cinq portions, le tout recouvert par un peu d’herbe aromatique et un filet de vinaigre basalmique, quelques olives noires et vertes à côté), un plat principal en sauce, des verres avec diverses boissons, une carte de menu.">
-                        </div>
-                    </a>
-                    <!-- <div class="new-stamp">
-                        <p>Nouveau</p>
-                    </div> -->
-                    <div class="restaurant-card-body">
-                        <div class="restaurant-card-body-title">
-                            <h3>
-                                <a href="" title="Choisissez ce restaurant">
-                                    La note enchantée
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="restaurant-card-body-place">
-                            <P> <!-- Modifier en titre pour SEO ? -->
-                                Charonne
-                            </P>
-                        </div>
-                        <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
-                            <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
-                            <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
-                        </div>
-                    </div>
-                </article>
-
-                <article class="restaurant-card">
-                    <a href="" title="Choisissez ce restaurant">
-                        <div class="restaurant-card-image">
-                            <img id="a_la_francaise" src="public/images/restaurant_a_la_francaise.jpg" alt="Plan rapproché sur une table du restaurant À la française : deux plats, une tasse à café sur une soucoupe, un verre rempli d’eau avec des glaçons et un morceau de citron.">
-                        </div>
-                    </a>
-                    <!-- <div class="new-stamp">
-                        <p>Nouveau</p>
-                    </div> --> <!-- display: none; -->
-                    <div class="restaurant-card-body">
-                        <div class="restaurant-card-body-title">
-                            <h3>
-                                <a href="" title="Choisissez ce restaurant">
-                                    À la française
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="restaurant-card-body-place">
-                            <P>
-                                Cité Rouge <!-- Modifier en titre pour SEO ? -->
-                            </P>
-                        </div>
-                        <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
-                            <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
-                            <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
-                        </div>
-                    </div>                    
-                </article>
-
-                <article class="restaurant-card">
-                    <a href="" title="Choisissez ce restaurant">
-                        <div class="restaurant-card-image">
-                            <img id="le_delice_des_sens" src="public/images/restaurant_le_delice_des_sens.jpg" alt="Intérieur du restaurant Le délice des sens : plan rapproché sur une table couleur acajou, avec un bâton enroulé de canelle, des plats dans des récipients oblongs, un cuiseur vapeur en bambou ; dossier d’une banquette avec des motifs de flamants roses et de feuilles de philodendron.">
-                        </div>
-                    </a>
-                    <!-- <div class="new-stamp">
-                        <p>Nouveau</p>
-                    </div> --> <!-- display: none; -->
-                    <div class="restaurant-card-body">
-                        <div class="restaurant-card-body-title">
-                            <h3>
-                                <a href="" title="Choisissez ce restaurant">
-                                    Le délice des sens
-                                </a>
-                            </h3>
-                        </div>
-                        <div class="restaurant-card-body-place">
-                            <P>
-                                Folie-Méricourt <!-- Modifier en titre pour SEO ? -->
-                            </P>
-                        </div>
-                        <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
-                            <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
-                            <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
-                        </div>
-                    </div>                    
-                </article>
-            </section>
-        </main> 
-
-        <footer>
-            <nav>
-                <h2>
-                    Informations <!-- display: none; in scss -->
-                </h2>
+            <header>
                 <div class="logo">
-                <a href="#">
-                    <img class="logo_ohmyfood" src="" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
-                </a>
+                    <a href="#">
+                        <img class="logo_ohmyfood" src="public/images/logo_ohmyfood.png" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
+                    </a>
                 </div>
-                <ul>
-                    <li>
-                        <a href="">
-                            Proposer un restaurant
+            </header>
+                
+            <form method="post" action="#"> <!-- flex-direction: column-reverse; -->
+                <div id="form-title">
+                    <h2>                       
+                        Réservez le menu qui vous convient                        
+                    </h2>
+                    <p>
+                        Découvrez des restaurants d’exception sélectionnés par nos soins.
+                    </p>
+                </div>
+                    
+                <label for="location">
+                    <input id="location" size="25" type="search" name="location" placeholder="Paris, Belleville" required class="search-field">
+                </label>
+                <input class="search-desktop" type="submit" value="Explorer nos restaurants">
+            </form>
+
+            <aside> <!-- Supprimer un niveau de div ? -->
+                <div class=""> <!-- Trouver class. -->
+                    <div class="-title"> <!-- Trouver class. -->
+                        <h2>
+                            Fonctionnnement
+                        </h2>
+                    </div>
+                    <ol class=""> <!-- padding: 0; -->
+                        <li class="search-filter">
+                            <button class="" id="" title="">
+                                <img class="" src="" alt="Icône pour le choix du restaurant : un téléphone portable">
+                            </button>
+                            <div class="">
+                                Choisissez un restaurant
+                            </div>
+                        </li>
+                        <li class="">
+                            <button class="" id="" title="">
+                                <img class="" src="" alt="Icône pour le choix du menu : une liste à puces">
+                            </button>
+                            <div class="">
+                                Composez votre menu
+                            </div>
+                        </li>
+                        <li class="">
+                            <button class="" id="" title="">
+                                <img class="" src="" alt="Icône pour le repas prêt : une devanture de restaurant">
+                            </button>
+                            <div class="filter-category">
+                            Dégustez au restaurant
+                            </div>
+                        </li>                    
+                    </ol>
+                </div>
+            </aside>    
+            
+            <main>
+                <section class="restaurants">
+                    
+                    <h2 class="restaurants_section-title">
+                        Restaurants
+                    </h2>   
+                    
+                    <article class="restaurant-card">
+                        <a href="" title="Choisissez ce restaurant">
+                            <div class="restaurant-card-image">
+                                <img id="la_palette_du_gout" src="public/images/restaurant_la_palette_du_gout.jpg" alt="Intérieur du restaurant La palette du goût : plan rapproché sur une table en longueur en bois marron, avec des verres plus ou moins remplis de diverses boissons, des bouteilles, une corbeille de pain, des plats, des couverts ; la main de l’une des convives en tient un, dans une grande assiette blanche, qui vient d’arriver.">
+                            </div>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Devenir partenaire
+                        <!-- <div class="new-stamp">
+                            <p>Nouveau</p>
+                        </div> -->
+
+                        <div class="restaurant-card-body">
+                            <div class="restaurant-card-body-title">
+                                <h3>
+                                    <a href="" title="Choisissez ce restaurant">
+                                        La palette du goût
+                                    </a>
+                                </h3>
+                            </div>                        
+                            <div class="restaurant-card-body-place">
+                                <P>
+                                    Ménilmontant <!-- Modifier en titre pour SEO ? -->
+                                </P>
+                            </div>                        
+                            <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
+                                <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
+                                <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="restaurant-card">
+                        <a href="" title="Choisissez ce restaurant">
+                            <div class="restaurant-card-image">
+                                <img id="la_note_enchantee" src="public/images/restaurant_la_note_enchantee.jpg" alt="Plan rapproché en plongée au-dessus d’une table en bois noir protégée par une plaque en verre du restaurant La note enchantée : du pain dans une corbeille recouverte d’une serviette blanche, un petit ramequin avec un cube de beurre, une entrée (des tomates cerises coupées en deux entourent un bloc de mozzarella découpé en cinq portions, le tout recouvert par un peu d’herbe aromatique et un filet de vinaigre basalmique, quelques olives noires et vertes à côté), un plat principal en sauce, des verres avec diverses boissons, une carte de menu.">
+                            </div>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Mentions légales
+                        <!-- <div class="new-stamp">
+                            <p>Nouveau</p>
+                        </div> -->
+                        <div class="restaurant-card-body">
+                            <div class="restaurant-card-body-title">
+                                <h3>
+                                    <a href="" title="Choisissez ce restaurant">
+                                        La note enchantée
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="restaurant-card-body-place">
+                                <P> <!-- Modifier en titre pour SEO ? -->
+                                    Charonne
+                                </P>
+                            </div>
+                            <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
+                                <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
+                                <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="restaurant-card">
+                        <a href="" title="Choisissez ce restaurant">
+                            <div class="restaurant-card-image">
+                                <img id="a_la_francaise" src="public/images/restaurant_a_la_francaise.jpg" alt="Plan rapproché sur une table du restaurant À la française : deux plats, une tasse à café sur une soucoupe, un verre rempli d’eau avec des glaçons et un morceau de citron.">
+                            </div>
                         </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Contact
+                        <!-- <div class="new-stamp">
+                            <p>Nouveau</p>
+                        </div> --> <!-- display: none; -->
+                        <div class="restaurant-card-body">
+                            <div class="restaurant-card-body-title">
+                                <h3>
+                                    <a href="" title="Choisissez ce restaurant">
+                                        À la française
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="restaurant-card-body-place">
+                                <P>
+                                    Cité Rouge <!-- Modifier en titre pour SEO ? -->
+                                </P>
+                            </div>
+                            <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
+                                <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
+                                <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
+                            </div>
+                        </div>                    
+                    </article>
+
+                    <article class="restaurant-card">
+                        <a href="" title="Choisissez ce restaurant">
+                            <div class="restaurant-card-image">
+                                <img id="le_delice_des_sens" src="public/images/restaurant_le_delice_des_sens.jpg" alt="Intérieur du restaurant Le délice des sens : plan rapproché sur une table couleur acajou, avec un bâton enroulé de canelle, des plats dans des récipients oblongs, un cuiseur vapeur en bambou ; dossier d’une banquette avec des motifs de flamants roses et de feuilles de philodendron.">
+                            </div>
                         </a>
-                    </li>
-                </ul>
-            </nav>
-        </footer>
+                        <!-- <div class="new-stamp">
+                            <p>Nouveau</p>
+                        </div> --> <!-- display: none; -->
+                        <div class="restaurant-card-body">
+                            <div class="restaurant-card-body-title">
+                                <h3>
+                                    <a href="" title="Choisissez ce restaurant">
+                                        Le délice des sens
+                                    </a>
+                                </h3>
+                            </div>
+                            <div class="restaurant-card-body-place">
+                                <P>
+                                    Folie-Méricourt <!-- Modifier en titre pour SEO ? -->
+                                </P>
+                            </div>
+                            <div class="restaurant-body-heart-choice" style="background-image: url('public/images/icons/heart-regular.svg')" alt="Icône d’un cœur vide">
+                                <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg">
+                                <!-- <img class="heart-solid-icon" src="public/images/icons/heart-solid.svg" alt="Icône d’un cœur violet"> -->
+                            </div>
+                        </div>                    
+                    </article>
+                </section>
+            </main> 
+
+            <footer>
+                <nav>
+                    <h2>
+                        Informations <!-- display: none; in scss -->
+                    </h2>
+                    <div class="logo">
+                    <a href="#">
+                        <img class="logo_ohmyfood" src="" alt="Logo Ohmyfood!" title="Ohmyfood!"> <!--src --> <!-- Compléter title-->
+                    </a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                Proposer un restaurant
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Devenir partenaire
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Mentions légales
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </div> <!-- Fin body-blur. -->
     </body>
 </html>
