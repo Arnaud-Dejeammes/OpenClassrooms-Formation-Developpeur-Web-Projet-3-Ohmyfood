@@ -376,6 +376,23 @@ a:visited {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.woff") format("woff");
 }
+/* Faire fonctionner à partir de _variables. */
+.validate {
+  transition: box-shadow 450ms, transform 350ms;
+}
+.validate:hover {
+  box-shadow: 0px 5px 5px #b8b8b8;
+}
+.validate:hover .validate__hover-effect {
+  opacity: 1;
+}
+.validate__hover-effect {
+  transition: opacity 350ms ease-in-out;
+}
+.validate:active {
+  transform: scale(0.95);
+}
+
 body {
   animation: body-fade-in 3000ms forwards;
 }
@@ -676,6 +693,41 @@ body {
   color: #FF79DA;
 }
 
+.validate {
+  position: relative;
+  /* Important pour le fonctionnement de l'effet avec .validate_hover-effect. */
+  z-index: 1;
+  box-shadow: 0px 5px 5px #C5C5C5;
+  border: none;
+  border-radius: 33px;
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
+  height: 50px;
+  font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+.validate__hover-effect {
+  position: absolute;
+  /* Important pour le fonctionnement. */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 33px;
+  background: linear-gradient(to bottom, #fface8, #ae80e5);
+}
+
+#validate-index {
+  width: 218px;
+}
+
+#validate-menu {
+  width: 186px;
+}
+
+/* $base-color-1: #9356DC;
+$base-color-2: #FF79DA; */
 /* A voir si pertinent */
 /* Syntaxe combinateur parent > enfant */
 /* Syntaxe combinateur descendant (.ascendant .descendant). */

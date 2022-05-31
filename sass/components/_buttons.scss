@@ -1,0 +1,34 @@
+.validate {
+    position: relative; /* Important pour le fonctionnement de l'effet avec .validate_hover-effect. */
+    z-index: 1;
+    box-shadow: 0px 5px 5px #C5C5C5;
+    border: none;
+    border-radius: 33px;
+    background: linear-gradient(to bottom, $base-color-2, $base-color-1);    
+    height: 50px;
+    font-family: 'Roboto-Regular', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+
+    &__hover-effect {
+        position: absolute; /* Important pour le fonctionnement. */
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0;        
+        border-radius: 33px;
+        background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));        
+    }    
+}
+
+#validate-index {
+    width: 218px;
+}
+
+#validate-menu {
+    width: 186px;
+}
+
+/* $base-color-1: #9356DC;
+$base-color-2: #FF79DA; */
