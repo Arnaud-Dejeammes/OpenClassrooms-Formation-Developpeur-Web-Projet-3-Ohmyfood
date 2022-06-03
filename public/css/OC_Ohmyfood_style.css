@@ -348,7 +348,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
+h1, nav h2 {
   display: none;
 }
 
@@ -362,6 +362,10 @@ a {
 
 a:visited {
   color: black;
+}
+
+ul {
+  padding: 0;
 }
 
 @font-face {
@@ -582,8 +586,13 @@ body {
 }
 @media all and (max-width: 767px) {
   body {
-    max-width: 375px;
+    /* max-width: 375px; */
     background-color: lightgrey;
+  }
+
+  main {
+    margin: 0vw 3.12vw 0vw 3.64vw;
+    /* 0px 12px 0px 14px; */
   }
 }
 /* @font-face {
