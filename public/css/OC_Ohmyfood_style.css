@@ -348,6 +348,10 @@ body {
   flex-direction: column;
 }
 
+main {
+  width: 100%;
+}
+
 h1, nav h2 {
   display: none;
 }
@@ -585,14 +589,11 @@ body {
   }
 }
 @media all and (max-width: 767px) {
-  body {
-    /* max-width: 375px; */
-    background-color: lightgrey;
-  }
-
   main {
+    align-items: center;
     margin: 0vw 3.12vw 0vw 3.64vw;
     /* 0px 12px 0px 14px; */
+    background-color: blue;
   }
 }
 /* @font-face {
