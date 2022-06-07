@@ -1,3 +1,5 @@
+// Renommer fichier.
+
 * {
     box-sizing: border-box;    
 }
@@ -5,25 +7,26 @@
 body {
     display: flex;
     flex-direction: column;
+    width: 100vw;
     // background-color: lightgrey;
 }
 
 h1, nav h2 {
-    display: none;
+    display: none; // Placer en _reset.
 }
 
 li {
-    list-style-type: none;        
-}
-
-a {
-    text-decoration: none;
-}
-
-a:visited {
-    color: black;
+    list-style-type: none; // Placer en _reset.
 }
 
 ul {
-    padding: 0;
+    padding: 0; // Placer en _reset.
+}
+
+a {
+    text-decoration: none; // Placer en _reset.
+}
+
+a:visited {
+    color: black; // Placer en _reset. 
 }

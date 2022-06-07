@@ -1,8 +1,13 @@
-$opacity-duration: 320ms;
+// $opacity-duration: 320ms;
+
+// $base-color-1: #9356DC;
+// $base-color-2: #FF79DA;
+
+// $ratio-screen-checkbox: calc(100/375);
+// $ratio-checkbox: calc(100/349);
+// Faire fonctionner $ à partir de _variables.
 
 // Animation - Général - Boutons validation
-$base-color-1: #9356DC;
-$base-color-2: #FF79DA; /* Faire fonctionner à partir de _variables. */
 .validate {
     transition: box-shadow 450ms, transform 350ms;    
 
@@ -161,33 +166,33 @@ body {
 }
 
 // Animation - Page Menu - Sélection d'un plat
-.menu-item {    
+.restaurant__menu__body { // Anciennement menu-item.
     /* Dissimulation de la case à cocher checkbox.
     Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
     & input {
         opacity: 0; 
-    }    
+    }
 
-    &:hover .check-solid-icon {        
+    &__item:hover .restaurant__menu__body__item__checkbox__body__title { // Anciennement &:hover .menu-checkbox-body-title..
+        width: calc($ratio-checkbox*231%); // 70% // 231px;
+    }
+
+    &__item:hover .restaurant__menu__body__item__checkbox__body__subtitle { // Anciennement &:hover .menu-checkbox-body-subtitle.
+        width: calc($ratio-checkbox*231%); // 70% // 231px;
+    }
+
+    &__item:hover .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon { // Anciennement &:hover .check-solid-icon.
         animation: item-checked 600ms forwards;
-    }
-    
-    &:hover .menu-checkbox-body-title {
-        width: 231px;
-    }
-    &:hover .menu-checkbox-body-subtitle {        
-        width: 231px;
     }
 }
 
-.menu-checkbox-body-title {    
+.restaurant__menu__body__item__checkbox__body__title {
     transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
-.menu-checkbox-body-subtitle {
-    transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);    
+.restaurant__menu__body__item__checkbox__body__subtitle {
+    transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
-
 
 @keyframes item-checked {
     100% {
@@ -196,12 +201,12 @@ body {
 }
 
 // Animation - Page Menu - Apparition progressive
-.menu-item {
-        animation: restaurant-menu-translate 800ms 100ms ease-out forwards;
-    }
+.restaurant__menu__body__item { // Anciennement menu-item.
+    animation: restaurant-menu-translate 800ms 100ms ease-out forwards;  
+}
 
 #menu-checkbox-01 {
-    opacity: 0;   
+    opacity: 0;
     animation: restaurant-menu-opacity $opacity-duration 100ms ease-in forwards;
 }
 
@@ -216,13 +221,17 @@ body {
 }
 
 @keyframes restaurant-menu-translate {
-    0% {        
-        margin: 0px 0px 20px 0px;
-        transform: translate(0px, 7px);   
+    0% {
+        margin-bottom: calc($ratio-screen-checkbox*20%);
+        transform: translate(0, calc($ratio-screen-checkbox*7%));
+        /* margin: 0 0 20px 0;
+        transform: translate(0px, 7px); */
     }
-    100% {    
-        margin: 0px 0px 13px 0px;
-        transform: translate(0px, 0px);       
+    100% {
+        margin-bottom: calc($ratio-screen-checkbox*13%);
+        transform: translate(0, 0);
+        /* margin: 0px 0px 13px 0px;
+        transform: translate(0px, 0px); */
     }
 }
 
