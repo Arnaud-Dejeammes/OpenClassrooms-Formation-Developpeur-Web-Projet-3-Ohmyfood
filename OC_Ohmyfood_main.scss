@@ -1,19 +1,18 @@
+@import "./sass/abstracts/variables";
+
 @import "./sass/base/normalize"; /* Exporter dans vendors ? */
 @import "./sass/base/site_foundations";
 @import "./sass/base/fonts";
 @import "./sass/base/animations";
 
-@import "./sass/utils/variables";
-
-@import "./sass/layouts/media_query_mobile";
-@import "./sass/layouts/media_query_tablet";
-@import "./sass/layouts/media_query_desktop";
-
-
 @import "./sass/components/loader";
 @import "./sass/components/buttons";
 @import "./sass/components/menu-checkbox";
 @import "./sass/components/restaurant-card";
+
+@import "./sass/layouts/media_query_mobile";
+@import "./sass/layouts/media_query_tablet";
+@import "./sass/layouts/media_query_desktop";
 
 /* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
 /* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */

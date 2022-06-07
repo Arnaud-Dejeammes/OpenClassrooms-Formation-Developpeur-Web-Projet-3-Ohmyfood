@@ -346,6 +346,7 @@ template {
 body {
   display: flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 main {
@@ -360,16 +361,16 @@ li {
   list-style-type: none;
 }
 
+ul {
+  padding: 0;
+}
+
 a {
   text-decoration: none;
 }
 
 a:visited {
   color: black;
-}
-
-ul {
-  padding: 0;
 }
 
 @font-face {
@@ -384,7 +385,6 @@ ul {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.woff") format("woff");
 }
-/* Faire fonctionner à partir de _variables. */
 .validate {
   transition: box-shadow 450ms, transform 350ms;
 }
@@ -518,28 +518,28 @@ body {
     opacity: 1;
   }
 }
-.menu-item {
+.restaurant__menu__body {
   /* Dissimulation de la case à cocher checkbox.
   Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
 }
-.menu-item input {
+.restaurant__menu__body input {
   opacity: 0;
 }
-.menu-item:hover .check-solid-icon {
+.restaurant__menu__body__item:hover .restaurant__menu__body__item__checkbox__body__title {
+  width: 66.1891117479%;
+}
+.restaurant__menu__body__item:hover .restaurant__menu__body__item__checkbox__body__subtitle {
+  width: 66.1891117479%;
+}
+.restaurant__menu__body__item:hover .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
   animation: item-checked 600ms forwards;
 }
-.menu-item:hover .menu-checkbox-body-title {
-  width: 231px;
-}
-.menu-item:hover .menu-checkbox-body-subtitle {
-  width: 231px;
-}
 
-.menu-checkbox-body-title {
+.restaurant__menu__body__item__checkbox__body__title {
   transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
-.menu-checkbox-body-subtitle {
+.restaurant__menu__body__item__checkbox__body__subtitle {
   transition: width 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
@@ -548,7 +548,7 @@ body {
     transform: rotate(360deg);
   }
 }
-.menu-item {
+.restaurant__menu__body__item {
   animation: restaurant-menu-translate 800ms 100ms ease-out forwards;
 }
 
@@ -569,12 +569,16 @@ body {
 
 @keyframes restaurant-menu-translate {
   0% {
-    margin: 0px 0px 20px 0px;
-    transform: translate(0px, 7px);
+    margin-bottom: 5.3333333333%;
+    transform: translate(0, 1.8666666667%);
+    /* margin: 0 0 20px 0;
+    transform: translate(0px, 7px); */
   }
   100% {
-    margin: 0px 0px 13px 0px;
-    transform: translate(0px, 0px);
+    margin-bottom: 3.4666666667%;
+    transform: translate(0, 0);
+    /* margin: 0px 0px 13px 0px;
+    transform: translate(0px, 0px); */
   }
 }
 @keyframes restaurant-menu-opacity {
@@ -586,14 +590,6 @@ body {
   }
   100% {
     opacity: 1;
-  }
-}
-@media all and (max-width: 767px) {
-  main {
-    align-items: center;
-    margin: 0vw 3.12vw 0vw 3.64vw;
-    /* 0px 12px 0px 14px; */
-    background-color: blue;
   }
 }
 /* @font-face {
@@ -738,78 +734,107 @@ body {
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
-/* A voir si pertinent */
-/* Syntaxe combinateur parent > enfant */
-/* Syntaxe combinateur descendant (.ascendant .descendant). */
-.menu-checkbox {
-  margin: 0px 0px 13px 0px;
-  width: 349px;
-  height: 69px;
+/* @media all and (min-width: 992px) {
+    .restaurant__menu__body__item {
+        width: calc((100/992)*375vw); // Diviser par 3.
+        height: calc((100/992)*69vw);
+    }
+
+    @media all and (min-width: 768px) and (max-width: 991px) {
+    .restaurant__menu__body__item {
+        width: calc((100/768)*375vw); // Diviser par 2 ?
+        height: calc((100/768)*69vw);
+    }
+}
+
+} */
+.restaurant__menu__body__item {
+  /* Calculs
+  total width: 100(vw)/375(px) = ratio
+  checkbox width : 349(px) * 0.26 = 90.74(% ou vw)
+  */
+  margin: 0 3.2vw 3.7333333333vw 3.7333333333vw;
+  width: 93.0666666667vw;
+  height: 18.4vw;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+  width: 83.0945558739%;
+  height: 50%;
+  padding: 0 0 0 3.1518624642%;
+  overflow: hidden;
+  font-size: 3.4666666667vw;
+  text-overflow: ellipsis;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
+  width: 83.0945558739%;
+  height: 50%;
+  padding: 0 0 0 3.1518624642%;
+  overflow: hidden;
+  font-size: 2.9333333333vw;
+  text-overflow: ellipsis;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+  height: 100%;
   background-color: #ffffff;
   box-shadow: 0 4px 8px 0 #d9d9d9;
-  border-radius: 13px;
+  border-radius: 3.4666666667vw;
+  /* Adaptation de la technique Fab Four en fonction du conteneur :
+  border-radius: max(0px, min(16px, (100% - 400px + 1px) * 9999)) / 16px; */
   overflow: hidden;
 }
-
-.menu-item {
-  width: fit-content;
-}
-
-.menu-checkbox-body {
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 349px;
-  max-height: 69px;
+  height: 100%;
+  font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
   white-space: nowrap;
   cursor: pointer;
-}
+  /* .restaurant__menu__body__item__checkbox__body__title {
+      width: calc($ratio-checkbox*290%); // 81%; // 85%; // 290px;
+      height: 50%; // calc($ratio-checkbox*35%); // 55%; // 9.1vw; //35px;
+      padding: 13px 0px 0px 11px; // Ajuster.
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: pink;;
+  }
 
-.menu-checkbox-body-title {
-  width: 290px;
-  height: 35px;
-  padding: 13px 0px 0px 11px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  .restaurant__menu__body__item__checkbox__body__subtitle {      
+      width: calc($ratio-checkbox*290%); // 81%; // 85%; // 290px;
+      height: 50%; // calc($ratio-checkbox*34%); // 50%; // 8.84vw; // 34px;
+      padding: 8px 0px 0px 11px; // Ajuster.
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: yellow;
+  } */
 }
-
-.menu-checkbox-body-subtitle {
-  width: 290px;
-  height: 34px;
-  padding: 0px 0px 0px 11px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.menu-checkbox-body-price {
-  width: 59px;
-  height: 69px;
-  padding: 42px 0px 0px 11px;
-  /* Ajuster en fonction de la maquette et de la police. padding-bottom: 13; */
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+  width: 16.9054441261%;
+  height: 100%;
+  padding: 10% 0 0 3.1518624642%;
+  font-size: 2.9333333333vw;
   font-weight: bolder;
 }
-
-.menu-checkbox-body-toggle {
-  width: 59px;
-  height: 69px;
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle {
+  width: 16.9054441261%;
+  height: 100%;
   background-color: #99E2D0;
   border: none;
-  border-radius: 0px 13px 13px 0px;
-  padding-left: 19px;
-  /* cursor: pointer; */
+  padding: 0 0 0 5.4441260745%;
   pointer-events: none;
 }
-
-.check {
-  width: 20px;
-  height: 20px;
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check {
+  position: relative;
+  width: 48.3983050847%;
+  height: 28.98%;
   background-color: #ffffff;
-  border-radius: 50px;
-  padding: 3px;
+  border-radius: 55%;
 }
-
-.check-solid-icon {
-  width: 12px;
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
+  position: absolute;
+  top: 20%;
+  right: 19%;
+  width: 60%;
   background-color: #ffffff;
 }
 
@@ -928,6 +953,12 @@ $base-color-2: #FF79DA; */
   transition: opacity 600ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
+@media all and (max-width: 767px) {
+  body {
+    /* max-width: 375px; */
+    background-color: lightgrey;
+  }
+}
 /* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
 /* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */
 /* @import "./sass/layouts/"; /* 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs. */
