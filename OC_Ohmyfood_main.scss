@@ -1,10 +1,13 @@
 @import "./sass/abstracts/variables";
+@import "./sass/abstracts/mixins";
 
-@import "./sass/base/normalize"; /* Exporter dans vendors ? */
+@import "./sass/base/normalize";
+@import "./sass/base/reset";
 @import "./sass/base/site_foundations";
 @import "./sass/base/fonts";
 @import "./sass/base/animations";
 
+@import "./sass/components/input";
 @import "./sass/components/loader";
 @import "./sass/components/buttons";
 @import "./sass/components/menu-checkbox";

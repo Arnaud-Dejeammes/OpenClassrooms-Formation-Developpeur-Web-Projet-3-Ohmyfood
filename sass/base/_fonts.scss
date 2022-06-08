@@ -12,4 +12,13 @@
 @font-face {
     font-family: 'Roboto-Bold'; //, sans-serif;
     src: url('../fonts/Roboto-Bold.woff') format('woff');
+} // Non nécessaire ?
+
+::placeholder {
+    font-family: $text-font;    
+}
+
+::placeholder {
+    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône.
+    font-weight: bold;
 }

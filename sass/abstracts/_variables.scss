@@ -6,14 +6,18 @@ $darken-base-color-3: #008766;
 
 $background-color-section: #f6f6f6;
 $background-color-element: #ffffff; // Vérifier la pertinence.
+$input-background-color: #eaeaea;
+
+$input-shadow: #cfcfcf;
 
 // Fonts
 $logo-title-font: 'Shrikhand-Regular', cursive, Times;
 $text-font: 'Roboto-Regular', Helvetica, Arial, sans-serif;
+$text-font-bold: 'Roboto-Bold', Helvetica, Arial, sans-serif;
 
 // Animations
 $opacity-duration: 320ms;
 
 // Elements
-$ratio-screen-checkbox: calc(100/375);
-$ratio-checkbox: calc(100/349);
+$screen-ratio: calc(100/375);
+$checkbox-ratio: calc(100/349);

@@ -1,5 +1,5 @@
 // $background-color-element: #ffffff; // Vérifier la pertinence.
-// $ratio-screen-checkbox: calc(100/375); // Faire une variable Desktop ou agir dans .restaurant__menu__body__item dans @media 992 ?
+// $screen-ratio: calc(100/375); // Faire une variable Desktop ou agir dans .restaurant__menu__body__item dans @media 992 ?
 /* @media all and (min-width: 992px) {
     .restaurant__menu__body__item {
         width: calc((100/992)*375vw); // Diviser par 3.
@@ -14,7 +14,7 @@
 }
 
 } */
-// $ratio-checkbox: calc(100/349);
+// $checkbox-ratio: calc(100/349);
 
 // $text-font: 'Roboto-Regular', Helvetica, Arial, sans-serif;
 
@@ -28,29 +28,29 @@
     total width: 100(vw)/375(px) = ratio
     checkbox width : 349(px) * 0.26 = 90.74(% ou vw)
     */
-    margin: 0 calc($ratio-screen-checkbox*12vw) calc($ratio-screen-checkbox*14vw) calc($ratio-screen-checkbox*14vw); // 0 3.12vw 3.38vw 3.64vw; // 0px 0px 13px 0px;
-    width: calc($ratio-screen-checkbox*349vw); // 90.74vw;
-    height: calc($ratio-screen-checkbox*69vw); // 17.94vw;    
+    margin: 0 calc($screen-ratio*12vw) calc($screen-ratio*14vw) calc($screen-ratio*14vw); // 0 3.12vw 3.38vw 3.64vw; // 0px 0px 13px 0px;
+    width: calc($screen-ratio*349vw); // 90.74vw;
+    height: calc($screen-ratio*69vw); // 17.94vw;    
     // overflow: hidden; // Double overflow (cf. menu-checkbox) : ne touche pas border-radius.
     // background-color: aqua;
 
     // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle fonctionne à ce niveau et au-dessus.
     .restaurant__menu__body__item__checkbox__body__title {
-        width: calc($ratio-checkbox*290%); // 290px;
+        width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 35px;
-        padding: 0 0 0 calc($ratio-checkbox*11%); // 13px 0px 0px 11px; // Ajuster.
+        padding: 0 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.
         overflow: hidden;
-        font-size: calc($ratio-screen-checkbox*13vw); // Ajuster les polices.
+        font-size: calc($screen-ratio*13vw); // Ajuster les polices.
         text-overflow: ellipsis;
         // background-color: pink;;
     }
 
     .restaurant__menu__body__item__checkbox__body__subtitle {      
-        width: calc($ratio-checkbox*290%); // 290px;
+        width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 34px;
-        padding: 0 0 0 calc($ratio-checkbox*11%); // 8px 0px 0px 11px; // Ajuster.
+        padding: 0 0 0 calc($checkbox-ratio*11%); // 8px 0px 0px 11px; // Ajuster.
         overflow: hidden;
-        font-size: calc($ratio-screen-checkbox*11vw); // Ajuster les polices.
+        font-size: calc($screen-ratio*11vw); // Ajuster les polices.
         text-overflow: ellipsis;
         // background-color: yellow;
     }
@@ -63,7 +63,7 @@
         // height: min(69px, max(69px, (100% - 767px + 1px) * 9999));
         background-color: $background-color-element; // Vérifier.
         box-shadow: 0 4px 8px 0 #d9d9d9; // Recalculer en fonction @media ?
-        border-radius: calc($ratio-screen-checkbox*13vw);  // Transformer en @function et ajuster le calcul.
+        border-radius: calc($screen-ratio*13vw);  // Transformer en @function et ajuster le calcul.
         // border-radius: 13px;
         /* Adaptation de la technique Fab Four en fonction du conteneur :
         border-radius: max(0px, min(16px, (100% - 400px + 1px) * 9999)) / 16px; */         
@@ -86,8 +86,8 @@
 
             // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle ne marche pas à ce niveau.
             /* .restaurant__menu__body__item__checkbox__body__title {
-                width: calc($ratio-checkbox*290%); // 81%; // 85%; // 290px;
-                height: 50%; // calc($ratio-checkbox*35%); // 55%; // 9.1vw; //35px;
+                width: calc($checkbox-ratio*290%); // 81%; // 85%; // 290px;
+                height: 50%; // calc($checkbox-ratio*35%); // 55%; // 9.1vw; //35px;
                 padding: 13px 0px 0px 11px; // Ajuster.
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -95,8 +95,8 @@
             }
 
             .restaurant__menu__body__item__checkbox__body__subtitle {      
-                width: calc($ratio-checkbox*290%); // 81%; // 85%; // 290px;
-                height: 50%; // calc($ratio-checkbox*34%); // 50%; // 8.84vw; // 34px;
+                width: calc($checkbox-ratio*290%); // 81%; // 85%; // 290px;
+                height: 50%; // calc($checkbox-ratio*34%); // 50%; // 8.84vw; // 34px;
                 padding: 8px 0px 0px 11px; // Ajuster.
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -104,11 +104,11 @@
             } */ // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle ne marche pas à ce niveau.
             
             .restaurant__menu__body__item__checkbox__body__price {
-                width: calc($ratio-checkbox*59%); // 59px;
+                width: calc($checkbox-ratio*59%); // 59px;
                 height: 100%; // 69px;
-                padding: 10% 0 0 calc($ratio-checkbox*11%); // 42px 0px 0px 11px; // Ajuster en fonction de la maquette et de la police. padding-bottom: 13; Maquette : 16px. */
-                font-size: calc($ratio-screen-checkbox*11vw); // Ajuster les polices.
-                font-weight: bolder;
+                padding: 10% 0 0 calc($checkbox-ratio*11%); // 42px 0px 0px 11px; // Ajuster en fonction de la maquette et de la police. padding-bottom: 13; Maquette : 16px. */
+                font-size: calc($screen-ratio*11vw); // Ajuster les polices.
+                font-weight: bold;
                 // background-color: red;
 
                 .price {                    
@@ -117,12 +117,12 @@
             }
 
             .restaurant__menu__body__item__checkbox__body__toggle { // menu-checkbox-body-toggle
-                width: calc($ratio-checkbox*59%); // 59px;
+                width: calc($checkbox-ratio*59%); // 59px;
                 height: 100%; // 69px;
                 background-color: $base-color-3;
                 border: none;
                 // border-radius: 0px 13px 13px 0px;
-                padding: 0 0 0 calc($ratio-checkbox*19%); // 4.94%; // 19px;
+                padding: 0 0 0 calc($checkbox-ratio*19%); // 4.94%; // 19px;
                 // cursor: pointer;
                 pointer-events: none;
 

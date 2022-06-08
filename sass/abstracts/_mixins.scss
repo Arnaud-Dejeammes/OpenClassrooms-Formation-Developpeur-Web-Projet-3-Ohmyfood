@@ -1,0 +1,3 @@
+@mixin inset-shadow {
+    box-shadow: inset 0px 8px 6px -6px $input-shadow; // inset 10px 10px 10px $input-shadow;
+}

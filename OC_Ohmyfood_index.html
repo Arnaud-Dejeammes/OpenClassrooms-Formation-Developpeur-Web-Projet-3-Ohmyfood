@@ -30,10 +30,11 @@
                     my
                 </span>
             </div>
-                <span class="circle" id="circle-03">
+            <div class="circle" id="circle-03">
+                <span>
                     food
                 </span>
-            <div>
+            </div>
         </div>
         
         <div class="loader-text">
@@ -88,6 +89,7 @@
         
 
     </div>
+
     <body>
         <h1>
             Ohmyfood!
@@ -104,6 +106,14 @@
             </header>
                 
             <form method="post" action="#"> <!-- flex-direction: column-reverse; -->
+                <div class="place-location">
+                    <label for="location" class="location-search">
+                        <img class="map-marker-icon" src="public/images/icons/map-marker-alt-solid.svg"  alt="Icône de localisation" title="Trouver un restaurant dans une ville">
+                    </label>
+                    <label for="location">
+                        <input id="location" size="25" type="search" name="location" placeholder="Paris, Belleville" required class="search-field">
+                    </label>
+                </div>
                 <div id="form-title">
                     <h2>                       
                         Réservez le menu qui vous convient                        
@@ -111,11 +121,7 @@
                     <p>
                         Découvrez des restaurants d’exception sélectionnés par nos soins.
                     </p>
-                </div>
-                    
-                <label for="location">
-                    <input id="location" size="25" type="search" name="location" placeholder="Paris, Belleville" required class="search-field">
-                </label>
+                </div>                
                 <button class="validate" id="validate-index"> <!-- type="submit" value="" -->
                     <span>
                         Explorer nos restaurants

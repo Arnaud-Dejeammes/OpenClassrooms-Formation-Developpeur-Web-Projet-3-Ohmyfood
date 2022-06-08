@@ -34,3 +34,8 @@ a {
 a:visited {
     color: black; // Placer en _reset. 
 }
+
+::selection {
+    background: $base-color-1;
+    color: $base-color-3;
+}

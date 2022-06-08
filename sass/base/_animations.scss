@@ -3,8 +3,8 @@
 // $base-color-1: #9356DC;
 // $base-color-2: #FF79DA;
 
-// $ratio-screen-checkbox: calc(100/375);
-// $ratio-checkbox: calc(100/349);
+// $screen-ratio: calc(100/375);
+// $checkbox-ratio: calc(100/349);
 // Faire fonctionner $ à partir de _variables.
 
 // Animation - Général - Boutons validation
@@ -42,15 +42,14 @@ body {
     animation: loader-animation 3000ms forwards;
 }
 
-/* @keyframes loader-animation {
+@keyframes loader-animation {
     99% {
         opacity: 0.99;
     }
     100% {
         opacity: 0;
     }
-
-} */
+}
 
 #circle-01 {
     animation: circle-01-translate 1000ms forwards;    
@@ -174,11 +173,11 @@ body {
     }
 
     &__item:hover .restaurant__menu__body__item__checkbox__body__title { // Anciennement &:hover .menu-checkbox-body-title..
-        width: calc($ratio-checkbox*231%); // 70% // 231px;
+        width: calc($checkbox-ratio*231%); // 70% // 231px;
     }
 
     &__item:hover .restaurant__menu__body__item__checkbox__body__subtitle { // Anciennement &:hover .menu-checkbox-body-subtitle.
-        width: calc($ratio-checkbox*231%); // 70% // 231px;
+        width: calc($checkbox-ratio*231%); // 70% // 231px;
     }
 
     &__item:hover .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon { // Anciennement &:hover .check-solid-icon.
@@ -222,13 +221,13 @@ body {
 
 @keyframes restaurant-menu-translate {
     0% {
-        margin-bottom: calc($ratio-screen-checkbox*20%);
-        transform: translate(0, calc($ratio-screen-checkbox*7%));
+        margin-bottom: calc($screen-ratio*20%);
+        transform: translate(0, calc($screen-ratio*7%));
         /* margin: 0 0 20px 0;
         transform: translate(0px, 7px); */
     }
     100% {
-        margin-bottom: calc($ratio-screen-checkbox*13%);
+        margin-bottom: calc($screen-ratio*13%);
         transform: translate(0, 0);
         /* margin: 0px 0px 13px 0px;
         transform: translate(0px, 0px); */
