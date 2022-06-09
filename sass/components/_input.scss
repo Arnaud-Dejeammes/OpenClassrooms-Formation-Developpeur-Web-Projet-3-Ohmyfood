@@ -1,8 +1,8 @@
 .place-location {    
     background-color: $input-background-color;
-    @include inset-shadow;    
+    @include inset-shadow;
     height: calc($screen-ratio*50vw);
-    padding-left: calc($screen-ratio)*104vw;
+    padding: 0 0 0 calc($screen-ratio)*104vw;
 
     & .map-marker-icon {        
         width: calc($screen-ratio*12vw); // Ajuster icône et/ou police.

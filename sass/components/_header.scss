@@ -1,0 +1,26 @@
+header {    
+    // background-color: #7fffd4;
+    // padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
+
+    & .logo {
+        width: fit-content;
+        // background-color: red;
+    }
+
+    & .logo_ohmyfood {
+        width: calc($screen-ratio*165vw);
+    }
+}
+
+.index-header {
+    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
+}
+
+.page-header {
+    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*23vw;
+
+    & .page-header__content {
+        display: inline-flex;
+        // background-color: blue;       
+    }
+}

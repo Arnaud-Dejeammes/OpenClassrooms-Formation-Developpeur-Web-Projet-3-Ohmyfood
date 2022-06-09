@@ -1,12 +1,23 @@
+// Bouton de retour à l'index (Header Page Menu)
+.page-header__content__backward {    
+    margin: calc($screen-ratio)*8vw calc($screen-ratio)*65vw 0 0; // margin-top: 26px
+    width: calc($screen-ratio)*17vw;
+    height: calc($screen-ratio)*16vw;
+    background-repeat: no-repeat;
+    cursor: pointer; // Regrouper avec les autres.
+    // background-color: blue;    
+}
+
+// Boutons de validation (Page Accueil - Explorer nos restaurants / Page Menu - Commander)
 .validate {
-    position: relative; /* Important pour le fonctionnement de l'effet avec .validate_hover-effect. */
+    position: relative; // Important pour le fonctionnement de l'effet avec .validate_hover-effect.
     z-index: 1;
     box-shadow: 0px 5px 5px #C5C5C5;
     border: none;
-    border-radius: 33px;
+    border-radius: calc($screen-ratio)*33vw; // 33px;
     background: linear-gradient(to bottom, $base-color-2, $base-color-1);    
-    height: 50px;
-    font-family: 'Roboto-Regular', Helvetica, Arial, sans-serif;
+    height: calc($screen-ratio)*50vw;
+    font-family: $text-font;
     color: #ffffff;
 
     &__hover-effect {
@@ -17,18 +28,18 @@
         right: 0;
         z-index: -1;
         opacity: 0;        
-        border-radius: 33px;
+        border-radius: calc($screen-ratio)*33vw; // 33px;
         background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));        
-    }    
+    }
 }
 
 #validate-index {
-    width: 218px;
-}
+    width: calc($screen-ratio)*218vw; // 218px;    
+} // Regrouper et améliorer syntaxe Sass.
 
 #validate-menu {
-    width: 186px;
-}
+    width: calc($screen-ratio)*186vw; // 186px;    
+} // Regrouper et améliorer syntaxe Sass.
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */

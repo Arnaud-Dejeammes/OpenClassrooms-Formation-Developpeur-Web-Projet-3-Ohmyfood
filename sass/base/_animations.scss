@@ -164,6 +164,19 @@ body {
     }
 }
 
+// Animation - Page Menu - Bouton retour accueil (index)
+.page-header__content__backward {
+    transition: transform 350ms ease-in-out;
+
+    &:hover {
+        opacity: 0.3; // Délai pour l'opacité ? Apparition d'un cercle grisé ?
+    }
+
+    &:active {
+        transform: scale(0.80);
+    }
+}
+
 // Animation - Page Menu - Sélection d'un plat
 .restaurant__menu__body { // Anciennement menu-item.
     /* Dissimulation de la case à cocher checkbox.

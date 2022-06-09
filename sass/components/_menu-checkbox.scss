@@ -62,7 +62,7 @@
         // height: 69px;        
         // height: min(69px, max(69px, (100% - 767px + 1px) * 9999));
         background-color: $background-color-element; // Vérifier.
-        box-shadow: 0 4px 8px 0 #d9d9d9; // Recalculer en fonction @media ?
+        box-shadow: 0 4px 8px 0 $shadow; // Recalculer en fonction @media ?
         border-radius: calc($screen-ratio*13vw);  // Transformer en @function et ajuster le calcul.
         // border-radius: 13px;
         /* Adaptation de la technique Fab Four en fonction du conteneur :
