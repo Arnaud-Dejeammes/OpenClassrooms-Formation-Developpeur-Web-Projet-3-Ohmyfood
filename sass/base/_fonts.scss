@@ -15,16 +15,24 @@
     src: url('../fonts/Roboto-Bold.woff') format('woff');
 } // Non nécessaire ?
 
-footer, .restaurant__menu__body__entry, ::placeholder {
+footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
     font-family: $text-font;
 }
 
+.restaurant-card-body-title {
+    font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper.
+}
+
+.restaurant-card-body-place {
+    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
+}
+
 .restaurant__menu__body__entry {
-    font-size: calc($screen-ratio)*12vw; // Ajuster.
+    font-size: calc($screen-ratio)*12vw; // // Ajuster et regrouper.
 }
 
 footer, .validate, ::placeholder {
-    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône.
+    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper.
 }
 
 ::placeholder {    
@@ -39,4 +47,3 @@ footer {
     font-family: $logo-title-font;
     font-size: calc($screen-ratio)*18vw; // 21px // Ajuster.
 } // Revoir éventuellement la hiérarchie des titres (h2, h3...), tout en assurant la cohérence entre la Page Restaurant et la Page Menu.
-

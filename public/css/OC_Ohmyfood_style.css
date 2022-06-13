@@ -338,6 +338,10 @@ template {
   display: none;
 }
 
+p {
+  margin: 0;
+}
+
 input {
   border: none;
   outline: none;
@@ -402,8 +406,16 @@ footer a:visited {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.woff") format("woff");
 }
-footer, .restaurant__menu__body__entry, ::placeholder {
+footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+}
+
+.restaurant-card-body-title {
+  font-size: 3.4666666667vw;
+}
+
+.restaurant-card-body-place {
+  font-size: 3.2vw;
 }
 
 .restaurant__menu__body__entry {
@@ -985,11 +997,11 @@ footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
 }
 
 .restaurant-card {
-  margin: 0px 0px 18px 20px;
-  width: 335px;
-  height: 251px;
-  border-radius: 11px;
-  box-shadow: 0px 4px 8px 4px #d9d9d9;
+  margin: 0 0 4.8vw 5.3333333333vw;
+  width: 89.3333333333vw;
+  height: 66.9333333333vw;
+  border-radius: 2.9333333333vw;
+  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
   transition: transform 800ms ease-in-out;
 }
 .restaurant-card:hover {
@@ -1009,8 +1021,8 @@ footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
 }
 
 .restaurant-card-image {
-  height: 174px;
-  border-radius: 11px 11px 0px 0px;
+  height: 46.4vw;
+  border-radius: 2.9333333333vw 2.9333333333vw 0 0;
   overflow: hidden;
 }
 
@@ -1060,23 +1072,24 @@ footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 335px;
-  height: 77px;
+  width: 89.3333333333vw;
+  height: 20.5333333333vw;
 }
 
 .restaurant-card-body-title {
-  width: 288px;
-  height: 40px;
-  padding: 0px 0px 0px 14px;
+  width: 76.8vw;
+  height: 50%;
+  padding: 0 0 0 3.7333333333vw;
 }
 
 .restaurant-card-body-place {
-  width: 288px;
-  height: 37px;
-  padding: 0px 0px 0px 14px;
+  width: 76.8vw;
+  height: 50%;
+  padding: 0 0 0 3.7333333333vw;
 }
 
 .restaurant-body-heart-choice {
+  margin: 6.1333333333vw 0 0 0;
   width: 6.1333333333vw;
   background: no-repeat;
   /* &:hover .restaurant-body-heart-choice style {

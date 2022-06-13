@@ -1,3 +1,7 @@
+p {
+    margin: 0;
+} // Correct the default padding-top in Firexfox and from "user agent stylesheet" in Google Chrome (display: block;).
+
 input {
     border: none;    
     outline: none;
