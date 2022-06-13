@@ -27,6 +27,8 @@
     }
 }
 
+// Animation - Général - Coeur
+
 // Animation - Page accueil - Loader
 body {
     animation: body-fade-in 3000ms forwards;
@@ -174,6 +176,20 @@ body {
 
     &:active {
         transform: scale(0.80);
+    }
+}
+
+// Animation - Page Menu - Trait (Entrées, Plats, Desserts)
+.restaurant__menu__body__entry {
+    animation: growing-bar 800ms;    
+}
+
+@keyframes growing-bar {
+    from {
+        width: 0;
+    }
+    to {
+        width: calc($screen-ratio)*39%;
     }
 }
 

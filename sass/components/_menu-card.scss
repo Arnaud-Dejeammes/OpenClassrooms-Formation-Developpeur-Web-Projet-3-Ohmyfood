@@ -1,0 +1,68 @@
+.restaurant__menu {
+    background-color: #f6f6f6; // aqua;
+    padding: 0 0 calc($screen-ratio)*83vw 0;
+    .restaurant__menu__body {
+        position: relative;
+        border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;
+        // background-color: blue;
+        &__title {
+            width: 100%;
+            display: inline-flex;            
+            border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;
+            padding: calc($screen-ratio)*37px 0 0 calc($screen-ratio)*19vw; // Voir si la mesure en px ne peut pas être modifiée.
+            background-color: #f6f6f6; // Mettre en $ avec .restaurant-menu // $background-color-element; // Vérifier.
+            // z-index: 1;
+            /* & h2 {
+                margin: 0 calc($screen-ratio)*93vw 0 0;
+            } */
+        }
+        &__entry {
+            width:  calc($screen-ratio)*39%; // fit-content;  // 66 39    
+            margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
+            padding: 0 0 calc($screen-ratio)*9vw 0;
+            border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
+            // background-color: red;
+        }
+    }
+}
+
+.restaurant__menu__body__title__heart {
+    height: fit-content;
+    // background-color: red;
+    
+    margin: calc($screen-ratio)*25vw 0 0 calc($screen-ratio)*93vw; // 39px
+    // padding: 0 calc($screen-ratio)*93vw 0 0;
+}
+
+#restaurant__menu__image__a_la_francaise { // Vérifier la pertinence de l'id en comparaison avec les autres sélecteurs et dénominations.
+    // margin-top: -50px;
+    margin-top: calc($screen-ratio)*-50vw; // Supprime la marge qui se crée dans .restaurant__menu avec le déplacement de l'image.
+    width: 100%;
+    transform: translate(0, 20%);
+//     z-index: 0;
+}
+
+/* .restaurant__menu__body__entry {
+    width:  calc($screen-ratio)*39%; // fit-content;  // 66 39    
+    margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
+    padding: 0 0 calc($screen-ratio)*9vw 0;
+    border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
+    // background-color: red;
+} */
+
+.restaurant__menu__image {
+    // height: 174px;        
+    // border-radius: 11px 11px 0px 0px;    
+    // overflow: hidden;
+    // z-index: -1;
+}
+
+.restaurant__menu__image img {
+    // margin-top: -50px;
+    // position: relative;    
+//     transform: translate(0, 20%);
+    // z-index: 0;   
+    
+}
+
+

@@ -2,12 +2,17 @@ header {
     // background-color: #7fffd4;
     // padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
 
-    & .logo {
-        width: fit-content;
+    /* & .logo {
+        // width: fit-content;
         // background-color: red;
-    }
+    } */
 
-    & .logo_ohmyfood {
+    /* & .logo_ohmyfood {
+        width: calc($screen-ratio*165vw);
+    } */
+
+    & .logo-header {
+        fill: #353535;
         width: calc($screen-ratio*165vw);
     }
 }

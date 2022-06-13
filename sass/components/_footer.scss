@@ -1,0 +1,22 @@
+footer {
+    background-color: black;
+    padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw; // Voir la la mesure en px.
+    color: #ffffff; // Placer en _fonts.
+
+    .logo-footer {
+        width: calc($screen-ratio)*98vw;
+        fill: #ffffff; // Créer une variable background-color.
+        & :hover {
+        fill: linear-gradient(to left, $base-color-3, $base-color-1);
+    }
+    }
+
+    .ustensils-solid-icon, .hands-helping-solid {
+        margin: 0 calc($screen-ratio)*11vw 0 0;
+        width: calc($screen-ratio)*11vw;
+        fill: #ffffff; // Créer une variable background-color.
+        :hover {
+            fill: $base-color-3; // Associer avec le survol du texte.
+        }        
+    }
+}

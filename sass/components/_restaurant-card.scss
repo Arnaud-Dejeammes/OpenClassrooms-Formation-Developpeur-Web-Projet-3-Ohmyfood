@@ -54,7 +54,7 @@
     top: 33.5%;
     left: 50%;
     width: 103%;
-}
+} // Modifier l'id ou en créer un autre pour dissocier Page Accueil et Page Menu ?
 
 #le_delice_des_sens {
     top: 33%;
@@ -101,11 +101,11 @@
     // transition: color 0ms 799ms;
 }
 
-.restaurant-body-heart-choice {
+.restaurant-body-heart-choice { // Transformer en mixin.
     // height: 77px;
-    width: 23px;
+    width: calc($screen-ratio)*23vw; // 23px;
     background: no-repeat;
-    color: linear-gradient(to bottom left, $base-color-1, $base-color-2);
+    // color: linear-gradient(to bottom left, $base-color-1, $base-color-2);
 
     // width: 47px;
     // Aligner en fonction de title et subtitle.
@@ -114,6 +114,12 @@
     } */
     &:hover .heart-solid-icon {        
         opacity: 1;        
+        // transform: opacity;
+        // transition-property: opacity 1000ms cubic-bezier(0.32, 0, 0.07, 1);
+    }
+    &:hover .heart-solid-icon {        
+        // opacity: 1;
+        transform: scale(1.1);     
         // transform: opacity;
         // transition-property: opacity 1000ms cubic-bezier(0.32, 0, 0.07, 1);
     }
@@ -129,17 +135,18 @@
     // width: 23px;
     // z-index: 0;
     // background-color: orange;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.heart-solid-icon {
+.heart-solid-icon { // Corriger réactivité sur les cards de la Page Accueil (fonctionne moins bien depuis le passage opacity --> transform: scale).
     // width: 23px;
     // z-index: 1;
     // background-image: linear-gradient(to bottom left, $base-color-1, $base-color-2);
     // background-clip: text;
-    fill: linear-gradient(to bottom left, $base-color-1, $base-color-2);
-    opacity: 0;
+    // background: linear-gradient(to bottom left, $base-color-1, $base-color-2);
+    transform: scale(0);
+    // opacity: 0;
     // transform: opacity;
     cursor: pointer;
-    transition: opacity 600ms cubic-bezier(0.32, 0, 0.07, 1);
+    transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
 }

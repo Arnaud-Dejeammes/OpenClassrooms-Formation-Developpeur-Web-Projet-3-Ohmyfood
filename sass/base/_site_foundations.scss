@@ -7,12 +7,12 @@
 body {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    // width: 100%; // 100vw; // vw provoque l'apparition de la barre de défilement horizontale. Des mesures trop grandes de margin ou de padding peuvent provoquer le même phénomène.
     // background-color: lightgrey;
 }
 
 main {
-    width: 100%;
+    // width: 100%;
 }
 
 h1, nav h2 {
@@ -32,8 +32,16 @@ a {
 }
 
 a:visited {
-    color: black; // Placer en _reset. 
+    color: black; // Placer en _reset. ou en _fonts.
 }
+
+footer li a:hover {
+    color: $base-color-3;
+} // Placer en _fonts.
+
+footer a:visited {
+    color: #ffffff;
+} // Placer en _fonts.
 
 ::selection {
     background: $base-color-1;

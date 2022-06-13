@@ -355,11 +355,6 @@ button {
 body {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-}
-
-main {
-  width: 100%;
 }
 
 h1, nav h2 {
@@ -382,6 +377,14 @@ a:visited {
   color: black;
 }
 
+footer li a:hover {
+  color: #99E2D0;
+}
+
+footer a:visited {
+  color: #ffffff;
+}
+
 ::selection {
   background: #9356DC;
   color: #99E2D0;
@@ -399,13 +402,29 @@ a:visited {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.woff") format("woff");
 }
-::placeholder {
+footer, .restaurant__menu__body__entry, ::placeholder {
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
 }
 
-::placeholder {
+.restaurant__menu__body__entry {
   font-size: 3.2vw;
+}
+
+footer, .validate, ::placeholder {
+  font-size: 3.2vw;
+}
+
+::placeholder {
   font-weight: bold;
+}
+
+footer {
+  line-height: 200%;
+}
+
+.restaurant__menu__body__title {
+  font-family: "Shrikhand-Regular", cursive, Times;
+  font-size: 4.8vw;
 }
 
 .validate {
@@ -550,6 +569,18 @@ body {
   transform: scale(0.8);
 }
 
+.restaurant__menu__body__entry {
+  animation: growing-bar 800ms;
+}
+
+@keyframes growing-bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10.4%;
+  }
+}
 .restaurant__menu__body {
   /* Dissimulation de la case à cocher checkbox.
   Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
@@ -765,8 +796,9 @@ body {
 }
 
 .validate {
-  position: relative;
   z-index: 1;
+  position: relative;
+  margin: 13.3333333333vw 0 0 25.3333333333vw;
   box-shadow: 0px 5px 5px #C5C5C5;
   border: none;
   border-radius: 8.8vw;
@@ -774,6 +806,7 @@ body {
   height: 13.3333333333vw;
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
   color: #ffffff;
+  cursor: pointer;
 }
 .validate__hover-effect {
   position: absolute;
@@ -798,10 +831,17 @@ body {
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
-header .logo {
-  width: fit-content;
+header {
+  /* & .logo {
+      // width: fit-content;
+      // background-color: red;
+  } */
+  /* & .logo_ohmyfood {
+      width: calc($screen-ratio*165vw);
+  } */
 }
-header .logo_ohmyfood {
+header .logo-header {
+  fill: #353535;
   width: 44vw;
 }
 
@@ -814,6 +854,27 @@ header .logo_ohmyfood {
 }
 .page-header .page-header__content {
   display: inline-flex;
+}
+
+footer {
+  background-color: black;
+  padding: 7.2vw 0 9.8666666667px 6.6666666667vw;
+  color: #ffffff;
+}
+footer .logo-footer {
+  width: 26.1333333333vw;
+  fill: #ffffff;
+}
+footer .logo-footer :hover {
+  fill: linear-gradient(to left, #99E2D0, #9356DC);
+}
+footer .ustensils-solid-icon, footer .hands-helping-solid {
+  margin: 0 2.9333333333vw 0 0;
+  width: 2.9333333333vw;
+  fill: #ffffff;
+}
+footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
+  fill: #99E2D0;
 }
 
 /* @media all and (min-width: 992px) {
@@ -835,8 +896,8 @@ header .logo_ohmyfood {
   total width: 100(vw)/375(px) = ratio
   checkbox width : 349(px) * 0.26 = 90.74(% ou vw)
   */
-  margin: 0 3.2vw 3.7333333333vw 3.7333333333vw;
-  width: 93.0666666667vw;
+  margin: 0 1.6vw 3.7333333333vw 3.2vw;
+  width: 93.0666666667%;
   height: 18.4vw;
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
@@ -891,11 +952,14 @@ header .logo_ohmyfood {
   } */
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
-  width: 16.9054441261%;
+  width: 16.9340974212%;
   height: 100%;
   padding: 10% 0 0 3.1518624642%;
   font-size: 2.9333333333vw;
   font-weight: bold;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price .price {
+  width: fit-content;
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle {
   width: 16.9054441261%;
@@ -1013,9 +1077,8 @@ header .logo_ohmyfood {
 }
 
 .restaurant-body-heart-choice {
-  width: 23px;
+  width: 6.1333333333vw;
   background: no-repeat;
-  color: linear-gradient(to bottom left, #9356DC, #FF79DA);
   /* &:hover .restaurant-body-heart-choice style {
       display: none;
   } */
@@ -1023,18 +1086,63 @@ header .logo_ohmyfood {
 .restaurant-body-heart-choice:hover .heart-solid-icon {
   opacity: 1;
 }
+.restaurant-body-heart-choice:hover .heart-solid-icon {
+  transform: scale(1.1);
+}
 
 .heart-regular-icon {
   cursor: pointer;
 }
 
 .heart-solid-icon {
-  fill: linear-gradient(to bottom left, #9356DC, #FF79DA);
-  opacity: 0;
+  transform: scale(0);
   cursor: pointer;
-  transition: opacity 600ms cubic-bezier(0.32, 0, 0.07, 1);
+  transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
+.restaurant__menu {
+  background-color: #f6f6f6;
+  padding: 0 0 22.1333333333vw 0;
+}
+.restaurant__menu .restaurant__menu__body {
+  position: relative;
+  border-radius: 9.6vw 9.6vw 0 0;
+}
+.restaurant__menu .restaurant__menu__body__title {
+  width: 100%;
+  display: inline-flex;
+  border-radius: 9.6vw 9.6vw 0 0;
+  padding: 9.8666666667px 0 0 5.0666666667vw;
+  background-color: #f6f6f6;
+  /* & h2 {
+      margin: 0 calc($screen-ratio)*93vw 0 0;
+  } */
+}
+.restaurant__menu .restaurant__menu__body__entry {
+  width: 10.4%;
+  margin: 0 0 3.7333333333vw 5.0666666667vw;
+  padding: 0 0 2.4vw 0;
+  border-bottom: solid 0.8vw #99E2D0;
+}
+
+.restaurant__menu__body__title__heart {
+  height: fit-content;
+  margin: 6.6666666667vw 0 0 24.8vw;
+}
+
+#restaurant__menu__image__a_la_francaise {
+  margin-top: -13.3333333333vw;
+  width: 100%;
+  transform: translate(0, 20%);
+}
+
+/* .restaurant__menu__body__entry {
+    width:  calc($screen-ratio)*39%; // fit-content;  // 66 39    
+    margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
+    padding: 0 0 calc($screen-ratio)*9vw 0;
+    border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
+    // background-color: red;
+} */
 /* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
 /* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */
 /* @import "./sass/layouts/"; /* 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs. */

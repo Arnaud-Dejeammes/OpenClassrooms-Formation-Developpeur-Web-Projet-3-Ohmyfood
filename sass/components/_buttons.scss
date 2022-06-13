@@ -10,8 +10,9 @@
 
 // Boutons de validation (Page Accueil - Explorer nos restaurants / Page Menu - Commander)
 .validate {
-    position: relative; // Important pour le fonctionnement de l'effet avec .validate_hover-effect.
     z-index: 1;
+    position: relative; // Important pour le fonctionnement de l'effet avec .validate_hover-effect.
+    margin: calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*95vw;
     box-shadow: 0px 5px 5px #C5C5C5;
     border: none;
     border-radius: calc($screen-ratio)*33vw; // 33px;
@@ -19,6 +20,7 @@
     height: calc($screen-ratio)*50vw;
     font-family: $text-font;
     color: #ffffff;
+    cursor: pointer; // Regrouper avec les autres.
 
     &__hover-effect {
         position: absolute; /* Important pour le fonctionnement. */

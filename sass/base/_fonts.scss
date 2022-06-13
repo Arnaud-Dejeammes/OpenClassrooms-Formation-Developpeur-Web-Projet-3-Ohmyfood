@@ -9,16 +9,34 @@
     font-family: 'Roboto-Regular'; //, sans-serif;
     src: url('../fonts/Roboto-Regular.woff') format('woff');
 }
+
 @font-face {
     font-family: 'Roboto-Bold'; //, sans-serif;
     src: url('../fonts/Roboto-Bold.woff') format('woff');
 } // Non nécessaire ?
 
-::placeholder {
-    font-family: $text-font;    
+footer, .restaurant__menu__body__entry, ::placeholder {
+    font-family: $text-font;
 }
 
-::placeholder {
+.restaurant__menu__body__entry {
+    font-size: calc($screen-ratio)*12vw; // Ajuster.
+}
+
+footer, .validate, ::placeholder {
     font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône.
+}
+
+::placeholder {    
     font-weight: bold;
 }
+
+footer {
+    line-height: 200%;    
+}
+
+.restaurant__menu__body__title {
+    font-family: $logo-title-font;
+    font-size: calc($screen-ratio)*18vw; // 21px // Ajuster.
+} // Revoir éventuellement la hiérarchie des titres (h2, h3...), tout en assurant la cohérence entre la Page Restaurant et la Page Menu.
+
