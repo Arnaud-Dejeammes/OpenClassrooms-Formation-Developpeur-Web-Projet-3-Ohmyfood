@@ -45,3 +45,21 @@
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
+
+// Boutons aside (Page Accueil - Fonctionnement)
+.aside-button {
+    // width: fit-content;
+    .mobile-icon, .list-solid-icon, .store-solid-icon {
+        fill: #7e7e7e;
+    }
+    .mobile-icon {
+        width: calc($screen-ratio)*13vw;
+        
+    }
+    .list-solid-icon {
+        width: calc($screen-ratio)*16vw;
+    }
+    .store-solid-icon {
+        width: calc($screen-ratio)*18vw;
+    }
+}

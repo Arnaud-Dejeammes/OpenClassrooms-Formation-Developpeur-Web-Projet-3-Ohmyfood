@@ -843,6 +843,19 @@ body {
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
+.aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
+  fill: #7e7e7e;
+}
+.aside-button .mobile-icon {
+  width: 3.4666666667vw;
+}
+.aside-button .list-solid-icon {
+  width: 4.2666666667vw;
+}
+.aside-button .store-solid-icon {
+  width: 4.8vw;
+}
+
 header {
   /* & .logo {
       // width: fit-content;
