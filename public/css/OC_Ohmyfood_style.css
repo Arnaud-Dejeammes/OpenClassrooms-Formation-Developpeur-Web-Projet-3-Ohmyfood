@@ -365,14 +365,41 @@ h1, nav h2 {
   display: none;
 }
 
-li {
-  list-style-type: none;
-}
-
 ul {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
+/* footer li {
+    list-style-type: none; // Placer en _reset.
+} */
+ol {
+  padding-inline-start: 0;
+}
+ol li {
+  counter-increment: list-dot;
+}
+ol li:before {
+  content: counter(list-dot) "";
+}
+
+/* 
+ol li {
+    counter-increment: dots;
+}
+
+ol li:before {
+    content: counter(dots) "";
+}
+
+ol {
+    // list-style: none;
+    counter-reset: dots; // Apparememnt pas nécessairement utile.
+}
+*/
 a {
   text-decoration: none;
 }
@@ -406,12 +433,26 @@ footer a:visited {
   font-family: "Roboto-Bold";
   src: url("../fonts/Roboto-Bold.woff") format("woff");
 }
-footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
+form, aside, main, footer, .restaurant__menu__body__entry {
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+}
+
+ol li:before {
+  font-size: 2.9333333333vw;
+}
+
+input[type=search] {
+  font-size: 3.12vw;
+  font-weight: bold;
 }
 
 .restaurant-card-body-title {
   font-size: 3.4666666667vw;
+}
+
+li button {
+  font-size: 3.2vw;
+  font-weight: bold;
 }
 
 .restaurant-card-body-place {
@@ -424,6 +465,22 @@ footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
 
 footer, .validate, ::placeholder {
   font-size: 3.2vw;
+}
+
+.form-description {
+  text-align: center;
+}
+
+.form-title {
+  font-size: 5.8666666667vw;
+}
+
+.form-subtitle {
+  font-size: 3.4666666667vw;
+}
+
+.aside-title {
+  font-size: 4.8vw;
 }
 
 ::placeholder {
@@ -787,16 +844,28 @@ body {
 .place-location input {
   background-color: #eaeaea;
   box-shadow: inset 0px 8px 6px -6px #cfcfcf;
-  caret-color: #9356DC;
+  caret-color: #FF79DA;
+  /* &:focus {
+      background-color: $input-background-color;
+  } */
 }
 .place-location input.search-field {
-  width: 26.6666666667vw;
+  width: fit-content;
   height: 13.3333333333vw;
   padding: 0 0 0 4.8vw;
 }
 .place-location input::placeholder {
-  width: fit-content;
   color: black;
+}
+
+.form-description {
+  padding: 11.7333333333vw 0 0 0;
+}
+.form-description .form-title {
+  margin: 0 17.3333333333vw 5.8666666667vw 17.3333333333vw;
+}
+.form-description .form-subtitle {
+  margin: 0 8.2666666667vw 0 10.4vw;
 }
 
 .page-header__content__backward {
@@ -810,7 +879,7 @@ body {
 .validate {
   z-index: 1;
   position: relative;
-  margin: 13.3333333333vw 0 0 25.3333333333vw;
+  margin: 13.3333333333vw 0 0 18.6666666667vw;
   box-shadow: 0px 5px 5px #C5C5C5;
   border: none;
   border-radius: 8.8vw;
@@ -821,13 +890,13 @@ body {
   cursor: pointer;
 }
 .validate__hover-effect {
+  z-index: -1;
   position: absolute;
   /* Important pour le fonctionnement. */
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;
   opacity: 0;
   border-radius: 8.8vw;
   background: linear-gradient(to bottom, #fface8, #ae80e5);
@@ -843,11 +912,44 @@ body {
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
+ol li:before {
+  z-index: 1;
+  position: relative;
+  background-color: #9356DC;
+  border-radius: 13.3333333333vw;
+  padding: 2.6666666667vw 3.7333333333vw;
+  color: #ffffff;
+}
+
+.aside-button {
+  z-index: -1;
+  display: inline-flex;
+  margin: 0 0 20.5333333333vw;
+  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
+  border-radius: 4.2666666667vw;
+  width: 86.1333333333%;
+  height: 19.2vw;
+  padding: 8vw 0 0 9.0666666667vw;
+  background-color: #f6f6f6;
+  transform: translate(-5vw, 2vw);
+}
+.aside-button:hover {
+  background-color: #f5edff;
+}
+.aside-button:hover .mobile-icon, .aside-button:hover .list-solid-icon, .aside-button:hover .store-solid-icon {
+  fill: #9356DC;
+}
 .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
+  margin: 0 5.6vw 0 0;
   fill: #7e7e7e;
+  cursor: pointer;
+  /* & :hover {
+      fill: $base-color-1;
+  } */
 }
 .aside-button .mobile-icon {
   width: 3.4666666667vw;
+  transform: translate(0, -2vw);
 }
 .aside-button .list-solid-icon {
   width: 4.2666666667vw;
@@ -1010,7 +1112,7 @@ footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
 }
 
 .restaurant-card {
-  margin: 0 0 4.8vw 5.3333333333vw;
+  margin: 0 0 4.8vw 0;
   width: 89.3333333333vw;
   height: 66.9333333333vw;
   border-radius: 2.9333333333vw;
@@ -1169,6 +1271,17 @@ footer .ustensils-solid-icon :hover, footer .hands-helping-solid :hover {
     border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
     // background-color: red;
 } */
+aside {
+  padding: 0 0 0 5.6vw;
+}
+aside .aside-title {
+  margin: 0 0 9.0666666667vw 0;
+}
+
+section {
+  padding: 0 0 0 4vw;
+}
+
 /* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
 /* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */
 /* @import "./sass/layouts/"; /* 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs. */

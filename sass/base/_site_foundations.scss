@@ -19,13 +19,44 @@ h1, nav h2 {
     display: none; // Placer en _reset.
 }
 
-li {
-    list-style-type: none; // Placer en _reset.
-}
-
 ul {
     padding: 0; // Placer en _reset.
 }
+
+li {
+    list-style-type: none; // Important pour éviter le double chiffrement de ol li.  // Placer en _reset.
+} // Sélecteur footer enlevé en même temps que list-style-none; pour ol li.
+
+/* footer li {
+    list-style-type: none; // Placer en _reset.
+} */
+
+ol {
+    // list-style-type: none; // Annule le double chiffrement si la variable n'est pas placée dans li.
+    padding-inline-start: 0; // Annule "padding-inline-start: 40px;" in "user style sheet" de Google Chrome.
+    li {
+        // list-style-type: none; // Annule le double chiffrement si la variable n'est pas placée dans li (général).        
+        counter-increment: list-dot; // Reprend le compte au lieu de 0.
+        &:before {
+            content: counter(list-dot) "";            
+        } // Annule le point après le chiffre.
+    }
+} // Trouver la raison du léger décalage vertical du premier chiffre.
+
+/* 
+ol li {
+    counter-increment: dots;
+}
+
+ol li:before {
+    content: counter(dots) "";
+}
+
+ol {
+    // list-style: none;
+    counter-reset: dots; // Apparememnt pas nécessairement utile.
+}
+*/
 
 a {
     text-decoration: none; // Placer en _reset.

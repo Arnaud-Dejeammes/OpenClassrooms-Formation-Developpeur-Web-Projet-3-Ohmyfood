@@ -15,12 +15,26 @@
     src: url('../fonts/Roboto-Bold.woff') format('woff');
 } // Non nécessaire ?
 
-footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
+form, aside, main, footer, .restaurant__menu__body__entry {
     font-family: $text-font;
+}
+
+ol li:before {
+    font-size: calc($screen-ratio)*11vw;
+}
+
+input[type="search"] {
+    font-size: calc($screen-ratio)*11.7vw; // Ajuster si ajustement de la police form.
+    font-weight: bold;
 }
 
 .restaurant-card-body-title {
     font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper.
+}
+
+li button {
+    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
+    font-weight: bold;
 }
 
 .restaurant-card-body-place {
@@ -33,6 +47,22 @@ footer, .restaurant-card-body, .restaurant__menu__body__entry, ::placeholder {
 
 footer, .validate, ::placeholder {
     font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper.
+}
+
+.form-description {
+    text-align: center;
+}
+
+.form-title {
+    font-size: calc($screen-ratio)*22vw; // 17vw;    
+}
+
+.form-subtitle {
+    font-size: calc($screen-ratio)*13vw; // Revoir taille de la police et marges.
+}
+
+.aside-title {
+    font-size: calc($screen-ratio)*18vw;
 }
 
 ::placeholder {    

@@ -6,26 +6,42 @@
 
     & .map-marker-icon {        
         width: calc($screen-ratio*12vw); // Ajuster icône et/ou police.
-        cursor: pointer;
+        cursor: pointer; // Curseur ne fonctionne pas.
     }
 
     & input {    
     background-color: $input-background-color;
-    @include inset-shadow;
-    caret-color: $base-color-1;
+    @include inset-shadow;    
+    caret-color: $base-color-2;    
 
         &.search-field {
-            width: calc($screen-ratio*100vw);
+            width: fit-content; // calc($screen-ratio*100vw);
             height: calc($screen-ratio*50vw);
             padding: 0 0 0 calc($screen-ratio*18vw);
-            // background-color: aqua;         
+            // background-color: aqua; 
         }
         
         &::placeholder {
-            width: fit-content;
+            // width: fit-content;
             color: black;
-            // background-color: red;
+            // background-color: red;            
         }
+
+        /* &:focus {
+            background-color: $input-background-color;
+        } */ // Trouver solution pour couleur de fond, et éventuellellent taille des suggestions.
+    }
+}
+
+.form-description {
+    padding: calc($screen-ratio*44vw) 0 0 0;
+
+    & .form-title {
+        margin: 0 calc($screen-ratio*65vw) calc($screen-ratio*22vw) calc($screen-ratio*65vw);
+    }
+
+    & .form-subtitle {
+        margin : 0 calc($screen-ratio)*31vw 0 calc($screen-ratio)*39vw; // Revoir taille de la police et marges.
     }
 }
 

@@ -1,4 +1,4 @@
-footer {
+footer { // Transférer in _layout.
     background-color: black;
     padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw; // Voir la la mesure en px.
     color: #ffffff; // Placer en _fonts.

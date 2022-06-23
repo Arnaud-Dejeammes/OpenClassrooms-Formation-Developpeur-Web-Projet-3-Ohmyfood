@@ -1,8 +1,8 @@
 .restaurant-card {
     // display: flex;
     // flex-direction: column;
-    margin: 0 0 calc($screen-ratio)*18vw calc($screen-ratio)*20vw; //0px 0px 18px 20px;
-    width: calc($screen-ratio)*335vw; // 335px;
+    margin: 0 0 calc($screen-ratio)*18vw 0; // margin: 0 0 calc($screen-ratio)*18vw calc($screen-ratio)*20vw; padding-left supprimé au profit de margin in section. // 0px 0px 18px 20px;
+    width: calc($screen-ratio)*335vw; // Revoir la taille en fonction de la suppression du padding-left.// 335px;
     height: calc($screen-ratio)*251vw; // 251px;
     border-radius: calc($screen-ratio)*11vw; // 11px;
     box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9;  // 0px 4px 8px 4px

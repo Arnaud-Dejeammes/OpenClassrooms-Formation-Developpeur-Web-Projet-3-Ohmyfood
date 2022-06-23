@@ -12,8 +12,8 @@
 .validate {
     z-index: 1;
     position: relative; // Important pour le fonctionnement de l'effet avec .validate_hover-effect.
-    margin: calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*95vw;
-    box-shadow: 0px 5px 5px #C5C5C5;
+    margin: calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*70vw; // calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*95vw; // Recentrer bouton Page Accueil (82px) et ajuster.
+    box-shadow: 0px 5px 5px #C5C5C5; // Transformer en mixin ? Changer en vw ?
     border: none;
     border-radius: calc($screen-ratio)*33vw; // 33px;
     background: linear-gradient(to bottom, $base-color-2, $base-color-1);    
@@ -23,12 +23,12 @@
     cursor: pointer; // Regrouper avec les autres.
 
     &__hover-effect {
+        z-index: -1;
         position: absolute; /* Important pour le fonctionnement. */
         top: 0;
         left: 0;
         bottom: 0;
-        right: 0;
-        z-index: -1;
+        right: 0;        
         opacity: 0;        
         border-radius: calc($screen-ratio)*33vw; // 33px;
         background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));        
@@ -47,13 +47,48 @@
 $base-color-2: #FF79DA; */
 
 // Boutons aside (Page Accueil - Fonctionnement)
+ol li:before {
+    // margin: 0 0 calc($screen-ratio)*77vw; Ne fonctionne pas.
+    z-index: 1;
+    position: relative;
+    background-color: $base-color-1;
+    border-radius: calc($screen-ratio)*50vw;
+    padding: calc($screen-ratio)*10vw calc($screen-ratio)*14vw;
+    color: #ffffff;     
+}
+
 .aside-button {
     // width: fit-content;
+    z-index: -1;
+    // position: absolute;
+    display: inline-flex;
+    margin: 0 0 calc($screen-ratio)*77vw; // 25px;
+    box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9; // Carte restaurant // Bouton validate (plus proche mais moins visible) : 0px 5px 5px $shadow; // Transformer en mixin et vérifier la valeur de la variable $shadow.
+    border-radius: calc($screen-ratio)*16vw;
+    width: calc($screen-ratio)*323%; // % plutôt que vw : réduit le décalage.
+    height: calc($screen-ratio)*72vw;
+    padding: calc($screen-ratio)*30vw 0 0 calc($screen-ratio)*34vw;
+    background-color: $background-color-section; // yellowgreen;
+    transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter 
+    &:hover {
+        background-color: #f5edff;
+        .mobile-icon, .list-solid-icon, .store-solid-icon {            
+                fill: $base-color-1;
+            } // A faire fonctionner de manière générale (créer class et changer l'ancienne en ID).
+        }
+    
+    
     .mobile-icon, .list-solid-icon, .store-solid-icon {
+        margin: 0 calc($screen-ratio)*21vw 0 0;
         fill: #7e7e7e;
+        cursor: pointer; // Regrouper ?
+        /* & :hover {
+            fill: $base-color-1;
+        } */ // Déplacé au niveau en-dessus.
     }
     .mobile-icon {
         width: calc($screen-ratio)*13vw;
+        transform: translate(0, -2vw); // Correctif spécifique pour être conforme à la maquette.
         
     }
     .list-solid-icon {
