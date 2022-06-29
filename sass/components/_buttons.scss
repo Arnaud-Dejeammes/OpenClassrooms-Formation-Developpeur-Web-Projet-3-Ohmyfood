@@ -22,6 +22,42 @@
     color: #ffffff;
     cursor: pointer; // Regrouper avec les autres.
 
+    @include respond-to('medium') {
+        margin: 0 0 0 calc($medium-screen-ratio)*15vw;
+        height: calc($medium-screen-ratio)*50vw;
+    }
+
+    @include respond-to('large') {
+        margin: 0 0 0 calc($large-screen-ratio)*15vw;
+        height: calc($large-screen-ratio)*50vw;
+    }
+
+    &#validate-index {
+        width: calc($screen-ratio)*218vw; // 218px;
+        
+        @include respond-to('medium') {
+            margin: calc($medium-screen-ratio)*30vw 0 calc($medium-screen-ratio)*10vw calc($medium-screen-ratio)*50vw;
+            width: calc($medium-screen-ratio)*218vw;
+        }
+
+        @include respond-to('large') {
+            margin: 0 0 0 0;
+            width: calc($large-screen-ratio)*218vw;
+        }
+    } // Regrouper et améliorer syntaxe Sass.
+    
+    &#validate-menu {
+        width: calc($screen-ratio)*186vw; // 186px;
+
+        @include respond-to('medium') {
+            width: calc($medium-screen-ratio)*186vw;
+        }
+
+        @include respond-to('large') {
+            width: calc($large-screen-ratio)*186vw;
+        } // Regrouper et améliorer syntaxe Sass.
+    }
+
     &__hover-effect {
         z-index: -1;
         position: absolute; /* Important pour le fonctionnement. */
@@ -35,13 +71,6 @@
     }
 }
 
-#validate-index {
-    width: calc($screen-ratio)*218vw; // 218px;    
-} // Regrouper et améliorer syntaxe Sass.
-
-#validate-menu {
-    width: calc($screen-ratio)*186vw; // 186px;    
-} // Regrouper et améliorer syntaxe Sass.
 
 /* $base-color-1: #9356DC;
 $base-color-2: #FF79DA; */
@@ -54,7 +83,15 @@ ol li:before {
     background-color: $base-color-1;
     border-radius: calc($screen-ratio)*50vw;
     padding: calc($screen-ratio)*10vw calc($screen-ratio)*14vw;
-    color: #ffffff;     
+    color: #ffffff;
+
+    @include respond-to('medium') {
+        padding: calc($medium-screen-ratio)*10vw calc($medium-screen-ratio)*14vw;        
+    }
+
+    @include respond-to('large') {
+        padding: calc($large-screen-ratio)*10vw calc($large-screen-ratio)*14vw;        
+    }
 }
 
 .aside-button {
@@ -62,14 +99,35 @@ ol li:before {
     z-index: -1;
     // position: absolute;
     display: inline-flex;
-    margin: 0 0 calc($screen-ratio)*77vw; // 25px;
+    margin: 0 0 calc($screen-ratio)*77vw; // 25px; // Manque une marge !!! (left ?)
     box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9; // Carte restaurant // Bouton validate (plus proche mais moins visible) : 0px 5px 5px $shadow; // Transformer en mixin et vérifier la valeur de la variable $shadow.
     border-radius: calc($screen-ratio)*16vw;
     width: calc($screen-ratio)*323%; // % plutôt que vw : réduit le décalage.
     height: calc($screen-ratio)*72vw;
     padding: calc($screen-ratio)*30vw 0 0 calc($screen-ratio)*34vw;
     background-color: $background-color-section; // yellowgreen;
-    transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter 
+    transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter
+
+    @include respond-to('medium') {
+        margin: 0 0 calc($medium-screen-ratio)*37vw 0;
+        box-shadow: 0 calc($medium-screen-ratio)*4vw calc($medium-screen-ratio)*8vw calc($medium-screen-ratio)*4vw #d9d9d9;
+        border-radius: calc($medium-screen-ratio)*16vw;
+        width: calc($medium-screen-ratio)*323vw;; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
+        height: calc($medium-screen-ratio)*72vw;
+        padding: calc($medium-screen-ratio)*30vw 0 0 calc($medium-screen-ratio)*34vw;
+        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter      
+    }
+
+    @include respond-to('large') {
+        margin: 0 0 calc($large-screen-ratio)*37vw 0;
+        box-shadow: 0 calc($large-screen-ratio)*4vw calc($large-screen-ratio)*8vw calc($large-screen-ratio)*4vw #d9d9d9;
+        border-radius: calc($large-screen-ratio)*16vw;
+        width: calc($large-screen-ratio)*323vw;; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
+        height: calc($large-screen-ratio)*72vw;
+        padding: calc($large-screen-ratio)*30vw 0 0 calc($large-screen-ratio)*34vw;
+        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter      
+    }
+
     &:hover {
         background-color: #f5edff;
         .mobile-icon, .list-solid-icon, .store-solid-icon {            
@@ -79,22 +137,55 @@ ol li:before {
     
     
     .mobile-icon, .list-solid-icon, .store-solid-icon {
+        position: relative;
+        
         margin: 0 calc($screen-ratio)*21vw 0 0;
         fill: #7e7e7e;
         cursor: pointer; // Regrouper ?
         /* & :hover {
             fill: $base-color-1;
         } */ // Déplacé au niveau en-dessus.
+
+        @include respond-to('large') {
+            margin: 0 calc($large-screen-ratio)*21vw 0 0;
+        }
     }
+
     .mobile-icon {
         width: calc($screen-ratio)*13vw;
         transform: translate(0, -2vw); // Correctif spécifique pour être conforme à la maquette.
-        
+
+        @include respond-to('medium') {
+            width: calc($medium-screen-ratio)*13vw;
+            transform: translate(0, -0.7vw); // Vérifier et regrouper éventuellement avec prochain breakpoint.
+        }        
+
+        @include respond-to('large') {
+            width: calc($large-screen-ratio)*13vw;
+            transform: translate(0, -0.7vw);
+        }        
     }
+    
     .list-solid-icon {
         width: calc($screen-ratio)*16vw;
+
+        @include respond-to('medium') {
+            width: calc($medium-screen-ratio)*16vw;
+        }
+
+        @include respond-to('large') {
+            width: calc($large-screen-ratio)*16vw;
+        }
     }
     .store-solid-icon {
         width: calc($screen-ratio)*18vw;
+
+        @include respond-to('medium') {
+            width: calc($medium-screen-ratio)*18vw;
+        }
+
+        @include respond-to('large') {
+            width: calc($large-screen-ratio)*18vw;
+        }
     }
 }

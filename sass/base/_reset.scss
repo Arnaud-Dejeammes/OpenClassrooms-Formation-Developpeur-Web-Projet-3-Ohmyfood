@@ -11,3 +11,8 @@ button {
     border: none;
     background-color: transparent;
 }
+
+ol {
+    margin-block-start: -1em;
+    margin-block-end: -1em;
+} // Annule user agent stylesheet de Google Chrome.

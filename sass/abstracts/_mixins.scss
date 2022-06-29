@@ -1,3 +1,36 @@
 @mixin inset-shadow {
     box-shadow: inset 0px 8px 6px -6px $input-shadow; // inset 10px 10px 10px $input-shadow;
 }
+
+// Créer une mixin/getter pour l'ajout de nouveaux breakpoints.
+
+// Getter pour lecture des maps de points
+// Breakpoint Manager
+// Source : https://sass-guidelin.es/
+
+/// Responsive breakpoint manager
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($breakpoints, $breakpoint);
+
+    @if $raw-query {
+        $query: if(
+            type-of($raw-query) == 'string',
+            unquote($raw-query),
+            inspect($raw-query)
+        );
+  
+        @media #{$query} {
+            @content;
+        }
+    }
+    
+    /* @else {
+        @error 'No value found for `#{$breakpoint}`. '
+           + 'Please make sure it is defined in `$breakpoints` map.';
+    } */
+}
+  

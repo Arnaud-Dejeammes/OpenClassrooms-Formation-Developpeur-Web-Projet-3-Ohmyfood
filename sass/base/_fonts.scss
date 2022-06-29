@@ -20,33 +20,129 @@ form, aside, main, footer, .restaurant__menu__body__entry {
 }
 
 ol li:before {
-    font-size: calc($screen-ratio)*11vw;
+
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*11vw; */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*11vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*11vw;        
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*11vw;        
+    }
 }
 
 input[type="search"] {
+    /* Code avant Media Queries
     font-size: calc($screen-ratio)*11.7vw; // Ajuster si ajustement de la police form.
+    font-weight: bold; */
+    
     font-weight: bold;
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*11.7vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*11.7vw;   
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*11.7vw;        
+    }
 }
 
 .restaurant-card-body-title {
-    font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper.
-}
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper. */
 
-li button {
-    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
-    font-weight: bold;
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*13vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw; // 13vw
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*13vw;
+    }
 }
 
 .restaurant-card-body-place {
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper. */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*12vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw; // 12vw
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
+}
+
+li button {
+    /* Code avant Media Queries
     font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
+    font-weight: bold; */
+    
+    font-weight: bold;
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*12vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
 }
 
 .restaurant__menu__body__entry {
-    font-size: calc($screen-ratio)*12vw; // // Ajuster et regrouper.
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*12vw; // // Ajuster et regrouper. */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*12vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*12vw;        
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
 }
 
 footer, .validate, ::placeholder {
-    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper.
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper. */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*14vw; // font-size: calc($screen-ratio)*12vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*16vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
 }
 
 .form-description {
@@ -54,26 +150,99 @@ footer, .validate, ::placeholder {
 }
 
 .form-title {
-    font-size: calc($screen-ratio)*22vw; // 17vw;    
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*22vw; // 17vw; */
+
+    font-size: calc($screen-ratio)*20vw; // 12vw
+    
+
+    @include respond-to('medium') {
+        font-size: calc($screen-ratio)*10vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($screen-ratio)*4.7vw;
+    }
 }
 
 .form-subtitle {
-    font-size: calc($screen-ratio)*13vw; // Revoir taille de la police et marges.
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*13vw; // Revoir taille de la police et marges. */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*15vw; // calc($screen-ratio)*13vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*14vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*13vw;
+    }
 }
 
 .aside-title {
-    font-size: calc($screen-ratio)*18vw;
+    /* Code avant Media Queries
+    font-size: calc($screen-ratio)*18vw; */
+
+    // @include respond-to('small') {
+        font-size: calc($screen-ratio)*15vw; // font-size: calc($screen-ratio)*18vw;
+    // }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*16vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*11vw;
+    }
 }
 
 ::placeholder {    
     font-weight: bold;
 }
 
+.restaurants_section-title {
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*17vw;
+    }
+}
+
 footer {
-    line-height: 200%;    
+    color: $background-color;
+    line-height: 200%;
+
+    li a:hover {
+        color: $base-color-3;
+    
+        .ustensils-solid-icon, .hands-helping-solid-icon {
+            fill: $base-color-3;
+        }    
+    }
+    
+    a:visited {
+        color: #ffffff;
+    }
 }
 
 .restaurant__menu__body__title {
+    /* Code avant Media Queries 
     font-family: $logo-title-font;
-    font-size: calc($screen-ratio)*18vw; // 21px // Ajuster.
+    font-size: calc($screen-ratio)*18vw; // 21px // Ajuster. */
+
+    font-family: $logo-title-font;    
+
+    @include respond-to('small') {
+        font-size: calc($screen-ratio)*18vw;
+    }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*18vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*18vw;
+    }
+
 } // Revoir éventuellement la hiérarchie des titres (h2, h3...), tout en assurant la cohérence entre la Page Restaurant et la Page Menu.

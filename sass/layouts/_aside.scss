@@ -1,6 +1,30 @@
 aside {
+    margin: calc($screen-ratio)*10vw 0 0 0;
     padding: 0 0 0 calc($screen-ratio)*21vw;
+    // background-color: yellowgreen;
+
+    @include respond-to('large') {
+        margin: 0 0 calc($screen-ratio)*10vw 0;
+        padding: 0 0 0 calc($large-screen-ratio)*15vw; // calc($large-screen-ratio)*21vw
+
+        ol {           
+            display: flex;
+            justify-content: space-evenly;
+            // margin: -30px;
+            // background-color: red;
+        }
+    }
+
     .aside-title {
         margin: 0 0 calc($screen-ratio)*34vw 0;
+
+        @include respond-to('medium') {
+            margin: 0 0 calc($medium-screen-ratio)*34vw 0;
+        }
+
+        @include respond-to('large') {
+            margin: 0 0 0 0; // 40%; // calc($screen-ratio)*18.5vw
+            // background-color: cadetblue;
+        }
     }
 }

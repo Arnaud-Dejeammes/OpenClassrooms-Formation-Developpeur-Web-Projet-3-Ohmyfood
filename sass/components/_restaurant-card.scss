@@ -1,4 +1,6 @@
 .restaurant-card {
+
+    /* Code avant Media Queries
     // display: flex;
     // flex-direction: column;
     margin: 0 0 calc($screen-ratio)*18vw 0; // margin: 0 0 calc($screen-ratio)*18vw calc($screen-ratio)*20vw; padding-left supprimé au profit de margin in section. // 0px 0px 18px 20px;
@@ -6,7 +8,33 @@
     height: calc($screen-ratio)*251vw; // 251px;
     border-radius: calc($screen-ratio)*11vw; // 11px;
     box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9;  // 0px 4px 8px 4px
+    transition: transform 800ms ease-in-out; */
+
     transition: transform 800ms ease-in-out;
+
+    // @include respond-to('small') {
+        margin: 0 0 calc($screen-ratio)*18vw 0;
+        width: calc($screen-ratio)*335vw;
+        height: calc($screen-ratio)*251vw;
+        border-radius: calc($screen-ratio)*11vw;
+        box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9;
+    // }
+
+    @include respond-to('medium') {
+        margin: 0 0 calc($medium-screen-ratio)*18vw 0;
+        width: calc($medium-screen-ratio)*385vw; // calc($medium-screen-ratio)*335vw;
+        height: calc($medium-screen-ratio)*288vw; // 251vw
+        border-radius: calc($medium-screen-ratio)*11vw;
+        box-shadow: 0 calc($medium-screen-ratio)*4vw calc($medium-screen-ratio)*8vw calc($medium-screen-ratio)*4vw #d9d9d9;
+    }
+
+    @include respond-to('large') {
+        margin: 0 calc($large-adjustment-ratio)*18vw calc($large-adjustment-ratio)*18vw 0;
+        width: calc($large-adjustment-ratio)*335vw; // Changer la taile pour adapter en row.
+        height: calc($large-adjustment-ratio)*251vw;
+        border-radius: calc($large-screen-ratio)*11vw;
+        box-shadow: 0 calc($large-screen-ratio)*4vw calc($large-screen-ratio)*8vw calc($large-screen-ratio)*4vw #d9d9d9;
+    }
 
     &:hover {
         transform: scale(1.03);    
@@ -27,9 +55,28 @@
 }
 
 .restaurant-card-image {
+    
+    /* Code avant Media Queries
     height: calc($screen-ratio)*174vw; // 174px;        
     border-radius: calc($screen-ratio)*11vw calc($screen-ratio)*11vw 0 0; // 11px 11px 0px 0px;    
-    overflow: hidden;    
+    overflow: hidden; */
+
+    overflow: hidden;
+
+    // @include respond-to('small') {
+        height: calc($screen-ratio)*174vw;
+        border-radius: calc($screen-ratio)*11vw calc($screen-ratio)*11vw 0 0;
+    // }
+
+    @include respond-to('medium') {
+        height: calc($medium-screen-ratio)*199vw; // 174vw
+        border-radius: calc($medium-screen-ratio)*11vw calc($medium-screen-ratio)*11vw 0 0;
+    }
+
+    @include respond-to('large') {
+        height: calc($large-adjustment-ratio)*174vw; // 174px;        
+        border-radius: calc($large-screen-ratio)*11vw calc($large-screen-ratio)*11vw 0 0; // 11px 11px 0px 0px;        
+    }
 }
 
 .restaurant-card-image img {    
@@ -77,39 +124,98 @@
 } Trouver la solution. */
 
 .restaurant-card-body {
+    
+    /* Code avant Media Queries
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;    
     width: calc($screen-ratio)*335vw; // 335px;
     height: calc($screen-ratio)*77vw; // 77px; // Hauteur card : 251
     // transform: translate(0px, -45px); Avec new-stamp. // transform: translate(0px, 174px); Si restaurant-card flex column.
-    // background-color: khaki;
-    
+    // background-color: khaki; */
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    // @include respond-to('small') {
+    width: calc($screen-ratio)*335vw;
+    height: calc($screen-ratio)*77vw;
+    // }
+
+    @include respond-to('medium') {
+        width: calc($medium-screen-ratio)*385vw; // 335vw
+        height: calc($medium-screen-ratio)*88vw; // 77vw
+    }
+
+    @include respond-to('large') {
+        width: calc($large-adjustment-ratio)*335vw;
+        height: calc($large-adjustment-ratio)*77vw;
+    }    
 }
 
-.restaurant-card-body-title {    
+.restaurant-card-body-title {
+    /* Code avant Media Queries
     width: calc($screen-ratio)*288vw; // 288px;
     height: 50%; // calc($screen-ratio)*40vw; // 40px;
     padding: 0 0 0 calc($screen-ratio)*14vw; // 0px 0px 0px 14px; // Problème avec le padding-bottom.    
     // color: black;          
     // transition: color 0ms 799ms;
-    // background-color: red;
+    // background-color: red; */
+
+    height: 50%;
+
+    // @include respond-to('small') {
+        width: calc($screen-ratio)*288vw;
+        padding: 0 0 0 calc($screen-ratio)*14vw;
+    // }
+
+    @include respond-to('medium') {
+        width: calc($medium-screen-ratio)*331vw; // 288vw
+        padding: 0 0 0 calc($medium-screen-ratio)*16vw; // 14vw
+    }
+
+    @include respond-to('large') {
+        width: calc($large-adjustment-ratio)*288vw;
+        padding: 0 0 0 calc($large-adjustment-ratio)*14vw;
+    }
 }
         
 .restaurant-card-body-place {
+    /* Code avant Media Queries
     width: calc($screen-ratio)*288vw; // 288px;
     height: 50%; // calc($screen-ratio)*11vw; // 37px;    
     padding: 0 0 0 calc($screen-ratio)*14vw; // 0px 0px 0px 14px; // Problème avec le padding-bottom.    
     // color: black;
     // transition: color 0ms 799ms;
-    // background-color: aqua;
+    // background-color: aqua; */
+
+    height: 50%;
+
+    // @include respond-to('small') {
+        width: calc($screen-ratio)*288vw;
+        padding: 0 0 0 calc($screen-ratio)*14vw;
+    // }
+
+    @include respond-to('medium') {
+        width: calc($medium-screen-ratio)*331vw; // 288vw
+        padding: 0 0 0 calc($medium-screen-ratio)*16vw; // 14vw
+    }
+
+    @include respond-to('large') {
+        width: calc($large-adjustment-ratio)*288vw;
+        padding: 0 0 0 calc($large-adjustment-ratio)*14vw;
+    }
 }
 
 .restaurant-body-heart-choice { // Transformer en mixin.
     // height: 77px;
+
+    /* Code avant Media Queries
     margin: calc($screen-ratio)*23vw 0 0 0; // 23px
     width: calc($screen-ratio)*23vw; // 23px;
-    background: no-repeat;
+    background: no-repeat; */
+
     // color: linear-gradient(to bottom left, $base-color-1, $base-color-2);
     // background-color: yellowgreen;
 
@@ -118,6 +224,24 @@
     /* &:hover .restaurant-body-heart-choice style {
         display: none;
     } */
+
+    background: no-repeat;
+
+    // @include respond-to('small') {
+        margin: calc($screen-ratio)*23vw 0 0 0;
+        width: calc($screen-ratio)*23vw;
+    // }
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*26vw 0 0 0; // calc($medium-screen-ratio)*23vw
+        width: calc($medium-screen-ratio)*26vw; // 23vw
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-adjustment-ratio)*23vw 0 0 0;
+        width: calc($large-adjustment-ratio)*23vw;
+    }
+
     &:hover .heart-solid-icon {        
         opacity: 1;        
         // transform: opacity;

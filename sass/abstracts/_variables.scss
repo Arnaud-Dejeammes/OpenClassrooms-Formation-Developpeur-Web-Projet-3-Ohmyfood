@@ -1,8 +1,22 @@
+// Media Queries
+// Smallest screen size : 320px
+$breakpoints: ('small': (min-width: 375px), 'medium': (min-width: 768px), 'large': (min-width: 992px));
+
+// Screens Ratios
+$screen-ratio: calc(100/375); // Remplacer $screen-ratio --> $small-screen-ratio // Plus nécessaire ; intitulé : Default ratio (Mobile Fist)
+$medium-screen-ratio: calc(100/880);
+$large-screen-ratio: calc(100/1300);
+$large-adjustment-ratio: calc($large-screen-ratio/1.12);
+
+// Elements Ratios
+$checkbox-ratio: calc(100/349);
+
 // Colors
 $base-color-1: #9356DC;
 $base-color-2: #FF79DA;
 $base-color-3: #99E2D0;
 $darken-base-color-3: #008766;
+$background-color: #ffffff;
 
 $background-color-section: #f6f6f6;
 $background-color-element: #ffffff; // Vérifier la pertinence.
@@ -18,7 +32,3 @@ $text-font-bold: 'Roboto-Bold', Helvetica, Arial, sans-serif; // Supprimer éven
 
 // Animations
 $opacity-duration: 320ms;
-
-// Elements
-$screen-ratio: calc(100/375);
-$checkbox-ratio: calc(100/349);

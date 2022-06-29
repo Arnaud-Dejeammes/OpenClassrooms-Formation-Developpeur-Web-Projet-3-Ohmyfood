@@ -1,48 +1,128 @@
-.place-location {    
-    background-color: $input-background-color;
-    @include inset-shadow;
-    height: calc($screen-ratio*50vw);
-    padding: 0 0 0 calc($screen-ratio)*104vw;
+form {
 
-    & .map-marker-icon {        
-        width: calc($screen-ratio*12vw); // Ajuster icône et/ou police.
-        cursor: pointer; // Curseur ne fonctionne pas.
+    padding: 0 0 calc($screen-ratio*109vw) 0;
+
+    @include respond-to('medium') {
+        padding: 0 0 0 0;
     }
 
-    & input {    
-    background-color: $input-background-color;
-    @include inset-shadow;    
-    caret-color: $base-color-2;    
+    @include respond-to('large') {
+        display: flex;
+        flex-direction: row reverse;
+        // gap: 5%;
+        // justify-content: space-evenly;
+        margin: 0 0 calc($screen-ratio)*10vw 0;
+        padding: 0 0 0 0;
+    }
 
-        &.search-field {
-            width: fit-content; // calc($screen-ratio*100vw);
-            height: calc($screen-ratio*50vw);
-            padding: 0 0 0 calc($screen-ratio*18vw);
-            // background-color: aqua; 
-        }
-        
-        &::placeholder {
-            // width: fit-content;
-            color: black;
-            // background-color: red;            
+    .place-location {
+        background-color: $input-background-color;
+        @include inset-shadow;
+        height: calc($screen-ratio*50vw);
+        padding: 0 0 0 calc($screen-ratio)*104vw;
+
+        @include respond-to('medium') {
+            // display: flex;
+            height: calc($medium-screen-ratio*50vw);
+            padding: 0 0 0 calc($medium-screen-ratio)*50vw;
         }
 
-        /* &:focus {
+        @include respond-to('large') {
+            display: flex;     
+            height: calc($large-screen-ratio*50vw);
+            padding: 0 0 0 calc($large-screen-ratio)*150vw; // 200vw           
+        }
+
+        /* & */ .map-marker-icon {
+            width: calc($screen-ratio*12vw); // Ajuster icône et/ou police.
+            cursor: pointer;
+
+            @include respond-to('medium') {
+                position: relative;
+                // top: 25%;
+                width: calc($medium-screen-ratio*15vw);
+            }
+
+            @include respond-to('large') {
+                position: relative;
+                top: 25%;
+                width: calc($large-screen-ratio*12vw);
+            }
+        }
+
+        & input { // Trouver une solution pour le padding-right (?) par défaut de form, label, input ou placeholder dans la boîte de recherche qui provoque des sauts entre l'agrandissement et le rétrécissement.
             background-color: $input-background-color;
-        } */ // Trouver solution pour couleur de fond, et éventuellellent taille des suggestions.
+            @include inset-shadow;    
+            caret-color: $base-color-2;
+            // background-color: red;
+
+            &.search-field {
+                width: fit-content; // calc($screen-ratio*100vw);
+                height: calc($screen-ratio*50vw);
+                padding: 0 0 0 calc($screen-ratio*18vw);
+                // background-color: aqua;
+
+                @include respond-to('medium') {
+                    height: calc($medium-screen-ratio*50vw);
+                    padding: 0 0 0 calc($medium-screen-ratio*18vw);
+                }
+
+                @include respond-to('large') {
+                    height: calc($large-screen-ratio*50vw);
+                    padding: 0 0 0 calc($large-screen-ratio*18vw);
+                }
+            }
+            
+            &::placeholder {
+                // width: fit-content;
+                color: black;                
+                // background-color: red;
+            }
+
+            /* &:focus {
+                background-color: $input-background-color;
+            } */ // Trouver solution pour couleur de fond, et éventuellellent taille des suggestions.
+        }
+    }
+
+    .form-description {        
+        padding: calc($screen-ratio*44vw) 0 0 0;
+
+        @include respond-to('medium') {             
+            padding: calc($medium-screen-ratio*11vw) 0 0 0;
+        }
+
+        @include respond-to('large') {
+            margin:  0 calc($large-screen-ratio*93vw) 0 calc($large-screen-ratio*35vw);     
+            padding: 0 0 0 calc($large-screen-ratio*15vw);
+        }
+    
+        & .form-title {
+            margin: 0 calc($screen-ratio*65vw) calc($screen-ratio*22vw) calc($screen-ratio*65vw);
+            width: calc($screen-ratio*229vw);
+
+            @include respond-to('medium') {                
+                margin: 0 0 calc($medium-screen-ratio*10vw) calc($medium-screen-ratio*50vw);
+                width: fit-content;                
+            }
+
+            @include respond-to('large') {
+                margin: 0 0 calc($large-screen-ratio*10vw) calc($large-screen-ratio*30vw); //  0 0 calc($large-screen-ratio*10vw) 0;
+                width: auto;                
+            }
+        }
+    
+        & .form-subtitle {
+            margin: 0 calc($screen-ratio)*31vw 0 calc($screen-ratio)*39vw; // Revoir taille de la police et marges.
+
+            @include respond-to('medium') {
+                margin: 0 calc($medium-screen-ratio)*31vw 0 calc($medium-screen-ratio*50vw);
+                width: fit-content;
+            }
+
+            @include respond-to('large') {
+                margin : 0 0 0 calc($screen-ratio)*15vw; // 0 0 0 0;                
+            }
+        }
     }
 }
-
-.form-description {
-    padding: calc($screen-ratio*44vw) 0 0 0;
-
-    & .form-title {
-        margin: 0 calc($screen-ratio*65vw) calc($screen-ratio*22vw) calc($screen-ratio*65vw);
-    }
-
-    & .form-subtitle {
-        margin : 0 calc($screen-ratio)*31vw 0 calc($screen-ratio)*39vw; // Revoir taille de la police et marges.
-    }
-}
-
-
