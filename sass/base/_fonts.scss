@@ -204,6 +204,12 @@ footer, .validate, ::placeholder {
 }
 
 .restaurants_section-title {
+    font-size: calc($screen-ratio)*17vw;
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*24vw;
+    }
+    
     @include respond-to('large') {
         font-size: calc($large-screen-ratio)*17vw;
     }

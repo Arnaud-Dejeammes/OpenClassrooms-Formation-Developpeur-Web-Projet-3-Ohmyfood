@@ -694,10 +694,20 @@ footer, .validate, ::placeholder {
 }
 
 .restaurants_section-title {
+  font-size: 4.5333333333vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
   /* @else {
       @error 'No value found for `large`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
+}
+@media (min-width: 768px) {
+  .restaurants_section-title {
+    font-size: 2.7272727273vw;
+  }
 }
 @media (min-width: 992px) {
   .restaurants_section-title {
