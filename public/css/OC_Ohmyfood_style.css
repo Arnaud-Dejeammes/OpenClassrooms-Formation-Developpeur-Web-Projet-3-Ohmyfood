@@ -580,7 +580,7 @@ li button {
 }
 @media (min-width: 768px) {
   .restaurant__menu__body__entry {
-    font-size: 1.3636363636vw;
+    font-size: 2.0454545455vw;
   }
 }
 @media (min-width: 992px) {
@@ -734,10 +734,7 @@ footer a:visited {
   font-family: $logo-title-font;
   font-size: calc($screen-ratio)*18vw; // 21px // Ajuster. */
   font-family: "Shrikhand-Regular", cursive, Times;
-  /* @else {
-      @error 'No value found for `small`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  font-size: 4.8vw;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -746,11 +743,6 @@ footer a:visited {
       @error 'No value found for `large`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
-}
-@media (min-width: 375px) {
-  .restaurant__menu__body__title {
-    font-size: 4.8vw;
-  }
 }
 @media (min-width: 768px) {
   .restaurant__menu__body__title {
@@ -900,6 +892,16 @@ body {
 }
 .page-header__content__backward:hover {
   opacity: 0.3;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  .page-header__content__backward:hover {
+    opacity: 1;
+    fill: #99E2D0;
+  }
 }
 .page-header__content__backward:active {
   transform: scale(0.8);
@@ -914,7 +916,7 @@ body {
     width: 0;
   }
   to {
-    width: 10.4%;
+    width: 7.7333333333%;
   }
 }
 .restaurant__menu__body {
@@ -1098,8 +1100,7 @@ body {
   color: #FF79DA;
 }
 
-form {
-  padding: 0 0 29.0666666667vw 0;
+.index-form {
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -1110,19 +1111,19 @@ form {
   } */
 }
 @media (min-width: 768px) {
-  form {
+  .index-form {
     padding: 0 0 0 0;
   }
 }
 @media (min-width: 992px) {
-  form {
+  .index-form {
     display: flex;
     flex-direction: row reverse;
     margin: 0 0 2.6666666667vw 0;
     padding: 0 0 0 0;
   }
 }
-form .place-location {
+.index-form .place-location {
   background-color: #eaeaea;
   box-shadow: inset 0px 8px 6px -6px #cfcfcf;
   height: 13.3333333333vw;
@@ -1138,19 +1139,19 @@ form .place-location {
   /* & */
 }
 @media (min-width: 768px) {
-  form .place-location {
+  .index-form .place-location {
     height: 5.6818181818vw;
     padding: 0 0 0 5.6818181818vw;
   }
 }
 @media (min-width: 992px) {
-  form .place-location {
+  .index-form .place-location {
     display: flex;
     height: 3.8461538462vw;
     padding: 0 0 0 11.5384615385vw;
   }
 }
-form .place-location .map-marker-icon {
+.index-form .place-location .map-marker-icon {
   width: 3.2vw;
   cursor: pointer;
   /* @else {
@@ -1163,19 +1164,19 @@ form .place-location .map-marker-icon {
   } */
 }
 @media (min-width: 768px) {
-  form .place-location .map-marker-icon {
+  .index-form .place-location .map-marker-icon {
     position: relative;
     width: 1.7045454545vw;
   }
 }
 @media (min-width: 992px) {
-  form .place-location .map-marker-icon {
+  .index-form .place-location .map-marker-icon {
     position: relative;
     top: 25%;
     width: 0.9230769231vw;
   }
 }
-form .place-location input {
+.index-form .place-location input {
   background-color: #eaeaea;
   box-shadow: inset 0px 8px 6px -6px #cfcfcf;
   caret-color: #FF79DA;
@@ -1183,7 +1184,7 @@ form .place-location input {
       background-color: $input-background-color;
   } */
 }
-form .place-location input.search-field {
+.index-form .place-location input.search-field {
   width: fit-content;
   height: 13.3333333333vw;
   padding: 0 0 0 4.8vw;
@@ -1197,21 +1198,21 @@ form .place-location input.search-field {
   } */
 }
 @media (min-width: 768px) {
-  form .place-location input.search-field {
+  .index-form .place-location input.search-field {
     height: 5.6818181818vw;
     padding: 0 0 0 2.0454545455vw;
   }
 }
 @media (min-width: 992px) {
-  form .place-location input.search-field {
+  .index-form .place-location input.search-field {
     height: 3.8461538462vw;
     padding: 0 0 0 1.3846153846vw;
   }
 }
-form .place-location input::placeholder {
+.index-form .place-location input::placeholder {
   color: black;
 }
-form .form-description {
+.index-form .form-description {
   padding: 11.7333333333vw 0 0 0;
   /* @else {
       @error 'No value found for `medium`. '
@@ -1223,17 +1224,17 @@ form .form-description {
   } */
 }
 @media (min-width: 768px) {
-  form .form-description {
+  .index-form .form-description {
     padding: 1.25vw 0 0 0;
   }
 }
 @media (min-width: 992px) {
-  form .form-description {
+  .index-form .form-description {
     margin: 0 7.1538461538vw 0 2.6923076923vw;
     padding: 0 0 0 1.1538461538vw;
   }
 }
-form .form-description .form-title {
+.index-form .form-description .form-title {
   margin: 0 17.3333333333vw 5.8666666667vw 17.3333333333vw;
   width: 61.0666666667vw;
   /* @else {
@@ -1246,18 +1247,18 @@ form .form-description .form-title {
   } */
 }
 @media (min-width: 768px) {
-  form .form-description .form-title {
+  .index-form .form-description .form-title {
     margin: 0 0 1.1363636364vw 5.6818181818vw;
     width: fit-content;
   }
 }
 @media (min-width: 992px) {
-  form .form-description .form-title {
+  .index-form .form-description .form-title {
     margin: 0 0 0.7692307692vw 2.3076923077vw;
     width: auto;
   }
 }
-form .form-description .form-subtitle {
+.index-form .form-description .form-subtitle {
   margin: 0 8.2666666667vw 0 10.4vw;
   /* @else {
       @error 'No value found for `medium`. '
@@ -1269,23 +1270,46 @@ form .form-description .form-subtitle {
   } */
 }
 @media (min-width: 768px) {
-  form .form-description .form-subtitle {
+  .index-form .form-description .form-subtitle {
     margin: 0 3.5227272727vw 0 5.6818181818vw;
     width: fit-content;
   }
 }
 @media (min-width: 992px) {
-  form .form-description .form-subtitle {
+  .index-form .form-description .form-subtitle {
     margin: 0 0 0 4vw;
   }
 }
 
+.backward-button {
+  padding: 0;
+}
+
 .page-header__content__backward {
-  margin: 2.1333333333vw 17.3333333333vw 0 0;
+  margin: 1.0666666667vw 17.3333333333vw 0 0;
   width: 4.5333333333vw;
-  height: 4.2666666667vw;
-  background-repeat: no-repeat;
   cursor: pointer;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .page-header__content__backward {
+    margin: 0.4545454545vw 22.5333333333vw 0 0;
+    width: 1.9318181818vw;
+  }
+}
+@media (min-width: 992px) {
+  .page-header__content__backward {
+    margin: 0.3076923077vw 4vw 0 0;
+    width: 1.3076923077vw;
+    fill: white;
+  }
 }
 
 .validate {
@@ -1357,6 +1381,7 @@ form .form-description .form-subtitle {
 }
 @media (min-width: 768px) {
   .validate#validate-menu {
+    margin: 0 0 0 39%;
     width: 21.1363636364vw;
   }
 }
@@ -1548,6 +1573,16 @@ header {
   /* & .logo_ohmyfood {
       width: calc($screen-ratio*165vw);
   } */
+  /* padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
+
+  @include respond-to('medium') {      
+      padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*255vw;
+  }
+
+  @include respond-to('large') {      
+      padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 43%; // 40%
+      background-color: cadetblue;
+  } */
 }
 header .logo-header {
   fill: #353535;
@@ -1563,7 +1598,7 @@ header .logo-header {
 }
 @media (min-width: 768px) {
   header .logo-header {
-    width: 34.0909090909vw;
+    width: 18.75vw;
   }
 }
 @media (min-width: 992px) {
@@ -1595,7 +1630,28 @@ header .logo-header {
 }
 
 .page-header {
-  padding: 6.1333333333vw 0 4.8vw 6.1333333333vw;
+  padding: 6.1333333333vw 0 4.8vw 6.28%;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .page-header {
+    padding: 2.6136363636vw 0 2.0454545455vw 4.5454545455vw;
+  }
+}
+@media (min-width: 992px) {
+  .page-header {
+    padding: 1.7692307692vw 0 1.3846153846vw 37.65%;
+  }
+  .page-header .logo-header {
+    fill: white;
+  }
 }
 .page-header .page-header__content {
   display: inline-flex;
@@ -1699,7 +1755,8 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 @media (min-width: 992px) {
   footer {
-    padding: 2.0769230769vw 0 2.8461538462px 1.9230769231vw;
+    height: 23.0769230769vh;
+    padding: 2.0769230769vw 0 2.8461538462px 6.6923076923vw;
   }
   footer .logo-footer {
     margin: 0 0 0 0;
@@ -1713,7 +1770,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   }
   footer ul li {
     width: fit-content;
-    padding: 0 0 0 0;
+    padding: 0 0 0 4.2307692308vw;
   }
   footer ul .ustensils-solid-icon, footer ul .hands-helping-solid-icon {
     margin: 0 0.8461538462vw 0 0;
@@ -1746,31 +1803,117 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   margin: 0 1.6vw 3.7333333333vw 3.2vw;
   width: 93.0666666667%;
   height: 18.4vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__item {
+    width: 90%;
+    height: 8.5227272727vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__item {
+    margin: 0;
+    width: 85%;
+    height: 5.3076923077vw;
+  }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
   width: 83.0945558739%;
   height: 50%;
-  padding: 0 0 0 3.1518624642%;
   overflow: hidden;
   font-size: 3.4666666667vw;
   text-overflow: ellipsis;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title h3 {
+  display: inline;
+  position: relative;
+  top: 33%;
+  left: 5%;
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    font-size: 2.0454545455vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    font-size: 1vw;
+  }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
   width: 83.0945558739%;
   height: 50%;
-  padding: 0 0 0 3.1518624642%;
   overflow: hidden;
   font-size: 2.9333333333vw;
   text-overflow: ellipsis;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle p {
+  display: inline;
+  position: relative;
+  left: 5%;
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
+    font-size: 0.8461538462vw;
+  }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
   height: 100%;
   background-color: #ffffff;
-  box-shadow: 0 4px 8px 0 #e9e9e9;
+  box-shadow: 0 2.1333333333vw 4.2666666667vw 0 #e9e9e9;
   border-radius: 3.4666666667vw;
   /* Adaptation de la technique Fab Four en fonction du conteneur :
   border-radius: max(0px, min(16px, (100% - 400px + 1px) * 9999)) / 16px; */
   overflow: hidden;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    box-shadow: 0 0.9090909091vw 1.8181818182vw 0 #e9e9e9;
+    border-radius: 1.4772727273vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    box-shadow: 0 0.6153846154vw 1.2307692308vw 0 #e9e9e9;
+    border-radius: 1vw;
+  }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body {
   display: flex;
@@ -1780,6 +1923,10 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
   white-space: nowrap;
   cursor: pointer;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
   /* .restaurant__menu__body__item__checkbox__body__title {
       width: calc($checkbox-ratio*290%); // 81%; // 85%; // 290px;
       height: 50%; // calc($checkbox-ratio*35%); // 55%; // 9.1vw; //35px;
@@ -1804,6 +1951,24 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   padding: 10% 0 0 3.1518624642%;
   font-size: 2.9333333333vw;
   font-weight: bold;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+    font-size: 0.8461538462vw;
+  }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price .price {
   width: fit-content;
@@ -1815,6 +1980,10 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   border: none;
   padding: 0 0 0 5.4441260745%;
   pointer-events: none;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check {
   position: relative;
@@ -1822,6 +1991,10 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   height: 28.98%;
   background-color: #ffffff;
   border-radius: 55%;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
   position: absolute;
@@ -1829,8 +2002,11 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   right: 19%;
   width: 60%;
   background-color: #ffffff;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
 }
-
 .restaurant-card {
   /* Code avant Media Queries
   // display: flex;
@@ -2114,12 +2290,50 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 
 .restaurant__menu {
-  background-color: #f6f6f6;
   padding: 0 0 22.1333333333vw 0;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu {
+    padding: 0 0 6.0227272727vw 0;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu {
+    padding: 0 0 0 0;
+    height: 38.4615384615vw;
+  }
 }
 .restaurant__menu .restaurant__menu__body {
   position: relative;
   border-radius: 9.6vw 9.6vw 0 0;
+  background-color: #f6f6f6;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu .restaurant__menu__body {
+    border-radius: 4.0909090909vw 4.0909090909vw 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body {
+    border-radius: 2.7692307692vw 2.7692307692vw 0 0;
+    padding: 0 0 0 5.3333333333vw;
+  }
 }
 .restaurant__menu .restaurant__menu__body__title {
   width: 100%;
@@ -2130,23 +2344,172 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   /* & h2 {
       margin: 0 calc($screen-ratio)*93vw 0 0;
   } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body__title {
+    border-radius: 2.7692307692vw 2.7692307692vw 0 0;
+    padding: 2.8461538462px 0 0 1.4615384615vw;
+  }
+}
+.restaurant__menu .restaurant__menu__body__form {
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+.restaurant__menu .restaurant__menu__body .entries-list {
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* & li {
+      @include respond-to('large') {
+          width: 70%;
+          background-color: palevioletred;
+      }
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu .restaurant__menu__body .entries-list {
+    display: flex;
+    /* border: solid 4px darkolivegreen;
+    background-color: cadetblue; */
+    flex-wrap: wrap;
+  }
+}
+.restaurant__menu .restaurant__menu__body .entries-list .entry {
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu .restaurant__menu__body .entries-list .entry {
+    margin: 0 0 4.0909090909vw 0;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body .entries-list .entry {
+    margin: 0 0 0 0;
+    width: 33%;
+    /* background-color: chartreuse;
+    border: solid 4px blue; */
+  }
+}
+.restaurant__menu .restaurant__menu__body .entries-list .items-list {
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body .entries-list .items-list {
+    /* background-color: gray;
+    border: solid 4px wheat; */
+  }
+}
+.restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item {
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item {
+    /* background-color: palevioletred;
+    border: solid 4px olivedrab; */
+  }
+}
+.restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item__checkbox {
+  /* border: solid 4px black; */
 }
 .restaurant__menu .restaurant__menu__body__entry {
-  width: 10.4%;
+  width: 7.7333333333%;
   margin: 0 0 3.7333333333vw 5.0666666667vw;
   padding: 0 0 2.4vw 0;
   border-bottom: solid 0.8vw #99E2D0;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu .restaurant__menu__body__entry {
+    padding: 0 0 1.9318181818vw 0;
+    border-bottom: solid 0.5681818182vw #99E2D0;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu .restaurant__menu__body__entry {
+    width: 7.7333333333%;
+    margin: 0 0 1.0769230769vw 1.4615384615vw;
+    padding: 0 0 0.6923076923vw 0;
+    border-bottom: solid 0.2307692308vw #99E2D0;
+  }
 }
 
 .restaurant__menu__body__title__heart {
-  height: fit-content;
-  margin: 6.6666666667vw 0 0 24.8vw;
+  margin: 0 0 0 24.8vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .restaurant__menu__body__title__heart {
+    margin: -0.4545454545vw 0 0 17.6923076923vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurant__menu__body__title__heart {
+    margin: 0.3846153846vw 0 0 7.1538461538vw;
+  }
+}
+
+.restaurant__menu__image {
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  .restaurant__menu__image {
+    position: absolute;
+    top: 0%;
+  }
 }
 
 #restaurant__menu__image__a_la_francaise {
   margin-top: -13.3333333333vw;
   width: 100%;
   transform: translate(0, 20%);
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 992px) {
+  #restaurant__menu__image__a_la_francaise {
+    z-index: -1;
+    transform: translate(0, -35%);
+  }
 }
 
 /* .restaurant__menu__body__entry {
@@ -2156,6 +2519,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
     // background-color: red;
 } */
+.restaurant__menu__image {
+  z-index: -1;
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
 aside {
   margin: 2.6666666667vw 0 0 0;
   padding: 0 0 0 5.6vw;
@@ -2192,7 +2562,11 @@ aside .aside-title {
 }
 @media (min-width: 992px) {
   aside .aside-title {
-    margin: 0 0 0 0;
+    margin: 0 0 2.6153846154vw 44%;
+    width: fit-content;
+    border-bottom: solid 0.2307692308vw #99E2D0;
+    /* margin-block-start: -0.83em;
+    margin-block-end: -0.83em; */
   }
 }
 
@@ -2227,6 +2601,9 @@ section {
 @media (min-width: 992px) {
   section .restaurants_section-title {
     padding: 0 0 0 0;
+  }
+  section .restaurants_section-articles {
+    flex-wrap: nowrap;
   }
 }
 

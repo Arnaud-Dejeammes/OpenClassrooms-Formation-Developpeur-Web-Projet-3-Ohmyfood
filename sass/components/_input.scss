@@ -1,6 +1,8 @@
-form {
+// Page Accueil form
 
-    padding: 0 0 calc($screen-ratio*109vw) 0;
+.index-form {
+
+    // padding: 0 0 calc($screen-ratio*109vw) 0;
 
     @include respond-to('medium') {
         padding: 0 0 0 0;

@@ -1,10 +1,31 @@
 .restaurant__menu {
-    background-color: #f6f6f6; // aqua;
+    // background-color: #f6f6f6; // aqua;
     padding: 0 0 calc($screen-ratio)*83vw 0;
+    // background-color: darkorchid;
+
+    @include respond-to('medium') {
+        padding: 0 0 calc($medium-screen-ratio)*53vw 0;
+    }
+
+    @include respond-to('large') {
+        padding: 0 0 0 0; // Eventuellement odifier padding-bottom.
+        height: calc($large-screen-ratio)*500vw;
+    }
+    
     .restaurant__menu__body {
         position: relative;
-        border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;
-        // background-color: blue;
+        border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0; // Ne semble plus agir. Retrouver le sélecteur qui applique le changement.
+        background-color: #f6f6f6; // blue;
+
+        @include respond-to('medium') {
+            border-radius: calc($medium-screen-ratio)*36vw calc($medium-screen-ratio)*36vw 0 0;
+        }
+        
+        @include respond-to('large') {
+            border-radius: calc($large-screen-ratio)*36vw calc($large-screen-ratio)*36vw 0 0;
+            padding: 0 0 0 calc($screen-ratio)*20vw;
+        }
+
         &__title {
             width: 100%;
             display: inline-flex;            
@@ -15,23 +36,126 @@
             /* & h2 {
                 margin: 0 calc($screen-ratio)*93vw 0 0;
             } */
+
+            @include respond-to('large') {
+                border-radius: calc($large-screen-ratio)*36vw calc($large-screen-ratio)*36vw 0 0;
+                padding: calc($large-screen-ratio)*37px 0 0 calc($large-screen-ratio)*19vw;
+            }
         }
+
+        &__form {
+            @include respond-to('large') {
+                // display: flex; // !!!
+                // flex-wrap: nowrap;
+                // background-color: red;
+            }
+        }
+
+        .entries-list {
+            @include respond-to('medium') {
+                display: flex;
+                // padding-inline-start: 40px; user agent stylesheet
+                /* border: solid 4px darkolivegreen;
+                background-color: cadetblue; */
+                flex-wrap: wrap;
+            }
+
+            /* & li {
+                @include respond-to('large') {
+                    width: 70%;
+                    background-color: palevioletred;
+                }
+            } */ // restaurant__menu__body__item
+
+        .entry { // li Plats, checkbox
+
+            @include respond-to('medium') {
+                margin: 0 0 calc($medium-screen-ratio)*36vw 0;
+                width: 50%;
+            }
+
+            @include respond-to('large') {
+                margin: 0 0 0 0;
+                width: 33%;
+            /* background-color: chartreuse;
+            border: solid 4px blue; */
+            }
+
+        }
+
+        .items-list { // ul, item, checkbox
+            @include respond-to('large') {
+            // width: 100%;
+            /* background-color: gray;
+            border: solid 4px wheat; */
+            
+            
+            }
+        }
+
+        .restaurant__menu__body__item { // li; item, checkbox
+            @include respond-to('large') {
+            /* background-color: palevioletred;
+            border: solid 4px olivedrab; */
+            
+            }
+
+        }
+
+        .restaurant__menu__body__item__checkbox {
+            
+            /* border: solid 4px black; */
+            // width: 100%;
+        }
+
+    }
+
         &__entry {
-            width:  calc($screen-ratio)*39%; // fit-content;  // 66 39    
+            width:  calc($screen-ratio)*29%; // calc($screen-ratio)*39%; // fit-content;  // 66 39    
             margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
             padding: 0 0 calc($screen-ratio)*9vw 0;
             border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
             // background-color: red;
+
+            @include respond-to('medium') {                      
+                padding: 0 0 calc($medium-screen-ratio)*17vw 0;
+                border-bottom: solid calc($medium-screen-ratio)*5vw $base-color-3;              
+            }
+
+            @include respond-to('large') {
+                width: calc($screen-ratio)*29%; // 66 39 // $screen-ratio conservé pour préserver l'animation.
+                margin: 0 0 calc($large-screen-ratio)*14vw calc($large-screen-ratio)*19vw;
+                padding: 0 0 calc($large-screen-ratio)*9vw 0;
+                border-bottom: solid calc($large-screen-ratio)*3vw $base-color-3;
+                // background-color: magenta;
+            }
         }
     }
 }
 
 .restaurant__menu__body__title__heart {
-    height: fit-content;
+    // height: fit-content;
     // background-color: red;
     
-    margin: calc($screen-ratio)*25vw 0 0 calc($screen-ratio)*93vw; // 39px
+    margin: 0 0 0 calc($screen-ratio)*93vw; // 39px // calc($screen-ratio)*25vw 0 0 calc($screen-ratio)*93vw; // 39px
     // padding: 0 calc($screen-ratio)*93vw 0 0;
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*230vw;
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*93vw;
+    }
+}
+
+.restaurant__menu__image {
+    @include respond-to('large') {
+        position: absolute;
+        // z-index: -1;
+        top: 0%;
+        // overflow: hidden;
+    }
 }
 
 #restaurant__menu__image__a_la_francaise { // Vérifier la pertinence de l'id en comparaison avec les autres sélecteurs et dénominations.
@@ -39,7 +163,15 @@
     margin-top: calc($screen-ratio)*-50vw; // Supprime la marge qui se crée dans .restaurant__menu avec le déplacement de l'image.
     width: 100%;
     transform: translate(0, 20%);
-//     z-index: 0;
+    //    z-index: 0;
+
+    @include respond-to('large') {
+        // Apparemment pas nécessaire.
+        // display: none;
+        z-index: -1;
+        transform: translate(0, -35%);
+        
+    }
 }
 
 /* .restaurant__menu__body__entry {
@@ -54,7 +186,11 @@
     // height: 174px;        
     // border-radius: 11px 11px 0px 0px;    
     // overflow: hidden;
-    // z-index: -1;
+    z-index: -1;
+
+    @include respond-to('large') {
+        
+    }
 }
 
 .restaurant__menu__image img {
@@ -64,5 +200,3 @@
     // z-index: 0;   
     
 }
-
-

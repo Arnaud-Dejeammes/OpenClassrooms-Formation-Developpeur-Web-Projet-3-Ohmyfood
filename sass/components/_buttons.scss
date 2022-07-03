@@ -1,11 +1,32 @@
 // Bouton de retour à l'index (Header Page Menu)
+
+.backward-button {
+    // margin: calc($screen-ratio)*8vw calc($screen-ratio)*65vw 0 0;
+    // width: fit-content;
+    // height: calc($screen-ratio)*16vw;
+    padding: 0; // Annule padding: 1px 6px de user agent stylesheet.
+    // background-color: aqua;
+    
+}
+
 .page-header__content__backward {    
-    margin: calc($screen-ratio)*8vw calc($screen-ratio)*65vw 0 0; // margin-top: 26px
+    margin: calc($screen-ratio)*4vw calc($screen-ratio)*65vw 0 0; // calc($screen-ratio)*8vw calc($screen-ratio)*65vw 0 0 // margin-top: 26px
     width: calc($screen-ratio)*17vw;
-    height: calc($screen-ratio)*16vw;
-    background-repeat: no-repeat;
+    // height: calc($screen-ratio)*16vw;
+    // background-repeat: no-repeat;
     cursor: pointer; // Regrouper avec les autres.
-    // background-color: blue;    
+    // background-color: blue;
+    
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*4vw calc($screen-ratio)*84.5vw 0 0;
+        width: calc($medium-screen-ratio)*17vw;       
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-screen-ratio)*4vw calc($screen-ratio)*15vw 0 0; // calc($large-screen-ratio)*4vw calc($screen-ratio)*65vw 0 0;
+        width: calc($large-screen-ratio)*17vw;
+        fill: white;        
+    }    
 }
 
 // Boutons de validation (Page Accueil - Explorer nos restaurants / Page Menu - Commander)
@@ -50,11 +71,13 @@
         width: calc($screen-ratio)*186vw; // 186px;
 
         @include respond-to('medium') {
-            width: calc($medium-screen-ratio)*186vw;
+            margin: 0 0 0 39%; // 0 0 0 40%;
+            width: calc($medium-screen-ratio)*186vw;            
         }
 
         @include respond-to('large') {
-            width: calc($large-screen-ratio)*186vw;
+            // margin: 0 0 0 39%; // 0 0 0 40%;            
+            width: calc($large-screen-ratio)*186vw;            
         } // Regrouper et améliorer syntaxe Sass.
     }
 
@@ -67,7 +90,7 @@
         right: 0;        
         opacity: 0;        
         border-radius: calc($screen-ratio)*33vw; // 33px;
-        background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));        
+        background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));
     }
 }
 

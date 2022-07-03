@@ -1,6 +1,7 @@
 // Media Queries
 // Smallest screen size : 320px
 $breakpoints: ('small': (min-width: 375px), 'medium': (min-width: 768px), 'large': (min-width: 992px));
+// $breakpoints: ('medium': (min-width: 700px), 'large': (min-width: 1440px)); Ajuster autour de ces valeurs.
 
 // Screens Ratios
 $screen-ratio: calc(100/375); // Remplacer $screen-ratio --> $small-screen-ratio // Plus nécessaire ; intitulé : Default ratio (Mobile Fist)

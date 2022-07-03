@@ -2,8 +2,7 @@ footer { // Transférer in _layout.
     /* Code avant Media Queries
     background-color: black;
     padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw; // Voir la la mesure en px.
-    color: #ffffff; // Placer en _fonts. */
-
+    color: #ffffff; // Placer en _fonts. */    
     background-color: black;
     padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw;
 
@@ -60,7 +59,8 @@ footer { // Transférer in _layout.
     }
 
     @include respond-to('large') {
-        padding: calc($large-screen-ratio)*27vw 0 calc($large-screen-ratio)*37px calc($large-screen-ratio)*25vw;
+        height: calc($large-screen-ratio)*300vh;
+        padding: calc($large-screen-ratio)*27vw 0 calc($large-screen-ratio)*37px calc($large-screen-ratio)*87vw; // calc($large-screen-ratio)*27vw 0 calc($large-screen-ratio)*37px calc($large-screen-ratio)*25vw;
 
         .logo-footer {
             margin: 0 0 0 0;
@@ -75,7 +75,7 @@ footer { // Transférer in _layout.
 
             li {                
                 width: fit-content;
-                padding: 0 0 0 0;
+                padding: 0 0 0 calc($large-screen-ratio)*55vw;
             }
 
             .ustensils-solid-icon, .hands-helping-solid-icon {

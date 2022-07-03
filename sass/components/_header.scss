@@ -11,16 +11,28 @@ header { // Transférer in _layout.
         width: calc($screen-ratio*165vw);
     } */
 
+    /* padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
+
+    @include respond-to('medium') {      
+        padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*255vw;
+    }
+    
+    @include respond-to('large') {      
+        padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 43%; // 40%
+        background-color: cadetblue;
+    } */
+
     & .logo-header {
         fill: #353535;
         width: calc($screen-ratio*165vw);
 
         @include respond-to('medium') {            
-            width: calc($medium-screen-ratio*300vw);
+            width: calc($medium-screen-ratio*165vw); // 300vw
         }
 
         @include respond-to('large') {            
-            width: calc($large-screen-ratio*165vw);
+            width: calc($large-screen-ratio*165vw);            
+            // background-color: yellowgreen;
         }
     }
 }
@@ -34,11 +46,24 @@ header { // Transférer in _layout.
     
     @include respond-to('large') {      
         padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 43%; // 40%
-    }
+    } // Transféré in header ?
 }
 
 .page-header {
-    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*23vw;
+    // padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*23vw;
+    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*23.55%; // Léger correctif pading-left pour éviter le décalage entre Page Menu et Page Accueil.
+
+    @include respond-to('medium') {      
+        padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*40vw;
+    }
+    
+    @include respond-to('large') {        
+        padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 37.65%; // calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 24.65%; // 40% Page Accueil // Revoir le correctif (décalage avec l'agrandissement de la taille de l'écran.
+
+        & .logo-header {
+            fill: white;
+        }
+    }
 
     & .page-header__content {
         display: inline-flex;

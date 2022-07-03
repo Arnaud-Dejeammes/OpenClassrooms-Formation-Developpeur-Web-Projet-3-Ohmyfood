@@ -120,7 +120,7 @@ li button {
     // }
 
     @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*12vw;        
+        font-size: calc($medium-screen-ratio)*18vw;        
     }
 
     @include respond-to('large') {
@@ -239,9 +239,9 @@ footer {
 
     font-family: $logo-title-font;    
 
-    @include respond-to('small') {
+    // @include respond-to('small') {
         font-size: calc($screen-ratio)*18vw;
-    }
+    // }
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*18vw;

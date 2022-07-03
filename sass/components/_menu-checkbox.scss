@@ -36,25 +36,72 @@
     // overflow: hidden; // Double overflow (cf. menu-checkbox) : ne touche pas border-radius.
     // background-color: aqua;
 
+    @include respond-to('medium') {
+        // margin: 0 calc($medium-screen-ratio*6vw) calc($medium-screen-ratio*14vw) calc($medium-screen-ratio*12vw);
+        width: 90%; // calc($medium-screen-ratio*349%); // Utilisation de % au lieu de vw, avec ajustement de margin, pour éviter la barre de défilement horizontale. // 90.74vw;
+        height: calc($medium-screen-ratio*75vw); // calc($medium-screen-ratio*69vw);
+    }
+
+    @include respond-to('large') {
+        // margin: 0 calc($large-screen-ratio*6vw) calc($large-screen-ratio*14vw) calc($large-screen-ratio*12vw);
+        margin: 0;
+        width: 85%; // calc($large-screen-ratio*349%); // margin et width écrasent le conteneur.
+        height: calc($large-screen-ratio*69vw);
+        
+    }
+
     // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle fonctionne à ce niveau et au-dessus.
     .restaurant__menu__body__item__checkbox__body__title {
         width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 35px;
-        padding: 0 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.
+        // padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.
         overflow: hidden;
-        font-size: calc($screen-ratio*13vw); // Ajuster les polices.
-        text-overflow: ellipsis;
-        // background-color: pink;;
-    }
+        font-size: calc($screen-ratio*13vw); // Ajuster les polices. // Déplacer in fonts.
+        text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
+        // background-color: pink;
 
+        & h3 {
+            display: inline; // Restaure le fonctionnement de text-overflow: ellipsis;
+            position: relative;
+            top: 33%; // 20%;
+            left: 5%;
+            // background-color: purple;
+        }
+
+        @include respond-to('medium') {            
+            font-size: calc($medium-screen-ratio*18vw); // Déplacer in fonts.            
+        }
+
+        @include respond-to('large') {
+            // padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.  
+            font-size: calc($large-screen-ratio*13vw); // Déplacer in fonts.
+            
+        }
+    }
+    
     .restaurant__menu__body__item__checkbox__body__subtitle {      
         width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 34px;
-        padding: 0 0 0 calc($checkbox-ratio*11%); // 8px 0px 0px 11px; // Ajuster.
+        // padding: 0 0 0 calc($checkbox-ratio*11%); // 8px 0px 0px 11px; // Ajuster.
         overflow: hidden;
-        font-size: calc($screen-ratio*11vw); // Ajuster les polices.
-        text-overflow: ellipsis;
+        font-size: calc($screen-ratio*11vw); // Ajuster les polices. // Déplacer dans _fonts.
+        text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
         // background-color: yellow;
+
+        & p {
+            display: inline; // Restaure le fonctionnement de text-overflow: ellipsis;
+            position: relative;            
+            left: 5%;
+            // background-color: orange;
+        }
+
+        @include respond-to('medium') {
+            font-size: calc($medium-screen-ratio*16vw); // Ajuster les polices. // Déplacer dans _fonts.
+        }
+
+        @include respond-to('large') {
+            font-size: calc($large-screen-ratio*11vw); // Ajuster les polices. // Déplacer dans _fonts.
+        }
     }
     
     .restaurant__menu__body__item__checkbox {
@@ -64,7 +111,7 @@
         // height: 69px;        
         // height: min(69px, max(69px, (100% - 767px + 1px) * 9999));
         background-color: $background-color-element; // Vérifier.
-        box-shadow: 0 4px 8px 0 $shadow; // Recalculer en fonction @media ?
+        box-shadow: 0 calc($screen-ratio*8vw) calc($screen-ratio*16vw) 0 $shadow; // box-shadow: 0 4px 8px 0 $shadow; // Recalculer en fonction @media ?
         border-radius: calc($screen-ratio*13vw);  // Transformer en @function et ajuster le calcul.
         // border-radius: 13px;
         /* Adaptation de la technique Fab Four en fonction du conteneur :
@@ -73,6 +120,18 @@
         // background-color: yellowgreen;
 
         // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle ne marche pas à ce niveau.
+
+        @include respond-to('medium') {
+            box-shadow: 0 calc($medium-screen-ratio*8vw) calc($medium-screen-ratio*16vw) 0 $shadow;
+            border-radius: calc($medium-screen-ratio*13vw);
+        }
+
+        @include respond-to('large') {
+            // height: 100%;
+            // width: 349px;
+            box-shadow: 0 calc($large-screen-ratio*8vw) calc($large-screen-ratio*16vw) 0 $shadow;
+            border-radius: calc($large-screen-ratio*13vw);
+        }
         
         .restaurant__menu__body__item__checkbox__body { // menu-checkbox-body
             display: flex;
@@ -81,10 +140,12 @@
             // width: 349px;         
             height: 100%;            
             // height: 69px;
-            font-family: $text-font;
+            font-family: $text-font; // Déplacer en _fonts.
             white-space: nowrap;
             cursor: pointer;
             // background-color: purple;
+
+            @include respond-to('large') {}
 
             // L'animation .restaurant__menu__body__item__checkbox__body__title et .restaurant__menu__body__item__checkbox__body__subtitle ne marche pas à ce niveau.
             /* .restaurant__menu__body__item__checkbox__body__title {
@@ -111,9 +172,17 @@
                 // calc($checkbox-ratio*59%); // 59px;
                 height: 100%; // 69px;
                 padding: 10% 0 0 calc($checkbox-ratio*11%); // 42px 0px 0px 11px; // Ajuster en fonction de la maquette et de la police. padding-bottom: 13; Maquette : 16px. */
-                font-size: calc($screen-ratio*11vw); // Ajuster les polices.
+                font-size: calc($screen-ratio*11vw); // Ajuster les polices. // Deplacer in _fonts.
                 font-weight: bold;
                 // background-color: red;
+
+                @include respond-to('medium') {
+                    font-size: calc($medium-screen-ratio*16vw); // Deplacer in _fonts.
+                }
+
+                @include respond-to('large') {
+                    font-size: calc($large-screen-ratio*11vw); // Deplacer in _fonts.
+                }
 
                 .price {
                     width: fit-content;
@@ -131,6 +200,8 @@
                 // cursor: pointer;
                 pointer-events: none;
 
+                @include respond-to('large') {}
+
                 .restaurant__menu__body__item__checkbox__body__toggle__check { // check
                     position: relative;
                     width: calc((100%/59)*20)+14.5%; // 20px; // Correctif pour obtenir un carré par rapport à la hauteur.
@@ -139,13 +210,17 @@
                     border-radius: 55%; // 50px;
                     // padding: calc((100%/69)*3); // 3px;
 
+                    @include respond-to('large') {}
+
                     .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon { //check-solid-icon
                         position: absolute;
                         top: 20%;
                         right: 19%;                     
                         width: 60%; // calc(100%/20)*12; // 12px;
                         // height: 60%; // 12px;
-                        background-color: $background-color-element; // Modifier en fonction de la div body.             
+                        background-color: $background-color-element; // Modifier en fonction de la div body.
+                        
+                        @include respond-to('large') {}
                     }
                 }
             }
