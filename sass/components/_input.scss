@@ -10,7 +10,7 @@
 
     @include respond-to('large') {
         display: flex;
-        flex-direction: row reverse;
+        // flex-direction: row-reverse;
         // gap: 5%;
         // justify-content: space-evenly;
         margin: 0 0 calc($screen-ratio)*10vw 0;

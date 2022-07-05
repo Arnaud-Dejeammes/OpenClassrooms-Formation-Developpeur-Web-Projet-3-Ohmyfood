@@ -19,6 +19,75 @@ form, aside, main, footer, .restaurant__menu__body__entry {
     font-family: $text-font;
 }
 
+.loader-text-top {
+    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-size: calc($screen-ratio)*16vw;
+    color: $base-color-1;
+    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-3; // -1px 1px 2px $base-color-2;
+    text-align: center;
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*24vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*23vw;
+    }
+}
+
+.loader-text-bottom {
+    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-size: calc($screen-ratio)*16vw;
+    color: $base-color-1;
+    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-2; // -1px 1px 2px $base-color-2;
+    text-align: center;
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*24vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*23vw;
+    }
+}
+
+.circle {
+    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-size: calc($screen-ratio)*16vw;
+}
+
+.spinner-circles {
+    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-size: calc($large-screen-ratio)*16vw;
+
+    #spinner-circle-01 {        
+        color: $base-color-3;
+    }
+
+    #spinner-circle-02 {
+        color: $base-color-2;
+    }
+
+    #spinner-circle-03 {        
+        color: $base-color-1;
+    }
+}
+
+#loader-circle-01 {
+    font-size: calc($medium-screen-ratio)*16vw;
+    color: $base-color-3;
+}
+
+#loader-circle-02 {
+    font-size: calc($medium-screen-ratio)*16vw;
+    color: $base-color-2;
+}
+
+#loader-circle-03 {
+    font-size: calc($medium-screen-ratio)*16vw;
+    color: $base-color-1;
+}
+
 ol li:before {
 
     /* Code avant Media Queries
