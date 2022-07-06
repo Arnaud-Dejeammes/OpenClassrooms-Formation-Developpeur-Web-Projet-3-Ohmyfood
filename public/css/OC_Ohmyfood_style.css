@@ -456,12 +456,12 @@ form, aside, main, footer, .restaurant__menu__body__entry {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-text-top {
     font-size: 2.7272727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-text-top {
     font-size: 1.7692307692vw;
   }
@@ -482,12 +482,12 @@ form, aside, main, footer, .restaurant__menu__body__entry {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-text-bottom {
     font-size: 2.7272727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-text-bottom {
     font-size: 1.7692307692vw;
   }
@@ -540,12 +540,12 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   ol li:before {
     font-size: 1.25vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   ol li:before {
     font-size: 0.8461538462vw;
   }
@@ -566,12 +566,12 @@ input[type=search] {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   input[type=search] {
     font-size: 1.3295454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   input[type=search] {
     font-size: 0.9vw;
   }
@@ -590,12 +590,12 @@ input[type=search] {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-body-title {
     font-size: 1.7045454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-body-title {
     font-size: 1vw;
   }
@@ -614,12 +614,12 @@ input[type=search] {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-body-place {
     font-size: 1.7045454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-body-place {
     font-size: 0.9230769231vw;
   }
@@ -639,12 +639,12 @@ input[type=search] {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .new-stamp {
     font-size: 1.5909090909vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .new-stamp {
     font-size: 1.0769230769vw;
   }
@@ -665,12 +665,12 @@ li button {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   li button {
     font-size: 1.7045454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   li button {
     font-size: 0.9230769231vw;
   }
@@ -689,12 +689,12 @@ li button {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__entry {
     font-size: 2.0454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__entry {
     font-size: 0.9230769231vw;
   }
@@ -713,12 +713,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   footer, .validate, ::placeholder {
     font-size: 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   footer, .validate, ::placeholder {
     font-size: 0.9230769231vw;
   }
@@ -735,12 +735,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .form-description {
     text-align: left;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .form-description {
     text-align: center;
   }
@@ -759,12 +759,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .form-title {
     font-size: 2.6666666667vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .form-title {
     font-size: 1.2533333333vw;
   }
@@ -783,12 +783,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .form-subtitle {
     font-size: 1.5909090909vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .form-subtitle {
     font-size: 1vw;
   }
@@ -807,12 +807,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .aside-title {
     font-size: 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-title {
     font-size: 0.8461538462vw;
   }
@@ -833,12 +833,12 @@ footer, .validate, ::placeholder {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurants_section-title {
     font-size: 2.7272727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurants_section-title {
     font-size: 1.3076923077vw;
   }
@@ -873,12 +873,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__title {
     font-size: 2.0454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__title {
     font-size: 1.3846153846vw;
   }
@@ -1221,7 +1221,7 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .page-header__content__backward:hover {
     opacity: 1;
     fill: #99E2D0;
@@ -1363,12 +1363,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader {
     width: 50%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader {
     width: 30%;
   }
@@ -1390,12 +1390,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-background {
     left: 45%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-background {
     top: 30%;
     left: 105%;
@@ -1419,12 +1419,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-background .loader-text-top {
     left: 11.0227272727vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-background .loader-text-top {
     left: 6.1538461538vw;
   }
@@ -1447,12 +1447,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-background .loader-text-bottom {
     left: 10.2272727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-background .loader-text-bottom {
     left: 5.5384615385vw;
   }
@@ -1474,14 +1474,14 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .circle {
     width: 5.6818181818vw;
     height: 5.6818181818vw;
     padding: 1.4772727273vw 0 0 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .circle {
     width: 3.8461538462vw;
     height: 3.8461538462vw;
@@ -1496,7 +1496,7 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .sliding-circles {
     display: none;
   }
@@ -1517,13 +1517,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   #circle-01 {
     border: solid 0.3409090909vw #99E2D0;
     box-shadow: 0 0 0.4545454545vw #9356DC;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #circle-01 {
     border: solid 0.2307692308vw #99E2D0;
     box-shadow: 0 0 0.3076923077vw #9356DC;
@@ -1545,13 +1545,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   #circle-02 {
     border: solid 0.3409090909vw #99E2D0;
     box-shadow: 0 0 0.4545454545vw #9356DC;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #circle-02 {
     border: solid 0.2307692308vw #99E2D0;
     box-shadow: 0 0 0.3076923077vw #9356DC;
@@ -1573,13 +1573,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   #circle-03 {
     border: solid 0.3409090909vw #99E2D0;
     box-shadow: 0 0 0.4545454545vw #9356DC;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #circle-03 {
     border: solid 0.2307692308vw #99E2D0;
     box-shadow: 0 0 0.3076923077vw #9356DC;
@@ -1593,7 +1593,7 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .spinner-circles {
     display: block;
     margin: 0 0 0 7.3076923077vw;
@@ -1661,12 +1661,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .progress-bar {
     display: block;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .progress-bar {
     display: none;
   }
@@ -1734,13 +1734,13 @@ footer a:visited {
   $medium-loader-element-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
   $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables. */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .loader-circles {
     display: block;
     margin: 0 0 0 10.2272727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .loader-circles {
     display: none;
   }
@@ -1805,12 +1805,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form {
     padding: 0 0 0 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form {
     display: flex;
     margin: 0 0 4vw 0;
@@ -1832,13 +1832,13 @@ footer a:visited {
   } */
   /* & */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .place-location {
     height: 5.6818181818vw;
     padding: 0 0 0 5.6818181818vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .place-location {
     display: flex;
     height: 3.8461538462vw;
@@ -1857,13 +1857,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .place-location .map-marker-icon {
     position: relative;
     width: 1.7045454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .place-location .map-marker-icon {
     position: relative;
     top: 25%;
@@ -1891,13 +1891,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .place-location input.search-field {
     height: 5.6818181818vw;
     padding: 0 0 0 2.0454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .place-location input.search-field {
     height: 3.8461538462vw;
     padding: 0 0 0 1.3846153846vw;
@@ -1912,7 +1912,7 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .form-description-validate {
     display: flex;
   }
@@ -1928,12 +1928,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .form-description {
     padding: 4.5454545455vw 0 0 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .form-description {
     margin: 0 7.1538461538vw 0 2.6923076923vw;
     padding: 0 0 0 1.1538461538vw;
@@ -1951,13 +1951,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .form-description .form-title {
     margin: 0 0 1.1363636364vw 4.5454545455vw;
     width: 51.1363636364vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .form-description .form-title {
     margin: 0 0 0.7692307692vw 2.3076923077vw;
     width: auto;
@@ -1974,13 +1974,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-form .form-description .form-subtitle {
     margin: 0 3.5227272727vw 0 4.5454545455vw;
     width: fit-content;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-form .form-description .form-subtitle {
     margin: 0 0 0 4vw;
   }
@@ -2003,13 +2003,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .page-header__content__backward {
     margin: 0.4545454545vw 22.5333333333vw 0 0;
     width: 1.9318181818vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .page-header__content__backward {
     margin: 0.3076923077vw 4vw 0 0;
     width: 1.3076923077vw;
@@ -2038,12 +2038,12 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .validate {
     height: 5.6818181818vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .validate {
     height: 3.8461538462vw;
   }
@@ -2059,13 +2059,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .validate#validate-index {
     margin: 3.4090909091vw 0 1.1363636364vw 6.8181818182vw;
     width: 24.7727272727vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .validate#validate-index {
     margin: 0 0 0 0;
     width: 16.7692307692vw;
@@ -2083,13 +2083,13 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .validate#validate-menu {
     margin: 0 0 0 39%;
     width: 21.1363636364vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .validate#validate-menu {
     margin: 2.5% 0 0 39%;
     width: 14.3076923077vw;
@@ -2126,12 +2126,12 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   ol li:before {
     padding: 1.1363636364vw 1.5909090909vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   ol li:before {
     padding: 0.7692307692vw 1.0769230769vw;
   }
@@ -2157,7 +2157,7 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .aside-button {
     margin: 0 4.2045454545vw 4.2045454545vw 0;
     box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
@@ -2168,7 +2168,7 @@ ol li:before {
     transform: translate(-1.5vw, 0.8vw);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-button {
     margin: 0 0 2.8461538462vw 0;
     box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
@@ -2198,7 +2198,7 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
     margin: 0 1.6153846154vw 0 0;
   }
@@ -2215,13 +2215,13 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .aside-button .mobile-icon {
     width: 1.4772727273vw;
     transform: translate(0, -0.7vw);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-button .mobile-icon {
     width: 1vw;
     transform: translate(0, -0.7vw);
@@ -2238,12 +2238,12 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .aside-button .list-solid-icon {
     width: 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-button .list-solid-icon {
     width: 1.2307692308vw;
   }
@@ -2259,12 +2259,12 @@ ol li:before {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .aside-button .store-solid-icon {
     width: 2.0454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .aside-button .store-solid-icon {
     width: 1.3846153846vw;
   }
@@ -2301,12 +2301,12 @@ header .logo-header {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   header .logo-header {
     width: 18.75vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   header .logo-header {
     width: 12.6923076923vw;
   }
@@ -2323,12 +2323,12 @@ header .logo-header {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .index-header {
     padding: 2.6136363636vw 0 2.0454545455vw 28.9772727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .index-header {
     padding: 1.7692307692vw 0 1.3846153846vw 43%;
   }
@@ -2345,12 +2345,12 @@ header .logo-header {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .page-header {
     padding: 2.6136363636vw 0 2.0454545455vw 4.5454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .page-header {
     padding: 1.7692307692vw 0 1.3846153846vw 37.65%;
   }
@@ -2420,21 +2420,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   margin: 0 2.9333333333vw 0 0;
   width: 2.9333333333vw;
 }
-@media (min-width: 375px) {
-  footer {
-    /* padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw;
-
-    .logo-footer {
-        width: calc($screen-ratio)*98vw;
-    }
-
-    .ustensils-solid-icon, .hands-helping-solid-icon {
-        margin: 0 calc($screen-ratio)*11vw 0 0;
-        width: calc($screen-ratio)*11vw;
-    } */
-  }
-}
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   footer {
     padding: 3.0681818182vw 0 4.2045454545px 2.8409090909vw;
   }
@@ -2458,7 +2444,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     margin: 0 0 0 2.8409090909vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   footer {
     height: 23.0769230769vh;
     padding: 2.0769230769vw 0 2.8461538462px 6.6923076923vw;
@@ -2517,13 +2503,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__item {
     width: 90%;
     height: 8.5227272727vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__item {
     margin: 0;
     width: 85%;
@@ -2551,12 +2537,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   top: 33%;
   left: 5%;
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
     font-size: 2.0454545455vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
     font-size: 1vw;
   }
@@ -2581,12 +2567,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   position: relative;
   left: 5%;
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
     font-size: 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
     font-size: 0.8461538462vw;
   }
@@ -2608,13 +2594,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
     box-shadow: 0 0.9090909091vw 1.8181818182vw 0 #e9e9e9;
     border-radius: 1.4772727273vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
     box-shadow: 0 0.6153846154vw 1.2307692308vw 0 #e9e9e9;
     border-radius: 1vw;
@@ -2665,12 +2651,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
     font-size: 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
     font-size: 0.8461538462vw;
   }
@@ -2737,7 +2723,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card {
     margin: 0 0 2.0454545455vw 0;
     width: 43.75vw;
@@ -2746,7 +2732,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card {
     margin: 0 1.2362637363vw 1.2362637363vw 0;
     width: 23.0082417582vw;
@@ -2788,13 +2774,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-image {
     height: 22.6136363636vw;
     border-radius: 1.25vw 1.25vw 0 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-image {
     height: 11.9505494505vw;
     border-radius: 0.8461538462vw 0.8461538462vw 0 0;
@@ -2866,13 +2852,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-body {
     width: 43.75vw;
     height: 10vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-body {
     width: 23.0082417582vw;
     height: 5.2884615385vw;
@@ -2899,13 +2885,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-body-title {
     width: 37.6136363636vw;
     padding: 0 0 0 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-body-title {
     width: 19.7802197802vw;
     padding: 0 0 0 0.9615384615vw;
@@ -2932,13 +2918,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-card-body-place {
     width: 37.6136363636vw;
     padding: 0 0 0 1.8181818182vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-card-body-place {
     width: 19.7802197802vw;
     padding: 0 0 0 0.9615384615vw;
@@ -2965,13 +2951,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant-body-heart-choice {
     margin: 2.9545454545vw 0 0 0;
     width: 2.9545454545vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant-body-heart-choice {
     margin: 1.5796703297vw 0 0 0;
     width: 1.5796703297vw;
@@ -3014,14 +3000,14 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .new-stamp {
     width: 9.0909090909vw;
     border-radius: 0.3409090909vw;
     padding: 1.0227272727vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .new-stamp {
     width: 6.1538461538vw;
     border-radius: 0.2307692308vw;
@@ -3039,12 +3025,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   #new-stamp-01 {
     transform: translate(-7.6136363636vw, 0.7954545455vw);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #new-stamp-01 {
     transform: translate(-29.7692307692vw, 0.3461538462vw);
   }
@@ -3060,12 +3046,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   #new-stamp-02 {
     transform: translate(39.7727272727vw, 0.7954545455vw);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #new-stamp-02 {
     transform: translate(-5.1538461538vw, 0.3461538462vw);
   }
@@ -3082,12 +3068,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu {
     padding: 0 0 6.0227272727vw 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu {
     margin: 0 0 5.3846153846vw 0;
     padding: 1.5384615385vw 0 0 0;
@@ -3107,12 +3093,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body {
     border-radius: 4.0909090909vw 4.0909090909vw 0 0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body {
     border-radius: 2.7692307692vw 2.7692307692vw 0 0;
     padding: 0 0 0 5.3333333333vw;
@@ -3133,7 +3119,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body__title {
     border-radius: 2.7692307692vw 2.7692307692vw 0 0;
     padding: 2.8461538462px 0 0 1.4615384615vw;
@@ -3157,7 +3143,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
       }
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body .entries-list {
     display: flex;
     /* border: solid 4px darkolivegreen;
@@ -3175,13 +3161,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body .entries-list .entry {
     margin: 0 0 4.0909090909vw 0;
     width: 50%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body .entries-list .entry {
     margin: 0 0 0 0;
     width: 33%;
@@ -3195,7 +3181,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body .entries-list .items-list {
     /* background-color: gray;
     border: solid 4px wheat; */
@@ -3207,7 +3193,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item {
     /* background-color: palevioletred;
     border: solid 4px olivedrab; */
@@ -3230,13 +3216,13 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body__entry {
     padding: 0 0 1.9318181818vw 0;
     border-bottom: solid 0.5681818182vw #99E2D0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body__entry {
     width: 7.7333333333%;
     margin: 0 0 1.0769230769vw 1.4615384615vw;
@@ -3256,12 +3242,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .restaurant__menu__body__title__heart {
     margin: -0.4545454545vw 0 0 17.6923076923vw;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__body__title__heart {
     margin: 0.3846153846vw 0 0 7.1538461538vw;
   }
@@ -3273,7 +3259,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   .restaurant__menu__image {
     position: absolute;
     top: 0%;
@@ -3289,7 +3275,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   #restaurant__menu__image__a_la_francaise {
     z-index: -1;
     transform: translate(0, -35%);
@@ -3322,7 +3308,7 @@ aside {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   aside {
     margin: 3.4090909091vw 0 0 0;
     padding: 0 0 5.6818181818vw 2.3863636364vw;
@@ -3332,7 +3318,7 @@ aside {
     flex-wrap: wrap;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   aside {
     margin: 0 0 2.6666666667vw 0;
     padding: 0 0 0 1.1538461538vw;
@@ -3352,14 +3338,14 @@ aside .aside-title {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   aside .aside-title {
     margin: 0 0 3.8636363636vw 19.6590909091vw;
     width: fit-content;
     border-bottom: solid 0.3409090909vw #99E2D0;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   aside .aside-title {
     margin: 0 0 2.6153846154vw 44%;
     border-bottom: solid 0.2307692308vw #99E2D0;
@@ -3390,7 +3376,7 @@ section {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   section {
     margin: 0 0 7.2727272727vw 0;
     padding: 0 0 0 1.7045454545vw;
@@ -3406,7 +3392,7 @@ section {
     justify-content: space-evenly;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1440px) {
   section {
     margin: 0 0 6.1538461538vw 0;
     padding: 0 0 0 1.1538461538vw;
