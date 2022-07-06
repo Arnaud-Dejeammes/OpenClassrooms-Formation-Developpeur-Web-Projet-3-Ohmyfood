@@ -1,14 +1,24 @@
 aside {
     margin: calc($screen-ratio)*10vw 0 0 0;
-    padding: 0 0 0 calc($screen-ratio)*21vw;
+    padding: 0 0 calc($screen-ratio)*127vw calc($screen-ratio)*21vw;
     // background-color: yellowgreen;
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*30vw 0 0 0;
+        padding: 0 0 calc($medium-screen-ratio)*50vw calc($medium-screen-ratio)*21vw;
+
+        ol {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
 
     @include respond-to('large') {
         margin: 0 0 calc($screen-ratio)*10vw 0;
         padding: 0 0 0 calc($large-screen-ratio)*15vw; // calc($large-screen-ratio)*21vw
 
-        ol {           
-            display: flex;
+        ol {   
+            // display: flex;
             justify-content: space-evenly;
             // margin: -30px;
             // background-color: red;
@@ -19,13 +29,15 @@ aside {
         margin: 0 0 calc($screen-ratio)*34vw 0;
 
         @include respond-to('medium') {
-            margin: 0 0 calc($medium-screen-ratio)*34vw 0;
+            margin: 0 0 calc($medium-screen-ratio)*34vw calc($medium-screen-ratio)*173vw;
+            width: fit-content;
+            border-bottom: solid calc($medium-screen-ratio)*3vw $base-color-3;
         }
 
         @include respond-to('large') {
             margin: 0 0 calc($large-screen-ratio)*34vw 44%; // 40%; // calc($screen-ratio)*18.5vw
-            width: fit-content;
-            border-bottom: solid calc($large-screen-ratio)*3vw $base-color-3;    
+            // width: fit-content;
+            border-bottom: solid calc($large-screen-ratio)*3vw $base-color-3;
             // background-color: cadetblue;
             /* margin-block-start: -0.83em;
             margin-block-end: -0.83em; */

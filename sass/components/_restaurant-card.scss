@@ -10,7 +10,7 @@
     box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9;  // 0px 4px 8px 4px
     transition: transform 800ms ease-in-out; */
 
-    transition: transform 800ms ease-in-out;
+    transition: transform 800ms ease-in-out; // Mettre dans _animations.
 
     // @include respond-to('small') {
         margin: 0 0 calc($screen-ratio)*18vw 0;
@@ -37,7 +37,7 @@
     }
 
     &:hover {
-        transform: scale(1.03);    
+        transform: scale(1.03); // Mettre dans _animations.        
     }
 
     &:hover #la_palette_du_gout {

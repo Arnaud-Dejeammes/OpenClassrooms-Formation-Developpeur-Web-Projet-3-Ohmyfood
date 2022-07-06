@@ -34,7 +34,8 @@
     z-index: 1;
     position: relative; // Important pour le fonctionnement de l'effet avec .validate_hover-effect.
     margin: calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*70vw; // calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*95vw; // Recentrer bouton Page Accueil (82px) et ajuster.
-    box-shadow: 0px 5px 5px #C5C5C5; // Transformer en mixin ? Changer en vw ?
+    // Default margin for "Explorer nos restaurants" ('small' or mobile phone) in index (Page Menu).
+    box-shadow: 0 5px 5px #C5C5C5; // Transformer en mixin ? Changer en vw ?
     border: none;
     border-radius: calc($screen-ratio)*33vw; // 33px;
     background: linear-gradient(to bottom, $base-color-2, $base-color-1);    
@@ -44,12 +45,12 @@
     cursor: pointer; // Regrouper avec les autres.
 
     @include respond-to('medium') {
-        margin: 0 0 0 calc($medium-screen-ratio)*15vw;
+        // margin: 0 0 0 calc($medium-screen-ratio)*15vw;
         height: calc($medium-screen-ratio)*50vw;
     }
 
     @include respond-to('large') {
-        margin: 0 0 0 calc($large-screen-ratio)*15vw;
+        // margin: 0 0 0 calc($large-screen-ratio)*15vw;
         height: calc($large-screen-ratio)*50vw;
     }
 
@@ -57,7 +58,7 @@
         width: calc($screen-ratio)*218vw; // 218px;
         
         @include respond-to('medium') {
-            margin: calc($medium-screen-ratio)*30vw 0 calc($medium-screen-ratio)*10vw calc($medium-screen-ratio)*50vw;
+            margin: calc($medium-screen-ratio)*30vw 0 calc($medium-screen-ratio)*10vw calc($medium-screen-ratio)*60vw;
             width: calc($medium-screen-ratio)*218vw;
         }
 
@@ -68,15 +69,17 @@
     } // Regrouper et améliorer syntaxe Sass.
     
     &#validate-menu {
+        // margin: 0 0 0 30%;
+        margin: calc($screen-ratio)*50vw 0 0 calc($screen-ratio)*90vw; // Léger correctif margin-left par rapport à la valeur par défaut de .validate.
         width: calc($screen-ratio)*186vw; // 186px;
 
         @include respond-to('medium') {
             margin: 0 0 0 39%; // 0 0 0 40%;
-            width: calc($medium-screen-ratio)*186vw;            
+            width: calc($medium-screen-ratio)*186vw;
         }
 
         @include respond-to('large') {
-            // margin: 0 0 0 39%; // 0 0 0 40%;            
+            margin: 2.5% 0 0 39%; // 0 0 0 40%;            
             width: calc($large-screen-ratio)*186vw;            
         } // Regrouper et améliorer syntaxe Sass.
     }
@@ -132,7 +135,7 @@ ol li:before {
     transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter
 
     @include respond-to('medium') {
-        margin: 0 0 calc($medium-screen-ratio)*37vw 0;
+        margin: 0 calc($medium-screen-ratio)*37vw calc($medium-screen-ratio)*37vw 0;
         box-shadow: 0 calc($medium-screen-ratio)*4vw calc($medium-screen-ratio)*8vw calc($medium-screen-ratio)*4vw #d9d9d9;
         border-radius: calc($medium-screen-ratio)*16vw;
         width: calc($medium-screen-ratio)*323vw;; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.

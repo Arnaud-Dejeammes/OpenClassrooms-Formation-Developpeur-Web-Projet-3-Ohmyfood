@@ -8,7 +8,8 @@
     }
 
     @include respond-to('large') {
-        padding: 0 0 0 0; // Eventuellement odifier padding-bottom.
+        margin: 0 0 calc($large-screen-ratio)*70vw 0;
+        padding: calc($large-screen-ratio)*20vw 0 0 0; // 0 en top. //Eventuellement modifier padding-bottom.
         height: calc($large-screen-ratio)*500vw;
     }
     
@@ -27,6 +28,7 @@
         }
 
         &__title {
+            margin: calc($large-screen-ratio)*20vw 0 0vw 0;
             width: 100%;
             display: inline-flex;            
             border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;

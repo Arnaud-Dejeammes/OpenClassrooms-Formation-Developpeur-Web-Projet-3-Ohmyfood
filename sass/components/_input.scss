@@ -2,7 +2,7 @@
 
 .index-form {
 
-    // padding: 0 0 calc($screen-ratio*109vw) 0;
+    padding: 0 0 calc($screen-ratio*109vw) 0;
 
     @include respond-to('medium') {
         padding: 0 0 0 0;
@@ -13,7 +13,7 @@
         // flex-direction: row-reverse;
         // gap: 5%;
         // justify-content: space-evenly;
-        margin: 0 0 calc($screen-ratio)*10vw 0;
+        margin: 0 0 calc($screen-ratio)*15vw 0;
         padding: 0 0 0 0;
     }
 
@@ -87,25 +87,32 @@
         }
     }
 
-    .form-description {        
+    .form-description-validate {
+        @include respond-to('medium') {
+            display: flex;
+        }
+    }
+
+    .form-description { 
         padding: calc($screen-ratio*44vw) 0 0 0;
+        // background-color: cadetblue;
 
         @include respond-to('medium') {             
-            padding: calc($medium-screen-ratio*11vw) 0 0 0;
+            padding: calc($medium-screen-ratio*40vw) 0 0 0;
         }
 
         @include respond-to('large') {
             margin:  0 calc($large-screen-ratio*93vw) 0 calc($large-screen-ratio*35vw);     
             padding: 0 0 0 calc($large-screen-ratio*15vw);
         }
-    
+
         & .form-title {
             margin: 0 calc($screen-ratio*65vw) calc($screen-ratio*22vw) calc($screen-ratio*65vw);
             width: calc($screen-ratio*229vw);
 
             @include respond-to('medium') {                
-                margin: 0 0 calc($medium-screen-ratio*10vw) calc($medium-screen-ratio*50vw);
-                width: fit-content;                
+                margin: 0 0 calc($medium-screen-ratio*10vw) calc($medium-screen-ratio*40vw);
+                width: calc($medium-screen-ratio*450vw); // fit-content;                
             }
 
             @include respond-to('large') {
@@ -118,7 +125,7 @@
             margin: 0 calc($screen-ratio)*31vw 0 calc($screen-ratio)*39vw; // Revoir taille de la police et marges.
 
             @include respond-to('medium') {
-                margin: 0 calc($medium-screen-ratio)*31vw 0 calc($medium-screen-ratio*50vw);
+                margin: 0 calc($medium-screen-ratio)*31vw 0 calc($medium-screen-ratio*40vw);
                 width: fit-content;
             }
 

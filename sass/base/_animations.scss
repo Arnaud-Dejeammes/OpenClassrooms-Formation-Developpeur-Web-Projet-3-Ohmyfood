@@ -32,21 +32,44 @@
 // Animation - Page accueil - Loader
 
 .body-blur {
-    // opacity: 0;
+    // opacity: 1;
     // animation: disparu 3000ms 4000ms;
     // animation: out-of-view 3000ms 4000ms
-    animation: visibility-invisibility 0ms 4600ms forwards; // Compromis à trouver entre Chrome et Firefox pour des raisons d'affichage.
+    // animation: absent 1ms 4400ms;
+    animation: visibility-invisibility 1ms 3700ms forwards; // 4400ms
+    // animation: fade-in 1000ms 4401ms forwards; // Compromis à trouver entre Chrome et Firefox pour des raisons d'affichage.
+    // REENCLENCHER !!!
 }
+
+/* @keyframes absent {
+    0% {
+        display: none; // REENCLENCHER !!!
+    }
+
+    100% {
+        display: block;
+    }
+} */
 
 @keyframes visibility-invisibility {
     0% {
-        visibility: hidden;
+        visibility: hidden; // REENCLENCHER !!!
     }
 
     100% {
         visibility: visible;
     }
 }
+
+/* @keyframes fade-in {
+    0% {
+        opacity: 0; // REENCLENCHER !!!
+    }    
+
+    100% {
+        opacity: 1;
+    }
+} */
 
 /* @keyframes disparu {
     0% {
@@ -97,16 +120,18 @@
 } */
 
 .loader {    
-    // animation: loader-animation 700ms 4000ms forwards; // Travailler la transition avec visibility-invisbility de .body-blur.
+    animation: loader-animation 700ms 3300ms forwards; // Travailler la transition avec visibility-invisbility de .body-blur.
 }
 
 @keyframes loader-animation {
     0% {
-        opacity: 1;
+        opacity: 1; // 1; // REMETTRE A ZERO !!!
     }
+    
     100% {
-        opacity: 0;
         z-index: 0;
+        opacity: 0;
+        
     }
 } // Travailler un fade-out.
 
@@ -389,6 +414,24 @@
     &:active {
         transform: scale(0.80);
     }
+}
+
+// Animation - Page Menu - Etiquette "Nouveau" (new-stamp)
+@keyframes stamp-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#new-stamp-01 {
+    animation: stamp-fade-in 900ms 4800ms ease-in-out forwards;
+}
+
+#new-stamp-02 {
+    animation: stamp-fade-in 900ms 5700ms ease-in-out forwards;
 }
 
 // Animation - Page Menu - Trait (Entrées, Plats, Desserts)

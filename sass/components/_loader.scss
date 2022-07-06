@@ -13,7 +13,7 @@
     // display: none; // Favorise l'animation des cercles, mais n'affiche pas le contenu.
     // position: absolute; top: -9999px; left: -9999px;
     // filter: blur(5);
-    visibility: hidden;
+    visibility: hidden; // REENCLENCHER !!!
 }
 
 // body {background-color: red;}
@@ -29,7 +29,8 @@
     /* filter: blur(5px);
     z-index: 1; */
     // background-color: red;
-    // opacity: 0.5;
+    opacity: 1;
+    // opacity: 1; // 0.5;
     // background: #D3D3D3; // linear-gradient(to right,#D3D3D3, #f6f6f6); // grey; // linear-gradient(to top, $base-color-3, $base-color-2);
     // display: none;    
 
@@ -52,12 +53,12 @@
     overflow: hidden;    
 
     @include respond-to('medium') {
-
+        left: 45%;
     }
 
     @include respond-to('large') {
         top: 30%;
-        left: 115%;        
+        left: 105%; // 115%;        
     }
 
     .loader-text-top {  

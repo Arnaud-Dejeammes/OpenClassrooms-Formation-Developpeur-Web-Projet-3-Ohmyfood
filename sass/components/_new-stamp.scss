@@ -1,0 +1,45 @@
+.new-stamp {
+    z-index: 2;
+    position: absolute;   
+    /* top: 10%;
+    left: 72%; */
+    width: calc($screen-ratio)*80vw;
+    background-color: $base-color-3;
+    border-radius: calc($screen-ratio)*3vw;
+    padding: calc($screen-ratio)*9vw;
+    transform: translate(calc($screen-ratio)*245vw, calc($screen-ratio)*10vw);
+    opacity: 0;
+
+    @include respond-to ('medium') {        
+        width: calc($medium-screen-ratio)*80vw;
+        border-radius: calc($medium-screen-ratio)*3vw;
+        padding: calc($medium-screen-ratio)*9vw;
+        // transform: translate(calc($medium-screen-ratio)*-70vw, calc($medium-screen-ratio)*0vw);
+    }
+
+    @include respond-to ('large') {
+        width: calc($large-screen-ratio)*80vw;
+        border-radius: calc($large-screen-ratio)*3vw;
+        padding: calc($large-screen-ratio)*9vw;        
+    }
+}
+
+#new-stamp-01 {
+    @include respond-to ('medium') {
+        transform: translate(calc($medium-screen-ratio)*-67vw, calc($medium-screen-ratio)*7vw);
+    }    
+
+    @include respond-to ('large') {
+        transform: translate(calc($large-screen-ratio)*-387vw, calc($large-screen-ratio)*4.5vw);
+    }
+}
+
+#new-stamp-02 {
+    @include respond-to ('medium') {
+        transform: translate(calc($medium-screen-ratio)*350vw, calc($medium-screen-ratio)*7vw);
+    }
+
+    @include respond-to ('large') {
+        transform: translate(calc($large-screen-ratio)*-67vw, calc($large-screen-ratio)*4.5vw);
+    }
+}

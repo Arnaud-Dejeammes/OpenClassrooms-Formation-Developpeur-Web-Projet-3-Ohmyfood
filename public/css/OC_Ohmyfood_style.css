@@ -625,6 +625,31 @@ input[type=search] {
   }
 }
 
+.new-stamp {
+  color: #008766;
+  font-weight: bold;
+  text-align: center;
+  font-size: 3.7333333333vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .new-stamp {
+    font-size: 1.5909090909vw;
+  }
+}
+@media (min-width: 992px) {
+  .new-stamp {
+    font-size: 1.0769230769vw;
+  }
+}
+
 li button {
   /* Code avant Media Queries
   font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
@@ -701,6 +726,24 @@ footer, .validate, ::placeholder {
 
 .form-description {
   text-align: center;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .form-description {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .form-description {
+    text-align: center;
+  }
 }
 
 .form-title {
@@ -858,9 +901,18 @@ footer a:visited {
 }
 
 .body-blur {
-  animation: visibility-invisibility 0ms 4600ms forwards;
+  animation: visibility-invisibility 1ms 3700ms forwards;
 }
 
+/* @keyframes absent {
+    0% {
+        display: none; // REENCLENCHER !!!
+    }
+
+    100% {
+        display: block;
+    }
+} */
 @keyframes visibility-invisibility {
   0% {
     visibility: hidden;
@@ -869,6 +921,15 @@ footer a:visited {
     visibility: visible;
   }
 }
+/* @keyframes fade-in {
+    0% {
+        opacity: 0; // REENCLENCHER !!!
+    }    
+
+    100% {
+        opacity: 1;
+    }
+} */
 /* @keyframes disparu {
     0% {
         position: absolute; top: -9999px; left: -9999px;
@@ -912,13 +973,17 @@ footer a:visited {
         filter: blur(0);
     }
 } */
+.loader {
+  animation: loader-animation 700ms 3300ms forwards;
+}
+
 @keyframes loader-animation {
   0% {
     opacity: 1;
   }
   100% {
-    opacity: 0;
     z-index: 0;
+    opacity: 0;
   }
 }
 #circle-01 {
@@ -1166,6 +1231,22 @@ footer a:visited {
   transform: scale(0.8);
 }
 
+@keyframes stamp-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#new-stamp-01 {
+  animation: stamp-fade-in 900ms 4800ms ease-in-out forwards;
+}
+
+#new-stamp-02 {
+  animation: stamp-fade-in 900ms 5700ms ease-in-out forwards;
+}
+
 .restaurant__menu__body__entry {
   animation: growing-bar 800ms;
 }
@@ -1272,6 +1353,7 @@ footer a:visited {
   height: 100vh;
   /* filter: blur(5px);
   z-index: 1; */
+  opacity: 1;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -1308,10 +1390,15 @@ footer a:visited {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
+@media (min-width: 768px) {
+  .loader-background {
+    left: 45%;
+  }
+}
 @media (min-width: 992px) {
   .loader-background {
     top: 30%;
-    left: 115%;
+    left: 105%;
   }
 }
 .loader-background .loader-text-top {
@@ -1708,6 +1795,7 @@ footer a:visited {
     // text-justify: center;
 } */
 .index-form {
+  padding: 0 0 29.0666666667vw 0;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -1725,7 +1813,7 @@ footer a:visited {
 @media (min-width: 992px) {
   .index-form {
     display: flex;
-    margin: 0 0 2.6666666667vw 0;
+    margin: 0 0 4vw 0;
     padding: 0 0 0 0;
   }
 }
@@ -1818,6 +1906,17 @@ footer a:visited {
 .index-form .place-location input::placeholder {
   color: black;
 }
+.index-form .form-description-validate {
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .index-form .form-description-validate {
+    display: flex;
+  }
+}
 .index-form .form-description {
   padding: 11.7333333333vw 0 0 0;
   /* @else {
@@ -1831,7 +1930,7 @@ footer a:visited {
 }
 @media (min-width: 768px) {
   .index-form .form-description {
-    padding: 1.25vw 0 0 0;
+    padding: 4.5454545455vw 0 0 0;
   }
 }
 @media (min-width: 992px) {
@@ -1854,8 +1953,8 @@ footer a:visited {
 }
 @media (min-width: 768px) {
   .index-form .form-description .form-title {
-    margin: 0 0 1.1363636364vw 5.6818181818vw;
-    width: fit-content;
+    margin: 0 0 1.1363636364vw 4.5454545455vw;
+    width: 51.1363636364vw;
   }
 }
 @media (min-width: 992px) {
@@ -1877,7 +1976,7 @@ footer a:visited {
 }
 @media (min-width: 768px) {
   .index-form .form-description .form-subtitle {
-    margin: 0 3.5227272727vw 0 5.6818181818vw;
+    margin: 0 3.5227272727vw 0 4.5454545455vw;
     width: fit-content;
   }
 }
@@ -1922,7 +2021,7 @@ footer a:visited {
   z-index: 1;
   position: relative;
   margin: 13.3333333333vw 0 0 18.6666666667vw;
-  box-shadow: 0px 5px 5px #C5C5C5;
+  box-shadow: 0 5px 5px #C5C5C5;
   border: none;
   border-radius: 8.8vw;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
@@ -1941,13 +2040,11 @@ footer a:visited {
 }
 @media (min-width: 768px) {
   .validate {
-    margin: 0 0 0 1.7045454545vw;
     height: 5.6818181818vw;
   }
 }
 @media (min-width: 992px) {
   .validate {
-    margin: 0 0 0 1.1538461538vw;
     height: 3.8461538462vw;
   }
 }
@@ -1964,7 +2061,7 @@ footer a:visited {
 }
 @media (min-width: 768px) {
   .validate#validate-index {
-    margin: 3.4090909091vw 0 1.1363636364vw 5.6818181818vw;
+    margin: 3.4090909091vw 0 1.1363636364vw 6.8181818182vw;
     width: 24.7727272727vw;
   }
 }
@@ -1975,6 +2072,7 @@ footer a:visited {
   }
 }
 .validate#validate-menu {
+  margin: 13.3333333333vw 0 0 24vw;
   width: 49.6vw;
   /* @else {
       @error 'No value found for `medium`. '
@@ -1993,6 +2091,7 @@ footer a:visited {
 }
 @media (min-width: 992px) {
   .validate#validate-menu {
+    margin: 2.5% 0 0 39%;
     width: 14.3076923077vw;
   }
 }
@@ -2060,7 +2159,7 @@ ol li:before {
 }
 @media (min-width: 768px) {
   .aside-button {
-    margin: 0 0 4.2045454545vw 0;
+    margin: 0 4.2045454545vw 4.2045454545vw 0;
     box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
     border-radius: 1.8181818182vw;
     width: 36.7045454545vw;
@@ -2895,6 +2994,83 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
 }
 
+.new-stamp {
+  z-index: 2;
+  position: absolute;
+  /* top: 10%;
+  left: 72%; */
+  width: 21.3333333333vw;
+  background-color: #99E2D0;
+  border-radius: 0.8vw;
+  padding: 2.4vw;
+  transform: translate(65.3333333333vw, 2.6666666667vw);
+  opacity: 0;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  .new-stamp {
+    width: 9.0909090909vw;
+    border-radius: 0.3409090909vw;
+    padding: 1.0227272727vw;
+  }
+}
+@media (min-width: 992px) {
+  .new-stamp {
+    width: 6.1538461538vw;
+    border-radius: 0.2307692308vw;
+    padding: 0.6923076923vw;
+  }
+}
+
+#new-stamp-01 {
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  #new-stamp-01 {
+    transform: translate(-7.6136363636vw, 0.7954545455vw);
+  }
+}
+@media (min-width: 992px) {
+  #new-stamp-01 {
+    transform: translate(-29.7692307692vw, 0.3461538462vw);
+  }
+}
+
+#new-stamp-02 {
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 768px) {
+  #new-stamp-02 {
+    transform: translate(39.7727272727vw, 0.7954545455vw);
+  }
+}
+@media (min-width: 992px) {
+  #new-stamp-02 {
+    transform: translate(-5.1538461538vw, 0.3461538462vw);
+  }
+}
+
 .restaurant__menu {
   padding: 0 0 22.1333333333vw 0;
   /* @else {
@@ -2913,7 +3089,8 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 @media (min-width: 992px) {
   .restaurant__menu {
-    padding: 0 0 0 0;
+    margin: 0 0 5.3846153846vw 0;
+    padding: 1.5384615385vw 0 0 0;
     height: 38.4615384615vw;
   }
 }
@@ -2942,6 +3119,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   }
 }
 .restaurant__menu .restaurant__menu__body__title {
+  margin: 1.5384615385vw 0 0vw 0;
   width: 100%;
   display: inline-flex;
   border-radius: 9.6vw 9.6vw 0 0;
@@ -3134,11 +3312,25 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 aside {
   margin: 2.6666666667vw 0 0 0;
-  padding: 0 0 0 5.6vw;
+  padding: 0 0 33.8666666667vw 5.6vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
   /* @else {
       @error 'No value found for `large`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
+}
+@media (min-width: 768px) {
+  aside {
+    margin: 3.4090909091vw 0 0 0;
+    padding: 0 0 5.6818181818vw 2.3863636364vw;
+  }
+  aside ol {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 @media (min-width: 992px) {
   aside {
@@ -3146,7 +3338,6 @@ aside {
     padding: 0 0 0 1.1538461538vw;
   }
   aside ol {
-    display: flex;
     justify-content: space-evenly;
   }
 }
@@ -3163,13 +3354,14 @@ aside .aside-title {
 }
 @media (min-width: 768px) {
   aside .aside-title {
-    margin: 0 0 3.8636363636vw 0;
+    margin: 0 0 3.8636363636vw 19.6590909091vw;
+    width: fit-content;
+    border-bottom: solid 0.3409090909vw #99E2D0;
   }
 }
 @media (min-width: 992px) {
   aside .aside-title {
     margin: 0 0 2.6153846154vw 44%;
-    width: fit-content;
     border-bottom: solid 0.2307692308vw #99E2D0;
     /* margin-block-start: -0.83em;
     margin-block-end: -0.83em; */
@@ -3179,9 +3371,18 @@ aside .aside-title {
 section {
   /* Code avant Media Queries
   padding: 0 0 0 calc($screen-ratio)*15vw; // 0 0 0 calc($screen-ratio)*21vw; */
+  margin: 0 0 17.0666666667vw 0;
   padding: 0 0 0 4vw;
   /* @else {
       @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
   /* @else {
@@ -3191,6 +3392,7 @@ section {
 }
 @media (min-width: 768px) {
   section {
+    margin: 0 0 7.2727272727vw 0;
     padding: 0 0 0 1.7045454545vw;
   }
   section .restaurants_section-title {
@@ -3205,6 +3407,10 @@ section {
   }
 }
 @media (min-width: 992px) {
+  section {
+    margin: 0 0 6.1538461538vw 0;
+    padding: 0 0 0 1.1538461538vw;
+  }
   section .restaurants_section-title {
     padding: 0 0 0 0;
   }
