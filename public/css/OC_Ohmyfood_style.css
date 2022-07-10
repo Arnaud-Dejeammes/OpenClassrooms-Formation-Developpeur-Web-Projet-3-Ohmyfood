@@ -1857,7 +1857,7 @@ footer a:visited {
     padding: 0 0 0 11.5384615385vw;
   }
 }
-.index-form .place-location .map-marker-icon {
+.index-form .place-location .map-marker-alt-solid-icon {
   width: 3.2vw;
   cursor: pointer;
   /* @else {
@@ -1870,13 +1870,13 @@ footer a:visited {
   } */
 }
 @media (min-width: 770px) {
-  .index-form .place-location .map-marker-icon {
+  .index-form .place-location .map-marker-alt-solid-icon {
     position: relative;
     width: 1.7045454545vw;
   }
 }
 @media (min-width: 1440px) {
-  .index-form .place-location .map-marker-icon {
+  .index-form .place-location .map-marker-alt-solid-icon {
     position: relative;
     top: 25%;
     width: 0.9230769231vw;
