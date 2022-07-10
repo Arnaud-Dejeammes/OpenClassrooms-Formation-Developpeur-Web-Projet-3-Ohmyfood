@@ -1305,17 +1305,17 @@ footer a:visited {
   animation: restaurant-menu-translate 800ms 100ms ease-out forwards;
 }
 
-#menu-checkbox-01 {
+#menu-checkbox-01, #menu-checkbox-04, #menu-checkbox-07 {
   opacity: 0;
   animation: restaurant-menu-opacity 320ms 100ms ease-in forwards;
 }
 
-#menu-checkbox-02 {
+#menu-checkbox-02, #menu-checkbox-05, #menu-checkbox-08 {
   opacity: 0;
   animation: restaurant-menu-opacity 320ms 260ms ease-in forwards;
 }
 
-#menu-checkbox-03 {
+#menu-checkbox-03, #menu-checkbox-06, #menu-checkbox-09 {
   opacity: 0;
   animation: restaurant-menu-opacity 320ms 420ms ease-in forwards;
 }
@@ -2725,6 +2725,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check {
   position: relative;
+  top: 35%;
   width: 48.3983050847%;
   height: 28.98%;
   background-color: #ffffff;

@@ -218,6 +218,7 @@
 
                 .restaurant__menu__body__item__checkbox__body__toggle__check { // check
                     position: relative;
+                    top: 35%;
                     width: calc((100%/59)*20)+14.5%; // 20px; // Correctif pour obtenir un carré par rapport à la hauteur.
                     height: 28.98%; // calc((100%/69)*20); // 20px;
                     background-color: $background-color-element;

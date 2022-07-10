@@ -488,17 +488,17 @@
     animation: restaurant-menu-translate 800ms 100ms ease-out forwards;  
 }
 
-#menu-checkbox-01 {
+#menu-checkbox-01, #menu-checkbox-04, #menu-checkbox-07 {
     opacity: 0;
     animation: restaurant-menu-opacity $opacity-duration 100ms ease-in forwards;
 }
 
-#menu-checkbox-02 {
+#menu-checkbox-02, #menu-checkbox-05, #menu-checkbox-08 {
     opacity: 0;    
     animation: restaurant-menu-opacity $opacity-duration 260ms ease-in forwards;
 }
 
-#menu-checkbox-03 {
+#menu-checkbox-03, #menu-checkbox-06, #menu-checkbox-09 {
     opacity: 0;    
     animation: restaurant-menu-opacity $opacity-duration 420ms ease-in forwards;
 }
