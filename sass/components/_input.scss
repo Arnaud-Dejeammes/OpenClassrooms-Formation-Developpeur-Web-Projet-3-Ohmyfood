@@ -2,7 +2,7 @@
 
 .index-form {
 
-    padding: 0 0 calc($screen-ratio*109vw) 0;
+    padding: 0 0 calc($screen-ratio*70vw) 0; // 109vw
 
     @include respond-to('medium') {
         padding: 0 0 0 0;
@@ -77,7 +77,8 @@
             
             &::placeholder {
                 // width: fit-content;
-                color: black;                
+                /* color: black;
+                opacity: 1; // Pour Firefox. */ // Déplacé en _fonts.            
                 // background-color: red;
             }
 
@@ -94,7 +95,7 @@
     }
 
     .form-description { 
-        padding: calc($screen-ratio*44vw) 0 0 0;
+        padding: calc($screen-ratio*44vw) 0 0 0; // 44vw
         // background-color: cadetblue;
 
         @include respond-to('medium') {             

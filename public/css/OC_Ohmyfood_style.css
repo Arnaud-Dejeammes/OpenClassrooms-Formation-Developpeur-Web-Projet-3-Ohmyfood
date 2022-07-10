@@ -409,10 +409,9 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: black;
-}
-
+/* a:visited {
+    color: black; // Placer en _reset. ou en _fonts.
+} */
 /* footer li a:hover {
     color: $base-color-3;
 } // Placer en _fonts.
@@ -590,6 +589,12 @@ input[type=search] {
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
+.restaurant-card-body-title a {
+  color: black;
+}
+.restaurant-card-body-title a:visited {
+  color: black;
+}
 @media (min-width: 770px) {
   .restaurant-card-body-title {
     font-size: 1.7045454545vw;
@@ -724,6 +729,11 @@ footer, .validate, ::placeholder {
   }
 }
 
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
 .form-description {
   text-align: center;
   /* @else {
@@ -845,8 +855,10 @@ footer, .validate, ::placeholder {
 }
 
 footer {
-  color: #ffffff;
   line-height: 200%;
+}
+footer li a {
+  color: #ffffff;
 }
 footer li a:hover {
   color: #99E2D0;
@@ -1795,7 +1807,7 @@ footer a:visited {
     // text-justify: center;
 } */
 .index-form {
-  padding: 0 0 29.0666666667vw 0;
+  padding: 0 0 18.6666666667vw 0;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -1904,7 +1916,8 @@ footer a:visited {
   }
 }
 .index-form .place-location input::placeholder {
-  color: black;
+  /* color: black;
+  opacity: 1; // Pour Firefox. */
 }
 .index-form .form-description-validate {
   /* @else {
@@ -2049,6 +2062,7 @@ footer a:visited {
   }
 }
 .validate#validate-index {
+  margin: 9.3333333333vw 0 0 18.6666666667vw;
   width: 58.1333333333vw;
   /* @else {
       @error 'No value found for `medium`. '
@@ -2140,7 +2154,7 @@ ol li:before {
 .aside-button {
   z-index: -1;
   display: inline-flex;
-  margin: 0 0 20.5333333333vw;
+  margin: 0 0 8vw 0;
   box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
   border-radius: 4.2666666667vw;
   width: 86.1333333333%;
@@ -2148,6 +2162,7 @@ ol li:before {
   padding: 8vw 0 0 9.0666666667vw;
   background-color: #f6f6f6;
   transform: translate(-5vw, 2vw);
+  -moz-transform: translate(-4.5vw, 7.5vw);
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2166,6 +2181,7 @@ ol li:before {
     height: 8.1818181818vw;
     padding: 3.4090909091vw 0 0 3.8636363636vw;
     transform: translate(-1.5vw, 0.8vw);
+    -moz-transform: translate(-2.5vw, 3.5vw);
   }
 }
 @media (min-width: 1440px) {
@@ -2177,6 +2193,7 @@ ol li:before {
     height: 5.5384615385vw;
     padding: 2.3076923077vw 0 0 2.6153846154vw;
     transform: translate(-1.5vw, 0.8vw);
+    -moz-transform: translate(-1.5vw, 2.3vw);
   }
 }
 .aside-button:hover {
@@ -2194,18 +2211,28 @@ ol li:before {
       fill: $base-color-1;
   } */
   /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
       @error 'No value found for `large`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
   } */
 }
+@media (min-width: 770px) {
+  .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
+    margin: 0 4.6590909091vw 0 0;
+  }
+}
 @media (min-width: 1440px) {
   .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
-    margin: 0 1.6153846154vw 0 0;
+    margin: 0 3.1538461538vw 0 0;
   }
 }
 .aside-button .mobile-icon {
   width: 3.4666666667vw;
-  transform: translate(0, -2vw);
+  transform: translate(0, -1vw);
+  -moz-transform: translate(0, -3.7vw);
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2219,16 +2246,19 @@ ol li:before {
   .aside-button .mobile-icon {
     width: 1.4772727273vw;
     transform: translate(0, -0.7vw);
+    -moz-transform: translate(0, -1.5vw);
   }
 }
 @media (min-width: 1440px) {
   .aside-button .mobile-icon {
     width: 1vw;
-    transform: translate(0, -0.7vw);
+    transform: translate(0, -0.3vw);
+    -moz-transform: translate(0, -1vw);
   }
 }
 .aside-button .list-solid-icon {
   width: 4.2666666667vw;
+  -moz-transform: translate(0, -3.7vw);
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2241,15 +2271,19 @@ ol li:before {
 @media (min-width: 770px) {
   .aside-button .list-solid-icon {
     width: 1.8181818182vw;
+    -moz-transform: translate(0, -1.5vw);
   }
 }
 @media (min-width: 1440px) {
   .aside-button .list-solid-icon {
     width: 1.2307692308vw;
+    transform: translate(0, -0.1vw);
+    -moz-transform: translate(0, -1vw);
   }
 }
 .aside-button .store-solid-icon {
   width: 4.8vw;
+  -moz-transform: translate(0, -3.7vw);
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2262,11 +2296,14 @@ ol li:before {
 @media (min-width: 770px) {
   .aside-button .store-solid-icon {
     width: 2.0454545455vw;
+    -moz-transform: translate(0, -1.5vw);
   }
 }
 @media (min-width: 1440px) {
   .aside-button .store-solid-icon {
     width: 1.3846153846vw;
+    transform: translate(0, -0.1vw);
+    -moz-transform: translate(0, -1vw);
   }
 }
 
@@ -2494,6 +2531,9 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   margin: 0 1.6vw 3.7333333333vw 3.2vw;
   width: 93.0666666667%;
   height: 18.4vw;
+  /* text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; */
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2519,9 +2559,12 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
   width: 83.0945558739%;
   height: 50%;
-  overflow: hidden;
+  padding: 3.7249283668% 0 0 3.1518624642%;
   font-size: 3.4666666667vw;
+  display: inline;
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2533,26 +2576,31 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title h3 {
   display: inline;
-  position: relative;
-  top: 33%;
-  left: 5%;
+  /* position: relative;
+  top: 33%; // 20%;
+  left: 5%; */
 }
 @media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    padding: 2.8653295129% 0 0 3.1518624642%;
     font-size: 2.0454545455vw;
   }
 }
 @media (min-width: 1440px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    padding: 3.7249283668% 0 0 3.1518624642%;
     font-size: 1vw;
   }
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
   width: 83.0945558739%;
   height: 50%;
-  overflow: hidden;
+  padding: 0 0 0 3.1518624642%;
   font-size: 2.9333333333vw;
+  display: inline;
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';
@@ -2564,8 +2612,8 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle p {
   display: inline;
-  position: relative;
-  left: 5%;
+  /* position: relative;            
+  left: 5%; */
 }
 @media (min-width: 770px) {
   .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
@@ -2612,7 +2660,6 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   flex-wrap: wrap;
   height: 100%;
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
-  white-space: nowrap;
   cursor: pointer;
   /* @else {
       @error 'No value found for `large`. '
@@ -3298,7 +3345,7 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 aside {
   margin: 2.6666666667vw 0 0 0;
-  padding: 0 0 33.8666666667vw 5.6vw;
+  padding: 0 0 21.3333333333vw 5.6vw;
   /* @else {
       @error 'No value found for `medium`. '
          + 'Please make sure it is defined in `$breakpoints` map.';

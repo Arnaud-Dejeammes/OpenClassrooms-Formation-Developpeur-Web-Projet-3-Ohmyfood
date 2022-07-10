@@ -2,6 +2,13 @@
     box-shadow: inset 0px 8px 6px -6px $input-shadow; // inset 10px 10px 10px $input-shadow;
 }
 
+@mixin ellipsis {
+    display: inline;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+} // + display: inline; appliqué au texte pour le fonctionnement d'ellipsis en valeur relative.
+
 // Créer une mixin/getter pour l'ajout de nouveaux breakpoints.
 
 // Getter pour lecture des maps de points

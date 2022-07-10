@@ -129,10 +129,18 @@ input[type="search"] {
 .restaurant-card-body-title {
     /* Code avant Media Queries
     font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper. */
-
+    // color: red;
     // @include respond-to('small') {
         font-size: calc($screen-ratio)*13vw;
     // }
+
+    a {
+        color: black; // a ajouté pour empêcher l'apparition du texte bleu dans Firefox.
+    }
+    
+    a:visited {
+        color: black;
+    }
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*15vw; // 13vw
@@ -229,6 +237,11 @@ footer, .validate, ::placeholder {
     }
 }
 
+::placeholder {
+    color: black;
+    opacity: 1; // Pour Firefox
+}
+
 .form-description {
     text-align: center;
 
@@ -308,8 +321,12 @@ footer, .validate, ::placeholder {
 }
 
 footer {
-    color: $background-color;
+
     line-height: 200%;
+
+    li a { // li a ajouté pour empêcher l'apparition du texte bleu dans Firefox.
+    color: $background-color;    
+    }
 
     li a:hover {
         color: $base-color-3;

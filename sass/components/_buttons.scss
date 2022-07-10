@@ -55,6 +55,7 @@
     }
 
     &#validate-index {
+        margin: calc($screen-ratio)*35vw 0 0 calc($screen-ratio)*70vw; // top: 50vw
         width: calc($screen-ratio)*218vw; // 218px;
         
         @include respond-to('medium') {
@@ -125,33 +126,36 @@ ol li:before {
     z-index: -1;
     // position: absolute;
     display: inline-flex;
-    margin: 0 0 calc($screen-ratio)*77vw; // 25px; // Manque une marge !!! (left ?)
+    margin: 0 0 calc($screen-ratio)*30vw 0; // bottom: 77vw // 25px; // Manque une marge !!! (left ?)
     box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9; // Carte restaurant // Bouton validate (plus proche mais moins visible) : 0px 5px 5px $shadow; // Transformer en mixin et vérifier la valeur de la variable $shadow.
     border-radius: calc($screen-ratio)*16vw;
     width: calc($screen-ratio)*323%; // % plutôt que vw : réduit le décalage.
     height: calc($screen-ratio)*72vw;
     padding: calc($screen-ratio)*30vw 0 0 calc($screen-ratio)*34vw;
     background-color: $background-color-section; // yellowgreen;
-    transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter
+    transform: translate(-5vw, 2vw); // Calcul obligatoire pour éviter un décalage.
+    -moz-transform: translate(-4.5vw, 7.5vw); // Correctif pour Mozilla Firefox.
 
     @include respond-to('medium') {
         margin: 0 calc($medium-screen-ratio)*37vw calc($medium-screen-ratio)*37vw 0;
         box-shadow: 0 calc($medium-screen-ratio)*4vw calc($medium-screen-ratio)*8vw calc($medium-screen-ratio)*4vw #d9d9d9;
         border-radius: calc($medium-screen-ratio)*16vw;
-        width: calc($medium-screen-ratio)*323vw;; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
+        width: calc($medium-screen-ratio)*323vw; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
         height: calc($medium-screen-ratio)*72vw;
         padding: calc($medium-screen-ratio)*30vw 0 0 calc($medium-screen-ratio)*34vw;
-        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter      
+        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter un décalage.
+        -moz-transform: translate(-2.5vw, 3.5vw); // Correctif pour Mozilla Firefox.
     }
 
     @include respond-to('large') {
         margin: 0 0 calc($large-screen-ratio)*37vw 0;
         box-shadow: 0 calc($large-screen-ratio)*4vw calc($large-screen-ratio)*8vw calc($large-screen-ratio)*4vw #d9d9d9;
         border-radius: calc($large-screen-ratio)*16vw;
-        width: calc($large-screen-ratio)*323vw;; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
+        width: calc($large-screen-ratio)*323vw; // calc($large-screen-ratio)*323%; // Vérifier le souci de détermination de la taille.
         height: calc($large-screen-ratio)*72vw;
         padding: calc($large-screen-ratio)*30vw 0 0 calc($large-screen-ratio)*34vw;
-        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter      
+        transform: translate(-1.5vw, 0.8vw); // Calcul obligatoire pour éviter un décalage.
+        -moz-transform: translate(-1.5vw, 2.3vw);
     }
 
     &:hover {
@@ -172,46 +176,61 @@ ol li:before {
             fill: $base-color-1;
         } */ // Déplacé au niveau en-dessus.
 
+        @include respond-to('medium') {
+            margin: 0 calc($medium-screen-ratio)*41vw 0 0;
+        }
+
         @include respond-to('large') {
-            margin: 0 calc($large-screen-ratio)*21vw 0 0;
+            margin: 0 calc($large-screen-ratio)*41vw 0 0; // 21vw
         }
     }
 
     .mobile-icon {
         width: calc($screen-ratio)*13vw;
-        transform: translate(0, -2vw); // Correctif spécifique pour être conforme à la maquette.
+        transform: translate(0, -1vw); // -2vw // Correctif spécifique pour être conforme à la maquette.
+        -moz-transform: translate(0, -3.7vw);
 
         @include respond-to('medium') {
             width: calc($medium-screen-ratio)*13vw;
             transform: translate(0, -0.7vw); // Vérifier et regrouper éventuellement avec prochain breakpoint.
+            -moz-transform: translate(0, -1.5vw);
         }        
 
         @include respond-to('large') {
             width: calc($large-screen-ratio)*13vw;
-            transform: translate(0, -0.7vw);
+            transform: translate(0, -0.3vw); // -0.7vw
+            -moz-transform: translate(0, -1vw);
         }        
     }
     
     .list-solid-icon {
         width: calc($screen-ratio)*16vw;
+        -moz-transform: translate(0, -3.7vw);
 
         @include respond-to('medium') {
             width: calc($medium-screen-ratio)*16vw;
+            -moz-transform: translate(0, -1.5vw);
         }
 
         @include respond-to('large') {
             width: calc($large-screen-ratio)*16vw;
+            transform: translate(0, -0.1vw);
+            -moz-transform: translate(0, -1vw);
         }
     }
     .store-solid-icon {
         width: calc($screen-ratio)*18vw;
+        -moz-transform: translate(0, -3.7vw);
 
         @include respond-to('medium') {
             width: calc($medium-screen-ratio)*18vw;
+            -moz-transform: translate(0, -1.5vw);
         }
 
         @include respond-to('large') {
             width: calc($large-screen-ratio)*18vw;
+            transform: translate(0, -0.1vw);
+            -moz-transform: translate(0, -1vw);
         }
     }
 }

@@ -1,6 +1,6 @@
 aside {
     margin: calc($screen-ratio)*10vw 0 0 0;
-    padding: 0 0 calc($screen-ratio)*127vw calc($screen-ratio)*21vw;
+    padding: 0 0 calc($screen-ratio)*80vw calc($screen-ratio)*21vw; // bottom: 127vw
     // background-color: yellowgreen;
 
     @include respond-to('medium') {

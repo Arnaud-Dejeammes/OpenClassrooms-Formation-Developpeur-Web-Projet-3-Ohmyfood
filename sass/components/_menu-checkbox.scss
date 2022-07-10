@@ -36,6 +36,11 @@
     // overflow: hidden; // Double overflow (cf. menu-checkbox) : ne touche pas border-radius.
     // background-color: aqua;
 
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */ // Ne fonctionne pas regroupé ici.
+
+
     @include respond-to('medium') {
         // margin: 0 calc($medium-screen-ratio*6vw) calc($medium-screen-ratio*14vw) calc($medium-screen-ratio*12vw);
         width: 90%; // calc($medium-screen-ratio*349%); // Utilisation de % au lieu de vw, avec ajustement de margin, pour éviter la barre de défilement horizontale. // 90.74vw;
@@ -54,26 +59,30 @@
     .restaurant__menu__body__item__checkbox__body__title {
         width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 35px;
-        // padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.
-        overflow: hidden;
+        padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.
+        // overflow: hidden;
         font-size: calc($screen-ratio*13vw); // Ajuster les polices. // Déplacer in fonts.
-        text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
+        // text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
         // background-color: pink;
+        // white-space: nowrap; N'influence apparemment pas sur ellipsis.
+
+        @include ellipsis; // + display: inline; appliqué au texte pour le fonctionnement d'ellipsis en valeur relative.
 
         & h3 {
             display: inline; // Restaure le fonctionnement de text-overflow: ellipsis;
-            position: relative;
+            /* position: relative;
             top: 33%; // 20%;
-            left: 5%;
+            left: 5%; */ // Déplace l'ellipsis.
             // background-color: purple;
         }
 
-        @include respond-to('medium') {            
-            font-size: calc($medium-screen-ratio*18vw); // Déplacer in fonts.            
+        @include respond-to('medium') {
+            padding: calc($checkbox-ratio*10%) 0 0 calc($checkbox-ratio*11%);    
+            font-size: calc($medium-screen-ratio*18vw); // Déplacer in fonts.       
         }
 
         @include respond-to('large') {
-            // padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.  
+            padding: calc($checkbox-ratio*13%) 0 0 calc($checkbox-ratio*11%); // 13px 0px 0px 11px; // Ajuster.  
             font-size: calc($large-screen-ratio*13vw); // Déplacer in fonts.
             
         }
@@ -82,17 +91,22 @@
     .restaurant__menu__body__item__checkbox__body__subtitle {      
         width: calc($checkbox-ratio*290%); // 290px;
         height: 50%; // 34px;
-        // padding: 0 0 0 calc($checkbox-ratio*11%); // 8px 0px 0px 11px; // Ajuster.
-        overflow: hidden;
+        padding: 0 0 0 calc($checkbox-ratio*11%); // 8px 0px 0px 11px; // Ajuster.
+        // overflow: hidden;
         font-size: calc($screen-ratio*11vw); // Ajuster les polices. // Déplacer dans _fonts.
-        text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
+        // text-overflow: ellipsis; // Ne fonctionne plus. // Réglé : display: inline;
         // background-color: yellow;
+
+        @include ellipsis; // + display: inline; appliqué au texte pour le fonctionnement d'ellipsis en valeur relative.
 
         & p {
             display: inline; // Restaure le fonctionnement de text-overflow: ellipsis;
-            position: relative;            
-            left: 5%;
+            /* position: relative;            
+            left: 5%; */ // Déplace l'ellipsis.
             // background-color: orange;
+            // white-space: nowrap;
+
+            
         }
 
         @include respond-to('medium') {
@@ -141,7 +155,7 @@
             height: 100%;            
             // height: 69px;
             font-family: $text-font; // Déplacer en _fonts.
-            white-space: nowrap;
+            // white-space: nowrap; // Important pour ellipsis.
             cursor: pointer;
             // background-color: purple;
 
