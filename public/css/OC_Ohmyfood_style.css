@@ -3297,7 +3297,73 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
 }
 @media (min-width: 1440px) {
   .restaurant__menu__body__title__heart {
-    margin: 0.3846153846vw 0 0 7.1538461538vw;
+    margin: 0.3846153846vw 0 0 7.0769230769vw;
+  }
+}
+
+#note_enchantee-heart {
+  margin: 0 0 0 8.2666666667vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 770px) {
+  #note_enchantee-heart {
+    margin: -0.4545454545vw 0 0 10.3846153846vw;
+  }
+}
+@media (min-width: 1440px) {
+  #note_enchantee-heart {
+    margin: 0.3846153846vw 0 0 2vw;
+  }
+}
+
+#palette_du_gout-heart {
+  margin: 0 0 0 9.8666666667vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 770px) {
+  #palette_du_gout-heart {
+    margin: -0.4545454545vw 0 0 10.7692307692vw;
+  }
+}
+@media (min-width: 1440px) {
+  #palette_du_gout-heart {
+    margin: 0.3846153846vw 0 0 2.4615384615vw;
+  }
+}
+
+#delice_des_sens-heart {
+  margin: 0 0 0 12.5333333333vw;
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 770px) {
+  #delice_des_sens-heart {
+    margin: -0.4545454545vw 0 0 12.3076923077vw;
+  }
+}
+@media (min-width: 1440px) {
+  #delice_des_sens-heart {
+    margin: 0.3846153846vw 0 0 3.2307692308vw;
   }
 }
 
@@ -3311,6 +3377,8 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   .restaurant__menu__image {
     position: absolute;
     top: 0%;
+    max-height: 50%;
+    overflow: hidden;
   }
 }
 
@@ -3327,6 +3395,77 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   #restaurant__menu__image__a_la_francaise {
     z-index: -1;
     transform: translate(0, -35%);
+  }
+}
+
+#restaurant__menu__image__la_note_enchantee {
+  margin-top: -70.1333333333vw;
+  width: 100%;
+  transform: translate(0, 57.5%);
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 770px) {
+  #restaurant__menu__image__la_note_enchantee {
+    margin-top: -70.6818181818vw;
+    transform: translate(0, 57.5%);
+  }
+}
+@media (min-width: 1440px) {
+  #restaurant__menu__image__la_note_enchantee {
+    z-index: -1;
+    position: relative;
+    margin-top: -28.4615384615vw;
+    transform: translate(0, -35%);
+  }
+}
+
+#restaurant__menu__image__la_palette_du_gout {
+  margin-top: -13.8666666667vw;
+  width: 100%;
+  transform: translate(0, 21%);
+  /* @else {
+      @error 'No value found for `medium`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 770px) {
+  #restaurant__menu__image__la_palette_du_gout {
+    margin-top: -13.1818181818vw;
+    width: 100%;
+    transform: translate(0, 20%);
+  }
+}
+@media (min-width: 1440px) {
+  #restaurant__menu__image__la_palette_du_gout {
+    z-index: -1;
+    transform: translate(0, -19%);
+  }
+}
+
+#restaurant__menu__image__le_delice_des_sens {
+  margin-top: -14.9333333333vw;
+  width: 100%;
+  transform: translate(0, 22%);
+  /* @else {
+      @error 'No value found for `large`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  } */
+}
+@media (min-width: 1440px) {
+  #restaurant__menu__image__le_delice_des_sens {
+    z-index: -1;
+    transform: translate(0, -52%);
   }
 }
 

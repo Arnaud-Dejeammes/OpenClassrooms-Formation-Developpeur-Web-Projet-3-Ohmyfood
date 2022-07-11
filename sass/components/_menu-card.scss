@@ -147,7 +147,43 @@
     }
 
     @include respond-to('large') {
-        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*93vw;
+        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*92vw;
+    }
+}
+
+#note_enchantee-heart {
+    margin: 0 0 0 calc($screen-ratio)*31vw;
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*135vw;
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*26vw;
+    }
+}
+
+#palette_du_gout-heart {
+    margin: 0 0 0 calc($screen-ratio)*37vw;
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*140vw;
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*32vw;
+    }
+}
+
+#delice_des_sens-heart {
+    margin: 0 0 0 calc($screen-ratio)*47vw;
+
+    @include respond-to('medium') {
+        margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*160vw;
+    }
+
+    @include respond-to('large') {
+        margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*42vw;
     }
 }
 
@@ -156,7 +192,8 @@
         position: absolute;
         // z-index: -1;
         top: 0%;
-        // overflow: hidden;
+        max-height: 50%;
+        overflow: hidden;
     }
 }
 
@@ -173,6 +210,53 @@
         z-index: -1;
         transform: translate(0, -35%);
         
+    }
+}
+
+#restaurant__menu__image__la_note_enchantee {
+    margin-top: calc($screen-ratio)*-263vw;
+    width: 100%;    
+    transform: translate(0, 57.5%);
+
+    @include respond-to('medium') {
+        margin-top: calc($medium-screen-ratio)*-622vw;
+        transform: translate(0, 57.5%);
+    }
+
+    @include respond-to('large') {
+        z-index: -1;
+        position: relative;
+        // max-height: 100%; 
+        margin-top: calc($large-screen-ratio)*-370vw;
+        transform: translate(0, -35%);        
+    }
+}
+
+#restaurant__menu__image__la_palette_du_gout {
+    margin-top: calc($screen-ratio)*-52vw;
+    width: 100%;
+    transform: translate(0, 21%);
+
+    @include respond-to('medium') {
+        margin-top: calc($medium-screen-ratio)*-116vw;
+    width: 100%;
+    transform: translate(0, 20%);
+    }
+
+    @include respond-to('large') {
+        z-index: -1;
+        transform: translate(0, -19%);
+    }
+}
+
+#restaurant__menu__image__le_delice_des_sens {
+    margin-top: calc($screen-ratio)*-56vw;
+    width: 100%;
+    transform: translate(0, 22%);    
+
+    @include respond-to('large') {
+        z-index: -1;
+        transform: translate(0, -52%);
     }
 }
 
