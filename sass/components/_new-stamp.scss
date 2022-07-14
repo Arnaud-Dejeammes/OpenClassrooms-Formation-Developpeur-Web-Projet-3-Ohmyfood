@@ -1,8 +1,6 @@
 .new-stamp {
     z-index: 2;
-    position: absolute;   
-    /* top: 10%;
-    left: 72%; */
+    position: absolute;
     width: calc($screen-ratio)*80vw;
     background-color: $base-color-3;
     border-radius: calc($screen-ratio)*3vw;
@@ -14,7 +12,6 @@
         width: calc($medium-screen-ratio)*80vw;
         border-radius: calc($medium-screen-ratio)*3vw;
         padding: calc($medium-screen-ratio)*9vw;
-        // transform: translate(calc($medium-screen-ratio)*-70vw, calc($medium-screen-ratio)*0vw);
     }
 
     @include respond-to ('large') {

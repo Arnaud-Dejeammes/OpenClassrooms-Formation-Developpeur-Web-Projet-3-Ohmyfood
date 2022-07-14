@@ -1,12 +1,3 @@
-// $opacity-duration: 320ms;
-
-// $base-color-1: #9356DC;
-// $base-color-2: #FF79DA;
-
-// $screen-ratio: calc(100/375);
-// $checkbox-ratio: calc(100/349);
-// Faire fonctionner $ à partir de _variables.
-
 // Animation - Général - Boutons validation
 .validate {
     transition: box-shadow 450ms, transform 350ms;    
@@ -19,6 +10,15 @@
     }
 
     &__hover-effect {
+        z-index: -1;
+        position: absolute; // Important pour le fonctionnement de l'effet.
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;        
+        opacity: 0;        
+        border-radius: calc($screen-ratio)*33vw;
+        background: linear-gradient(to bottom, lighten($base-color-2, 10), lighten($base-color-1, 10));
         transition: opacity 350ms ease-in-out;
     }
 
@@ -27,33 +27,32 @@
     }
 }
 
-// Animation - Général - Coeur
+// Animation - Général - Aside button + Icons
+.aside-button:hover {
+    background-color: #f5edff;
 
-// Animation - Page accueil - Loader
-
-.body-blur {
-    // opacity: 1;
-    // animation: disparu 3000ms 4000ms;
-    // animation: out-of-view 3000ms 4000ms
-    // animation: absent 1ms 4400ms;
-    animation: visibility-invisibility 1ms 3700ms forwards; // 4400ms
-    // animation: fade-in 1000ms 4401ms forwards; // Compromis à trouver entre Chrome et Firefox pour des raisons d'affichage.
-    // REENCLENCHER !!!
+    .mobile-icon, .list-solid-icon, .store-solid-icon {            
+        fill: $base-color-1;
+    }
 }
 
-/* @keyframes absent {
-    0% {
-        display: none; // REENCLENCHER !!!
-    }
+// Animation - Général - Coeur (Page Accueil + Page Menu)
+.restaurant-body-heart-choice:hover .heart-solid-icon {         
+        opacity: 1;
+        transform: scale(1.1);
+}
 
-    100% {
-        display: block;
-    }
-} */
+.heart-solid-icon {    
+    transform: scale(0);
+    transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
+    cursor: pointer; // Placé ici pour toucher la Page Menu et la Page Accueil.
+}
 
+// Animation - Page accueil - Loader
+// Animation - Page accueil - Loader - Cache pour body durant l'animation
 @keyframes visibility-invisibility {
     0% {
-        visibility: hidden; // REENCLENCHER !!!
+        visibility: hidden;
     }
 
     100% {
@@ -61,281 +60,106 @@
     }
 }
 
-/* @keyframes fade-in {
-    0% {
-        opacity: 0; // REENCLENCHER !!!
-    }    
-
-    100% {
-        opacity: 1;
-    }
-} */
-
-/* @keyframes disparu {
-    0% {
-        position: absolute; top: -9999px; left: -9999px;
-    }
-
-    100% {
-        position: absolute; top: 0px; left: 0px;
-    }
-} */
-
-/* @keyframes disparu {
-    0% {
-        display: none;
-    }
-
-    100% {
-        display: block;
-    }
-} */
-
-
-/* .body-blur {
-    animation: fade-in 3000ms 3000ms forwards;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-} */
-
-/* .body-blur {
-    animation: body-fade-in 3000ms forwards;
-}
-
-@keyframes body-fade-in {
-    0% {
-        filter: blur(5);
-    }
-    100% {
-        filter: blur(0);
-    }
-} */
-
-.loader {    
-    animation: loader-animation 700ms 3300ms forwards; // Travailler la transition avec visibility-invisbility de .body-blur.
+.body-blur {   
+    animation: visibility-invisibility 1ms 3700ms forwards; // Compromis entre Chrome et Firefox pour des raisons d'affichage.    
 }
 
 @keyframes loader-animation {
     0% {
-        opacity: 1; // 1; // REMETTRE A ZERO !!!
+        opacity: 1;
     }
     
     100% {
         z-index: 0;
-        opacity: 0;
-        
+        opacity: 0;        
     }
-} // Travailler un fade-out.
-
-#circle-01 {
-    animation: circle-01-translate 1000ms forwards;    
 }
 
-@keyframes circle-01-translate {
-    /* 0% {
-        transform: translate(-50px);
-    } */
+.loader {    
+    animation: loader-animation 700ms 3300ms forwards;
+}
 
+// Animation - Page accueil - Loader - Default Loader (small screen)
+@keyframes circle-01-translate {
     0%, 99% {
         transform: scaleX(1.2);
     }
 
     50% {
-        transform: translate(calc($screen-ratio*294vw)) scaleY(1.2); // 300px
+        transform: translate(calc($screen-ratio*294vw)) scaleY(1.2);
     }
 
     81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
-        transform: translate(calc($screen-ratio*90vw)) scaleX(.95); // 95px
+        transform: translate(calc($screen-ratio*90vw)) scaleX(.95);
     }
 
     80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
-        transform: translate(calc($screen-ratio*95vw)) scaleX(1); // 100px
+        transform: translate(calc($screen-ratio*95vw)) scaleX(1);
     }    
+}
+
+#circle-01 {
+    animation: circle-01-translate 1000ms forwards;    
+}
+
+@keyframes circle-02-translate {
+    0%, 99% {
+        transform: scaleX(1.2);
+    }
+
+    50% {
+        transform: translate(calc($screen-ratio*242vw)) scaleY(1.2);
+    }
+
+    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: translate(calc($screen-ratio*90vw)) scaleX(.95);
+    }
+
+    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
+        transform: translate(calc($screen-ratio*95vw)) scaleX(1);
+    }
 }
 
 #circle-02 {
     animation: circle-02-translate 1000ms 500ms forwards;    
 }
 
-@keyframes circle-02-translate {
-    /* 0% {
-        transform: translate(-100px);
-    } */
-
+@keyframes circle-03-translate {    
     0%, 99% {
         transform: scaleX(1.2);
     }
 
     50% {
-        transform: translate(calc($screen-ratio*242vw)) scaleY(1.2); // 250px
-    }
-    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
-        transform: translate(calc($screen-ratio*90vw)) scaleX(.95); // 95px
-    }
-
-    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
-        transform: translate(calc($screen-ratio*95vw)) scaleX(1); // 100px
+        transform: translate(calc($screen-ratio*189vw)) scaleY(1.2);
     }
     
-    /* 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
-        transform: scaleX(.80);
-        transform-origin: center;
+    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
+        transform: translate(calc($screen-ratio*90vw)) scaleX(.95);
     }
 
     80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
-        transform: scaleX(1);
-        transform-origin: center;
-    } */
+        transform: translate(calc($screen-ratio*95vw)) scaleX(1);
+    }
 }
 
 #circle-03 {
     animation: circle-03-translate 1000ms 1000ms forwards;    
 }
 
-@keyframes circle-03-translate {
-    /* 0% {
-        transform: translate(-180px);
-    } */
-
-    0%, 99% {
-        transform: scaleX(1.2);
-    }
-
-    50% {
-        transform: translate(calc($screen-ratio*189vw)) scaleY(1.2); // 190px
-    }
-    
-    81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
-        transform: translate(calc($screen-ratio*90vw)) scaleX(.95); // 95px
-    }
-
-    80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
-        transform: translate(calc($screen-ratio*95vw)) scaleX(1); // 100px
-    }
-}
-
-
-// Animation spinner loader large-screen
-@keyframes spinner-circle-square {   
-    
-    100% {
-        border-radius: 50%;
-        transform: rotate(0deg);
-        // color: $base-color-2;
-    }
-}
-
-#spinner-circle-01 {
-    animation: spinner-circle-square 1000ms 500ms forwards;    
-}
-
-#spinner-circle-02 {
-    animation: spinner-circle-square 1000ms 1500ms forwards;    
-}
-
-#spinner-circle-03 {
-    animation: spinner-circle-square 1000ms 2500ms forwards;    
-}
-
-/* @keyframes spinner-circle-01-square { */
-    /* 0% {
-        // border-radius: 50%;
-        // transform: rotate(0);
-        // background-color: $base-color-3;
-        // color: $base-color-1;
-        // border: solid calc($large-screen-ratio)*3vw $base-color-1;
-    } */
-    
-    /* 100% {
-        border-radius: 50%;
-        transform: rotate(0deg);
-        // background-color: $base-color-1;
-        // color: $base-color-3;
-        // border: solid calc($large-screen-ratio)*3vw $base-color-3;        
-    }
-} */
-
-@keyframes spinner-list-icon {
-    100% {
-        opacity: 0;
-    }
-}
-
-#list-solid-icon-spinner-01 {
-    animation: spinner-list-icon 500ms 500ms forwards;
-}
-
-#list-solid-icon-spinner-02 {
-    animation: spinner-list-icon 500ms 1500ms forwards;
-}
-
-#list-solid-icon-spinner-03 {
-    animation: spinner-list-icon 500ms 2500ms forwards;
-}
-
-@keyframes spinner-span {
-    
-    100% {
-        opacity: 1;
-    }
-}
-
-#spinner-circle-span-01 {
-    animation: spinner-span 1000ms 600ms forwards;    
-}
-
-#spinner-circle-span-02 {
-    animation: spinner-span 1000ms 1600ms forwards;    
-}
-
-#spinner-circle-span-03 {
-    animation: spinner-span 1000ms 2600ms forwards;    
-}
-
-
-
-
-
-/*
-@keyframes stasis-text {
-    0%, 50%, 100% {
-        
-        transform: rotate(0deg);
-        
-    }
-    
-    25%, 75% {
-        
-        transform: rotate(-180deg);
-       
-        
-    }
-    
-    
-} */
-
-.progress-bar-load {       
-        transform-origin: 0%; /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */        
-        animation: progress-bar-animation 2000ms cubic-bezier(.32,0,.07,1) forwards;
-}
-
+// Animation - Page accueil - Loader - Progress Bar Loader (medium screen)
 @keyframes progress-bar-animation {
     0% {
-        transform: scaleX(0%);
-        // opacity: 1;
+        transform: scaleX(0%);    
     }
+
     100% {
-        transform: scaleX(425%); // 3330%
-        // opacity: 0.3;
+        transform: scaleX(425%);
     }
+}
+
+.progress-bar-load {       
+    transform-origin: 0%;
+    animation: progress-bar-animation 2000ms cubic-bezier(.32,0,.07,1) forwards;
 }
 
 @keyframes loader-circle {
@@ -360,15 +184,18 @@
     animation: loader-circle 2300ms 700ms forwards;    
 }
 
-@keyframes loader-span {
-    
+@keyframes spinner-span {
+    0% {
+        opacity: 0; // Optionnel.
+    }
+
     100% {
         opacity: 1;
     }
 }
 
 #loader-circle-span-01 {
-    animation: spinner-span 1000ms 1000ms forwards; // delay 600
+    animation: spinner-span 1000ms 1000ms forwards;
 }
 
 #loader-circle-span-02 {
@@ -380,13 +207,17 @@
 }
 
 @keyframes loader-store-icon {
+    0% {
+        opacity: 1; // Optionnel.
+    }
+
     100% {
         opacity: 0;
     }
 }
 
 #store-solid-icon-loader-01 {
-    animation: loader-store-icon 500ms 900ms forwards; // delay 500
+    animation: loader-store-icon 500ms 900ms forwards;
 }
 
 #store-solid-icon-loader-02 {
@@ -397,13 +228,88 @@
     animation: loader-store-icon 500ms 1700ms forwards;
 }
 
+// Animation - Page accueil - Loader - Spinner Loader (large screen)
+@keyframes spinner-circle-square {    
+    100% {
+        border-radius: 50%;
+        transform: rotate(0deg);        
+    }
+}
 
-// Animation - Page Menu - Bouton retour accueil (index)
+#spinner-circle-01 {
+    animation: spinner-circle-square 1000ms 500ms forwards;    
+}
+
+#spinner-circle-02 {
+    animation: spinner-circle-square 1000ms 1500ms forwards;    
+}
+
+#spinner-circle-03 {
+    animation: spinner-circle-square 1000ms 2500ms forwards;    
+}
+
+@keyframes spinner-list-icon {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#list-solid-icon-spinner-01 {
+    animation: spinner-list-icon 500ms 500ms forwards;
+}
+
+#list-solid-icon-spinner-02 {
+    animation: spinner-list-icon 500ms 1500ms forwards;
+}
+
+#list-solid-icon-spinner-03 {
+    animation: spinner-list-icon 500ms 2500ms forwards;
+}
+
+#spinner-circle-span-01 {
+    animation: spinner-span 1000ms 600ms forwards;    
+}
+
+#spinner-circle-span-02 {
+    animation: spinner-span 1000ms 1600ms forwards;    
+}
+
+#spinner-circle-span-03 {
+    animation: spinner-span 1000ms 2600ms forwards;    
+}
+
+// Animation - Page Accueil - Restaurant cards
+.restaurant-card {
+    transition: transform 800ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &:hover #la_palette_du_gout {
+        width: 108%;
+    }
+    &:hover #la_note_enchantee {
+        width: 105%;
+    }
+    &:hover #a_la_francaise {
+        width: 108%;
+    }
+    &:hover #le_delice_des_sens {
+        width: 105%;
+    }
+}
+
+// Animation - Page Menu - Bouton retour Page Accueil (index)
 .page-header__content__backward {
     transition: transform 350ms ease-in-out;
 
     &:hover {
-        opacity: 0.3; // Délai pour l'opacité ? Apparition d'un cercle grisé ?
+        opacity: 0.3;
 
         @include respond-to('large') {
             opacity: 1;
@@ -421,6 +327,7 @@
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -443,28 +350,27 @@
     from {
         width: 0;
     }
+
     to {
-        width: calc($screen-ratio)*29%; // 39%
+        width: calc($screen-ratio)*29%;
     }    
 }
 
 // Animation - Page Menu - Sélection d'un plat
-.restaurant__menu__body { // Anciennement menu-item.
-    /* Dissimulation de la case à cocher checkbox.
-    Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
+.restaurant__menu__body {
     & input {
         opacity: 0; 
+    } // Dissimulation de la case à cocher checkbox.
+
+    &__item:hover .restaurant__menu__body__item__checkbox__body__title {
+        width: calc($checkbox-ratio*231%);
     }
 
-    &__item:hover .restaurant__menu__body__item__checkbox__body__title { // Anciennement &:hover .menu-checkbox-body-title..
-        width: calc($checkbox-ratio*231%); // 70% // 231px;
+    &__item:hover .restaurant__menu__body__item__checkbox__body__subtitle {
+        width: calc($checkbox-ratio*231%);
     }
 
-    &__item:hover .restaurant__menu__body__item__checkbox__body__subtitle { // Anciennement &:hover .menu-checkbox-body-subtitle.
-        width: calc($checkbox-ratio*231%); // 70% // 231px;
-    }
-
-    &__item:hover .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon { // Anciennement &:hover .check-solid-icon.
+    &__item:hover .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
         animation: item-checked 600ms forwards;
     }
 }
@@ -484,7 +390,7 @@
 }
 
 // Animation - Page Menu - Apparition progressive
-.restaurant__menu__body__item { // Anciennement menu-item.
+.restaurant__menu__body__item {
     animation: restaurant-menu-translate 800ms 100ms ease-out forwards;  
 }
 
@@ -506,29 +412,25 @@
 @keyframes restaurant-menu-translate {
     0% {
         margin-bottom: calc($screen-ratio*20%);
-        transform: translate(0, calc($screen-ratio*7%));
-        /* margin: 0 0 20px 0;
-        transform: translate(0px, 7px); */
+        transform: translate(0, calc($screen-ratio*7%));        
     }
+
     100% {
         margin-bottom: calc($screen-ratio*13%);
-        transform: translate(0, 0);
-        /* margin: 0px 0px 13px 0px;
-        transform: translate(0px, 0px); */
+        transform: translate(0, 0);        
     }
 }
 
 @keyframes restaurant-menu-opacity {
     0% {
-        opacity: 0;
-        
+        opacity: 0;        
     }
+
     50% {
         opacity: 0.5;
     }
+    
     100% {
         opacity: 1;
     }
 }
-
-// Ajouter un délai pour les catégories Plats et Desserts.

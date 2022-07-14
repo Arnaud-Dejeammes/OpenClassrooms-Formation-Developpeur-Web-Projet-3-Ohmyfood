@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/*  Breakpoint Manager
+    D'après le Responsive breakpoint manager du Sass Guidelines (https://sass-guidelin.es/)
+    (Getter function for reading breakpoint map)
+
+    @access public
+    @param {String} $breakpoint - Breakpoint
+    @requires $breakpoints
+
+    $breakpoints in _variables.scss */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -338,10 +347,6 @@ template {
   display: none;
 }
 
-p {
-  margin: 0;
-}
-
 input {
   border: none;
   outline: none;
@@ -352,9 +357,36 @@ button {
   background-color: transparent;
 }
 
+ul {
+  padding: 0;
+}
+ul li {
+  list-style-type: none;
+}
+
 ol {
   margin-block-start: -1em;
   margin-block-end: -1em;
+  padding-inline-start: 0;
+}
+ol li {
+  list-style-type: none;
+  counter-increment: list-dot;
+}
+ol li:before {
+  content: counter(list-dot) "";
+}
+
+h1, nav h2 {
+  display: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 * {
@@ -366,59 +398,6 @@ body {
   flex-direction: column;
 }
 
-h1, nav h2 {
-  display: none;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
-}
-
-/* footer li {
-    list-style-type: none; // Placer en _reset.
-} */
-ol {
-  padding-inline-start: 0;
-}
-ol li {
-  counter-increment: list-dot;
-}
-ol li:before {
-  content: counter(list-dot) "";
-}
-
-/* 
-ol li {
-    counter-increment: dots;
-}
-
-ol li:before {
-    content: counter(dots) "";
-}
-
-ol {
-    // list-style: none;
-    counter-reset: dots; // Apparememnt pas nécessairement utile.
-}
-*/
-a {
-  text-decoration: none;
-}
-
-/* a:visited {
-    color: black; // Placer en _reset. ou en _fonts.
-} */
-/* footer li a:hover {
-    color: $base-color-3;
-} // Placer en _fonts.
-
-footer a:visited {
-    color: #ffffff;
-} // Placer en _fonts. */
 ::selection {
   background: #9356DC;
   color: #99E2D0;
@@ -432,28 +411,16 @@ footer a:visited {
   font-family: "Roboto-Regular";
   src: url("../fonts/Roboto-Regular.woff") format("woff");
 }
-@font-face {
-  font-family: "Roboto-Bold";
-  src: url("../fonts/Roboto-Bold.woff") format("woff");
-}
 form, aside, main, footer, .restaurant__menu__body__entry {
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
 }
 
 .loader-text-top {
-  font-family: "Shrikhand-Regular", cursive, serif;
+  font-family: "Shrikhand-Regular", cursive, Times, serif;
   font-size: 4.2666666667vw;
   color: #9356DC;
-  text-shadow: -0.2666666667vw 0.2666666667vw 0.5333333333vw #99E2D0;
   text-align: center;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  text-shadow: -0.2666666667vw 0.2666666667vw 0.5333333333vw #99E2D0;
 }
 @media (min-width: 770px) {
   .loader-text-top {
@@ -467,19 +434,11 @@ form, aside, main, footer, .restaurant__menu__body__entry {
 }
 
 .loader-text-bottom {
-  font-family: "Shrikhand-Regular", cursive, serif;
+  font-family: "Shrikhand-Regular", cursive, Times, serif;
   font-size: 4.2666666667vw;
   color: #9356DC;
-  text-shadow: -0.2666666667vw 0.2666666667vw 0.5333333333vw #FF79DA;
   text-align: center;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  text-shadow: -0.2666666667vw 0.2666666667vw 0.5333333333vw #FF79DA;
 }
 @media (min-width: 770px) {
   .loader-text-bottom {
@@ -493,12 +452,12 @@ form, aside, main, footer, .restaurant__menu__body__entry {
 }
 
 .circle {
-  font-family: "Shrikhand-Regular", cursive, serif;
+  font-family: "Shrikhand-Regular", cursive, Times, serif;
   font-size: 4.2666666667vw;
 }
 
 .spinner-circles {
-  font-family: "Shrikhand-Regular", cursive, serif;
+  font-family: "Shrikhand-Regular", cursive, Times, serif;
   font-size: 1.2307692308vw;
 }
 .spinner-circles #spinner-circle-01 {
@@ -526,44 +485,9 @@ form, aside, main, footer, .restaurant__menu__body__entry {
   color: #9356DC;
 }
 
-ol li:before {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*11vw; */
-  font-size: 2.9333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  ol li:before {
-    font-size: 1.25vw;
-  }
-}
-@media (min-width: 1440px) {
-  ol li:before {
-    font-size: 0.8461538462vw;
-  }
-}
-
 input[type=search] {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*11.7vw; // Ajuster si ajustement de la police form.
-  font-weight: bold; */
-  font-weight: bold;
   font-size: 3.12vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  font-weight: bold;
 }
 @media (min-width: 770px) {
   input[type=search] {
@@ -576,18 +500,107 @@ input[type=search] {
   }
 }
 
+.form-description {
+  text-align: center;
+}
+@media (min-width: 770px) {
+  .form-description {
+    text-align: left;
+  }
+}
+@media (min-width: 1440px) {
+  .form-description {
+    text-align: center;
+  }
+}
+
+.form-title {
+  font-size: 5.3333333333vw;
+}
+@media (min-width: 770px) {
+  .form-title {
+    font-size: 2.6666666667vw;
+  }
+}
+@media (min-width: 1440px) {
+  .form-title {
+    font-size: 1.2533333333vw;
+  }
+}
+
+.form-subtitle {
+  font-size: 4vw;
+}
+@media (min-width: 770px) {
+  .form-subtitle {
+    font-size: 1.5909090909vw;
+  }
+}
+@media (min-width: 1440px) {
+  .form-subtitle {
+    font-size: 1vw;
+  }
+}
+
+.aside-title {
+  font-size: 4vw;
+}
+@media (min-width: 770px) {
+  .aside-title {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  .aside-title {
+    font-size: 0.8461538462vw;
+  }
+}
+
+ol li:before {
+  font-size: 2.9333333333vw;
+}
+@media (min-width: 770px) {
+  ol li:before {
+    font-size: 1.25vw;
+  }
+}
+@media (min-width: 1440px) {
+  ol li:before {
+    font-size: 0.8461538462vw;
+  }
+}
+
+li button {
+  font-size: 3.2vw;
+  font-weight: bold;
+}
+@media (min-width: 770px) {
+  li button {
+    font-size: 1.7045454545vw;
+  }
+}
+@media (min-width: 1440px) {
+  li button {
+    font-size: 0.9230769231vw;
+  }
+}
+
+.restaurants_section-title {
+  font-size: 4.5333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurants_section-title {
+    font-size: 2.7272727273vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurants_section-title {
+    font-size: 1.3076923077vw;
+  }
+}
+
 .restaurant-card-body-title {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper. */
   font-size: 3.4666666667vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 .restaurant-card-body-title a {
   color: black;
@@ -607,17 +620,7 @@ input[type=search] {
 }
 
 .restaurant-card-body-place {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper. */
   font-size: 3.2vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .restaurant-card-body-place {
@@ -631,18 +634,10 @@ input[type=search] {
 }
 
 .new-stamp {
-  color: #008766;
-  font-weight: bold;
-  text-align: center;
   font-size: 3.7333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  font-weight: bold;
+  color: #008766;
+  text-align: center;
 }
 @media (min-width: 770px) {
   .new-stamp {
@@ -655,44 +650,8 @@ input[type=search] {
   }
 }
 
-li button {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
-  font-weight: bold; */
-  font-weight: bold;
-  font-size: 3.2vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  li button {
-    font-size: 1.7045454545vw;
-  }
-}
-@media (min-width: 1440px) {
-  li button {
-    font-size: 0.9230769231vw;
-  }
-}
-
 .restaurant__menu__body__entry {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*12vw; // // Ajuster et regrouper. */
   font-size: 3.2vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .restaurant__menu__body__entry {
@@ -705,185 +664,9 @@ li button {
   }
 }
 
-footer, .validate, ::placeholder {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper. */
-  font-size: 3.7333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  footer, .validate, ::placeholder {
-    font-size: 1.8181818182vw;
-  }
-}
-@media (min-width: 1440px) {
-  footer, .validate, ::placeholder {
-    font-size: 0.9230769231vw;
-  }
-}
-
-::placeholder {
-  color: black;
-  opacity: 1;
-}
-
-.form-description {
-  text-align: center;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .form-description {
-    text-align: left;
-  }
-}
-@media (min-width: 1440px) {
-  .form-description {
-    text-align: center;
-  }
-}
-
-.form-title {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*22vw; // 17vw; */
-  font-size: 5.3333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .form-title {
-    font-size: 2.6666666667vw;
-  }
-}
-@media (min-width: 1440px) {
-  .form-title {
-    font-size: 1.2533333333vw;
-  }
-}
-
-.form-subtitle {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*13vw; // Revoir taille de la police et marges. */
-  font-size: 4vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .form-subtitle {
-    font-size: 1.5909090909vw;
-  }
-}
-@media (min-width: 1440px) {
-  .form-subtitle {
-    font-size: 1vw;
-  }
-}
-
-.aside-title {
-  /* Code avant Media Queries
-  font-size: calc($screen-ratio)*18vw; */
-  font-size: 4vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .aside-title {
-    font-size: 1.8181818182vw;
-  }
-}
-@media (min-width: 1440px) {
-  .aside-title {
-    font-size: 0.8461538462vw;
-  }
-}
-
-::placeholder {
-  font-weight: bold;
-}
-
-.restaurants_section-title {
-  font-size: 4.5333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurants_section-title {
-    font-size: 2.7272727273vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurants_section-title {
-    font-size: 1.3076923077vw;
-  }
-}
-
-footer {
-  line-height: 200%;
-}
-footer li a {
-  color: #ffffff;
-}
-footer li a:hover {
-  color: #99E2D0;
-}
-footer li a:hover .ustensils-solid-icon, footer li a:hover .hands-helping-solid-icon {
-  fill: #99E2D0;
-}
-footer a:visited {
-  color: #ffffff;
-}
-
 .restaurant__menu__body__title {
-  /* Code avant Media Queries 
-  font-family: $logo-title-font;
-  font-size: calc($screen-ratio)*18vw; // 21px // Ajuster. */
-  font-family: "Shrikhand-Regular", cursive, Times;
   font-size: 4.8vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  font-family: "Shrikhand-Regular", cursive, Times, serif;
 }
 @media (min-width: 770px) {
   .restaurant__menu__body__title {
@@ -896,6 +679,95 @@ footer a:visited {
   }
 }
 
+.restaurant__menu__body__item__checkbox__body {
+  font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
+}
+.restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__title {
+  font-size: 3.4666666667vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (min-width: 770px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__title {
+    font-size: 2.0454545455vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__title {
+    font-size: 1vw;
+  }
+}
+.restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__title h3 {
+  display: inline;
+}
+.restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__subtitle {
+  font-size: 2.9333333333vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media (min-width: 770px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__subtitle {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__subtitle {
+    font-size: 0.8461538462vw;
+  }
+}
+.restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__subtitle p {
+  display: inline;
+}
+.restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+  font-size: 2.9333333333vw;
+  font-weight: bold;
+}
+@media (min-width: 770px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+    font-size: 0.8461538462vw;
+  }
+}
+
+footer, .validate, ::placeholder {
+  font-size: 3.7333333333vw;
+}
+@media (min-width: 770px) {
+  footer, .validate, ::placeholder {
+    font-size: 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  footer, .validate, ::placeholder {
+    font-size: 0.9230769231vw;
+  }
+}
+
+::placeholder {
+  font-weight: bold;
+  color: black;
+  opacity: 1;
+}
+
+footer {
+  line-height: 200%;
+}
+footer li a, footer a:visited {
+  color: #ffffff;
+}
+footer li a:hover {
+  color: #99E2D0;
+}
+footer li a:hover .ustensils-solid-icon, footer li a:hover .hands-helping-solid-icon {
+  fill: #99E2D0;
+}
+
 .validate {
   transition: box-shadow 450ms, transform 350ms;
 }
@@ -906,25 +778,39 @@ footer a:visited {
   opacity: 1;
 }
 .validate__hover-effect {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  border-radius: 8.8vw;
+  background: linear-gradient(to bottom, #fface8, #ae80e5);
   transition: opacity 350ms ease-in-out;
 }
 .validate:active {
   transform: scale(0.95);
 }
 
-.body-blur {
-  animation: visibility-invisibility 1ms 3700ms forwards;
+.aside-button:hover {
+  background-color: #f5edff;
+}
+.aside-button:hover .mobile-icon, .aside-button:hover .list-solid-icon, .aside-button:hover .store-solid-icon {
+  fill: #9356DC;
 }
 
-/* @keyframes absent {
-    0% {
-        display: none; // REENCLENCHER !!!
-    }
+.restaurant-body-heart-choice:hover .heart-solid-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
 
-    100% {
-        display: block;
-    }
-} */
+.heart-solid-icon {
+  transform: scale(0);
+  transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
+  cursor: pointer;
+}
+
 @keyframes visibility-invisibility {
   0% {
     visibility: hidden;
@@ -933,60 +819,8 @@ footer a:visited {
     visibility: visible;
   }
 }
-/* @keyframes fade-in {
-    0% {
-        opacity: 0; // REENCLENCHER !!!
-    }    
-
-    100% {
-        opacity: 1;
-    }
-} */
-/* @keyframes disparu {
-    0% {
-        position: absolute; top: -9999px; left: -9999px;
-    }
-
-    100% {
-        position: absolute; top: 0px; left: 0px;
-    }
-} */
-/* @keyframes disparu {
-    0% {
-        display: none;
-    }
-
-    100% {
-        display: block;
-    }
-} */
-/* .body-blur {
-    animation: fade-in 3000ms 3000ms forwards;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-} */
-/* .body-blur {
-    animation: body-fade-in 3000ms forwards;
-}
-
-@keyframes body-fade-in {
-    0% {
-        filter: blur(5);
-    }
-    100% {
-        filter: blur(0);
-    }
-} */
-.loader {
-  animation: loader-animation 700ms 3300ms forwards;
+.body-blur {
+  animation: visibility-invisibility 1ms 3700ms forwards;
 }
 
 @keyframes loader-animation {
@@ -998,14 +832,11 @@ footer a:visited {
     opacity: 0;
   }
 }
-#circle-01 {
-  animation: circle-01-translate 1000ms forwards;
+.loader {
+  animation: loader-animation 700ms 3300ms forwards;
 }
 
 @keyframes circle-01-translate {
-  /* 0% {
-      transform: translate(-50px);
-  } */
   0%, 99% {
     transform: scaleX(1.2);
   }
@@ -1019,14 +850,11 @@ footer a:visited {
     transform: translate(25.3333333333vw) scaleX(1);
   }
 }
-#circle-02 {
-  animation: circle-02-translate 1000ms 500ms forwards;
+#circle-01 {
+  animation: circle-01-translate 1000ms forwards;
 }
 
 @keyframes circle-02-translate {
-  /* 0% {
-      transform: translate(-100px);
-  } */
   0%, 99% {
     transform: scaleX(1.2);
   }
@@ -1039,24 +867,12 @@ footer a:visited {
   80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
     transform: translate(25.3333333333vw) scaleX(1);
   }
-  /* 81%, 83%, 85%, 87%, 89%, 91%, 93%, 95%, 97%, 99% {
-      transform: scaleX(.80);
-      transform-origin: center;
-  }
-
-  80%, 82%, 84%, 86%, 88%, 90%, 92%, 94%, 96%, 98%, 100% {
-      transform: scaleX(1);
-      transform-origin: center;
-  } */
 }
-#circle-03 {
-  animation: circle-03-translate 1000ms 1000ms forwards;
+#circle-02 {
+  animation: circle-02-translate 1000ms 500ms forwards;
 }
 
 @keyframes circle-03-translate {
-  /* 0% {
-      transform: translate(-180px);
-  } */
   0%, 99% {
     transform: scaleX(1.2);
   }
@@ -1070,95 +886,8 @@ footer a:visited {
     transform: translate(25.3333333333vw) scaleX(1);
   }
 }
-@keyframes spinner-circle-square {
-  100% {
-    border-radius: 50%;
-    transform: rotate(0deg);
-  }
-}
-#spinner-circle-01 {
-  animation: spinner-circle-square 1000ms 500ms forwards;
-}
-
-#spinner-circle-02 {
-  animation: spinner-circle-square 1000ms 1500ms forwards;
-}
-
-#spinner-circle-03 {
-  animation: spinner-circle-square 1000ms 2500ms forwards;
-}
-
-/* @keyframes spinner-circle-01-square { */
-/* 0% {
-    // border-radius: 50%;
-    // transform: rotate(0);
-    // background-color: $base-color-3;
-    // color: $base-color-1;
-    // border: solid calc($large-screen-ratio)*3vw $base-color-1;
-} */
-/* 100% {
-        border-radius: 50%;
-        transform: rotate(0deg);
-        // background-color: $base-color-1;
-        // color: $base-color-3;
-        // border: solid calc($large-screen-ratio)*3vw $base-color-3;        
-    }
-} */
-@keyframes spinner-list-icon {
-  100% {
-    opacity: 0;
-  }
-}
-#list-solid-icon-spinner-01 {
-  animation: spinner-list-icon 500ms 500ms forwards;
-}
-
-#list-solid-icon-spinner-02 {
-  animation: spinner-list-icon 500ms 1500ms forwards;
-}
-
-#list-solid-icon-spinner-03 {
-  animation: spinner-list-icon 500ms 2500ms forwards;
-}
-
-@keyframes spinner-span {
-  100% {
-    opacity: 1;
-  }
-}
-#spinner-circle-span-01 {
-  animation: spinner-span 1000ms 600ms forwards;
-}
-
-#spinner-circle-span-02 {
-  animation: spinner-span 1000ms 1600ms forwards;
-}
-
-#spinner-circle-span-03 {
-  animation: spinner-span 1000ms 2600ms forwards;
-}
-
-/*
-@keyframes stasis-text {
-    0%, 50%, 100% {
-
-        transform: rotate(0deg);
-
-    }
-
-    25%, 75% {
-
-        transform: rotate(-180deg);
-
-
-    }
-
-
-} */
-.progress-bar-load {
-  transform-origin: 0%;
-  /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */
-  animation: progress-bar-animation 2000ms cubic-bezier(0.32, 0, 0.07, 1) forwards;
+#circle-03 {
+  animation: circle-03-translate 1000ms 1000ms forwards;
 }
 
 @keyframes progress-bar-animation {
@@ -1169,6 +898,11 @@ footer a:visited {
     transform: scaleX(425%);
   }
 }
+.progress-bar-load {
+  transform-origin: 0%;
+  animation: progress-bar-animation 2000ms cubic-bezier(0.32, 0, 0.07, 1) forwards;
+}
+
 @keyframes loader-circle {
   0%, 20%, 40%, 80% {
     transform: rotateY(180deg);
@@ -1189,7 +923,10 @@ footer a:visited {
   animation: loader-circle 2300ms 700ms forwards;
 }
 
-@keyframes loader-span {
+@keyframes spinner-span {
+  0% {
+    opacity: 0;
+  }
   100% {
     opacity: 1;
   }
@@ -1207,6 +944,9 @@ footer a:visited {
 }
 
 @keyframes loader-store-icon {
+  0% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
   }
@@ -1223,15 +963,80 @@ footer a:visited {
   animation: loader-store-icon 500ms 1700ms forwards;
 }
 
+@keyframes spinner-circle-square {
+  100% {
+    border-radius: 50%;
+    transform: rotate(0deg);
+  }
+}
+#spinner-circle-01 {
+  animation: spinner-circle-square 1000ms 500ms forwards;
+}
+
+#spinner-circle-02 {
+  animation: spinner-circle-square 1000ms 1500ms forwards;
+}
+
+#spinner-circle-03 {
+  animation: spinner-circle-square 1000ms 2500ms forwards;
+}
+
+@keyframes spinner-list-icon {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#list-solid-icon-spinner-01 {
+  animation: spinner-list-icon 500ms 500ms forwards;
+}
+
+#list-solid-icon-spinner-02 {
+  animation: spinner-list-icon 500ms 1500ms forwards;
+}
+
+#list-solid-icon-spinner-03 {
+  animation: spinner-list-icon 500ms 2500ms forwards;
+}
+
+#spinner-circle-span-01 {
+  animation: spinner-span 1000ms 600ms forwards;
+}
+
+#spinner-circle-span-02 {
+  animation: spinner-span 1000ms 1600ms forwards;
+}
+
+#spinner-circle-span-03 {
+  animation: spinner-span 1000ms 2600ms forwards;
+}
+
+.restaurant-card {
+  transition: transform 800ms ease-in-out;
+}
+.restaurant-card:hover {
+  transform: scale(1.03);
+}
+.restaurant-card:hover #la_palette_du_gout {
+  width: 108%;
+}
+.restaurant-card:hover #la_note_enchantee {
+  width: 105%;
+}
+.restaurant-card:hover #a_la_francaise {
+  width: 108%;
+}
+.restaurant-card:hover #le_delice_des_sens {
+  width: 105%;
+}
+
 .page-header__content__backward {
   transition: transform 350ms ease-in-out;
 }
 .page-header__content__backward:hover {
   opacity: 0.3;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 1440px) {
   .page-header__content__backward:hover {
@@ -1270,10 +1075,6 @@ footer a:visited {
   to {
     width: 7.7333333333%;
   }
-}
-.restaurant__menu__body {
-  /* Dissimulation de la case à cocher checkbox.
-  Placer dans .menu-checkbox-body-toggle ? Si oui, attention au décalage de l'icône. */
 }
 .restaurant__menu__body input {
   opacity: 0;
@@ -1324,14 +1125,10 @@ footer a:visited {
   0% {
     margin-bottom: 5.3333333333%;
     transform: translate(0, 1.8666666667%);
-    /* margin: 0 0 20px 0;
-    transform: translate(0px, 7px); */
   }
   100% {
     margin-bottom: 3.4666666667%;
     transform: translate(0, 0);
-    /* margin: 0px 0px 13px 0px;
-    transform: translate(0px, 0px); */
   }
 }
 @keyframes restaurant-menu-opacity {
@@ -1345,14 +1142,6 @@ footer a:visited {
     opacity: 1;
   }
 }
-/* @font-face {
-    font-family: 'Shrikhand-Regular';
-    src: url('public/fonts/Shrikhand-Regular.ttf') format('ttf');
-} */
-/* @font-face {
-    font-family: 'Shrikhand-Regular';
-    src: url('../fonts/Shrikhand-Regular.woff') format('woff');
-} */
 .body-blur {
   visibility: hidden;
 }
@@ -1363,17 +1152,7 @@ footer a:visited {
   margin: 0 0 0 2.5%;
   width: 95%;
   height: 100vh;
-  /* filter: blur(5px);
-  z-index: 1; */
   opacity: 1;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .loader {
@@ -1393,14 +1172,6 @@ footer a:visited {
   background: linear-gradient(to top, #99E2D0, #FF79DA);
   border-radius: 3.8461538462vw;
   overflow: hidden;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .loader-background {
@@ -1418,18 +1189,6 @@ footer a:visited {
   left: 25.8666666667vw;
   width: fit-content;
   padding: 5% 0 5% 0;
-  /* font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
-  color: $base-color-1;
-  text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-3; // -1px 1px 2px $base-color-2;
-  text-align: center; */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .loader-background .loader-text-top {
@@ -1446,18 +1205,6 @@ footer a:visited {
   left: 24vw;
   width: fit-content;
   padding: 5% 0 5% 0;
-  /* font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
-  color: $base-color-1;
-  text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-2; // -1px 1px 2px $base-color-2;
-  text-align: center; */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .loader-background .loader-text-bottom {
@@ -1472,138 +1219,67 @@ footer a:visited {
 
 .circle {
   display: inline-flex;
-  width: 13.3333333333vw;
-  height: 13.3333333333vw;
   border-radius: 50%;
   padding: 3.4666666667vw 0 0 0;
   justify-content: center;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  width: 13.3333333333vw;
+  height: 13.3333333333vw;
 }
 @media (min-width: 770px) {
   .circle {
     width: 5.6818181818vw;
     height: 5.6818181818vw;
-    padding: 1.4772727273vw 0 0 0;
   }
 }
 @media (min-width: 1440px) {
   .circle {
     width: 3.8461538462vw;
     height: 3.8461538462vw;
+  }
+}
+@media (min-width: 770px) {
+  .circle {
+    padding: 1.4772727273vw 0 0 0;
+  }
+}
+@media (min-width: 1440px) {
+  .circle {
     padding: 1vw 0 0 0;
   }
 }
 
 .sliding-circles {
   padding: 5% 0 0 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .sliding-circles {
     display: none;
   }
 }
-
-#circle-01 {
+.sliding-circles #circle-01, .sliding-circles #circle-02, .sliding-circles #circle-03 {
+  box-shadow: 0 0 1.0666666667vw #9356DC;
+}
+.sliding-circles #circle-01 {
   background-color: #9356DC;
   color: #99E2D0;
   border: solid 0.8vw #99E2D0;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   transform: translate(-12vw, 0);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
-@media (min-width: 770px) {
-  #circle-01 {
-    border: solid 0.3409090909vw #99E2D0;
-    box-shadow: 0 0 0.4545454545vw #9356DC;
-  }
-}
-@media (min-width: 1440px) {
-  #circle-01 {
-    border: solid 0.2307692308vw #99E2D0;
-    box-shadow: 0 0 0.3076923077vw #9356DC;
-  }
-}
-
-#circle-02 {
+.sliding-circles #circle-02 {
   background-color: #99E2D0;
   color: #FF79DA;
   border: solid 0.8vw #FF79DA;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   transform: translate(-29.3333333333vw, 0);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
-@media (min-width: 770px) {
-  #circle-02 {
-    border: solid 0.3409090909vw #99E2D0;
-    box-shadow: 0 0 0.4545454545vw #9356DC;
-  }
-}
-@media (min-width: 1440px) {
-  #circle-02 {
-    border: solid 0.2307692308vw #99E2D0;
-    box-shadow: 0 0 0.3076923077vw #9356DC;
-  }
-}
-
-#circle-03 {
+.sliding-circles #circle-03 {
   background-color: #FF79DA;
   color: #9356DC;
   border: solid 0.8vw #9356DC;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   transform: translate(-42.6666666667vw, 0);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #circle-03 {
-    border: solid 0.3409090909vw #99E2D0;
-    box-shadow: 0 0 0.4545454545vw #9356DC;
-  }
-}
-@media (min-width: 1440px) {
-  #circle-03 {
-    border: solid 0.2307692308vw #99E2D0;
-    box-shadow: 0 0 0.3076923077vw #9356DC;
-  }
 }
 
 .spinner-circles {
   display: none;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 1440px) {
   .spinner-circles {
@@ -1614,64 +1290,62 @@ footer a:visited {
 .spinner-circles .spinner-circle {
   display: inline-flex;
   margin: 0 1vw 0 0;
-  width: 3.8461538462vw;
-  height: 3.8461538462vw;
   border-radius: 15%;
   padding: 1vw 0 0 0;
   justify-content: center;
   transform: rotate(180deg);
+  width: 13.3333333333vw;
+  height: 13.3333333333vw;
+}
+@media (min-width: 770px) {
+  .spinner-circles .spinner-circle {
+    width: 5.6818181818vw;
+    height: 5.6818181818vw;
+  }
+}
+@media (min-width: 1440px) {
+  .spinner-circles .spinner-circle {
+    width: 3.8461538462vw;
+    height: 3.8461538462vw;
+  }
 }
 .spinner-circles .spinner-circle span {
   opacity: 0;
 }
+.spinner-circles #spinner-circle-01, .spinner-circles #spinner-circle-02, .spinner-circles #spinner-circle-03 {
+  box-shadow: 0 0 1.0666666667vw #9356DC;
+}
+.spinner-circles #spinner-circle-01 #list-solid-icon-spinner-01, .spinner-circles #spinner-circle-01 #list-solid-icon-spinner-02, .spinner-circles #spinner-circle-01 #list-solid-icon-spinner-03, .spinner-circles #spinner-circle-02 #list-solid-icon-spinner-01, .spinner-circles #spinner-circle-02 #list-solid-icon-spinner-02, .spinner-circles #spinner-circle-02 #list-solid-icon-spinner-03, .spinner-circles #spinner-circle-03 #list-solid-icon-spinner-01, .spinner-circles #spinner-circle-03 #list-solid-icon-spinner-02, .spinner-circles #spinner-circle-03 #list-solid-icon-spinner-03 {
+  width: 1.9230769231vw;
+  position: absolute;
+  transform: rotate(180deg);
+}
 .spinner-circles #spinner-circle-01 {
   background-color: #9356DC;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border: solid 0.2307692308vw #99E2D0;
 }
 .spinner-circles #spinner-circle-01 #list-solid-icon-spinner-01 {
-  width: 1.9230769231vw;
-  position: absolute;
   fill: #99E2D0;
-  transform: rotate(180deg);
 }
 .spinner-circles #spinner-circle-02 {
   background-color: #99E2D0;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border: solid 0.2307692308vw #FF79DA;
 }
 .spinner-circles #spinner-circle-02 #list-solid-icon-spinner-02 {
-  width: 1.9230769231vw;
-  position: absolute;
   fill: #FF79DA;
-  transform: rotate(180deg);
 }
 .spinner-circles #spinner-circle-03 {
   background-color: #FF79DA;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border: solid 0.2307692308vw #9356DC;
 }
 .spinner-circles #spinner-circle-03 #list-solid-icon-spinner-03 {
-  width: 1.9230769231vw;
-  position: absolute;
   fill: #9356DC;
-  transform: rotate(180deg);
 }
 
 .progress-bar {
-  /* position: absolute;
-  left: 5%; */
   margin: 5% 0 5% 5%;
   width: 90%;
   display: none;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .progress-bar {
@@ -1683,68 +1357,33 @@ footer a:visited {
     display: none;
   }
 }
-
-.progress-bar-border {
+.progress-bar .progress-bar-border {
   width: 100%;
   height: 20px;
   background: #9356DC;
   background-color: #99E2D0;
   border: solid 2px #9356DC;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border-radius: 2px;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
-.progress-bar-load {
+@media (min-width: 770px) {
+  .progress-bar .progress-bar-border {
+    box-shadow: 0 0 0.4545454545vw #9356DC;
+  }
+}
+@media (min-width: 1440px) {
+  .progress-bar .progress-bar-border {
+    box-shadow: 0 0 0.3076923077vw #9356DC;
+  }
+}
+.progress-bar .progress-bar-border .progress-bar-load {
   width: 10vw;
   height: 10px;
   margin: 3px 0 0 4px;
   background: linear-gradient(to left, #FF79DA, #9356DC);
-  /* transform-origin: 0%; /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */
-  /* transform: scaleX(0);
-  transition: transform 2000ms cubic-bezier(.32,0,.07,1); */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
+
 .loader-circles {
   display: none;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* .loader-circle {
-      display: inline-flex;
-      margin: 0 calc($medium-screen-ratio)*13vw 0 0;
-      width: $medium-circle-radius;
-      height: $medium-circle-radius;        
-      padding: calc($medium-screen-ratio)*13vw 0 0 0;
-      justify-content: center;
-      // transform: rotate(180deg);
-
-      & span {
-          // opacity: 0;
-      }
-
-  } */
-  /* $loader-element-shadow: 0 0 calc($screen-ratio)*4vw $base-color-1; // 0px 0px 4px $base-color-1; // Déplacer dans _variables.
-  $medium-loader-element-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-  $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables. */
 }
 @media (min-width: 770px) {
   .loader-circles {
@@ -1757,65 +1396,51 @@ footer a:visited {
     display: none;
   }
 }
-.loader-circles #loader-circle-01 {
+.loader-circles #loader-circle-01, .loader-circles #loader-circle-02, .loader-circles #loader-circle-03 {
   margin: 0 4.5454545455vw 0 0;
-  background-color: #9356DC;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
-  border: solid 0.3409090909vw #99E2D0;
 }
-.loader-circles #loader-circle-01 span {
+@media (min-width: 770px) {
+  .loader-circles #loader-circle-01, .loader-circles #loader-circle-02, .loader-circles #loader-circle-03 {
+    box-shadow: 0 0 0.4545454545vw #9356DC;
+  }
+}
+@media (min-width: 1440px) {
+  .loader-circles #loader-circle-01, .loader-circles #loader-circle-02, .loader-circles #loader-circle-03 {
+    box-shadow: 0 0 0.3076923077vw #9356DC;
+  }
+}
+.loader-circles #loader-circle-01 span, .loader-circles #loader-circle-02 span, .loader-circles #loader-circle-03 span {
   opacity: 0;
 }
-.loader-circles #loader-circle-01 #store-solid-icon-loader-01 {
-  width: 2.8409090909vw;
+.loader-circles #loader-circle-01 #store-solid-icon-loader-01, .loader-circles #loader-circle-01 #store-solid-icon-loader-02, .loader-circles #loader-circle-01 #store-solid-icon-loader-03, .loader-circles #loader-circle-02 #store-solid-icon-loader-01, .loader-circles #loader-circle-02 #store-solid-icon-loader-02, .loader-circles #loader-circle-02 #store-solid-icon-loader-03, .loader-circles #loader-circle-03 #store-solid-icon-loader-01, .loader-circles #loader-circle-03 #store-solid-icon-loader-02, .loader-circles #loader-circle-03 #store-solid-icon-loader-03 {
   position: absolute;
+  width: 2.8409090909vw;
+  opacity: 1;
+}
+.loader-circles #loader-circle-01 {
+  background-color: #9356DC;
+  border: solid 0.3409090909vw #99E2D0;
+}
+.loader-circles #loader-circle-01 #store-solid-icon-loader-01 {
   fill: #99E2D0;
 }
 .loader-circles #loader-circle-02 {
-  margin: 0 4.5454545455vw 0 0;
   background-color: #99E2D0;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border: solid 0.3409090909vw #FF79DA;
 }
-.loader-circles #loader-circle-02 span {
-  opacity: 0;
-}
 .loader-circles #loader-circle-02 #store-solid-icon-loader-02 {
-  width: 2.8409090909vw;
-  position: absolute;
   fill: #FF79DA;
 }
 .loader-circles #loader-circle-03 {
   background-color: #FF79DA;
-  box-shadow: 0 0 1.0666666667vw #9356DC;
   border: solid 0.3409090909vw #9356DC;
 }
-.loader-circles #loader-circle-03 span {
-  opacity: 0;
-}
 .loader-circles #loader-circle-03 #store-solid-icon-loader-03 {
-  width: 2.8409090909vw;
-  position: absolute;
   fill: #9356DC;
 }
 
-/* #loader-welcome-text {    
-    // background-color: coral;
-    padding: 10px 0px 0px 100px;
-    font-family: 'Shrikhand-Regular', cursive, serif;
-    text-shadow: -1px 1px 2px $base-color-2;
-    // text-justify: center;
-} */
 .index-form {
   padding: 0 0 18.6666666667vw 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form {
@@ -1834,15 +1459,6 @@ footer a:visited {
   box-shadow: inset 0px 8px 6px -6px #cfcfcf;
   height: 13.3333333333vw;
   padding: 0 0 0 27.7333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* & */
 }
 @media (min-width: 770px) {
   .index-form .place-location {
@@ -1860,14 +1476,6 @@ footer a:visited {
 .index-form .place-location .map-marker-alt-solid-icon {
   width: 3.2vw;
   cursor: pointer;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form .place-location .map-marker-alt-solid-icon {
@@ -1886,22 +1494,11 @@ footer a:visited {
   background-color: #eaeaea;
   box-shadow: inset 0px 8px 6px -6px #cfcfcf;
   caret-color: #FF79DA;
-  /* &:focus {
-      background-color: $input-background-color;
-  } */
 }
 .index-form .place-location input.search-field {
   width: fit-content;
   height: 13.3333333333vw;
   padding: 0 0 0 4.8vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form .place-location input.search-field {
@@ -1915,16 +1512,6 @@ footer a:visited {
     padding: 0 0 0 1.3846153846vw;
   }
 }
-.index-form .place-location input::placeholder {
-  /* color: black;
-  opacity: 1; // Pour Firefox. */
-}
-.index-form .form-description-validate {
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
 @media (min-width: 770px) {
   .index-form .form-description-validate {
     display: flex;
@@ -1932,14 +1519,6 @@ footer a:visited {
 }
 .index-form .form-description {
   padding: 11.7333333333vw 0 0 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form .form-description {
@@ -1955,14 +1534,6 @@ footer a:visited {
 .index-form .form-description .form-title {
   margin: 0 17.3333333333vw 5.8666666667vw 17.3333333333vw;
   width: 61.0666666667vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form .form-description .form-title {
@@ -1978,14 +1549,6 @@ footer a:visited {
 }
 .index-form .form-description .form-subtitle {
   margin: 0 8.2666666667vw 0 10.4vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .index-form .form-description .form-subtitle {
@@ -1999,6 +1562,10 @@ footer a:visited {
   }
 }
 
+.page-header__content__backward, .validate, .mobile-icon, .list-solid-icon, .store-solid-icon {
+  cursor: pointer;
+}
+
 .backward-button {
   padding: 0;
 }
@@ -2006,15 +1573,6 @@ footer a:visited {
 .page-header__content__backward {
   margin: 1.0666666667vw 17.3333333333vw 0 0;
   width: 4.5333333333vw;
-  cursor: pointer;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .page-header__content__backward {
@@ -2034,22 +1592,13 @@ footer a:visited {
   z-index: 1;
   position: relative;
   margin: 13.3333333333vw 0 0 18.6666666667vw;
-  box-shadow: 0 5px 5px #C5C5C5;
   border: none;
   border-radius: 8.8vw;
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   height: 13.3333333333vw;
   font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
   color: #ffffff;
-  cursor: pointer;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  box-shadow: 0 5px 5px #C5C5C5;
 }
 @media (min-width: 770px) {
   .validate {
@@ -2064,14 +1613,6 @@ footer a:visited {
 .validate#validate-index {
   margin: 9.3333333333vw 0 0 18.6666666667vw;
   width: 58.1333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .validate#validate-index {
@@ -2088,14 +1629,6 @@ footer a:visited {
 .validate#validate-menu {
   margin: 13.3333333333vw 0 0 24vw;
   width: 49.6vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .validate#validate-menu {
@@ -2109,21 +1642,7 @@ footer a:visited {
     width: 14.3076923077vw;
   }
 }
-.validate__hover-effect {
-  z-index: -1;
-  position: absolute;
-  /* Important pour le fonctionnement. */
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  border-radius: 8.8vw;
-  background: linear-gradient(to bottom, #fface8, #ae80e5);
-}
 
-/* $base-color-1: #9356DC;
-$base-color-2: #FF79DA; */
 ol li:before {
   z-index: 1;
   position: relative;
@@ -2131,14 +1650,6 @@ ol li:before {
   border-radius: 13.3333333333vw;
   padding: 2.6666666667vw 3.7333333333vw;
   color: #ffffff;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   ol li:before {
@@ -2155,7 +1666,6 @@ ol li:before {
   z-index: -1;
   display: inline-flex;
   margin: 0 0 8vw 0;
-  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
   border-radius: 4.2666666667vw;
   width: 86.1333333333%;
   height: 19.2vw;
@@ -2163,19 +1673,21 @@ ol li:before {
   background-color: #f6f6f6;
   transform: translate(-5vw, 2vw);
   -moz-transform: translate(-4.5vw, 7.5vw);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
+}
+@media (min-width: 770px) {
+  .aside-button {
+    box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
+  }
+}
+@media (min-width: 1440px) {
+  .aside-button {
+    box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
+  }
 }
 @media (min-width: 770px) {
   .aside-button {
     margin: 0 4.2045454545vw 4.2045454545vw 0;
-    box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
     border-radius: 1.8181818182vw;
     width: 36.7045454545vw;
     height: 8.1818181818vw;
@@ -2187,7 +1699,6 @@ ol li:before {
 @media (min-width: 1440px) {
   .aside-button {
     margin: 0 0 2.8461538462vw 0;
-    box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
     border-radius: 1.2307692308vw;
     width: 24.8461538462vw;
     height: 5.5384615385vw;
@@ -2196,28 +1707,10 @@ ol li:before {
     -moz-transform: translate(-1.5vw, 2.3vw);
   }
 }
-.aside-button:hover {
-  background-color: #f5edff;
-}
-.aside-button:hover .mobile-icon, .aside-button:hover .list-solid-icon, .aside-button:hover .store-solid-icon {
-  fill: #9356DC;
-}
 .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
   position: relative;
   margin: 0 5.6vw 0 0;
   fill: #7e7e7e;
-  cursor: pointer;
-  /* & :hover {
-      fill: $base-color-1;
-  } */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .aside-button .mobile-icon, .aside-button .list-solid-icon, .aside-button .store-solid-icon {
@@ -2233,14 +1726,6 @@ ol li:before {
   width: 3.4666666667vw;
   transform: translate(0, -1vw);
   -moz-transform: translate(0, -3.7vw);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .aside-button .mobile-icon {
@@ -2258,15 +1743,8 @@ ol li:before {
 }
 .aside-button .list-solid-icon {
   width: 4.2666666667vw;
+  transform: translate(0, 0);
   -moz-transform: translate(0, -3.7vw);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .aside-button .list-solid-icon {
@@ -2283,15 +1761,8 @@ ol li:before {
 }
 .aside-button .store-solid-icon {
   width: 4.8vw;
+  transform: translate(0, 0);
   -moz-transform: translate(0, -3.7vw);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .aside-button .store-solid-icon {
@@ -2307,146 +1778,349 @@ ol li:before {
   }
 }
 
-header {
-  /* & .logo {
-      // width: fit-content;
-      // background-color: red;
-  } */
-  /* & .logo_ohmyfood {
-      width: calc($screen-ratio*165vw);
-  } */
-  /* padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
-
-  @include respond-to('medium') {      
-      padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*255vw;
-  }
-
-  @include respond-to('large') {      
-      padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 43%; // 40%
-      background-color: cadetblue;
-  } */
-}
-header .logo-header {
-  fill: #353535;
-  width: 44vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+.restaurant__menu__body__item {
+  margin: 0 1.6vw 3.7333333333vw 3.2vw;
+  width: 93.0666666667%;
+  height: 18.4vw;
 }
 @media (min-width: 770px) {
-  header .logo-header {
-    width: 18.75vw;
+  .restaurant__menu__body__item {
+    width: 90%;
+    height: 8.5227272727vw;
   }
 }
 @media (min-width: 1440px) {
-  header .logo-header {
-    width: 12.6923076923vw;
+  .restaurant__menu__body__item {
+    margin: 0;
+    width: 85%;
+    height: 5.3076923077vw;
   }
 }
-
-.index-header {
-  padding: 6.1333333333vw 0 4.8vw 28vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+  width: 83.0945558739%;
+  height: 50%;
+  padding: 3.7249283668% 0 0 3.1518624642%;
 }
 @media (min-width: 770px) {
-  .index-header {
-    padding: 2.6136363636vw 0 2.0454545455vw 28.9772727273vw;
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    padding: 2.8653295129% 0 0 3.1518624642%;
   }
 }
 @media (min-width: 1440px) {
-  .index-header {
-    padding: 1.7692307692vw 0 1.3846153846vw 43%;
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
+    padding: 3.7249283668% 0 0 3.1518624642%;
   }
 }
-
-.page-header {
-  padding: 6.1333333333vw 0 4.8vw 6.28%;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
+  width: 83.0945558739%;
+  height: 50%;
+  padding: 0 0 0 3.1518624642%;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 3.4666666667vw;
+  overflow: hidden;
+  box-shadow: 0 2.1333333333vw 4.2666666667vw 0 #e9e9e9;
 }
 @media (min-width: 770px) {
-  .page-header {
-    padding: 2.6136363636vw 0 2.0454545455vw 4.5454545455vw;
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    box-shadow: 0 0.9090909091vw 1.8181818182vw 0 #e9e9e9;
   }
 }
 @media (min-width: 1440px) {
-  .page-header {
-    padding: 1.7692307692vw 0 1.3846153846vw 37.65%;
-  }
-  .page-header .logo-header {
-    fill: white;
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    box-shadow: 0 0.6153846154vw 1.2307692308vw 0 #e9e9e9;
   }
 }
-.page-header .page-header__content {
-  display: inline-flex;
+@media (min-width: 770px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    border-radius: 1.4772727273vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
+    border-radius: 1vw;
+  }
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  cursor: pointer;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
+  width: 16.9340974212%;
+  height: 100%;
+  padding: 10% 0 0 3.1518624642%;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price .price {
+  width: fit-content;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle {
+  width: 16.9054441261%;
+  height: 100%;
+  background-color: #99E2D0;
+  border: none;
+  padding: 0 0 0 5.4441260745%;
+  pointer-events: none;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check {
+  position: relative;
+  top: 35%;
+  width: 48.3983050847%;
+  height: 28.98%;
+  background-color: #ffffff;
+  border-radius: 55%;
+}
+.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
+  position: absolute;
+  top: 20%;
+  right: 19%;
+  width: 60%;
+  background-color: #ffffff;
+}
+
+.restaurant-card {
+  margin: 0 0 4.8vw 0;
+  width: 89.3333333333vw;
+  height: 66.9333333333vw;
+  border-radius: 2.9333333333vw;
+  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
+}
+@media (min-width: 770px) {
+  .restaurant-card {
+    box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card {
+    box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
+  }
+}
+@media (min-width: 770px) {
+  .restaurant-card {
+    margin: 0 0 2.0454545455vw 0;
+    width: 43.75vw;
+    height: 32.7272727273vw;
+    border-radius: 1.25vw;
+    box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card {
+    margin: 0 1.2362637363vw 1.2362637363vw 0;
+    width: 23.0082417582vw;
+    height: 17.239010989vw;
+    border-radius: 0.8461538462vw;
+    box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
+  }
+}
+.restaurant-card .restaurant-card-image {
+  height: 46.4vw;
+  border-radius: 2.9333333333vw 2.9333333333vw 0 0;
+  overflow: hidden;
+}
+@media (min-width: 770px) {
+  .restaurant-card .restaurant-card-image {
+    height: 22.6136363636vw;
+    border-radius: 1.25vw 1.25vw 0 0;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card .restaurant-card-image {
+    height: 11.9505494505vw;
+    border-radius: 0.8461538462vw 0.8461538462vw 0 0;
+  }
+}
+.restaurant-card .restaurant-card-image img {
+  position: relative;
+  transform: translate(-50%, -50%);
+  transition: width 900ms 100ms ease-in-out;
+}
+.restaurant-card .restaurant-card-image #la_palette_du_gout {
+  top: 33.5%;
+  left: 50.2%;
+  width: 103.5%;
+}
+.restaurant-card .restaurant-card-image #la_note_enchantee {
+  top: 35%;
+  left: 50%;
+  width: 102%;
+}
+.restaurant-card .restaurant-card-image #a_la_francaise {
+  top: 33.5%;
+  left: 50%;
+  width: 103%;
+}
+.restaurant-card .restaurant-card-image #le_delice_des_sens {
+  top: 33%;
+  left: 50%;
+  width: 102%;
+}
+.restaurant-card .restaurant-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 89.3333333333vw;
+  height: 20.5333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurant-card .restaurant-card-body {
+    width: 43.75vw;
+    height: 10vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card .restaurant-card-body {
+    width: 23.0082417582vw;
+    height: 5.2884615385vw;
+  }
+}
+.restaurant-card .restaurant-card-body .restaurant-card-body-title {
+  height: 50%;
+  width: 76.8vw;
+  padding: 0 0 0 3.7333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurant-card .restaurant-card-body .restaurant-card-body-title {
+    width: 37.6136363636vw;
+    padding: 0 0 0 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card .restaurant-card-body .restaurant-card-body-title {
+    width: 19.7802197802vw;
+    padding: 0 0 0 0.9615384615vw;
+  }
+}
+.restaurant-card .restaurant-card-body .restaurant-card-body-place {
+  height: 50%;
+  width: 76.8vw;
+  padding: 0 0 0 3.7333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurant-card .restaurant-card-body .restaurant-card-body-place {
+    width: 37.6136363636vw;
+    padding: 0 0 0 1.8181818182vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-card .restaurant-card-body .restaurant-card-body-place {
+    width: 19.7802197802vw;
+    padding: 0 0 0 0.9615384615vw;
+  }
+}
+
+.restaurant-body-heart-choice {
+  background: no-repeat;
+  margin: 6.1333333333vw 0 0 0;
+  width: 6.1333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurant-body-heart-choice {
+    margin: 2.9545454545vw 0 0 0;
+    width: 2.9545454545vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant-body-heart-choice {
+    margin: 1.5796703297vw 0 0 0;
+    width: 1.5796703297vw;
+  }
+}
+
+.new-stamp {
+  z-index: 2;
+  position: absolute;
+  width: 21.3333333333vw;
+  background-color: #99E2D0;
+  border-radius: 0.8vw;
+  padding: 2.4vw;
+  transform: translate(65.3333333333vw, 2.6666666667vw);
+  opacity: 0;
+}
+@media (min-width: 770px) {
+  .new-stamp {
+    width: 9.0909090909vw;
+    border-radius: 0.3409090909vw;
+    padding: 1.0227272727vw;
+  }
+}
+@media (min-width: 1440px) {
+  .new-stamp {
+    width: 6.1538461538vw;
+    border-radius: 0.2307692308vw;
+    padding: 0.6923076923vw;
+  }
+}
+
+@media (min-width: 770px) {
+  #new-stamp-01 {
+    transform: translate(-7.6136363636vw, 0.7954545455vw);
+  }
+}
+@media (min-width: 1440px) {
+  #new-stamp-01 {
+    transform: translate(-29.7692307692vw, 0.3461538462vw);
+  }
+}
+
+@media (min-width: 770px) {
+  #new-stamp-02 {
+    transform: translate(39.7727272727vw, 0.7954545455vw);
+  }
+}
+@media (min-width: 1440px) {
+  #new-stamp-02 {
+    transform: translate(-5.1538461538vw, 0.3461538462vw);
+  }
+}
+
+aside {
+  margin: 2.6666666667vw 0 0 0;
+  padding: 0 0 21.3333333333vw 5.6vw;
+}
+@media (min-width: 770px) {
+  aside {
+    margin: 3.4090909091vw 0 0 0;
+    padding: 0 0 5.6818181818vw 2.3863636364vw;
+  }
+  aside ol {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1440px) {
+  aside {
+    margin: 0 0 2.6666666667vw 0;
+    padding: 0 0 0 1.1538461538vw;
+  }
+  aside ol {
+    justify-content: space-evenly;
+  }
+}
+aside .aside-title {
+  margin: 0 0 9.0666666667vw 0;
+}
+@media (min-width: 770px) {
+  aside .aside-title {
+    margin: 0 0 3.8636363636vw 19.6590909091vw;
+    width: fit-content;
+    border-bottom: solid 0.3409090909vw #99E2D0;
+  }
+}
+@media (min-width: 1440px) {
+  aside .aside-title {
+    margin: 0 0 2.6153846154vw 44%;
+    border-bottom: solid 0.2307692308vw #99E2D0;
+  }
 }
 
 footer {
-  /* Code avant Media Queries
-  background-color: black;
-  padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw; // Voir la la mesure en px.
-  color: #ffffff; // Placer en _fonts. */
   background-color: black;
   padding: 7.2vw 0 9.8666666667px 6.6666666667vw;
-  /* @else {
-      @error 'No value found for `small`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* Code avant Media Queries
-  width: calc($screen-ratio)*98vw;
-  fill: #ffffff; // Créer une variable background-color.
-  & :hover {
-      fill: linear-gradient(to left, $base-color-3, $base-color-1);
-  } */
-  /* fill: $background-color;
-
-      @include respond-to('small') {
-          width: calc($screen-ratio)*98vw;
-      }
-
-      @include respond-to('medium') {
-          width: calc($medium-screen-ratio)*98vw;
-      }
-
-      @include respond-to('large') {
-          width: calc($large-screen-ratio)*196vw;            
-      }
-  } */
-  /* Code avant Media Queries
-  .ustensils-solid-icon, .hands-helping-solid {
-      margin: 0 calc($screen-ratio)*11vw 0 0;
-      width: calc($screen-ratio)*11vw;
-      fill: #ffffff; // Créer une variable background-color.
-      :hover {
-          fill: $base-color-3; // Associer avec le survol du texte.
-      }        
-  } */
 }
 footer .logo-footer {
   fill: #ffffff;
@@ -2491,7 +2165,6 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     width: 15.0769230769vw;
   }
   footer ul {
-    /* display: flex; */
     flex-wrap: nowrap;
     justify-content: space-evenly;
     margin-left: -16.4vw;
@@ -2509,612 +2182,57 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   }
 }
 
-/* @media all and (min-width: 992px) {
-    .restaurant__menu__body__item {
-        width: calc((100/992)*375vw); // Diviser par 3.
-        height: calc((100/992)*69vw);
-    }
-
-    @media all and (min-width: 768px) and (max-width: 991px) {
-    .restaurant__menu__body__item {
-        width: calc((100/768)*375vw); // Diviser par 2 ?
-        height: calc((100/768)*69vw);
-    }
-}
-
-} */
-.restaurant__menu__body__item {
-  /* Calculs
-  total width: 100(vw)/375(px) = ratio
-  checkbox width : 349(px) * 0.26 = 90.74(% ou vw)
-  */
-  margin: 0 1.6vw 3.7333333333vw 3.2vw;
-  width: 93.0666666667%;
-  height: 18.4vw;
-  /* text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap; */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+header .logo-header {
+  fill: #353535;
+  width: 44vw;
 }
 @media (min-width: 770px) {
-  .restaurant__menu__body__item {
-    width: 90%;
-    height: 8.5227272727vw;
+  header .logo-header {
+    width: 18.75vw;
   }
 }
 @media (min-width: 1440px) {
-  .restaurant__menu__body__item {
-    margin: 0;
-    width: 85%;
-    height: 5.3076923077vw;
+  header .logo-header {
+    width: 12.6923076923vw;
   }
 }
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
-  width: 83.0945558739%;
-  height: 50%;
-  padding: 3.7249283668% 0 0 3.1518624642%;
-  font-size: 3.4666666667vw;
-  display: inline;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title h3 {
-  display: inline;
-  /* position: relative;
-  top: 33%; // 20%;
-  left: 5%; */
+
+.index-header {
+  padding: 6.1333333333vw 0 4.8vw 28vw;
 }
 @media (min-width: 770px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
-    padding: 2.8653295129% 0 0 3.1518624642%;
-    font-size: 2.0454545455vw;
+  .index-header {
+    padding: 2.6136363636vw 0 2.0454545455vw 28.9772727273vw;
   }
 }
 @media (min-width: 1440px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__title {
-    padding: 3.7249283668% 0 0 3.1518624642%;
-    font-size: 1vw;
+  .index-header {
+    padding: 1.7692307692vw 0 1.3846153846vw 43%;
   }
 }
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
-  width: 83.0945558739%;
-  height: 50%;
-  padding: 0 0 0 3.1518624642%;
-  font-size: 2.9333333333vw;
-  display: inline;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle p {
-  display: inline;
-  /* position: relative;            
-  left: 5%; */
+
+.page-header {
+  padding: 6.1333333333vw 0 4.8vw 6.28%;
 }
 @media (min-width: 770px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
-    font-size: 1.8181818182vw;
+  .page-header {
+    padding: 2.6136363636vw 0 2.0454545455vw 4.5454545455vw;
   }
 }
 @media (min-width: 1440px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox__body__subtitle {
-    font-size: 0.8461538462vw;
+  .page-header {
+    padding: 1.7692307692vw 0 1.3846153846vw 37.65%;
+  }
+  .page-header .logo-header {
+    fill: white;
   }
 }
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
-  height: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 2.1333333333vw 4.2666666667vw 0 #e9e9e9;
-  border-radius: 3.4666666667vw;
-  /* Adaptation de la technique Fab Four en fonction du conteneur :
-  border-radius: max(0px, min(16px, (100% - 400px + 1px) * 9999)) / 16px; */
-  overflow: hidden;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
-    box-shadow: 0 0.9090909091vw 1.8181818182vw 0 #e9e9e9;
-    border-radius: 1.4772727273vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox {
-    box-shadow: 0 0.6153846154vw 1.2307692308vw 0 #e9e9e9;
-    border-radius: 1vw;
-  }
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 100%;
-  font-family: "Roboto-Regular", Helvetica, Arial, sans-serif;
-  cursor: pointer;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* .restaurant__menu__body__item__checkbox__body__title {
-      width: calc($checkbox-ratio*290%); // 81%; // 85%; // 290px;
-      height: 50%; // calc($checkbox-ratio*35%); // 55%; // 9.1vw; //35px;
-      padding: 13px 0px 0px 11px; // Ajuster.
-      overflow: hidden;
-      text-overflow: ellipsis;
-      background-color: pink;;
-  }
-
-  .restaurant__menu__body__item__checkbox__body__subtitle {      
-      width: calc($checkbox-ratio*290%); // 81%; // 85%; // 290px;
-      height: 50%; // calc($checkbox-ratio*34%); // 50%; // 8.84vw; // 34px;
-      padding: 8px 0px 0px 11px; // Ajuster.
-      overflow: hidden;
-      text-overflow: ellipsis;
-      background-color: yellow;
-  } */
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
-  width: 16.9340974212%;
-  height: 100%;
-  padding: 10% 0 0 3.1518624642%;
-  font-size: 2.9333333333vw;
-  font-weight: bold;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
-    font-size: 1.8181818182vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price {
-    font-size: 0.8461538462vw;
-  }
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__price .price {
-  width: fit-content;
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle {
-  width: 16.9054441261%;
-  height: 100%;
-  background-color: #99E2D0;
-  border: none;
-  padding: 0 0 0 5.4441260745%;
-  pointer-events: none;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check {
-  position: relative;
-  top: 35%;
-  width: 48.3983050847%;
-  height: 28.98%;
-  background-color: #ffffff;
-  border-radius: 55%;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-.restaurant__menu__body__item .restaurant__menu__body__item__checkbox .restaurant__menu__body__item__checkbox__body .restaurant__menu__body__item__checkbox__body__toggle .restaurant__menu__body__item__checkbox__body__toggle__check .restaurant__menu__body__item__checkbox__body__toggle__check-solid-icon {
-  position: absolute;
-  top: 20%;
-  right: 19%;
-  width: 60%;
-  background-color: #ffffff;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-.restaurant-card {
-  /* Code avant Media Queries
-  // display: flex;
-  // flex-direction: column;
-  margin: 0 0 calc($screen-ratio)*18vw 0; // margin: 0 0 calc($screen-ratio)*18vw calc($screen-ratio)*20vw; padding-left supprimé au profit de margin in section. // 0px 0px 18px 20px;
-  width: calc($screen-ratio)*335vw; // Revoir la taille en fonction de la suppression du padding-left.// 335px;
-  height: calc($screen-ratio)*251vw; // 251px;
-  border-radius: calc($screen-ratio)*11vw; // 11px;
-  box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw #d9d9d9;  // 0px 4px 8px 4px
-  transition: transform 800ms ease-in-out; */
-  transition: transform 800ms ease-in-out;
-  margin: 0 0 4.8vw 0;
-  width: 89.3333333333vw;
-  height: 66.9333333333vw;
-  border-radius: 2.9333333333vw;
-  box-shadow: 0 1.0666666667vw 2.1333333333vw 1.0666666667vw #d9d9d9;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-card {
-    margin: 0 0 2.0454545455vw 0;
-    width: 43.75vw;
-    height: 32.7272727273vw;
-    border-radius: 1.25vw;
-    box-shadow: 0 0.4545454545vw 0.9090909091vw 0.4545454545vw #d9d9d9;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-card {
-    margin: 0 1.2362637363vw 1.2362637363vw 0;
-    width: 23.0082417582vw;
-    height: 17.239010989vw;
-    border-radius: 0.8461538462vw;
-    box-shadow: 0 0.3076923077vw 0.6153846154vw 0.3076923077vw #d9d9d9;
-  }
-}
-.restaurant-card:hover {
-  transform: scale(1.03);
-}
-.restaurant-card:hover #la_palette_du_gout {
-  width: 108%;
-}
-.restaurant-card:hover #la_note_enchantee {
-  width: 105%;
-}
-.restaurant-card:hover #a_la_francaise {
-  width: 108%;
-}
-.restaurant-card:hover #le_delice_des_sens {
-  width: 105%;
-}
-
-.restaurant-card-image {
-  /* Code avant Media Queries
-  height: calc($screen-ratio)*174vw; // 174px;        
-  border-radius: calc($screen-ratio)*11vw calc($screen-ratio)*11vw 0 0; // 11px 11px 0px 0px;    
-  overflow: hidden; */
-  overflow: hidden;
-  height: 46.4vw;
-  border-radius: 2.9333333333vw 2.9333333333vw 0 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-card-image {
-    height: 22.6136363636vw;
-    border-radius: 1.25vw 1.25vw 0 0;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-card-image {
-    height: 11.9505494505vw;
-    border-radius: 0.8461538462vw 0.8461538462vw 0 0;
-  }
-}
-
-.restaurant-card-image img {
-  position: relative;
-  transform: translate(-50%, -50%);
-  transition: width 900ms 100ms ease-in-out;
-}
-
-#la_palette_du_gout {
-  top: 33.5%;
-  left: 50.2%;
-  width: 103.5%;
-}
-
-#la_note_enchantee {
-  top: 35%;
-  left: 50%;
-  width: 102%;
-}
-
-#a_la_francaise {
-  top: 33.5%;
-  left: 50%;
-  width: 103%;
-}
-
-#le_delice_des_sens {
-  top: 33%;
-  left: 50%;
-  width: 102%;
-}
-
-/* .new-stamp {
-    transform: translate(240px, -165px);
-    width: 80px;
-    height: 29px;
-    background-color: $base-color-3;    
-    padding: 0 0 9px 13px; // Problème avec le padding-bottom.
-    color: $darken-base-color-3;
-} */
-/* .new-stamp:nth-child() {
-    // display: none;
-    background-color: pink;
-} Trouver la solution. */
-.restaurant-card-body {
-  /* Code avant Media Queries
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;    
-  width: calc($screen-ratio)*335vw; // 335px;
-  height: calc($screen-ratio)*77vw; // 77px; // Hauteur card : 251
-  // transform: translate(0px, -45px); Avec new-stamp. // transform: translate(0px, 174px); Si restaurant-card flex column.
-  // background-color: khaki; */
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 89.3333333333vw;
-  height: 20.5333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-card-body {
-    width: 43.75vw;
-    height: 10vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-card-body {
-    width: 23.0082417582vw;
-    height: 5.2884615385vw;
-  }
-}
-
-.restaurant-card-body-title {
-  /* Code avant Media Queries
-  width: calc($screen-ratio)*288vw; // 288px;
-  height: 50%; // calc($screen-ratio)*40vw; // 40px;
-  padding: 0 0 0 calc($screen-ratio)*14vw; // 0px 0px 0px 14px; // Problème avec le padding-bottom.    
-  // color: black;          
-  // transition: color 0ms 799ms;
-  // background-color: red; */
-  height: 50%;
-  width: 76.8vw;
-  padding: 0 0 0 3.7333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-card-body-title {
-    width: 37.6136363636vw;
-    padding: 0 0 0 1.8181818182vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-card-body-title {
-    width: 19.7802197802vw;
-    padding: 0 0 0 0.9615384615vw;
-  }
-}
-
-.restaurant-card-body-place {
-  /* Code avant Media Queries
-  width: calc($screen-ratio)*288vw; // 288px;
-  height: 50%; // calc($screen-ratio)*11vw; // 37px;    
-  padding: 0 0 0 calc($screen-ratio)*14vw; // 0px 0px 0px 14px; // Problème avec le padding-bottom.    
-  // color: black;
-  // transition: color 0ms 799ms;
-  // background-color: aqua; */
-  height: 50%;
-  width: 76.8vw;
-  padding: 0 0 0 3.7333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-card-body-place {
-    width: 37.6136363636vw;
-    padding: 0 0 0 1.8181818182vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-card-body-place {
-    width: 19.7802197802vw;
-    padding: 0 0 0 0.9615384615vw;
-  }
-}
-
-.restaurant-body-heart-choice {
-  /* Code avant Media Queries
-  margin: calc($screen-ratio)*23vw 0 0 0; // 23px
-  width: calc($screen-ratio)*23vw; // 23px;
-  background: no-repeat; */
-  /* &:hover .restaurant-body-heart-choice style {
-      display: none;
-  } */
-  background: no-repeat;
-  margin: 6.1333333333vw 0 0 0;
-  width: 6.1333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant-body-heart-choice {
-    margin: 2.9545454545vw 0 0 0;
-    width: 2.9545454545vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant-body-heart-choice {
-    margin: 1.5796703297vw 0 0 0;
-    width: 1.5796703297vw;
-  }
-}
-.restaurant-body-heart-choice:hover .heart-solid-icon {
-  opacity: 1;
-}
-.restaurant-body-heart-choice:hover .heart-solid-icon {
-  transform: scale(1.1);
-}
-
-.heart-regular-icon {
-  cursor: pointer;
-}
-
-.heart-solid-icon {
-  transform: scale(0);
-  cursor: pointer;
-  transition: transform 750ms cubic-bezier(0.32, 0, 0.07, 1);
-}
-
-.new-stamp {
-  z-index: 2;
-  position: absolute;
-  /* top: 10%;
-  left: 72%; */
-  width: 21.3333333333vw;
-  background-color: #99E2D0;
-  border-radius: 0.8vw;
-  padding: 2.4vw;
-  transform: translate(65.3333333333vw, 2.6666666667vw);
-  opacity: 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .new-stamp {
-    width: 9.0909090909vw;
-    border-radius: 0.3409090909vw;
-    padding: 1.0227272727vw;
-  }
-}
-@media (min-width: 1440px) {
-  .new-stamp {
-    width: 6.1538461538vw;
-    border-radius: 0.2307692308vw;
-    padding: 0.6923076923vw;
-  }
-}
-
-#new-stamp-01 {
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #new-stamp-01 {
-    transform: translate(-7.6136363636vw, 0.7954545455vw);
-  }
-}
-@media (min-width: 1440px) {
-  #new-stamp-01 {
-    transform: translate(-29.7692307692vw, 0.3461538462vw);
-  }
-}
-
-#new-stamp-02 {
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #new-stamp-02 {
-    transform: translate(39.7727272727vw, 0.7954545455vw);
-  }
-}
-@media (min-width: 1440px) {
-  #new-stamp-02 {
-    transform: translate(-5.1538461538vw, 0.3461538462vw);
-  }
+.page-header .page-header__content {
+  display: inline-flex;
 }
 
 .restaurant__menu {
   padding: 0 0 22.1333333333vw 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .restaurant__menu {
@@ -3128,18 +2246,71 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     height: 38.4615384615vw;
   }
 }
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__image {
+    z-index: -1;
+    position: absolute;
+    top: 0%;
+    max-height: 50%;
+    overflow: hidden;
+  }
+}
+.restaurant__menu .restaurant__menu__image #restaurant__menu__image__a_la_francaise, .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_note_enchantee, .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_palette_du_gout, .restaurant__menu .restaurant__menu__image #restaurant__menu__image__le_delice_des_sens {
+  width: 100%;
+}
+.restaurant__menu .restaurant__menu__image #restaurant__menu__image__a_la_francaise {
+  margin-top: -13.3333333333vw;
+  transform: translate(0, 20%);
+}
+.restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_note_enchantee {
+  margin-top: -70.1333333333vw;
+  transform: translate(0, 57.5%);
+}
+@media (min-width: 770px) {
+  .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_note_enchantee {
+    margin-top: -70.6818181818vw;
+    transform: translate(0, 57.5%);
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_note_enchantee {
+    z-index: -1;
+    position: relative;
+    margin-top: -28.4615384615vw;
+    transform: translate(0, -35%);
+  }
+}
+.restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_palette_du_gout {
+  margin-top: -13.8666666667vw;
+  transform: translate(0, 21%);
+}
+@media (min-width: 770px) {
+  .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_palette_du_gout {
+    margin-top: -13.1818181818vw;
+    width: 100%;
+    transform: translate(0, 20%);
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__image #restaurant__menu__image__la_palette_du_gout {
+    z-index: -1;
+    transform: translate(0, -19%);
+  }
+}
+.restaurant__menu .restaurant__menu__image #restaurant__menu__image__le_delice_des_sens {
+  margin-top: -14.9333333333vw;
+  transform: translate(0, 22%);
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__image #restaurant__menu__image__le_delice_des_sens {
+    z-index: -1;
+    transform: translate(0, -52%);
+  }
+}
 .restaurant__menu .restaurant__menu__body {
   position: relative;
   border-radius: 9.6vw 9.6vw 0 0;
   background-color: #f6f6f6;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body {
@@ -3159,13 +2330,6 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   border-radius: 9.6vw 9.6vw 0 0;
   padding: 9.8666666667px 0 0 5.0666666667vw;
   background-color: #f6f6f6;
-  /* & h2 {
-      margin: 0 calc($screen-ratio)*93vw 0 0;
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 1440px) {
   .restaurant__menu .restaurant__menu__body__title {
@@ -3173,96 +2337,68 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
     padding: 2.8461538462px 0 0 1.4615384615vw;
   }
 }
-.restaurant__menu .restaurant__menu__body__form {
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
+.restaurant__menu .restaurant__menu__body__title #note_enchantee-heart {
+  margin: 0 0 0 8.2666666667vw;
 }
-.restaurant__menu .restaurant__menu__body .entries-list {
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* & li {
-      @include respond-to('large') {
-          width: 70%;
-          background-color: palevioletred;
-      }
-  } */
+@media (min-width: 770px) {
+  .restaurant__menu .restaurant__menu__body__title #note_enchantee-heart {
+    margin: -0.4545454545vw 0 0 10.3846153846vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__body__title #note_enchantee-heart {
+    margin: 0.3846153846vw 0 0 2vw;
+  }
+}
+.restaurant__menu .restaurant__menu__body__title #palette_du_gout-heart {
+  margin: 0 0 0 9.8666666667vw;
+}
+@media (min-width: 770px) {
+  .restaurant__menu .restaurant__menu__body__title #palette_du_gout-heart {
+    margin: -0.4545454545vw 0 0 10.7692307692vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__body__title #palette_du_gout-heart {
+    margin: 0.3846153846vw 0 0 2.4615384615vw;
+  }
+}
+.restaurant__menu .restaurant__menu__body__title #delice_des_sens-heart {
+  margin: 0 0 0 12.5333333333vw;
+}
+@media (min-width: 770px) {
+  .restaurant__menu .restaurant__menu__body__title #delice_des_sens-heart {
+    margin: -0.4545454545vw 0 0 12.3076923077vw;
+  }
+}
+@media (min-width: 1440px) {
+  .restaurant__menu .restaurant__menu__body__title #delice_des_sens-heart {
+    margin: 0.3846153846vw 0 0 3.2307692308vw;
+  }
 }
 @media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body .entries-list {
     display: flex;
-    /* border: solid 4px darkolivegreen;
-    background-color: cadetblue; */
     flex-wrap: wrap;
   }
 }
-.restaurant__menu .restaurant__menu__body .entries-list .entry {
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
 @media (min-width: 770px) {
-  .restaurant__menu .restaurant__menu__body .entries-list .entry {
+  .restaurant__menu .restaurant__menu__body .entry {
     margin: 0 0 4.0909090909vw 0;
     width: 50%;
   }
 }
 @media (min-width: 1440px) {
-  .restaurant__menu .restaurant__menu__body .entries-list .entry {
+  .restaurant__menu .restaurant__menu__body .entry {
     margin: 0 0 0 0;
     width: 33%;
-    /* background-color: chartreuse;
-    border: solid 4px blue; */
   }
-}
-.restaurant__menu .restaurant__menu__body .entries-list .items-list {
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 1440px) {
-  .restaurant__menu .restaurant__menu__body .entries-list .items-list {
-    /* background-color: gray;
-    border: solid 4px wheat; */
-  }
-}
-.restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item {
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 1440px) {
-  .restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item {
-    /* background-color: palevioletred;
-    border: solid 4px olivedrab; */
-  }
-}
-.restaurant__menu .restaurant__menu__body .entries-list .restaurant__menu__body__item__checkbox {
-  /* border: solid 4px black; */
 }
 .restaurant__menu .restaurant__menu__body__entry {
   width: 7.7333333333%;
   margin: 0 0 3.7333333333vw 5.0666666667vw;
   padding: 0 0 2.4vw 0;
   border-bottom: solid 0.8vw #99E2D0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   .restaurant__menu .restaurant__menu__body__entry {
@@ -3279,289 +2415,9 @@ footer .ustensils-solid-icon, footer .hands-helping-solid-icon {
   }
 }
 
-.restaurant__menu__body__title__heart {
-  margin: 0 0 0 24.8vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  .restaurant__menu__body__title__heart {
-    margin: -0.4545454545vw 0 0 17.6923076923vw;
-  }
-}
-@media (min-width: 1440px) {
-  .restaurant__menu__body__title__heart {
-    margin: 0.3846153846vw 0 0 7.0769230769vw;
-  }
-}
-
-#note_enchantee-heart {
-  margin: 0 0 0 8.2666666667vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #note_enchantee-heart {
-    margin: -0.4545454545vw 0 0 10.3846153846vw;
-  }
-}
-@media (min-width: 1440px) {
-  #note_enchantee-heart {
-    margin: 0.3846153846vw 0 0 2vw;
-  }
-}
-
-#palette_du_gout-heart {
-  margin: 0 0 0 9.8666666667vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #palette_du_gout-heart {
-    margin: -0.4545454545vw 0 0 10.7692307692vw;
-  }
-}
-@media (min-width: 1440px) {
-  #palette_du_gout-heart {
-    margin: 0.3846153846vw 0 0 2.4615384615vw;
-  }
-}
-
-#delice_des_sens-heart {
-  margin: 0 0 0 12.5333333333vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #delice_des_sens-heart {
-    margin: -0.4545454545vw 0 0 12.3076923077vw;
-  }
-}
-@media (min-width: 1440px) {
-  #delice_des_sens-heart {
-    margin: 0.3846153846vw 0 0 3.2307692308vw;
-  }
-}
-
-.restaurant__menu__image {
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 1440px) {
-  .restaurant__menu__image {
-    position: absolute;
-    top: 0%;
-    max-height: 50%;
-    overflow: hidden;
-  }
-}
-
-#restaurant__menu__image__a_la_francaise {
-  margin-top: -13.3333333333vw;
-  width: 100%;
-  transform: translate(0, 20%);
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 1440px) {
-  #restaurant__menu__image__a_la_francaise {
-    z-index: -1;
-    transform: translate(0, -35%);
-  }
-}
-
-#restaurant__menu__image__la_note_enchantee {
-  margin-top: -70.1333333333vw;
-  width: 100%;
-  transform: translate(0, 57.5%);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #restaurant__menu__image__la_note_enchantee {
-    margin-top: -70.6818181818vw;
-    transform: translate(0, 57.5%);
-  }
-}
-@media (min-width: 1440px) {
-  #restaurant__menu__image__la_note_enchantee {
-    z-index: -1;
-    position: relative;
-    margin-top: -28.4615384615vw;
-    transform: translate(0, -35%);
-  }
-}
-
-#restaurant__menu__image__la_palette_du_gout {
-  margin-top: -13.8666666667vw;
-  width: 100%;
-  transform: translate(0, 21%);
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  #restaurant__menu__image__la_palette_du_gout {
-    margin-top: -13.1818181818vw;
-    width: 100%;
-    transform: translate(0, 20%);
-  }
-}
-@media (min-width: 1440px) {
-  #restaurant__menu__image__la_palette_du_gout {
-    z-index: -1;
-    transform: translate(0, -19%);
-  }
-}
-
-#restaurant__menu__image__le_delice_des_sens {
-  margin-top: -14.9333333333vw;
-  width: 100%;
-  transform: translate(0, 22%);
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 1440px) {
-  #restaurant__menu__image__le_delice_des_sens {
-    z-index: -1;
-    transform: translate(0, -52%);
-  }
-}
-
-/* .restaurant__menu__body__entry {
-    width:  calc($screen-ratio)*39%; // fit-content;  // 66 39    
-    margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
-    padding: 0 0 calc($screen-ratio)*9vw 0;
-    border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
-    // background-color: red;
-} */
-.restaurant__menu__image {
-  z-index: -1;
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-aside {
-  margin: 2.6666666667vw 0 0 0;
-  padding: 0 0 21.3333333333vw 5.6vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  aside {
-    margin: 3.4090909091vw 0 0 0;
-    padding: 0 0 5.6818181818vw 2.3863636364vw;
-  }
-  aside ol {
-    display: flex;
-    flex-wrap: wrap;
-  }
-}
-@media (min-width: 1440px) {
-  aside {
-    margin: 0 0 2.6666666667vw 0;
-    padding: 0 0 0 1.1538461538vw;
-  }
-  aside ol {
-    justify-content: space-evenly;
-  }
-}
-aside .aside-title {
-  margin: 0 0 9.0666666667vw 0;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-}
-@media (min-width: 770px) {
-  aside .aside-title {
-    margin: 0 0 3.8636363636vw 19.6590909091vw;
-    width: fit-content;
-    border-bottom: solid 0.3409090909vw #99E2D0;
-  }
-}
-@media (min-width: 1440px) {
-  aside .aside-title {
-    margin: 0 0 2.6153846154vw 44%;
-    border-bottom: solid 0.2307692308vw #99E2D0;
-    /* margin-block-start: -0.83em;
-    margin-block-end: -0.83em; */
-  }
-}
-
 section {
-  /* Code avant Media Queries
-  padding: 0 0 0 calc($screen-ratio)*15vw; // 0 0 0 calc($screen-ratio)*21vw; */
   margin: 0 0 17.0666666667vw 0;
   padding: 0 0 0 4vw;
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `medium`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
-  /* @else {
-      @error 'No value found for `large`. '
-         + 'Please make sure it is defined in `$breakpoints` map.';
-  } */
 }
 @media (min-width: 770px) {
   section {
@@ -3575,7 +2431,6 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    /* Enlever une fois les cards ajustées. */
     justify-content: space-evenly;
   }
 }
@@ -3592,16 +2447,14 @@ section {
   }
 }
 
-/* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
-/* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */
-/* @import "./sass/layouts/"; /* 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs. */
-/* @import "./sass/pages/"; /* 4. blocs de code uniques à une seule page. Page d’accueil. Règles spécifiques applicables à une page unique, non réutilisées ailleurs. */
-/* A supprimer */
-/* @import "./sass/themes/"; */
-/* 5. code thématique (par ex. en fonction des saisons). */
-/* @import "./sass/utils/"; /* 6. variables, fonctions, mixins et placeholders. Créer par exemple un fichier _variable.scss. */
-/* A supprimer */
-/* @import "./sass/vendors/"; */
-/* 7. (tiers) : feuilles de style externes (Bootstrap, Jquery). Rapidité pour le développement. Styles prédéfinis pour des boutons ou des formulaires par exemple. */
+/* 
+    @import "./sass/base/"; 1. fondations du site (police de caractères, normes, box-sizing…).
+    @import "./sass/components/"; 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction.
+    @import "./sass/layouts/"; 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs.
+    @import "./sass/pages/"; 4. blocs de code uniques à une seule page. Page d’accueil. Règles spécifiques applicables à une page unique, non réutilisées ailleurs.
+    @import "./sass/themes/"; 5. code thématique (par ex. en fonction des saisons).
+    @import "./sass/utils/"; 6. variables, fonctions, mixins et placeholders. Créer par exemple un fichier _variable.scss.
+    @import "./sass/vendors/"; 7. (tiers) : feuilles de style externes (Bootstrap, Jquery). Rapidité pour le développement. Styles prédéfinis pour des boutons ou des formulaires par exemple.
+*/
 
 /*# sourceMappingURL=OC_Ohmyfood_style.css.map */

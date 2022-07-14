@@ -1,0 +1,73 @@
+footer {
+    background-color: black;
+    padding: calc($screen-ratio)*27vw 0 calc($screen-ratio)*37px calc($screen-ratio)*25vw;
+
+    .logo-footer {
+        fill: $background-color;
+        width: calc($screen-ratio)*98vw;
+    }
+
+    .ustensils-solid-icon, .hands-helping-solid-icon {
+        fill: $background-color;
+        margin: 0 calc($screen-ratio)*11vw 0 0;
+        width: calc($screen-ratio)*11vw;
+    }
+
+    @include respond-to('medium') {
+        padding: calc($medium-screen-ratio)*27vw 0 calc($medium-screen-ratio)*37px calc($medium-screen-ratio)*25vw;
+        
+        .logo-footer {
+            margin: 0 0 0 43%;
+            width: calc($medium-screen-ratio)*98vw;
+        }
+        
+        ul {
+            display: flex;            
+            flex-wrap: wrap;
+
+            li {                
+                width: 50%;
+                padding: 0 0 2% 15%;
+            }
+
+            .ustensils-solid-icon, .hands-helping-solid-icon {
+                margin: 0 calc($medium-screen-ratio)*11vw 0 0;
+                width: calc($medium-screen-ratio)*11vw;
+            }
+
+            .icon-less {
+                margin: 0 0 0 calc($medium-screen-ratio)*25vw;
+            }
+        }
+    }
+
+    @include respond-to('large') {
+        height: calc($large-screen-ratio)*300vh;
+        padding: calc($large-screen-ratio)*27vw 0 calc($large-screen-ratio)*37px calc($large-screen-ratio)*87vw;
+
+        .logo-footer {
+            margin: 0 0 0 0;
+            width: calc($large-screen-ratio)*196vw;
+        }
+        
+        ul {
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            margin-left: -16.4vw;
+
+            li {                
+                width: fit-content;
+                padding: 0 0 0 calc($large-screen-ratio)*55vw;
+            }
+
+            .ustensils-solid-icon, .hands-helping-solid-icon {
+                margin: 0 calc($large-screen-ratio)*11vw 0 0;
+                width: calc($large-screen-ratio)*11vw;
+            }
+
+            .icon-less {
+                margin: 0 0 0 0;
+            }
+        }   
+    }
+}

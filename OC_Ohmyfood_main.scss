@@ -3,30 +3,29 @@
 
 @import "./sass/base/normalize";
 @import "./sass/base/reset";
-@import "./sass/base/site_foundations";
+@import "./sass/base/site_basis";
 @import "./sass/base/fonts";
 @import "./sass/base/animations";
 
 @import "./sass/components/loader";
 @import "./sass/components/input";
 @import "./sass/components/buttons";
-@import "./sass/components/header";
-@import "./sass/components/footer";
 @import "./sass/components/menu-checkbox";
-@import "./sass/components/restaurant-card";
+@import "./sass/components/restaurant-card"; // article (Page Accueil (index))
 @import "./sass/components/new-stamp";
-@import "./sass/components/menu-card";
 
 @import "./sass/layouts/aside";
-@import "./sass/layouts/section"; // Corriger layouts --> layout.
-@import "./sass/layouts/media_query_mobile";
-@import "./sass/layouts/media_query_tablet";
-@import "./sass/layouts/media_query_desktop";
+@import "./sass/layouts/footer";
+@import "./sass/layouts/header";
+@import "./sass/layouts/menu-card"; // main (Page Menu)
+@import "./sass/layouts/section";
 
-/* @import "./sass/base/"; /* 1. fondations du site (police de caractères, normes, box-sizing…). */
-/* @import "./sass/components/"; /* 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction. */
-/* @import "./sass/layouts/"; /* 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs. */
-/* @import "./sass/pages/"; /* 4. blocs de code uniques à une seule page. Page d’accueil. Règles spécifiques applicables à une page unique, non réutilisées ailleurs. */
-/* A supprimer */  /* @import "./sass/themes/"; */ /* 5. code thématique (par ex. en fonction des saisons). */
-/* @import "./sass/utils/"; /* 6. variables, fonctions, mixins et placeholders. Créer par exemple un fichier _variable.scss. */
-/* A supprimer */ /* @import "./sass/vendors/"; */ /* 7. (tiers) : feuilles de style externes (Bootstrap, Jquery). Rapidité pour le développement. Styles prédéfinis pour des boutons ou des formulaires par exemple. */
+/* 
+    @import "./sass/base/"; 1. fondations du site (police de caractères, normes, box-sizing…).
+    @import "./sass/components/"; 2. blocs BEM indépendants (boutons…) ; plus élémentaires que layouts. Pas besoin d’autres composants pour remplir leur fonction.
+    @import "./sass/layouts/"; 3. (mise en page) : blocs BEM réutilisables (header, footer, formulaires…) ; utilisent d’autres composants pour leur contenu. La mise en page est une fonction vitale du bloc, qui utilise d’autres blocs.
+    @import "./sass/pages/"; 4. blocs de code uniques à une seule page. Page d’accueil. Règles spécifiques applicables à une page unique, non réutilisées ailleurs.
+    @import "./sass/themes/"; 5. code thématique (par ex. en fonction des saisons).
+    @import "./sass/utils/"; 6. variables, fonctions, mixins et placeholders. Créer par exemple un fichier _variable.scss.
+    @import "./sass/vendors/"; 7. (tiers) : feuilles de style externes (Bootstrap, Jquery). Rapidité pour le développement. Styles prédéfinis pour des boutons ou des formulaires par exemple.
+*/

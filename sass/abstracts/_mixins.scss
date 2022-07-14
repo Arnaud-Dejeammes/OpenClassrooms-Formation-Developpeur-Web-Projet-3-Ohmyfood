@@ -1,24 +1,82 @@
-@mixin inset-shadow {
-    box-shadow: inset 0px 8px 6px -6px $input-shadow; // inset 10px 10px 10px $input-shadow;
+// Loader
+@mixin circle {
+    width: $circle-radius;
+    height: $circle-radius;
+
+    @include respond-to('medium') {
+        width: $medium-circle-radius;
+        height: $medium-circle-radius;
+    }
+
+    @include respond-to('large') {
+        width: $large-circle-radius;
+        height: $large-circle-radius;
+    }
 }
 
+// Ombre pour buttons (small, large), cards et loader
+@mixin box-shadow-small-element {
+    box-shadow: 0 5px 5px $shadow-1;
+}
+
+@mixin box-shadow-intermediate-element {
+    box-shadow: 0 calc($screen-ratio*8vw) calc($screen-ratio*16vw) 0 $shadow-2;
+
+    @include respond-to('medium') {
+        box-shadow: 0 calc($medium-screen-ratio*8vw) calc($medium-screen-ratio*16vw) 0 $shadow-2;
+    }
+
+    @include respond-to('large') {
+        box-shadow: 0 calc($large-screen-ratio*8vw) calc($large-screen-ratio*16vw) 0 $shadow-2;
+    }
+}
+
+@mixin box-shadow-large-element {
+    box-shadow: 0 calc($screen-ratio)*4vw calc($screen-ratio)*8vw calc($screen-ratio)*4vw $shadow-3; // Carte restaurant // Bouton validate (plus proche mais moins visible) : 0px 5px 5px $shadow;
+
+    @include respond-to('medium') {
+        box-shadow: 0 calc($medium-screen-ratio)*4vw calc($medium-screen-ratio)*8vw calc($medium-screen-ratio)*4vw $shadow-3;
+    }
+
+    @include respond-to('large') {
+        box-shadow: 0 calc($large-screen-ratio)*4vw calc($large-screen-ratio)*8vw calc($large-screen-ratio)*4vw $shadow-3;
+    }
+}
+
+@mixin box-shadow-loader {    
+
+    @include respond-to('medium') {
+        box-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1;
+    }
+
+    @include respond-to('large') {
+        box-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1;
+    }
+}
+
+// Ombre portée pour l'intérieur de l'input in <form>
+@mixin inset-shadow {
+    box-shadow: inset 0px 8px 6px -6px $input-shadow;
+}
+
+// Fonctionnement d'ellipsis avec des valeurs relatives (width, height)
 @mixin ellipsis {
-    display: inline;
+    // display: inline; : ajout nécessaire pour les sélecteurs enfants (h3, p) en présence de valeurs relatives.
+    // Attributs et valeurs requis pour le déclenchement efficient d'ellipsis.
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-} // + display: inline; appliqué au texte pour le fonctionnement d'ellipsis en valeur relative.
+}
 
-// Créer une mixin/getter pour l'ajout de nouveaux breakpoints.
+/*  Breakpoint Manager
+    D'après le Responsive breakpoint manager du Sass Guidelines (https://sass-guidelin.es/)
+    (Getter function for reading breakpoint map)
 
-// Getter pour lecture des maps de points
-// Breakpoint Manager
-// Source : https://sass-guidelin.es/
-
-/// Responsive breakpoint manager
-/// @access public
-/// @param {String} $breakpoint - Breakpoint
-/// @requires $breakpoints
+    @access public
+    @param {String} $breakpoint - Breakpoint
+    @requires $breakpoints
+    
+    $breakpoints in _variables.scss */
 
 @mixin respond-to($breakpoint) {
     $raw-query: map-get($breakpoints, $breakpoint);
@@ -29,15 +87,9 @@
             unquote($raw-query),
             inspect($raw-query)
         );
-  
+
         @media #{$query} {
             @content;
         }
-    }
-    
-    /* @else {
-        @error 'No value found for `#{$breakpoint}`. '
-           + 'Please make sure it is defined in `$breakpoints` map.';
-    } */
+    } // Suppression @else.
 }
-  

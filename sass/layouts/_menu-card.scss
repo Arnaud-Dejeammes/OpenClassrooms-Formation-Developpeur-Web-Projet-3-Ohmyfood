@@ -1,0 +1,179 @@
+// <main class="restaurant"> > <div class="restaurant__menu">
+.restaurant__menu {    
+    padding: 0 0 calc($screen-ratio)*83vw 0;    
+
+    @include respond-to('medium') {
+        padding: 0 0 calc($medium-screen-ratio)*53vw 0;
+    }
+
+    @include respond-to('large') {
+        margin: 0 0 calc($large-screen-ratio)*70vw 0;
+        padding: calc($large-screen-ratio)*20vw 0 0 0;
+        height: calc($large-screen-ratio)*500vw;
+    }
+
+    .restaurant__menu__image {
+        @include respond-to('large') {
+            z-index: -1;
+            position: absolute;        
+            top: 0%;
+            max-height: 50%;
+            overflow: hidden;
+        }
+        
+        #restaurant__menu__image__a_la_francaise, #restaurant__menu__image__la_note_enchantee, #restaurant__menu__image__la_palette_du_gout, #restaurant__menu__image__le_delice_des_sens {
+            width: 100%;
+        }
+
+        #restaurant__menu__image__a_la_francaise {
+            margin-top: calc($screen-ratio)*-50vw; // Supprime la marge qui se crée dans .restaurant__menu avec le déplacement de l'image.            
+            transform: translate(0, 20%);
+        }
+
+        #restaurant__menu__image__la_note_enchantee {
+            margin-top: calc($screen-ratio)*-263vw;            
+            transform: translate(0, 57.5%);
+        
+            @include respond-to('medium') {
+                margin-top: calc($medium-screen-ratio)*-622vw;
+                transform: translate(0, 57.5%);
+            }
+        
+            @include respond-to('large') {
+                z-index: -1;
+                position: relative;        
+                margin-top: calc($large-screen-ratio)*-370vw;
+                transform: translate(0, -35%);        
+            }
+        }
+        
+        #restaurant__menu__image__la_palette_du_gout {
+            margin-top: calc($screen-ratio)*-52vw;            
+            transform: translate(0, 21%);
+        
+            @include respond-to('medium') {
+                margin-top: calc($medium-screen-ratio)*-116vw;
+                width: 100%;
+                transform: translate(0, 20%);
+            }
+        
+            @include respond-to('large') {
+                z-index: -1;
+                transform: translate(0, -19%);
+            }
+        }
+        
+        #restaurant__menu__image__le_delice_des_sens {
+            margin-top: calc($screen-ratio)*-56vw;            
+            transform: translate(0, 22%);    
+        
+            @include respond-to('large') {
+                z-index: -1;
+                transform: translate(0, -52%);
+            }
+        }
+    }
+    
+    .restaurant__menu__body {
+        position: relative;
+        border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;
+        background-color: $background-color-section;
+
+        @include respond-to('medium') {
+            border-radius: calc($medium-screen-ratio)*36vw calc($medium-screen-ratio)*36vw 0 0;
+        }
+        
+        @include respond-to('large') {
+            border-radius: calc($large-screen-ratio)*36vw calc($large-screen-ratio)*36vw 0 0;
+            padding: 0 0 0 calc($screen-ratio)*20vw;
+        }
+
+        &__title {
+            margin: calc($large-screen-ratio)*20vw 0 0vw 0;
+            width: 100%;
+            display: inline-flex;            
+            border-radius: calc($screen-ratio)*36vw calc($screen-ratio)*36vw 0 0;
+            padding: calc($screen-ratio)*37px 0 0 calc($screen-ratio)*19vw;
+            background-color: $background-color-section;
+
+            @include respond-to('large') {
+                border-radius: calc($large-screen-ratio)*36vw calc($large-screen-ratio)*36vw 0 0;
+                padding: calc($large-screen-ratio)*37px 0 0 calc($large-screen-ratio)*19vw;
+            }
+
+            #note_enchantee-heart {
+                margin: 0 0 0 calc($screen-ratio)*31vw;
+            
+                @include respond-to('medium') {
+                    margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*135vw;
+                }
+            
+                @include respond-to('large') {
+                    margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*26vw;
+                }
+            }
+            
+            #palette_du_gout-heart {
+                margin: 0 0 0 calc($screen-ratio)*37vw;
+            
+                @include respond-to('medium') {
+                    margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*140vw;
+                }
+            
+                @include respond-to('large') {
+                    margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*32vw;
+                }
+            }
+            
+            #delice_des_sens-heart {
+                margin: 0 0 0 calc($screen-ratio)*47vw;
+            
+                @include respond-to('medium') {
+                    margin: calc($medium-screen-ratio)*-4vw 0 0 calc($large-screen-ratio)*160vw;
+                }
+            
+                @include respond-to('large') {
+                    margin: calc($large-screen-ratio)*5vw 0 0 calc($large-screen-ratio)*42vw;
+                }
+            }
+        }
+
+        .entries-list {
+            @include respond-to('medium') {
+                display: flex;                
+                flex-wrap: wrap;
+            }            
+        }
+
+        .entry {
+            @include respond-to('medium') {
+                margin: 0 0 calc($medium-screen-ratio)*36vw 0;
+                width: 50%;
+            }
+
+            @include respond-to('large') {
+                margin: 0 0 0 0;
+                width: 33%;            
+            }
+        }    
+
+        &__entry {
+            width:  calc($screen-ratio)*29%;
+            margin: 0 0 calc($screen-ratio)*14vw calc($screen-ratio)*19vw;
+            padding: 0 0 calc($screen-ratio)*9vw 0;
+            border-bottom: solid calc($screen-ratio)*3vw $base-color-3;
+            
+            @include respond-to('medium') {                      
+                padding: 0 0 calc($medium-screen-ratio)*17vw 0;
+                border-bottom: solid calc($medium-screen-ratio)*5vw $base-color-3;              
+            }
+
+            @include respond-to('large') {
+                width: calc($screen-ratio)*29%; // $screen-ratio conservé (plutôt que $large-screen-ratio) pour préserver l'animation.
+                margin: 0 0 calc($large-screen-ratio)*14vw calc($large-screen-ratio)*19vw;
+                padding: 0 0 calc($large-screen-ratio)*9vw 0;
+                border-bottom: solid calc($large-screen-ratio)*3vw $base-color-3;                
+            }
+        }
+    }
+}

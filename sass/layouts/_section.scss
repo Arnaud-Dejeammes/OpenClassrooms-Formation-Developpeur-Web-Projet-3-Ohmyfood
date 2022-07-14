@@ -1,12 +1,6 @@
 section {
-    /* Code avant Media Queries
-    padding: 0 0 0 calc($screen-ratio)*15vw; // 0 0 0 calc($screen-ratio)*21vw; */
     margin: 0 0 calc($screen-ratio)*64vw 0;
-    padding: 0 0 0 calc($screen-ratio)*15vw;
-
-    @include respond-to('medium') {
-        // margin: 0 0 calc($medium-screen-ratio)*64vw 0;
-    }    
+    padding: 0 0 0 calc($screen-ratio)*15vw;   
 
     @include respond-to('medium') {
         margin: 0 0 calc($medium-screen-ratio)*64vw 0;
@@ -19,17 +13,10 @@ section {
         .restaurants_section-articles {
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap; /* Enlever une fois les cards ajustées. */ // Conserver : corrigé dans brkpoint suivant.
+            flex-wrap: wrap;
             justify-content: space-evenly;
         }
-    }
-
-    @include respond-to('large') {
-        // margin: 0 0 calc($screen-ratio)*20vw 0;
-    }
-    // @include respond-to('small') {
-        // padding: 0 0 0 calc($screen-ratio)*15vw;
-    //}
+    }    
 
     @include respond-to('large') {
         margin: 0 0 calc($large-screen-ratio)*80vw 0;

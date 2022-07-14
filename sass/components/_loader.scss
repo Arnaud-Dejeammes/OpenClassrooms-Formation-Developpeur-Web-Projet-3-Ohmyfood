@@ -1,39 +1,18 @@
-/* @font-face {
-    font-family: 'Shrikhand-Regular';
-    src: url('public/fonts/Shrikhand-Regular.ttf') format('ttf');
-} */
-
-/* @font-face {
-    font-family: 'Shrikhand-Regular';
-    src: url('../fonts/Shrikhand-Regular.woff') format('woff');
-} */
-
 .body-blur {
-    // opacity: 0; // Gêne l'animation des cercles.
-    // display: none; // Favorise l'animation des cercles, mais n'affiche pas le contenu.
-    // position: absolute; top: -9999px; left: -9999px;
-    // filter: blur(5);
-    visibility: hidden; // REENCLENCHER !!!
+    // opacity: 0; Gêne l'animation des cercles.
+    // display: none; Favorise l'animation des cercles, mais n'affiche pas le contenu.
+    visibility: hidden;
 }
 
-// body {background-color: red;}
-
+// Loader - Général
 .loader {
     z-index: 2;
     position: absolute;
     margin: 0 0 0 2.5%;
     width: 95%;
     height: 100vh;
-    // width: calc($screen-ratio)*375vw;// 375px;
-    // height: 1675px;
-    /* filter: blur(5px);
-    z-index: 1; */
-    // background-color: red;
     opacity: 1;
-    // opacity: 1; // 0.5;
-    // background: #D3D3D3; // linear-gradient(to right,#D3D3D3, #f6f6f6); // grey; // linear-gradient(to top, $base-color-3, $base-color-2);
-    // display: none;    
-
+    
     @include respond-to('medium') {
         width: 50%;
     }
@@ -45,8 +24,7 @@
 
 .loader-background {
     position: relative;
-    top: 25%;
-    // width: fit-content;
+    top: 25%;    
     height: fit-content;
     background: linear-gradient(to top, $base-color-3, $base-color-2);
     border-radius: calc($large-screen-ratio)*50vw;
@@ -58,25 +36,17 @@
 
     @include respond-to('large') {
         top: 30%;
-        left: 105%; // 115%;        
+        left: 105%;
     }
 
-    .loader-text-top {  
-        // background-color: coral;
+    .loader-text-top {        
         position: relative;
-        left: calc($screen-ratio)*97vw; // 130vw // Ajuster avec une fois les polices en responsive.
+        left: calc($screen-ratio)*97vw;
         width: fit-content;
-        padding: 5% 0 5% 0;
-        // padding: 10px 0px 0px 100px;
-        /* font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
-        color: $base-color-1;
-        text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-3; // -1px 1px 2px $base-color-2;
-        text-align: center; */
-        // text-justify: center;
-        // background-color: magenta;
+        padding: 5% 0 5% 0;        
     
         @include respond-to('medium') {
-            left: calc($medium-screen-ratio)*97vw;    
+            left: calc($medium-screen-ratio)*97vw;
         }
     
         @include respond-to('large') {
@@ -84,17 +54,11 @@
         }
     }    
     
-    .loader-text-bottom {    
-        // background-color: coral;
+    .loader-text-bottom {
         position: relative;
-        left: calc($screen-ratio)*90vw; // 130vw Ajuster avec une fois les polices en responsive.
+        left: calc($screen-ratio)*90vw;
         width: fit-content;
-        padding: 5% 0 5% 0;
-        // padding: 10px 0px 0px 100px;
-        /* font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
-        color: $base-color-1;
-        text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-2; // -1px 1px 2px $base-color-2;
-        text-align: center; */
+        padding: 5% 0 5% 0;       
     
         @include respond-to('medium') {
             left: calc($medium-screen-ratio)*90vw;    
@@ -106,107 +70,54 @@
     }    
 }
 
-// $base-color-1: #9356DC;
-// $base-color-2: #FF79DA;
-// $base-color-3: #99E2D0;
-$circle-radius: calc($screen-ratio)*50vw; // 50px; // Déplacer dans _variables.
-$medium-circle-radius: calc($medium-screen-ratio)*50vw; // Déplacer dans _variables.
-$large-circle-radius: calc($large-screen-ratio)*50vw; // Déplacer dans _variables.
-// $logo-title-font: 'Shrikhand-Regular', sans-serif;
-
 .circle {
-    display: inline-flex;
-    width: $circle-radius;
-    height: $circle-radius;
+    display: inline-flex;    
     border-radius: 50%;
-    padding: calc($screen-ratio)*13vw 0 0 0; // 13px 0px 0px 0px;
-    justify-content: center;
-    // vertical-align: middle;
-    // font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
+    padding: calc($screen-ratio)*13vw 0 0 0;
+    justify-content: center;    
+
+    @include circle;
     
-    @include respond-to('medium') {
-        width: $medium-circle-radius;
-        height: $medium-circle-radius;
+    @include respond-to('medium') {        
         padding: calc($medium-screen-ratio)*13vw 0 0 0
     }
 
-    @include respond-to('large') {
-        width: $large-circle-radius;
-        height: $large-circle-radius;
+    @include respond-to('large') {        
         padding: calc($large-screen-ratio)*13vw 0 0 0
     }
 }
 
-.sliding-circles {
-    // margin: 0px 0px 20px 0px;
-    // width: calc($screen-ratio)*375vw; // 375px;
-    // height: calc($screen-ratio)*375vw; // 375px;
-    padding: 5% 0 0 0; // 45% 0 0 0;
-    // background-color: yellowgreen;
+// Loader - Small screen
+.sliding-circles {    
+    padding: 5% 0 0 0;
     
     @include respond-to ("medium") {
         display: none;
     }
-}
 
-$loader-element-shadow: 0 0 calc($screen-ratio)*4vw $base-color-1; // 0px 0px 4px $base-color-1; // Déplacer dans _variables.
-$medium-loader-element-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-$large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-
-#circle-01 {
-    background-color: $base-color-1;
-    color: $base-color-3;
-    border: solid calc($screen-ratio)*3vw $base-color-3; // 3px // Mixin ?
-    box-shadow: $loader-element-shadow;
-    // z-index: 1;
-    transform: translate(calc($screen-ratio)*-45vw, 0); // translate(-45px, 0px); // Ne fonctionne plus ?
-
-    @include respond-to('medium') {
-        border: solid calc($medium-screen-ratio)*3vw $base-color-3;
-        box-shadow: $medium-loader-element-shadow;
+    #circle-01, #circle-02, #circle-03 {
+        box-shadow: $loader-element-shadow;
     }
 
-    @include respond-to('large') {
-        border: solid calc($large-screen-ratio)*3vw $base-color-3;
-        box-shadow: $large-loader-element-shadow;
+    #circle-01 {
+        background-color: $base-color-1;
+        color: $base-color-3;
+        border: solid calc($screen-ratio)*3vw $base-color-3;    
+        transform: translate(calc($screen-ratio)*-45vw, 0);
     }
-}
-
-#circle-02 {
-    background-color: $base-color-3;
-    color: $base-color-2;
-    border: solid calc($screen-ratio)*3vw $base-color-2; // 3px // Mixin ?
-    box-shadow: $loader-element-shadow;
-    // z-index: 2;
-    transform: translate(calc($screen-ratio)*-110vw, 0); // translate(-110px, 0px);
-
-    @include respond-to('medium') {
-        border: solid calc($medium-screen-ratio)*3vw $base-color-3;
-        box-shadow: $medium-loader-element-shadow;
+    
+    #circle-02 {
+        background-color: $base-color-3;
+        color: $base-color-2;
+        border: solid calc($screen-ratio)*3vw $base-color-2;    
+        transform: translate(calc($screen-ratio)*-110vw, 0);
     }
-
-    @include respond-to('large') {
-        border: solid calc($large-screen-ratio)*3vw $base-color-3;
-        box-shadow: $large-loader-element-shadow;
-    }
-}
-
-#circle-03 {
-    background-color: $base-color-2;
-    color: $base-color-1;
-    border: solid calc($screen-ratio)*3vw $base-color-1; // 3px // Mixin ?
-    box-shadow: $loader-element-shadow;
-    // z-index: 3;
-    transform: translate(calc($screen-ratio)*-160vw, 0); // translate(-160px, 0px);
-
-    @include respond-to('medium') {
-        border: solid calc($medium-screen-ratio)*3vw $base-color-3;
-        box-shadow: $medium-loader-element-shadow;
-    }
-
-    @include respond-to('large') {
-        border: solid calc($large-screen-ratio)*3vw $base-color-3;
-        box-shadow: $large-loader-element-shadow;
+    
+    #circle-03 {
+        background-color: $base-color-2;
+        color: $base-color-1;
+        border: solid calc($screen-ratio)*3vw $base-color-1;    
+        transform: translate(calc($screen-ratio)*-160vw, 0);
     }
 }
 
@@ -220,78 +131,60 @@ $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; /
 
     .spinner-circle {
         display: inline-flex;
-        margin: 0 calc($large-screen-ratio)*13vw 0 0;
-        width: $large-circle-radius;
-        height: $large-circle-radius;
+        margin: 0 calc($large-screen-ratio)*13vw 0 0;        
         border-radius: 15%;
-        padding: calc($large-screen-ratio)*13vw 0 0 0; // 13px 0px 0px 0px;
-        justify-content: center;
-        // vertical-align: middle;
+        padding: calc($large-screen-ratio)*13vw 0 0 0;
+        justify-content: center;        
         transform: rotate(180deg);
-        // font-family: 'Shrikhand-Regular', cursive, serif; // Déplacer dans _fonts.
+
+        @include circle;
 
         & span {
             opacity: 0;
         }        
     }
     
-    $loader-element-shadow: 0 0 calc($screen-ratio)*4vw $base-color-1; // 0px 0px 4px $base-color-1; // Déplacer dans _variables.
-    $medium-loader-element-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-    $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-    
-    #spinner-circle-01 {
-        background-color: $base-color-1;
+    #spinner-circle-01, #spinner-circle-02, #spinner-circle-03 {
         box-shadow: $loader-element-shadow;
-        // color: $base-color-3;
-        border: solid calc($large-screen-ratio)*3vw $base-color-3;
 
-        #list-solid-icon-spinner-01 {
+        #list-solid-icon-spinner-01, #list-solid-icon-spinner-02, #list-solid-icon-spinner-03 {
             width: calc($large-screen-ratio)*25vw;
             position: absolute;
-            // top: -40%;
-            // left: -40%;
-            fill: $base-color-3;
             transform: rotate(180deg);
+        }
+    }
+
+    #spinner-circle-01 {
+        background-color: $base-color-1;        
+        border: solid calc($large-screen-ratio)*3vw $base-color-3;
+
+        #list-solid-icon-spinner-01 {            
+            fill: $base-color-3;            
         }
     }
     
     #spinner-circle-02 {
-        background-color: $base-color-3;
-        box-shadow: $loader-element-shadow;
-        // color: $base-color-2;        
+        background-color: $base-color-3;        
         border: solid calc($large-screen-ratio)*3vw $base-color-2;
 
-        #list-solid-icon-spinner-02 {
-            width: calc($large-screen-ratio)*25vw;
-            position: absolute;            
-            fill: $base-color-2;
-            transform: rotate(180deg);
+        #list-solid-icon-spinner-02 {            
+            fill: $base-color-2;            
         }
     }
     
     #spinner-circle-03 {
-        background-color: $base-color-2;
-        box-shadow: $loader-element-shadow;
-        // color: $base-color-1;        
+        background-color: $base-color-2;        
         border: solid calc($large-screen-ratio)*3vw $base-color-1;
 
-        #list-solid-icon-spinner-03 {
-            width: calc($large-screen-ratio)*25vw;
-            position: absolute;            
-            fill: $base-color-1;
-            transform: rotate(180deg);
+        #list-solid-icon-spinner-03 {            
+            fill: $base-color-1;            
         }
     }
 }
 
-.progress-bar {
-    /* position: absolute;
-    left: 5%; */
+.progress-bar {    
     margin: 5% 0 5% 5%;    
-    width: 90%; // fit-content;
-    // height: 40px; // 40px;
-    // padding: 5% 0 0 0; // 5% // padding: 10px 0px 0px 15px;
-    // background-color: orange;
+    width: 90%;
     display: none;
 
     @include respond-to('medium') {
@@ -301,57 +194,30 @@ $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; /
     @include respond-to('large') {
         display: none;
     }
-}
 
-.progress-bar-border {
-    width: 100%; // 345px;
-    height: 20px; // 20px;
-    background: $base-color-1;
-    background-color: #99E2D0;
-    border: solid 2px $base-color-1; // 2px
-    box-shadow: $loader-element-shadow;
-    border-radius: 2px; // 2px;
-    // margin: 50px;
+    .progress-bar-border {
+        width: 100%;
+        height: 20px;
+        background: $base-color-1;
+        background-color: #99E2D0;
+        border: solid 2px $base-color-1;    
+        border-radius: 2px;
+        @include box-shadow-loader;
 
-    @include respond-to('medium') {
-
-    }
-
-    @include respond-to('large') {
-        
-    }
-}
-
-.progress-bar-load {
-        width: 10vw; // 10px;
-        height: 10px; // 10px;        
-        margin: 3px 0 0 4px; // 3px 0px 0px 4px;
-        // width: 100%;
-        background: linear-gradient(to left, $base-color-2, $base-color-1);
-        // background: linear-gradient(to left, $base-color-2, $base-color-3);
-        
-        // margin: 10px 0px 0px 20px;
-       //  margin: auto;
-        // transform: translate(10px, -3px);
-        // margin-top: 3px;
-        /* transform-origin: 0%; /* 0% : left ; 50% : center ; 100% : right ; possibilité d'ajouter une seconde valeur */
-        /* transform: scaleX(0);
-        transition: transform 2000ms cubic-bezier(.32,0,.07,1); */
-
-        @include respond-to('medium') {
-
+        .progress-bar-load {
+            width: 10vw;
+            height: 10px;
+            margin: 3px 0 0 4px;
+            background: linear-gradient(to left, $base-color-2, $base-color-1);
         }
-    
-        @include respond-to('large') {
-            
-        }
+    }    
 }
 
 .loader-circles {
     display: none;
 
     @include respond-to('medium') {
-        display: block;
+        display: block;        
         margin: 0 0 0 calc($medium-screen-ratio)*90vw;
     }
 
@@ -359,97 +225,46 @@ $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; /
         display: none;
     }
 
-    /* .loader-circle {
-        display: inline-flex;
-        margin: 0 calc($medium-screen-ratio)*13vw 0 0;
-        width: $medium-circle-radius;
-        height: $medium-circle-radius;        
-        padding: calc($medium-screen-ratio)*13vw 0 0 0;
-        justify-content: center;
-        // transform: rotate(180deg);
-
-        & span {
-            // opacity: 0;
-        }
-        
-    } */
-
-        
-    /* $loader-element-shadow: 0 0 calc($screen-ratio)*4vw $base-color-1; // 0px 0px 4px $base-color-1; // Déplacer dans _variables.
-    $medium-loader-element-shadow: 0 0 calc($medium-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables.
-    $large-loader-element-shadow: 0 0 calc($large-screen-ratio)*4vw $base-color-1; // Déplacer dans _variables. */
-    
-    #loader-circle-01 {
+    #loader-circle-01, #loader-circle-02, #loader-circle-03 {
         margin: 0 calc($medium-screen-ratio)*40vw 0 0;
-        background-color: $base-color-1;
-        box-shadow: $loader-element-shadow;        
-        border: solid calc($medium-screen-ratio)*3vw $base-color-3;
-
+        
+        @include box-shadow-loader;
+    
         & span {
             opacity: 0;
         }
-
-        #store-solid-icon-loader-01 {
-            width: calc($medium-screen-ratio)*25vw;
-            position: absolute;
-            // top: -40%;
-            // left: -40%;
-            fill: $base-color-3;
-            // transform: rotate(180deg);
+    
+        & #store-solid-icon-loader-01, & #store-solid-icon-loader-02, & #store-solid-icon-loader-03 {
+            position: absolute;                
+            width: calc($medium-screen-ratio)*25vw;            
+            opacity: 1;  // Optionnel.
         }
     }
-    
-    #loader-circle-02 {
-        margin: 0 calc($medium-screen-ratio)*40vw 0 0;
-        background-color: $base-color-3;
-        box-shadow: $loader-element-shadow;
+
+    #loader-circle-01 {     
+        background-color: $base-color-1;
+        border: solid calc($medium-screen-ratio)*3vw $base-color-3;
+
+        #store-solid-icon-loader-01 {
+            fill: $base-color-3;            
+        }
+    }
+      
+    #loader-circle-02 {        
+        background-color: $base-color-3;        
         border: solid calc($medium-screen-ratio)*3vw $base-color-2;
 
-        & span {
-            opacity: 0;
-        }
-
-        #store-solid-icon-loader-02 {
-            width: calc($medium-screen-ratio)*25vw;
-            position: absolute;            
-            fill: $base-color-2;
-            // transform: rotate(180deg);
+        #store-solid-icon-loader-02 {            
+            fill: $base-color-2;            
         }
     }
     
     #loader-circle-03 {
         background-color: $base-color-2;
-        box-shadow: $loader-element-shadow;        
         border: solid calc($medium-screen-ratio)*3vw $base-color-1;
 
-        & span {
-            opacity: 0;
-        }
-
-        #store-solid-icon-loader-03 {
-            width: calc($medium-screen-ratio)*25vw;
-            position: absolute;            
+        #store-solid-icon-loader-03 {           
             fill: $base-color-1;
-            // transform: rotate(180deg);
         }
     }
 }
-
- /* #loader-welcome-text {    
-    // background-color: coral;
-    padding: 10px 0px 0px 100px;
-    font-family: 'Shrikhand-Regular', cursive, serif;
-    text-shadow: -1px 1px 2px $base-color-2;
-    // text-justify: center;
-} */
-
-
-
-// .loader span {
-    // color: #99E2D0;
-    // background: linear-gradient(to left, $base-color-2, $base-color-1);
-// }
-
-// body {
-    // filter: blur(7px);
-// }

@@ -1,7 +1,3 @@
-p {
-    margin: 0;
-} // Correct the default padding-top in Firexfox and from "user agent stylesheet" in Google Chrome (display: block;).
-
 input {
     border: none;    
     outline: none;
@@ -12,7 +8,38 @@ button {
     background-color: transparent;
 }
 
+ul {
+    padding: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
 ol {
-    margin-block-start: -1em;
-    margin-block-end: -1em;
-} // Annule user agent stylesheet de Google Chrome.
+    margin-block-start: -1em; // Annule user agent stylesheet de Google Chrome.
+    margin-block-end: -1em; // Annule user agent stylesheet de Google Chrome.
+    padding-inline-start: 0; // Annule "padding-inline-start: 40px;" in "user style sheet" de Google Chrome.
+    
+    // list-style-type: none; // Annule le double chiffrement si la variable n'est pas placée dans li.
+    
+    li {
+        list-style-type: none; // Important pour éviter le double chiffrement de ol li.     
+        counter-increment: list-dot; // Reprend le compte au lieu de 0.
+        &:before {
+            content: counter(list-dot) "";
+        } // Annule le point après le chiffre.
+    }
+}
+
+h1, nav h2 {
+    display: none;
+}
+
+p {
+    margin: 0;
+} // Correct the default padding-top in Firexfox and from "user agent stylesheet" in Google Chrome (display: block;).
+
+a {
+    text-decoration: none;
+}

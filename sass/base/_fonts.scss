@@ -1,30 +1,26 @@
-// Logo et titres
+// Fonts - Général - Logo et titres
 @font-face {
     font-family: 'Shrikhand-Regular'; //, cursive, serif;
     src: url('../fonts/Shrikhand-Regular.woff') format('woff');
 }
 
-// Texte
+// Fonts - Général - Texte
 @font-face {
     font-family: 'Roboto-Regular'; //, sans-serif;
     src: url('../fonts/Roboto-Regular.woff') format('woff');
 }
 
-@font-face {
-    font-family: 'Roboto-Bold'; //, sans-serif;
-    src: url('../fonts/Roboto-Bold.woff') format('woff');
-} // Non nécessaire ?
-
 form, aside, main, footer, .restaurant__menu__body__entry {
     font-family: $text-font;
 }
 
+// Fonts - Page Accueil - Loader
 .loader-text-top {
-    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-family: $logo-title-font;
     font-size: calc($screen-ratio)*16vw;
     color: $base-color-1;
-    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-3; // -1px 1px 2px $base-color-2;
     text-align: center;
+    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-3;    
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*24vw;
@@ -36,11 +32,11 @@ form, aside, main, footer, .restaurant__menu__body__entry {
 }
 
 .loader-text-bottom {
-    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-family: $logo-title-font;
     font-size: calc($screen-ratio)*16vw;
     color: $base-color-1;
-    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-2; // -1px 1px 2px $base-color-2;
     text-align: center;
+    text-shadow: calc($screen-ratio)*-1vw calc($screen-ratio)*1vw calc($screen-ratio)*2vw $base-color-2;    
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*24vw;
@@ -52,12 +48,12 @@ form, aside, main, footer, .restaurant__menu__body__entry {
 }
 
 .circle {
-    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-family: $logo-title-font;
     font-size: calc($screen-ratio)*16vw;
 }
 
 .spinner-circles {
-    font-family: 'Shrikhand-Regular', cursive, serif;
+    font-family: $logo-title-font;
     font-size: calc($large-screen-ratio)*16vw;
 
     #spinner-circle-01 {        
@@ -88,34 +84,12 @@ form, aside, main, footer, .restaurant__menu__body__entry {
     color: $base-color-1;
 }
 
-ol li:before {
-
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*11vw; */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*11vw;
-    // }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*11vw;        
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*11vw;        
-    }
-}
+// Fonts - Page Accueil - Formulaire (form > label location)
 
 input[type="search"] {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*11.7vw; // Ajuster si ajustement de la police form.
-    font-weight: bold; */
     
+    font-size: calc($screen-ratio)*11.7vw;
     font-weight: bold;
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*11.7vw;
-    // }
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*11.7vw;   
@@ -124,122 +98,6 @@ input[type="search"] {
     @include respond-to('large') {
         font-size: calc($large-screen-ratio)*11.7vw;        
     }
-}
-
-.restaurant-card-body-title {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*13vw; // Ajuster et regrouper. */
-    // color: red;
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*13vw;
-    // }
-
-    a {
-        color: black; // a ajouté pour empêcher l'apparition du texte bleu dans Firefox.
-    }
-    
-    a:visited {
-        color: black;
-    }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*15vw; // 13vw
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*13vw;
-    }
-}
-
-.restaurant-card-body-place {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper. */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*12vw;
-    // }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*15vw; // 12vw
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*12vw;
-    }
-}
-
-.new-stamp {
-    color: $darken-base-color-3;
-    font-weight: bold;
-    text-align: center;
-    font-size: calc($screen-ratio)*14vw;
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*14vw;
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*14vw;
-    }
-}
-
-li button {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*12vw; // Ajuster et regrouper.
-    font-weight: bold; */
-    
-    font-weight: bold;
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*12vw;
-    // }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*15vw;
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*12vw;
-    }
-}
-
-.restaurant__menu__body__entry {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*12vw; // // Ajuster et regrouper. */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*12vw;
-    // }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*18vw;        
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*12vw;
-    }
-}
-
-footer, .validate, ::placeholder {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*12vw; // Ajuster police et/ou icône. // Ajuster et regrouper. */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*14vw; // font-size: calc($screen-ratio)*12vw;
-    // }
-
-    @include respond-to('medium') {
-        font-size: calc($medium-screen-ratio)*16vw;
-    }
-
-    @include respond-to('large') {
-        font-size: calc($large-screen-ratio)*12vw;
-    }
-}
-
-::placeholder {
-    color: black;
-    opacity: 1; // Pour Firefox
 }
 
 .form-description {
@@ -255,11 +113,7 @@ footer, .validate, ::placeholder {
 }
 
 .form-title {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*22vw; // 17vw; */
-
-    font-size: calc($screen-ratio)*20vw; // 12vw
-    
+    font-size: calc($screen-ratio)*20vw;    
 
     @include respond-to('medium') {
         font-size: calc($screen-ratio)*10vw;
@@ -271,13 +125,8 @@ footer, .validate, ::placeholder {
 }
 
 .form-subtitle {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*13vw; // Revoir taille de la police et marges. */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*15vw; // calc($screen-ratio)*13vw;
-    // }
-
+    font-size: calc($screen-ratio)*15vw;
+    
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*14vw;
     }
@@ -287,14 +136,10 @@ footer, .validate, ::placeholder {
     }
 }
 
+// Fonts - Page Accueil - Aside (title)
 .aside-title {
-    /* Code avant Media Queries
-    font-size: calc($screen-ratio)*18vw; */
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*15vw; // font-size: calc($screen-ratio)*18vw;
-    // }
-
+    font-size: calc($screen-ratio)*15vw;
+    
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*16vw;
     }
@@ -304,10 +149,35 @@ footer, .validate, ::placeholder {
     }
 }
 
-::placeholder {    
-    font-weight: bold;
+// Fonts - Page Accueil - Aside (buttons)
+// Numération
+ol li:before {
+    font-size: calc($screen-ratio)*11vw;
+    
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*11vw;        
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*11vw;        
+    }
 }
 
+// Texte
+li button {
+    font-size: calc($screen-ratio)*12vw;
+    font-weight: bold;
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
+}
+
+// Fonts - Page Accueil - Titre (main > section)
 .restaurants_section-title {
     font-size: calc($screen-ratio)*17vw;
 
@@ -320,37 +190,71 @@ footer, .validate, ::placeholder {
     }
 }
 
-footer {
-
-    line-height: 200%;
-
-    li a { // li a ajouté pour empêcher l'apparition du texte bleu dans Firefox.
-    color: $background-color;    
-    }
-
-    li a:hover {
-        color: $base-color-3;
+// Fonts - Page Accueil - Restaurant Card (main > section > article)
+.restaurant-card-body-title {    
+    font-size: calc($screen-ratio)*13vw;
     
-        .ustensils-solid-icon, .hands-helping-solid-icon {
-            fill: $base-color-3;
-        }    
+    a {
+        color: black; // Empêche l'apparition du texte bleu dans Firefox.
     }
     
     a:visited {
-        color: #ffffff;
+        color: black;
+    }
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*13vw;
     }
 }
 
+.restaurant-card-body-place {
+    font-size: calc($screen-ratio)*12vw;
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*15vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
+}
+
+.new-stamp {
+    font-size: calc($screen-ratio)*14vw;
+    font-weight: bold;
+    color: $darken-base-color-3;    
+    text-align: center;    
+
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*14vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*14vw;
+    }
+}
+
+// Fonts - Page Menu - Entries (main > form > ul > li) 
+.restaurant__menu__body__entry {    
+    font-size: calc($screen-ratio)*12vw;
+    
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*18vw;        
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
+}
+
+// Fonts - Page Menu - Restaurant Menu (card)
 .restaurant__menu__body__title {
-    /* Code avant Media Queries 
+    font-size: calc($screen-ratio)*18vw;
     font-family: $logo-title-font;
-    font-size: calc($screen-ratio)*18vw; // 21px // Ajuster. */
-
-    font-family: $logo-title-font;    
-
-    // @include respond-to('small') {
-        font-size: calc($screen-ratio)*18vw;
-    // }
 
     @include respond-to('medium') {
         font-size: calc($medium-screen-ratio)*18vw;
@@ -359,5 +263,93 @@ footer {
     @include respond-to('large') {
         font-size: calc($large-screen-ratio)*18vw;
     }
+}
 
-} // Revoir éventuellement la hiérarchie des titres (h2, h3...), tout en assurant la cohérence entre la Page Restaurant et la Page Menu.
+.restaurant__menu__body__item__checkbox__body {               
+    font-family: $text-font;
+
+    .restaurant__menu__body__item__checkbox__body__title {    
+        font-size: calc($screen-ratio*13vw);    
+    
+        @include respond-to('medium') {
+            font-size: calc($medium-screen-ratio*18vw);
+        }
+    
+        @include respond-to('large') {
+            font-size: calc($large-screen-ratio*13vw);        
+        }
+    
+        @include ellipsis;
+    
+        & h3 {            
+            display: inline; // Restaure le fonctionnement de text-overflow: ellipsis; quand le conteneur est en valeur relative.
+        }
+    }
+    
+    .restaurant__menu__body__item__checkbox__body__subtitle {
+        font-size: calc($screen-ratio*11vw);
+    
+        @include respond-to('medium') {
+            font-size: calc($medium-screen-ratio*16vw);
+        }
+    
+        @include respond-to('large') {
+            font-size: calc($large-screen-ratio*11vw);
+        }
+    
+        @include ellipsis; // + display: inline; appliqué au texte pour le fonctionnement d'ellipsis en valeur relative.
+    
+        & p {
+            display: inline; // Restaure le fonctionnement de text-overflow: ellipsis; quand le conteneur est en valeur relative.
+        }
+    }
+
+    .restaurant__menu__body__item__checkbox__body__price {        
+        font-size: calc($screen-ratio*11vw);
+        font-weight: bold;
+        
+        @include respond-to('medium') {
+            font-size: calc($medium-screen-ratio*16vw);
+        }
+
+        @include respond-to('large') {
+            font-size: calc($large-screen-ratio*11vw);
+        }
+    }
+}
+
+// Fonts - Général - Footer + Button (validate) & Page Accueil - Formulaire (location)
+footer, .validate, ::placeholder {    
+    font-size: calc($screen-ratio)*14vw;
+    
+    @include respond-to('medium') {
+        font-size: calc($medium-screen-ratio)*16vw;
+    }
+
+    @include respond-to('large') {
+        font-size: calc($large-screen-ratio)*12vw;
+    }
+}
+
+::placeholder {
+    font-weight: bold;
+    color: black;
+    opacity: 1; // Pour Firefox.
+}
+
+// Fonts - Footer
+footer {
+    line-height: 200%;
+
+    li a, a:visited {
+        color: $background-color;    
+    } // li a : empêche l'apparition du texte bleu dans Firefox.
+
+    li a:hover {
+        color: $base-color-3;
+    
+        .ustensils-solid-icon, .hands-helping-solid-icon {
+            fill: $base-color-3;
+        }    
+    }
+}

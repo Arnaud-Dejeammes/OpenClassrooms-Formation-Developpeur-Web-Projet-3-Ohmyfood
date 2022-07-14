@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;    
+}
+
+body {
+    display: flex;
+    flex-direction: column;    
+}
+
+::selection {
+    background: $base-color-1;
+    color: $base-color-3;
+}

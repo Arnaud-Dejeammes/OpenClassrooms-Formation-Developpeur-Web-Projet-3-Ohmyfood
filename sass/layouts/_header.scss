@@ -1,0 +1,47 @@
+header {
+
+    & .logo-header {
+        fill: #353535;
+        width: calc($screen-ratio*165vw);
+
+        @include respond-to('medium') {            
+            width: calc($medium-screen-ratio*165vw);
+        }
+
+        @include respond-to('large') {            
+            width: calc($large-screen-ratio*165vw);
+        }
+    }
+}
+
+.index-header {
+    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*105vw;
+
+    @include respond-to('medium') {      
+        padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*255vw;
+    }
+    
+    @include respond-to('large') {      
+        padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 43%;
+    }
+}
+
+.page-header {    
+    padding: calc($screen-ratio)*23vw 0 calc($screen-ratio)*18vw calc($screen-ratio)*23.55%; // Léger correctif pading-left pour éviter le décalage entre Page Menu et Page Accueil.
+
+    @include respond-to('medium') {      
+        padding: calc($medium-screen-ratio)*23vw 0 calc($medium-screen-ratio)*18vw calc($medium-screen-ratio)*40vw;
+    }
+    
+    @include respond-to('large') {        
+        padding: calc($large-screen-ratio)*23vw 0 calc($large-screen-ratio)*18vw 37.65%;
+
+        & .logo-header {
+            fill: white;
+        }
+    }
+
+    & .page-header__content {
+        display: inline-flex;        
+    }
+}
